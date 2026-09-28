@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nome do meu site</title>
+  <meta name="description" content="Uma frase dizendo do que o site trata.">
+
+  <!-- Conexão com o CSS -->
+  <style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+/* Cores do site: troque aqui e o site inteiro muda */
+:root {
+  --cor-principal: #12324a;
+  --cor-destaque: #ffb703;
+  --cor-fundo: #f4f7fa;
+  --cor-texto: #1b2a38;
+}
+
+/* A largura passa a incluir o padding e a borda */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;   /* rolagem suave nos links com # */
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--cor-principal);
+}
+
+/* Centraliza o conteúdo e limita a largura */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+section {
+  padding: 3rem 0;
+}
+
+.topo {
+  background-color: var(--cor-principal);
+  padding: 1rem 0;
+}
+.topo nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.topo a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.rodape-simples {
+  background-color: var(--cor-principal);
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+</style>
+  <!-- Conexão com o JavaScript. defer = só roda depois que o HTML todo foi lido -->
+  
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Estrutura de um projeto novo. Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#conexao">Ver no Catálogo</a></div>
+
+  <header class="topo">
+    <nav class="container">
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <div class="container">
+        <h1>Nome do meu site</h1>
+        <p>Uma frase de apresentação.</p>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <h2>Sobre</h2>
+        <p>Texto da seção.</p>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <h2>Contato</h2>
+        <p>Texto da seção.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape-simples">
+    <div class="container">
+      <p>&copy; 2026 Seu Nome</p>
+    </div>
+  </footer>
+<script>
+// Se esta mensagem aparecer no Console (F12), o JavaScript está conectado.
+console.log("script.js conectado!");
+
+</script>
+</body>
+</html>

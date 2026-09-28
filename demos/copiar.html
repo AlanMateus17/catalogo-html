@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Botão de copiar com aviso</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+
+.linha-copiar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.linha-copiar code {
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #eaf0f5;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 300;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  background-color: #12324a;
+  color: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.toast.visivel {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Botão de copiar com aviso. Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#exemplo-20">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<div class="linha-copiar">
+  <code id="texto-copiar">texto que será copiado</code>
+  <button type="button" class="botao" id="btn-copiar">Copiar</button>
+</div>
+
+<!-- Aviso rápido: fica escondido até o JavaScript mostrar -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+// ----- Aviso rápido (toast): use mostrarAviso("texto") em qualquer lugar -----
+let temporizadorAviso;
+function mostrarAviso(mensagem) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+  toast.textContent = mensagem;
+  toast.classList.add("visivel");
+  clearTimeout(temporizadorAviso);
+  temporizadorAviso = setTimeout(function () {
+    toast.classList.remove("visivel");
+  }, 2500);   // some depois de 2,5 segundos
+}
+
+// ----- Botão de copiar -----
+const btnCopiar = document.getElementById("btn-copiar");
+
+if (btnCopiar) {
+  btnCopiar.addEventListener("click", function () {
+    const texto = document.getElementById("texto-copiar").textContent;
+
+    navigator.clipboard.writeText(texto)
+      .then(function () {
+        mostrarAviso("Copiado! Cole com Ctrl + V.");
+      })
+      .catch(function () {
+        mostrarAviso("Não deu para copiar. Selecione o texto e use Ctrl + C.");
+      });
+  });
+}
+
+</script>
+</body>
+</html>

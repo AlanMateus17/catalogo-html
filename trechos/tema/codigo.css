@@ -1,0 +1,33 @@
+/* 1. As cores ficam em variáveis */
+:root {
+  --cor-fundo: #f4f7fa;
+  --cor-superficie: #ffffff;
+  --cor-texto: #1b2a38;
+  --cor-borda: #cfd9e3;
+}
+
+/* 2. No tema escuro, só as variáveis mudam */
+[data-tema="escuro"] {
+  --cor-fundo: #0c1720;
+  --cor-superficie: #13222f;
+  --cor-texto: #e4ecf2;
+  --cor-borda: #2a4056;
+  color-scheme: dark;       /* barras de rolagem e campos escuros também */
+}
+
+/* 3. As regras usam as variáveis */
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-tema {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+  font: inherit;
+  cursor: pointer;
+}

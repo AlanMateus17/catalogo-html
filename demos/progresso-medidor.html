@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Barra de andamento e medidor (progress e meter)</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+.indicadores {
+  display: grid;
+  gap: 0.3rem;
+  max-width: 360px;
+}
+.indicadores label {
+  margin-top: 0.6rem;
+  font-weight: 700;
+}
+.indicadores progress,
+.indicadores meter {
+  width: 100%;
+  height: 1.2rem;
+}
+.indicadores progress {
+  accent-color: #2a9d8f;
+}
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Barra de andamento e medidor (progress e meter). Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#formularios">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<div class="indicadores">
+  <label for="progresso-download">Download: 70%</label>
+  <progress id="progresso-download" value="70" max="100">70%</progress>
+
+  <label for="medidor-disco">Espaço usado: 9 de 10 GB</label>
+  <meter id="medidor-disco" value="9" min="0" max="10" low="4" high="8" optimum="2">9 de 10</meter>
+</div>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+
+</script>
+</body>
+</html>

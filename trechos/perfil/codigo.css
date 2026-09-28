@@ -1,0 +1,34 @@
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 720px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(18, 50, 74, 0.12);
+}
+.perfil-foto {
+  flex-shrink: 0;           /* a foto nunca é espremida */
+  width: 120px;
+  height: 120px;
+  border: 4px solid #ffb703;
+  border-radius: 50%;       /* 50% = círculo */
+  object-fit: cover;
+}
+.perfil-nome {
+  margin: 0;
+}
+.perfil-funcao {
+  margin: 0 0 0.5rem;
+  color: #4f5f6f;
+}
+.perfil-link {
+  font-weight: 700;
+}
+@media (max-width: 600px) {
+  .perfil {
+    flex-direction: column;  /* foto em cima, texto embaixo */
+    text-align: center;
+  }
+}

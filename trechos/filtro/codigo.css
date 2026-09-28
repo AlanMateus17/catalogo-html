@@ -1,0 +1,26 @@
+/* Garante que o atributo hidden sempre esconda (igual em vários exemplos) */
+[hidden] {
+  display: none !important;
+}
+
+#filtro-busca {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;   /* a largura inclui padding e borda */
+  max-width: 320px;
+  padding: 0.5rem;
+  font: inherit;
+}
+.lista-filtro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+.lista-filtro li {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid #cfd9e3;
+  border-radius: 999px;
+  background-color: #ffffff;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--
+  VERIFICADOR DO PROJETO
+  O aluno escolhe a pasta do site dele e o js/verificador.js confere caminhos, HTML, CSS e JS.
+  Os arquivos não saem do computador: o navegador só lê o conteúdo.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <!-- Ferramenta do Catálogo: dados dos códigos (para o exemplo da Estrutura) e o verificador -->
+  <script src="js/codigos-dados.js" defer></script>
+  <script src="js/verificador.js" defer></script>
+  <title>Verificador do projeto — Catálogo do HTML</title>
+  <meta name="description" content="Confere a pasta do seu site: caminhos, HTML, CSS e JavaScript, com a explicação de como corrigir cada problema.">
+</head>
+<body class="pagina-trilha">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html" aria-current="page">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="passo-a-passo.html">Passo a passo</a></li>
+            <li aria-current="page">Verificador</li>
+          </ol>
+        </nav>
+        <h1 class="heroi-titulo">Verificador do projeto</h1>
+        <p class="heroi-texto">Escolha a pasta do seu site. A página confere os caminhos, o HTML, o CSS e o JavaScript, e diz como corrigir cada problema.</p>
+      </div>
+    </section>
+
+    <div class="container trilha-corpo">
+      <section class="trilha-secao" id="escolher">
+        <h2>Escolher a pasta</h2>
+        <div class="verif-entrada">
+          <label class="verif-botao" for="pasta-projeto">
+            <span class="verif-botao-titulo">Escolher a pasta do meu projeto</span>
+            <span>A pasta que tem o <code>index.html</code> dentro</span>
+          </label>
+          <input type="file" id="pasta-projeto" webkitdirectory multiple class="visualmente-escondido">
+          <p id="estado-leitura" class="verif-estado" aria-live="polite"></p>
+        </div>
+        <p>O navegador vai perguntar se você quer "enviar" os arquivos. Pode confirmar: os arquivos <strong>não saem do seu computador</strong>. A página só lê o conteúdo, aqui mesmo no navegador.</p>
+        <p class="verif-exemplos">
+          <button type="button" class="botao botao-contorno botao-pequeno" id="exemplo-erros">Ver o exemplo com erros</button>
+          <button type="button" class="botao botao-contorno botao-pequeno" id="exemplo-certo">Testar com o código da Estrutura</button>
+        </p>
+      </section>
+
+      <section class="trilha-secao" id="resultado" aria-live="polite">
+        <div class="verif-resumo" id="resumo-verificacao"></div>
+        <label class="verif-filtro"><input type="checkbox" id="so-problemas" checked> Mostrar só o que precisa de atenção</label>
+        <div id="resultado-verificacao"></div>
+      </section>
+
+      <section class="trilha-secao" id="limites">
+        <h2>O que o Verificador não vê</h2>
+        <ul>
+          <li>Ele não abre o site: não testa cliques, animações nem a aparência. Para isso, use o Live Server e o F12 (<a href="passo-7-verificar.html">Passo 7</a>).</li>
+          <li>A conferência de tags é pela contagem de aberturas e fechamentos. O <strong>validador do W3C</strong> é mais completo e mostra a linha exata.</li>
+          <li>Um item de atenção nem sempre é erro. Leia a explicação e decida.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+.tabela-rolagem {
+  overflow-x: auto;          /* rola para o lado no celular */
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(18, 50, 74, 0.12);
+}
+.tabela {
+  width: 100%;
+  border-collapse: collapse; /* bordas das células viram uma linha só */
+  background-color: #ffffff;
+}
+.tabela caption {
+  padding: 1rem;
+  font-weight: 700;
+  text-align: left;
+}
+.tabela th,
+.tabela td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #cfd9e3;
+  text-align: left;
+}
+.tabela thead th {
+  background-color: #12324a;
+  color: #ffffff;
+}
+/* Linhas zebradas: as pares ficam com fundo diferente */
+.tabela tbody tr:nth-child(even) {
+  background-color: #eaf0f5;
+}
+.tabela tbody tr:hover {
+  background-color: #fff3cc;
+}
+.tabela tfoot {
+  font-weight: 700;
+}

@@ -1,0 +1,68 @@
+/* Cores do site: troque aqui e o site inteiro muda */
+:root {
+  --cor-principal: #12324a;
+  --cor-destaque: #ffb703;
+  --cor-fundo: #f4f7fa;
+  --cor-texto: #1b2a38;
+}
+
+/* A largura passa a incluir o padding e a borda */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;   /* rolagem suave nos links com # */
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--cor-principal);
+}
+
+/* Centraliza o conteúdo e limita a largura */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+section {
+  padding: 3rem 0;
+}
+
+.topo {
+  background-color: var(--cor-principal);
+  padding: 1rem 0;
+}
+.topo nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.topo a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.rodape-simples {
+  background-color: var(--cor-principal);
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 0;
+}

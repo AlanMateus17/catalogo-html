@@ -1,0 +1,19 @@
+<form class="form-tarefa" id="form-tarefa">
+  <label for="nova-tarefa">Nova tarefa</label>
+  <input type="text" id="nova-tarefa" required maxlength="60" autocomplete="off">
+  <button type="submit" class="botao">Adicionar</button>
+</form>
+
+<ul class="lista-tarefas" id="lista-tarefas"></ul>
+<p id="tarefas-restantes">Nenhuma tarefa.</p>
+
+<!-- Modelo de cada tarefa: não aparece na tela, o JavaScript copia -->
+<template id="modelo-tarefa">
+  <li class="tarefa">
+    <label>
+      <input type="checkbox" class="tarefa-check">
+      <span class="tarefa-texto"></span>
+    </label>
+    <button type="button" class="tarefa-remover" aria-label="Remover tarefa">✕</button>
+  </li>
+</template>

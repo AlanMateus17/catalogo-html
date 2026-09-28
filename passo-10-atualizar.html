@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--
+  TRILHA "PASSO A PASSO" — Passo 10: Atualizar o site publicado
+  Página de conteúdo. Os comandos têm botão de copiar e as caixas
+  "Pronto quando" guardam o progresso no navegador (js/trilha.js).
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/trilha.js" defer></script>
+  <title>Passo 10: Atualizar o site publicado — Catálogo do HTML</title>
+  <meta name="description" content="O ciclo de todo dia: editar, testar, commit, push. E como trabalhar em outro computador.">
+</head>
+<body class="pagina-trilha">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="passo-a-passo.html">Passo a passo</a></li>
+            <li aria-current="page">Passo 10</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Passo 10 de 10. Tempo: 20 min</p>
+        <h1 class="heroi-titulo">Atualizar o site publicado</h1>
+        <p class="heroi-texto">O site está no ar. Daqui em diante, toda mudança segue o mesmo ciclo de cinco comandos. Este passo também mostra como continuar o projeto em outro computador.</p>
+      </div>
+    </section>
+
+    <div class="container trilha-corpo">
+      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-html.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-5-css.html" data-passo="5" data-total="4"><span class="mapa-num">5</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-6-js.html" data-passo="6" data-total="4"><span class="mapa-num">6</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-7-verificar.html" data-passo="7" data-total="4"><span class="mapa-num">7</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-8-github.html" data-passo="8" data-total="4"><span class="mapa-num">8</span><span class="mapa-nome">Git e GitHub</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4" aria-current="step"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
+<section class="trilha-secao" id="ciclo">
+  <h2>10.1 O ciclo de todo dia</h2>
+  
+<ol class="passos">
+  <li>Edite e salve no VS Code.</li>
+  <li>Confira no Live Server.</li>
+  <li>Registre e envie:</li>
+</ol>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git status</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git add .</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git commit -m &quot;Adiciona galeria de fotos&quot;</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git push</span></span></code></pre>
+</div>
+<p>Espere um ou dois minutos e recarregue o site no ar com <kbd>Ctrl</kbd> + <kbd>F5</kbd>.</p>
+<p>Uma boa mensagem de commit diz <strong>o que mudou</strong>, começando por um verbo: <code>Adiciona formulário de contato</code>, <code>Corrige link do menu</code>, <code>Troca cores do tema</code>. Evite <code>ajustes</code> ou <code>aaa</code>: daqui a um mês, nem você vai saber o que fez.</p>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>nothing to commit, working tree clean</code>.</p>
+  <p>O Git não viu nenhuma mudança. Você salvou o arquivo (<kbd>Ctrl</kbd> + <kbd>S</kbd>)? Está na pasta certa?</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> o <code>git push</code> respondeu <code>Everything up-to-date</code> e o site não mudou.</p>
+  <p>Faltou o <code>git commit</code>. O push só envia o que já virou commit.</p>
+</div>
+</section><section class="trilha-secao" id="historico">
+  <h2>10.2 Ver o que mudou e desfazer</h2>
+  
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git diff</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git log --oneline</span></span></code></pre>
+</div>
+<ul>
+  <li><code>git diff</code> mostra o que você mudou desde o último commit: linhas com <code>-</code> saíram, com <code>+</code> entraram.</li>
+  <li><code>git log --oneline</code> lista os commits, do mais novo para o mais antigo.</li>
+  <li><code>git restore index.html</code> desfaz as mudanças do <code>index.html</code> que ainda <strong>não</strong> viraram commit. Cuidado: o que você tinha mudado se perde.</li>
+</ul>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> o terminal "travou" com um <code>:</code> ou <code>(END)</code> no final.</p>
+  <p>O <code>git log</code> e o <code>git diff</code> abrem uma tela de leitura. Use as setas para rolar e aperte <kbd>q</kbd> para sair.</p>
+</div><div class="confira">
+  <p><strong>Confira:</strong> você mudou uma cor, fez <code>git commit</code> e o site no ar não mudou. Cite dois motivos possíveis.</p>
+  <details><summary>Ver a resposta</summary><p>Faltou o <code>git push</code>, ou o GitHub Pages ainda está publicando (espere e use <kbd>Ctrl</kbd> + <kbd>F5</kbd>). Também pode ser cache do navegador.</p></details>
+</div>
+</section><section class="trilha-secao" id="outro-pc">
+  <h2>10.3 Continuar em outro computador</h2>
+  
+<p>No laboratório, em casa ou num computador novo, baixe o projeto do GitHub com <code>clone</code>:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd ~/Documents</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">gh repo clone seu-usuario/turismo-barbacena</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd turismo-barbacena</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">code .</span></span></code></pre>
+</div>
+<p>Já tem o projeto nesse computador? Então comece toda sessão trazendo o que mudou em outro lugar:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git pull</span></span></code></pre>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>! [rejected] main -> main (fetch first)</code> no push.</p>
+  <p>O GitHub tem mudanças que o seu computador não tem (você mexeu em outro computador ou pelo site). Rode <code>git pull</code> e depois <code>git push</code> de novo. Se o VS Code abrir um arquivo de mensagem, feche a aba: o Git continua sozinho.</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> sair do laboratório logado.</p>
+  <p>No fim da aula, rode <code>gh auth logout</code>. Na próxima, faça o <code>gh auth login</code> de novo (Passo 1.7).</p>
+</div><div class="voce-tenta">
+  <p class="voce-tenta-titulo">Você tenta</p>
+  <p>Faça três mudanças pequenas no seu site, cada uma com o seu commit e o seu push. Depois abra o repositório com <code>gh repo view --web</code> e clique em <strong>commits</strong>: as três mensagens estão lá.</p>
+</div>
+</section>
+      <section class="pronto-quando" aria-labelledby="pronto-titulo">
+  <h2 id="pronto-titulo">Pronto quando</h2>
+  <p>Marque cada item só depois de conferir. As marcações ficam salvas neste navegador e aparecem na página inicial da trilha.</p>
+  <ul data-total="4">
+    <li><label><input type="checkbox" data-progresso="passo-10-1"> Fiz pelo menos 3 commits com mensagens que dizem o que mudou</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-10-2"> Vi uma mudança chegar ao site no ar depois do push</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-10-3"> Usei <code>git log --oneline</code> e saí com <kbd>q</kbd></label></li>
+    <li><label><input type="checkbox" data-progresso="passo-10-4"> Sei trazer o projeto para outro computador (<code>gh repo clone</code>) e atualizar (<code>git pull</code>)</label></li>
+  </ul>
+</section>
+      <nav class="passo-nav" aria-label="Navegação entre passos">
+        <a class="passo-ant" href="passo-9-pages.html"><span>Passo anterior</span>9. GitHub Pages</a>
+        <a class="passo-prox" href="passo-a-passo.html"><span>Fim da trilha</span>Ver o seu progresso</a>
+      </nav>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

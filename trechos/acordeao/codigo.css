@@ -1,0 +1,35 @@
+.acordeao {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 760px;
+}
+.acordeao details {
+  border: 1px solid #cfd9e3;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.acordeao summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;          /* tira o triângulo padrão */
+}
+.acordeao summary::-webkit-details-marker {
+  display: none;             /* tira o triângulo no Safari */
+}
+.acordeao summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  color: #2a9d8f;
+  transition: transform 0.2s;
+}
+.acordeao details[open] summary::after {
+  transform: rotate(45deg);  /* aberto: o + vira × */
+}
+.acordeao details p {
+  margin: 0;
+  padding: 0 1rem 1rem;
+}

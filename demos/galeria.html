@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Galeria de fotos que amplia ao clicar</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+/* Grade automática: quantas colunas couberem, cada uma com no mínimo 220px */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.galeria-item {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: none;
+  cursor: zoom-in;
+}
+.galeria-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.galeria-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Janela ampliada */
+.lightbox {
+  width: min(1000px, 94vw);
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background-color: #000000;
+  overflow: visible;
+}
+.lightbox::backdrop {
+  background-color: rgba(8, 20, 30, 0.8);
+}
+.lightbox-figura {
+  margin: 0;
+}
+.lightbox-figura img {
+  display: block;
+  width: 100%;
+  max-height: 84vh;
+  object-fit: contain;
+}
+.lightbox-figura figcaption {
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  text-align: center;
+}
+.lightbox-btn {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #12324a;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.lightbox-anterior { top: 45%; left: 1rem; }
+.lightbox-proximo  { top: 45%; right: 1rem; }
+.lightbox-fechar   { top: 1rem; right: 1rem; font-size: 1.1rem; }
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Galeria de fotos que amplia ao clicar. Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#imagens">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<ul class="galeria">
+  <li>
+    <button type="button" class="galeria-item" data-grande="../img/foto-1.jpg" data-legenda="Legenda da foto 1">
+      <img src="../img/foto-1.jpg" alt="Descreva a foto 1" width="600" height="400" loading="lazy">
+    </button>
+  </li>
+  <li>
+    <button type="button" class="galeria-item" data-grande="../img/foto-2.jpg" data-legenda="Legenda da foto 2">
+      <img src="../img/foto-2.jpg" alt="Descreva a foto 2" width="600" height="400" loading="lazy">
+    </button>
+  </li>
+  <li>
+    <button type="button" class="galeria-item" data-grande="../img/foto-3.jpg" data-legenda="Legenda da foto 3">
+      <img src="../img/foto-3.jpg" alt="Descreva a foto 3" width="600" height="400" loading="lazy">
+    </button>
+  </li>
+</ul>
+
+<!-- Janela da foto ampliada -->
+<dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+  <figure class="lightbox-figura">
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-legenda"></figcaption>
+  </figure>
+  <button type="button" class="lightbox-btn lightbox-anterior" id="lightbox-anterior" aria-label="Foto anterior">‹</button>
+  <button type="button" class="lightbox-btn lightbox-proximo" id="lightbox-proximo" aria-label="Próxima foto">›</button>
+  <button type="button" class="lightbox-btn lightbox-fechar" id="lightbox-fechar" aria-label="Fechar">✕</button>
+</dialog>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+// ----- Galeria que amplia ao clicar -----
+const itensGaleria = document.querySelectorAll(".galeria-item");
+const lightbox = document.getElementById("lightbox");
+
+if (lightbox && itensGaleria.length > 0) {
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxLegenda = document.getElementById("lightbox-legenda");
+  let fotoAtual = 0;
+
+  function mostrarFoto(posicao) {
+    // Dá a volta: antes da primeira vem a última, e vice-versa
+    fotoAtual = (posicao + itensGaleria.length) % itensGaleria.length;
+    const item = itensGaleria[fotoAtual];
+    lightboxImg.src = item.dataset.grande;
+    lightboxImg.alt = item.dataset.legenda;
+    lightboxLegenda.textContent = item.dataset.legenda + " (" + (fotoAtual + 1) + " de " + itensGaleria.length + ")";
+  }
+
+  itensGaleria.forEach(function (item, posicao) {
+    item.addEventListener("click", function () {
+      mostrarFoto(posicao);
+      lightbox.showModal();   // abre a janela por cima da página
+    });
+  });
+
+  document.getElementById("lightbox-anterior").addEventListener("click", function () {
+    mostrarFoto(fotoAtual - 1);
+  });
+  document.getElementById("lightbox-proximo").addEventListener("click", function () {
+    mostrarFoto(fotoAtual + 1);
+  });
+  document.getElementById("lightbox-fechar").addEventListener("click", function () {
+    lightbox.close();
+  });
+
+  // Setas do teclado trocam a foto (o Esc o <dialog> já fecha sozinho)
+  lightbox.addEventListener("keydown", function (evento) {
+    if (evento.key === "ArrowLeft") mostrarFoto(fotoAtual - 1);
+    if (evento.key === "ArrowRight") mostrarFoto(fotoAtual + 1);
+  });
+
+  // Clicar no fundo escuro fecha
+  lightbox.addEventListener("click", function (evento) {
+    if (evento.target === lightbox) lightbox.close();
+  });
+}
+
+</script>
+</body>
+</html>

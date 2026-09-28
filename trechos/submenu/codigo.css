@@ -1,0 +1,47 @@
+.tem-submenu {
+  position: relative;       /* o submenu se posiciona em relação a este item */
+}
+.tem-submenu > a::after {
+  content: " ▾";
+  font-size: 0.8em;
+}
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  min-width: 200px;
+  margin: 0;
+  padding: 0.5rem;
+  list-style: none;
+  border-radius: 8px;
+  background-color: #12324a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  /* começa escondido */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+}
+/* Aparece com o mouse em cima ou quando algo dentro dele recebe o foco (Tab) */
+.tem-submenu:hover .submenu,
+.tem-submenu:focus-within .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+  .submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    padding: 0 0 0 1rem;
+    box-shadow: none;
+    background: none;
+  }
+  .tem-submenu > a::after {
+    content: "";
+  }
+}

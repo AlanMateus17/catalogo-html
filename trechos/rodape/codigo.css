@@ -1,0 +1,43 @@
+.rodape {
+  padding-top: 2.5rem;
+  background-color: #12324a;
+  color: #c5d4e0;
+}
+.rodape-grade {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;   /* 1ª coluna com o dobro das outras */
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+.rodape-nome {
+  margin: 0 0 0.5rem;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.rodape-titulo {
+  margin: 0 0 0.5rem;
+  color: #ffb703;
+  font-size: 1rem;
+}
+.rodape ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.rodape a {
+  color: #ffffff;
+}
+.rodape-direitos {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+@media (max-width: 700px) {
+  .rodape-grade {
+    grid-template-columns: 1fr;       /* uma coluna só no celular */
+  }
+}

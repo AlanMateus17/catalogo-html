@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--
+  TRILHA "PASSO A PASSO" — Passo 3: Criar o projeto pelo terminal
+  Página de conteúdo. Os comandos têm botão de copiar e as caixas
+  "Pronto quando" guardam o progresso no navegador (js/trilha.js).
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/trilha.js" defer></script>
+  <script src="js/codigos-dados.js" defer></script>
+  <script src="js/painel-codigos.js" defer></script>
+  <title>Passo 3: Criar o projeto pelo terminal — Catálogo do HTML</title>
+  <meta name="description" content="Criar a pasta e os três arquivos, colar a estrutura e ver o site no Live Server.">
+</head>
+<body class="pagina-trilha">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="passo-a-passo.html">Passo a passo</a></li>
+            <li aria-current="page">Passo 3</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Passo 3 de 10. Tempo: 30 min</p>
+        <h1 class="heroi-titulo">Criar o projeto pelo terminal</h1>
+        <p class="heroi-texto">Agora o projeto de verdade: a pasta do seu site, com os três arquivos já conectados, aberta no navegador pelo Live Server.</p>
+      </div>
+    </section>
+
+    <div class="container trilha-corpo">
+      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5" aria-current="step"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-html.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-5-css.html" data-passo="5" data-total="4"><span class="mapa-num">5</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-6-js.html" data-passo="6" data-total="4"><span class="mapa-num">6</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-7-verificar.html" data-passo="7" data-total="4"><span class="mapa-num">7</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-8-github.html" data-passo="8" data-total="4"><span class="mapa-num">8</span><span class="mapa-nome">Git e GitHub</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
+<section class="trilha-secao" id="nome">
+  <h2>3.1 Escolher o nome do projeto</h2>
+  
+<p>O nome da pasta vira o nome do repositório e o final do endereço do site: <code>https://seu-usuario.github.io/<strong>turismo-barbacena</strong>/</code>.</p>
+<ul>
+  <li>Tudo em <strong>minúsculas</strong>, <strong>sem espaço</strong> (use hífen) e <strong>sem acento</strong>.</li>
+  <li>Curto e sobre o tema: <code>receitas-da-vo</code>, <code>portfolio-ana</code>, <code>time-de-volei</code>.</li>
+</ul>
+
+</section><section class="trilha-secao" id="criar">
+  <h2>3.2 Criar a pasta e os arquivos pelo terminal</h2>
+  
+<p>No Git Bash, troque <code>turismo-barbacena</code> pelo nome que você escolheu, nos dois primeiros comandos em que ele aparece:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd ~/Documents</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">mkdir turismo-barbacena</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd turismo-barbacena</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">mkdir css js img</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">touch index.html css/estilo.css js/script.js</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">ls -R</span></span></code></pre>
+</div><div class="saida">
+  <p class="saida-titulo">O que deve aparecer</p>
+  <pre><code>.:
+css  img  index.html  js
+
+./css:
+estilo.css
+
+./img:
+
+./js:
+script.js</code></pre>
+</div>
+<p>O <code>ls -R</code> lista a pasta e tudo o que está dentro das subpastas. É a estrutura que o seu site precisa.</p>
+<div class="confira">
+  <p><strong>Confira:</strong> o que faz <code>touch css/estilo.css</code>?</p>
+  <details><summary>Ver a resposta</summary><p>Cria um arquivo vazio chamado <code>estilo.css</code> dentro da pasta <code>css</code>. A pasta precisa existir antes; por isso o <code>mkdir</code> veio primeiro.</p></details>
+</div>
+</section><section class="trilha-secao" id="fotos">
+  <h2>3.3 Trazer as suas fotos</h2>
+  
+<p>Copie as fotos para a pasta <code>img</code> pelo Explorador de Arquivos ou pelo terminal. Pelo terminal, já dá para acertar o nome:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cp ~/Downloads/IMG_2031.JPG img/praca-central.jpg</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">ls img</span></span></code></pre>
+</div><p class="terminal-nota"><code>cp origem destino</code>: copia a foto de Downloads e, na mesma hora, dá a ela um nome em minúsculas e sem espaço.</p><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> foto com nome <code>Foto 1.JPG</code>.</p>
+  <p>Espaço e maiúsculas funcionam no seu computador e quebram no GitHub Pages. Renomeie: <code>mv "img/Foto 1.JPG" img/foto-1.jpg</code>.</p>
+</div>
+</section><section class="trilha-secao" id="abrir">
+  <h2>3.4 Abrir no VS Code e colar a estrutura</h2>
+  
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">code .</span></span></code></pre>
+</div>
+<p>O VS Code abre com a pasta do projeto. Agora cole os três arquivos da estrutura inicial: abra o painel abaixo e copie cada aba para o arquivo indicado.</p>
+<div class="codigo" data-codigo="estrutura"></div>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>bash: code: command not found</code>.</p>
+  <p>O VS Code foi instalado sem a opção <em>Adicionar ao PATH</em>. Abra o VS Code pelo menu Iniciar e use <strong>Arquivo &gt; Abrir Pasta</strong>. Na próxima reinstalação, marque a opção.</p>
+</div>
+</section><section class="trilha-secao" id="live-server">
+  <h2>3.5 Ver o site no navegador e testar a conexão</h2>
+  
+<ol class="passos">
+  <li>No VS Code, clique com o botão direito no <code>index.html</code> e escolha <strong>Open with Live Server</strong> (ou clique em <strong>Go Live</strong>, embaixo, à direita).</li>
+  <li>O navegador abre em <code>http://127.0.0.1:5500/index.html</code>. Esse endereço só existe no seu computador: ninguém mais consegue abrir.</li>
+  <li><strong>Teste de conexão do CSS:</strong> no fim do <code>estilo.css</code>, escreva <code>body { background-color: yellow; }</code> e salve. A página fica amarela sozinha.</li>
+  <li><strong>Teste de conexão do JS:</strong> aperte <kbd>F12</kbd> no navegador e abra a aba <strong>Console</strong>. Deve aparecer <samp>script.js conectado!</samp>, que é a linha que veio no <code>script.js</code> da estrutura.</li>
+  <li>Deu certo? Apague a linha amarela do CSS.</li>
+</ol>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> o Live Server abre uma lista de arquivos em vez do site.</p>
+  <p>Ele não achou o <code>index.html</code> na pasta aberta. Confira se o arquivo se chama exatamente <code>index.html</code> e se você abriu a pasta do projeto (e não a pasta de cima).</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> a página não ficou amarela.</p>
+  <p>O caminho do CSS está errado ou o arquivo não foi salvo. Confira o <code>&lt;link rel="stylesheet" href="css/estilo.css"&gt;</code> letra por letra e aperte <kbd>Ctrl</kbd> + <kbd>S</kbd>. No F12, a aba <strong>Rede</strong> mostra o arquivo em vermelho com o código <strong>404</strong> quando o caminho não existe.</p>
+</div><div class="voce-tenta">
+  <p class="voce-tenta-titulo">Você tenta</p>
+  <p>Troque o texto do <code>&lt;h1&gt;</code> pelo nome do seu site e salve. Não recarregue o navegador: o Live Server faz isso sozinho.</p>
+</div>
+</section>
+      <section class="pronto-quando" aria-labelledby="pronto-titulo">
+  <h2 id="pronto-titulo">Pronto quando</h2>
+  <p>Marque cada item só depois de conferir. As marcações ficam salvas neste navegador e aparecem na página inicial da trilha.</p>
+  <ul data-total="5">
+    <li><label><input type="checkbox" data-progresso="passo-3-1"> O <code>ls -R</code> mostra <code>index.html</code>, <code>css/estilo.css</code>, <code>js/script.js</code> e a pasta <code>img</code></label></li>
+    <li><label><input type="checkbox" data-progresso="passo-3-2"> As minhas fotos estão em <code>img</code>, com nomes em minúsculas e sem espaço</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-3-3"> O site abre pelo Live Server</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-3-4"> A página ficou amarela no teste (depois apaguei a linha)</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-3-5"> Apareceu <samp>script.js conectado!</samp> no Console</label></li>
+  </ul>
+</section>
+      <nav class="passo-nav" aria-label="Navegação entre passos">
+        <a class="passo-ant" href="passo-2-terminal.html"><span>Passo anterior</span>2. Terminal sem medo</a>
+        <a class="passo-prox" href="passo-4-html.html"><span>Próximo passo</span>4. HTML</a>
+      </nav>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

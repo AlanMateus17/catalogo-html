@@ -1,0 +1,82 @@
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+/* Garante que o atributo hidden sempre esconda (igual em vários exemplos) */
+[hidden] {
+  display: none !important;
+}
+
+.form-completo {
+  display: grid;
+  gap: 1rem;
+  max-width: 640px;
+}
+.form-completo fieldset {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid #cfd9e3;
+  border-radius: 8px;
+}
+.form-completo legend {
+  padding: 0 0.4rem;
+  font-weight: 700;
+}
+.form-completo label {
+  margin-top: 0.4rem;
+  font-weight: 700;
+}
+/* Campos de texto: todos com a mesma cara */
+.form-completo input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="color"]):not([type="file"]),
+.form-completo select,
+.form-completo textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 2px solid #cfd9e3;
+  border-radius: 6px;
+  font: inherit;
+}
+.form-completo input:focus,
+.form-completo select:focus,
+.form-completo textarea:focus {
+  outline: none;
+  border-color: #2a9d8f;
+}
+/* Pinta radio, checkbox e o controle deslizante com a cor do site */
+.form-completo input {
+  accent-color: #2a9d8f;
+}
+.form-completo .fc-opcao {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0;
+  font-weight: 400;
+}
+.fc-acoes {
+  display: flex;
+  gap: 0.75rem;
+}
+.fc-resultado {
+  max-width: 640px;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #0f2233;
+  color: #e6f1f8;
+  white-space: pre-wrap;
+}

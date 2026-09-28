@@ -22,6 +22,9 @@
   <!-- MESMO CSS e MESMO JS do index.html -->
   <link rel="stylesheet" href="css/estilo.css">
   <script src="js/script.js" defer></script>
+  <!-- Ferramenta do Catálogo: painéis "Ver código" (os alunos não precisam copiar) -->
+  <script src="js/codigos-dados.js" defer></script>
+  <script src="js/painel-codigos.js" defer></script>
 </head>
 <body>
   <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
@@ -49,15 +52,10 @@
 
       <nav class="menu" aria-label="Menu principal">
         <ul class="menu-lista" id="menu-principal">
-          <!-- Links para seções de OUTRA página: nome do arquivo + #id -->
-          <li><a href="index.html#conexao">Conexão</a></li>
-          <li><a href="index.html#textos">Textos</a></li>
-          <li><a href="index.html#formularios">Formulários</a></li>
-          <li><a href="index.html#interatividade">JavaScript</a></li>
-          <!--
-            aria-current="page" marca o link da página ATUAL.
-            O CSS usa isso para destacar o item do menu (procure [aria-current] no estilo.css).
-          -->
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
           <li><a href="sobre.html" aria-current="page">Sobre</a></li>
         </ul>
       </nav>
@@ -113,6 +111,12 @@
             <p><a href="index.html#links">Voltar aos exemplos de links</a></p>
           </div>
         </article>
+
+        <h3>Códigos desta página</h3>
+        <p>O caminho de navegação do topo e este cartão de perfil, prontos para copiar.</p>
+        <div class="codigo" data-codigo="migalhas"></div>
+        <div class="codigo" data-codigo="perfil"></div>
+
       </div>
     </section>
   </main>

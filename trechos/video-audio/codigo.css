@@ -1,0 +1,14 @@
+.video {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 10px;
+  background-color: #000000;
+}
+.audio {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 1rem;
+}

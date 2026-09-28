@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--
+  TRILHA "PASSO A PASSO" — Passo 1: Preparar o computador
+  Página de conteúdo. Os comandos têm botão de copiar e as caixas
+  "Pronto quando" guardam o progresso no navegador (js/trilha.js).
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/trilha.js" defer></script>
+  <title>Passo 1: Preparar o computador — Catálogo do HTML</title>
+  <meta name="description" content="Criar a conta no GitHub, instalar VS Code, Git e GitHub CLI e entrar na sua conta pelo terminal.">
+</head>
+<body class="pagina-trilha">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="passo-a-passo.html">Passo a passo</a></li>
+            <li aria-current="page">Passo 1</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Passo 1 de 10. Tempo: 40 min</p>
+        <h1 class="heroi-titulo">Preparar o computador</h1>
+        <p class="heroi-texto">Antes de programar, o computador precisa de três programas e da sua conta no GitHub. No fim deste passo, o terminal já sabe quem você é.</p>
+      </div>
+    </section>
+
+    <div class="container trilha-corpo">
+      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5" aria-current="step"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-html.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-5-css.html" data-passo="5" data-total="4"><span class="mapa-num">5</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-6-js.html" data-passo="6" data-total="4"><span class="mapa-num">6</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-7-verificar.html" data-passo="7" data-total="4"><span class="mapa-num">7</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-8-github.html" data-passo="8" data-total="4"><span class="mapa-num">8</span><span class="mapa-nome">Git e GitHub</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
+<section class="trilha-secao" id="conta">
+  <h2>1.1 Criar a conta no GitHub</h2>
+  
+<p>O GitHub guarda o código do seu site e publica o site na internet. A conta é gratuita.</p>
+<ol class="passos">
+  <li>Acesse <strong>github.com/signup</strong>.</li>
+  <li>Digite o seu e-mail, crie uma senha e escolha o <strong>nome de usuário</strong>.</li>
+  <li>O GitHub manda um código para o seu e-mail. Copie e cole na tela de cadastro.</li>
+  <li>Se perguntar sobre planos, escolha o gratuito (<em>Free</em>).</li>
+</ol>
+<p>O nome de usuário vai aparecer no endereço do seu site: <code>https://<strong>seu-usuario</strong>.github.io/meu-site/</code>. Escolha pensando nisso.</p>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> escolher um nome de usuário de brincadeira.</p>
+  <p>Daqui a dois anos, esse endereço pode estar no seu currículo. Prefira o seu nome, sem números aleatórios: <code>anasouza</code> ou <code>ana-souza-dev</code>.</p>
+</div>
+</section><section class="trilha-secao" id="vscode">
+  <h2>1.2 Instalar o VS Code e o Live Server</h2>
+  
+<ol class="passos">
+  <li>Baixe o VS Code em <strong>code.visualstudio.com</strong> e instale.</li>
+  <li>Durante a instalação, marque as opções <strong>Adicionar ao PATH</strong> e <strong>Adicionar a ação "Abrir com Code"</strong>. A primeira faz o comando <code>code</code> funcionar no terminal.</li>
+  <li>Abra o VS Code, aperte <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> (Extensões), procure <strong>Live Server</strong> (autor: Ritwick Dey) e clique em <strong>Instalar</strong>.</li>
+</ol>
+<p>O Live Server abre o seu site no navegador e recarrega a página sozinho toda vez que você salva um arquivo.</p>
+
+</section><section class="trilha-secao" id="git">
+  <h2>1.3 Instalar o Git (vem com o Git Bash)</h2>
+  
+<p>O Git registra cada versão do seu projeto. Junto com ele vem o <strong>Git Bash</strong>, o terminal que vamos usar em toda a trilha.</p>
+<ol class="passos">
+  <li>Baixe em <strong>git-scm.com</strong>, na parte de downloads para Windows, e abra o instalador.</li>
+  <li>Pode aceitar as opções que já vêm marcadas, com duas exceções:
+    <ul>
+      <li>Na tela <em>Choosing the default editor used by Git</em>, escolha <strong>Use Visual Studio Code as Git's default editor</strong>.</li>
+      <li>Na tela <em>Adjusting the name of the initial branch in new repositories</em>, escolha <strong>Override the default branch name</strong> e deixe escrito <code>main</code>.</li>
+    </ul>
+  </li>
+  <li>Termine a instalação.</li>
+</ol>
+
+</section><section class="trilha-secao" id="gh">
+  <h2>1.4 Instalar o GitHub CLI</h2>
+  
+<p>O GitHub CLI é o comando <code>gh</code>. Com ele você cria o repositório e publica o site sem sair do terminal. O Git sozinho não consegue fazer essas duas coisas.</p>
+<ol class="passos">
+  <li>Baixe em <strong>cli.github.com</strong> o instalador para Windows e instale.</li>
+  <li>Feche todos os terminais abertos. Os programas instalados só aparecem num terminal aberto <strong>depois</strong> da instalação.</li>
+</ol>
+<p>Se o seu computador tiver o <strong>winget</strong> (Windows 10 e 11), dá para instalar os três programas de uma vez, pelo PowerShell:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>PowerShell</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">winget install -e --id Microsoft.VisualStudioCode</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">winget install -e --id Git.Git</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">winget install -e --id GitHub.cli</span></span></code></pre>
+</div>
+<aside class="dica"><strong>No laboratório da escola:</strong> se o computador não deixar instalar programas, peça ao professor. Os passos 1.6 e 1.7 você faz mesmo assim.</aside>
+
+</section><section class="trilha-secao" id="conferir">
+  <h2>1.5 Conferir se deu certo</h2>
+  
+<p>Abra o <strong>Git Bash</strong> pelo menu Iniciar e digite um comando de cada vez, apertando <kbd>Enter</kbd> depois de cada um:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git --version</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">gh --version</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">code --version</span></span></code></pre>
+</div><div class="saida">
+  <p class="saida-titulo">O que deve aparecer (no lugar de xx, os números da sua versão)</p>
+  <pre><code>git version 2.xx.x.windows.1
+gh version 2.xx.x (data da versão)
+https://github.com/cli/cli/releases/tag/v2.xx.x
+1.xx.x
+(uma sequência longa de letras e números)
+x64</code></pre>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>bash: gh: command not found</code> (ou <code>git</code>, ou <code>code</code>).</p>
+  <p>O terminal foi aberto antes da instalação, ou a instalação não terminou. Feche o Git Bash, abra de novo e repita. Se continuar, reinstale o programa e, no caso do VS Code, marque <em>Adicionar ao PATH</em>.</p>
+</div><div class="confira">
+  <p><strong>Confira:</strong> por que é preciso fechar e abrir o terminal depois de instalar um programa?</p>
+  <details><summary>Ver a resposta</summary><p>Porque o terminal lê a lista de programas disponíveis (o PATH) só quando abre. Um programa instalado depois não está nessa lista até você abrir um terminal novo.</p></details>
+</div>
+</section><section class="trilha-secao" id="config">
+  <h2>1.6 Apresentar-se ao Git</h2>
+  
+<p>Todo registro que você fizer (o <em>commit</em>) leva o seu nome e o seu e-mail. Use <strong>o mesmo e-mail da conta do GitHub</strong>: é assim que o GitHub liga os seus commits ao seu perfil.</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git config --global user.name &quot;Seu Nome Completo&quot;</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git config --global user.email &quot;seu-email@exemplo.com&quot;</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git config --global init.defaultBranch main</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git config --global --list</span></span></code></pre>
+</div><p class="terminal-nota">Troque o nome e o e-mail pelos seus antes de apertar Enter. As aspas são obrigatórias por causa dos espaços.</p><div class="saida">
+  <p class="saida-titulo">O que deve aparecer no último comando (pode ter outras linhas também)</p>
+  <pre><code>user.name=Seu Nome Completo
+user.email=seu-email@exemplo.com
+init.defaultbranch=main</code></pre>
+</div>
+<p>O terceiro comando faz todo repositório novo começar com o nome <code>main</code>, que é o nome que o GitHub usa.</p>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> computador compartilhado (laboratório).</p>
+  <p>O <code>--global</code> vale para todo mundo que usar aquele usuário do Windows. Num computador da escola, os commits do colega podem sair com o seu nome. Nesse caso, pule os dois primeiros comandos aqui e rode-os <strong>sem</strong> o <code>--global</code>, dentro da pasta do seu projeto, depois do <code>git init</code> (Passo 8). Assim eles valem só para o seu projeto.</p>
+</div>
+</section><section class="trilha-secao" id="login">
+  <h2>1.7 Entrar no GitHub pelo terminal</h2>
+  
+<p>Este comando liga o terminal à sua conta. Depois dele, o <code>git push</code> e o <code>gh</code> funcionam sem pedir senha.</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">gh auth login</span></span></code></pre>
+</div>
+<p>O comando faz algumas perguntas. Use as setas do teclado para escolher e <kbd>Enter</kbd> para confirmar:</p>
+<div class="tabela-rolagem"><table class="tabela">
+  <thead><tr><th scope="col">Pergunta</th><th scope="col">Responda</th></tr></thead>
+  <tbody>
+    <tr><td>Where do you use GitHub? <em>(ou: What account do you want to log into?)</em></td><td><strong>GitHub.com</strong></td></tr>
+    <tr><td>What is your preferred protocol for Git operations?</td><td><strong>HTTPS</strong></td></tr>
+    <tr><td>Authenticate Git with your GitHub credentials?</td><td><strong>Yes</strong> (aperte <kbd>Y</kbd>)</td></tr>
+    <tr><td>How would you like to authenticate GitHub CLI?</td><td><strong>Login with a web browser</strong></td></tr>
+  </tbody>
+</table></div>
+<p>O terminal mostra um código de 8 letras (<code>ABCD-1234</code>). Aperte <kbd>Enter</kbd>, o navegador abre, você entra na sua conta, digita o código e clica em <strong>Authorize</strong>. Volte ao terminal e confira:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">gh auth status</span></span></code></pre>
+</div><div class="saida">
+  <p class="saida-titulo">O que deve aparecer</p>
+  <pre><code>github.com
+  ✓ Logged in to github.com account seu-usuario (keyring)
+  - Active account: true
+  - Git operations protocol: https</code></pre>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> sair do laboratório sem sair da conta.</p>
+  <p>Quem sentar no computador depois consegue mexer nos seus repositórios. No fim de toda aula no laboratório, rode <code>gh auth logout</code>. Na próxima aula, faça o <code>gh auth login</code> de novo.</p>
+</div><div class="voce-tenta">
+  <p class="voce-tenta-titulo">Você tenta</p>
+  <p>Rode <code>gh auth status</code> e encontre, na resposta, o seu nome de usuário. Depois abra <code>https://github.com/</code> + o seu usuário no navegador: é o seu perfil público.</p>
+</div>
+</section>
+      <section class="pronto-quando" aria-labelledby="pronto-titulo">
+  <h2 id="pronto-titulo">Pronto quando</h2>
+  <p>Marque cada item só depois de conferir. As marcações ficam salvas neste navegador e aparecem na página inicial da trilha.</p>
+  <ul data-total="5">
+    <li><label><input type="checkbox" data-progresso="passo-1-1"> Tenho conta no GitHub e sei o meu nome de usuário</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-1-2"> <code>git --version</code>, <code>gh --version</code> e <code>code --version</code> mostram números</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-1-3"> O Live Server está instalado no VS Code</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-1-4"> <code>git config --global --list</code> mostra o meu nome e o meu e-mail</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-1-5"> <code>gh auth status</code> mostra <em>Logged in</em> com o meu usuário</label></li>
+  </ul>
+</section>
+      <nav class="passo-nav" aria-label="Navegação entre passos">
+        <a class="passo-ant" href="passo-a-passo.html"><span>Voltar</span>Início da trilha</a>
+        <a class="passo-prox" href="passo-2-terminal.html"><span>Próximo passo</span>2. Terminal sem medo</a>
+      </nav>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

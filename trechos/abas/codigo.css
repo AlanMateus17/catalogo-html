@@ -1,0 +1,28 @@
+/* Garante que o atributo hidden sempre esconda (igual em vários exemplos) */
+[hidden] {
+  display: none !important;
+}
+
+.abas {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 2px solid #cfd9e3;
+}
+.aba {
+  margin-bottom: -2px;
+  padding: 0.5rem 1.25rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: #4f5f6f;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.aba[aria-selected="true"] {   /* a aba ativa */
+  color: #12324a;
+  border-bottom-color: #ffb703;
+}
+.painel-aba {
+  padding: 1rem 0;
+}

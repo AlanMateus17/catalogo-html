@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Todos os tipos de link</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+a {
+  color: #0d6a86;
+  text-underline-offset: 3px;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+/* Contorno visível para quem navega pelo teclado (Tab) */
+a:focus-visible {
+  outline: 3px solid #ffb703;
+  outline-offset: 3px;
+}
+
+/* Setinha automática depois de todo link externo */
+.lista-links a[href^="http"]::after {
+  content: " ↗";
+}
+
+.botao-link {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.botao-link:hover {
+  transform: translateY(-2px);
+}
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Todos os tipos de link. Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#links">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<ul class="lista-links">
+  <!-- Site externo em nova aba: sempre com rel="noopener" -->
+  <li><a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener noreferrer">Site externo</a></li>
+
+  <!-- Outra página do seu site -->
+  <li><a href="../sobre.html">Outra página do meu site</a></li>
+
+  <!-- Seção da mesma página: # + id da seção -->
+  <li><a href="#contato">Ir para Contato</a></li>
+
+  <li><a href="mailto:seuemail@exemplo.com?subject=Contato%20pelo%20site">Mandar e-mail</a></li>
+  <li><a href="tel:+5532999999999">Ligar</a></li>
+  <li><a href="https://wa.me/5532999999999?text=Ol%C3%A1" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+
+  <!-- Baixar um arquivo da pasta docs -->
+  <li><a href="../docs/material-exemplo.pdf" download>Baixar o PDF</a></li>
+</ul>
+
+<a class="botao-link" href="#contato">Link com cara de botão</a>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+
+</script>
+</body>
+</html>

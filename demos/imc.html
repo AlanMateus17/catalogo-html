@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Calculadora (exemplo: IMC)</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+
+.form-calculo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+}
+.campo-calculo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 160px;
+}
+.campo-calculo input {
+  padding: 0.5rem;
+  font: inherit;
+}
+.resultado-calculo {
+  font-weight: 700;
+}
+.resultado-calculo.ok { color: #1e7a4c; }
+.resultado-calculo.atencao { color: #b86e00; }
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Calculadora (exemplo: IMC). Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#exemplo-22">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<form class="form-calculo" id="form-imc">
+  <div class="campo-calculo">
+    <label for="peso">Peso (kg)</label>
+    <input type="number" id="peso" min="20" max="300" step="0.1" required>
+  </div>
+  <div class="campo-calculo">
+    <label for="altura">Altura (m)</label>
+    <input type="number" id="altura" min="1" max="2.5" step="0.01" required>
+  </div>
+  <button type="submit" class="botao">Calcular</button>
+</form>
+<p class="resultado-calculo" id="resultado-imc" role="status"></p>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+// ----- Calculadora de IMC -----
+const formImc = document.getElementById("form-imc");
+
+if (formImc) {
+  const resultadoImc = document.getElementById("resultado-imc");
+
+  formImc.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+
+    // .value é sempre TEXTO: Number() transforma em número
+    const peso = Number(document.getElementById("peso").value);
+    const altura = Number(document.getElementById("altura").value);
+    const imc = peso / (altura * altura);
+
+    let classificacao;
+    if (imc < 18.5) {
+      classificacao = "abaixo do peso";
+    } else if (imc < 25) {
+      classificacao = "peso normal";
+    } else if (imc < 30) {
+      classificacao = "sobrepeso";
+    } else {
+      classificacao = "obesidade";
+    }
+
+    // toFixed(1) = uma casa decimal; replace troca o ponto pela vírgula
+    resultadoImc.textContent = "IMC " + imc.toFixed(1).replace(".", ",") + ": " + classificacao + ".";
+    resultadoImc.className = "resultado-calculo " + (classificacao === "peso normal" ? "ok" : "atencao");
+  });
+}
+
+</script>
+</body>
+</html>

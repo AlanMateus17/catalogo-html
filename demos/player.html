@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Vídeo com botões feitos por você</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+
+.player {
+  max-width: 800px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(18, 50, 74, 0.12);
+}
+.player-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background-color: #000000;
+}
+.player-controles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+.player-controles progress {
+  flex: 1;                 /* ocupa o espaço que sobrar */
+  min-width: 80px;
+  accent-color: #2a9d8f;
+}
+.player-tempo {
+  font-family: Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Vídeo com botões feitos por você. Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#audio-video">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<div class="player">
+  <video id="video-custom" class="player-video" poster="../midia/poster.jpg" preload="metadata" width="1280" height="720" muted playsinline>
+    <source src="../midia/video-exemplo.mp4" type="video/mp4">
+  </video>
+  <div class="player-controles">
+    <button type="button" class="botao" id="btn-play">▶ Tocar</button>
+    <button type="button" class="botao" id="btn-mudo">Ligar som</button>
+    <progress id="video-progresso" max="100" value="0" aria-label="Progresso do vídeo"></progress>
+    <span id="video-tempo" class="player-tempo">0:00</span>
+  </div>
+</div>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+// ----- Vídeo com botões próprios -----
+const videoCustom = document.getElementById("video-custom");
+
+if (videoCustom) {
+  const btnPlay = document.getElementById("btn-play");
+  const btnMudo = document.getElementById("btn-mudo");
+  const videoProgresso = document.getElementById("video-progresso");
+  const videoTempo = document.getElementById("video-tempo");
+
+  // 75 segundos viram "1:15"
+  function formatarTempo(segundos) {
+    const min = Math.floor(segundos / 60);
+    const seg = Math.floor(segundos % 60);
+    return min + ":" + String(seg).padStart(2, "0");
+  }
+
+  btnPlay.addEventListener("click", function () {
+    if (videoCustom.paused) {
+      videoCustom.play();
+    } else {
+      videoCustom.pause();
+    }
+  });
+
+  videoCustom.addEventListener("play", function () { btnPlay.textContent = "❚❚ Pausar"; });
+  videoCustom.addEventListener("pause", function () { btnPlay.textContent = "▶ Tocar"; });
+
+  btnMudo.addEventListener("click", function () {
+    videoCustom.muted = !videoCustom.muted;
+    btnMudo.textContent = videoCustom.muted ? "Ligar som" : "Tirar som";
+  });
+
+  videoCustom.addEventListener("timeupdate", function () {
+    if (!videoCustom.duration) return;
+    videoProgresso.value = (videoCustom.currentTime / videoCustom.duration) * 100;
+    videoTempo.textContent = formatarTempo(videoCustom.currentTime) + " / " + formatarTempo(videoCustom.duration);
+  });
+}
+
+</script>
+</body>
+</html>

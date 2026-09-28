@@ -1,0 +1,31 @@
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+
+.contador {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.contador-valor {
+  min-width: 3ch;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.contador-valor.negativo {
+  color: #c62839;
+}

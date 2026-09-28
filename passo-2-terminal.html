@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+  TRILHA "PASSO A PASSO" — Passo 2: Terminal sem medo
+  Página de conteúdo. Os comandos têm botão de copiar e as caixas
+  "Pronto quando" guardam o progresso no navegador (js/trilha.js).
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/trilha.js" defer></script>
+  <title>Passo 2: Terminal sem medo — Catálogo do HTML</title>
+  <meta name="description" content="Ler o prompt, andar entre pastas e criar arquivos com pwd, ls, cd, mkdir e touch.">
+</head>
+<body class="pagina-trilha">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="passo-a-passo.html">Passo a passo</a></li>
+            <li aria-current="page">Passo 2</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Passo 2 de 10. Tempo: 30 min</p>
+        <h1 class="heroi-titulo">Terminal sem medo</h1>
+        <p class="heroi-texto">O terminal é uma conversa por escrito com o computador: você digita um comando, ele responde. Todo o resto da trilha usa só uns dez comandos, e eles estão nesta página.</p>
+      </div>
+    </section>
+
+    <div class="container trilha-corpo">
+      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4" aria-current="step"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-html.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-5-css.html" data-passo="5" data-total="4"><span class="mapa-num">5</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-6-js.html" data-passo="6" data-total="4"><span class="mapa-num">6</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-7-verificar.html" data-passo="7" data-total="4"><span class="mapa-num">7</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-8-github.html" data-passo="8" data-total="4"><span class="mapa-num">8</span><span class="mapa-nome">Git e GitHub</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
+<section class="trilha-secao" id="abrir">
+  <h2>2.1 Abrir o Git Bash e ler o prompt</h2>
+  
+<p>Abra o <strong>Git Bash</strong> pelo menu Iniciar. A linha que aparece se chama <strong>prompt</strong>. Ela diz onde você está:</p>
+<div class="prompt-anotado" role="img" aria-label="Prompt do Git Bash com cada parte explicada">
+  <div class="prompt-linha"><span class="pa pa-usuario">aluno@LAB-07</span> <span class="pa pa-sistema">MINGW64</span> <span class="pa pa-pasta">~/Documents/meu-site</span> <span class="pa pa-repo">(main)</span></div>
+  <div class="prompt-linha"><span class="pa pa-cifrao">$</span> <span class="cursor">▌</span></div>
+  <ul class="prompt-legenda">
+    <li><span class="pa pa-usuario">aluno@LAB-07</span> quem você é e em qual computador</li>
+    <li><span class="pa pa-sistema">MINGW64</span> o tipo de terminal (pode ignorar)</li>
+    <li><span class="pa pa-pasta">~/Documents/meu-site</span> <strong>a pasta onde você está agora</strong>. O <code>~</code> é a sua pasta pessoal (<code>C:\Users\aluno</code>)</li>
+    <li><span class="pa pa-repo">(main)</span> só aparece <strong>dentro de um repositório Git</strong></li>
+    <li><span class="pa pa-cifrao">$</span> o terminal está esperando você digitar</li>
+  </ul>
+</div>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> digitar o <code>$</code> junto com o comando.</p>
+  <p>O <code>$</code> faz parte do prompt, não do comando. Nesta trilha ele aparece antes dos comandos só para mostrar que é algo para digitar no terminal. O botão <strong>Copiar</strong> já copia sem ele.</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> aparecer <code>(main)</code> na sua pasta pessoal (<code>~</code>).</p>
+  <p>Quer dizer que alguém rodou <code>git init</code> na pasta errada e ela inteira virou um repositório. É perigoso: um <code>git add .</code> ali tentaria guardar o seu computador inteiro. Veja como desfazer no <a href="passo-8-github.html#pasta-errada">Passo 8</a>.</p>
+</div>
+</section><section class="trilha-secao" id="comandos">
+  <h2>2.2 Os comandos da trilha</h2>
+  
+<div class="tabela-rolagem"><table class="tabela">
+  <thead><tr><th scope="col">Comando</th><th scope="col">O que faz</th><th scope="col">Exemplo</th></tr></thead>
+  <tbody>
+    <tr><td><code>pwd</code></td><td>Mostra em que pasta você está</td><td><code>pwd</code></td></tr>
+    <tr><td><code>ls</code></td><td>Lista o que tem na pasta</td><td><code>ls</code> ou <code>ls -a</code> (mostra também os ocultos, como <code>.git</code>)</td></tr>
+    <tr><td><code>cd</code></td><td>Entra numa pasta</td><td><code>cd Documents</code></td></tr>
+    <tr><td><code>cd ..</code></td><td>Volta uma pasta (sobe um nível)</td><td><code>cd ..</code></td></tr>
+    <tr><td><code>cd ~</code></td><td>Volta para a sua pasta pessoal</td><td><code>cd ~</code></td></tr>
+    <tr><td><code>mkdir</code></td><td>Cria uma pasta</td><td><code>mkdir meu-site</code></td></tr>
+    <tr><td><code>touch</code></td><td>Cria um arquivo vazio</td><td><code>touch index.html</code></td></tr>
+    <tr><td><code>cp</code></td><td>Copia um arquivo</td><td><code>cp ~/Downloads/foto.jpg img/</code></td></tr>
+    <tr><td><code>mv</code></td><td>Move ou renomeia</td><td><code>mv img/Foto.JPG img/foto.jpg</code></td></tr>
+    <tr><td><code>code .</code></td><td>Abre a pasta atual no VS Code</td><td><code>code .</code></td></tr>
+    <tr><td><code>clear</code></td><td>Limpa a tela</td><td><code>clear</code></td></tr>
+  </tbody>
+</table></div>
+<p>Três atalhos que poupam muito tempo:</p>
+<ul>
+  <li><kbd>Tab</kbd> completa o nome de pastas e arquivos. Digite <code>cd Doc</code> e aperte <kbd>Tab</kbd>.</li>
+  <li><kbd>↑</kbd> traz de volta o último comando.</li>
+  <li><kbd>Ctrl</kbd> + <kbd>C</kbd> cancela o comando que está rodando. No terminal ele <strong>não</strong> copia. Para copiar texto do Git Bash, selecione com o mouse; para colar, use <kbd>Shift</kbd> + <kbd>Insert</kbd> ou o botão direito.</li>
+</ul>
+<div class="confira">
+  <p><strong>Confira:</strong> você está em <code>~/Documents/meu-site</code> e digita <code>cd ..</code>. Onde você vai parar?</p>
+  <details><summary>Ver a resposta</summary><p>Em <code>~/Documents</code>. O <code>..</code> quer dizer "a pasta de cima".</p></details>
+</div>
+</section><section class="trilha-secao" id="treino">
+  <h2>2.3 Treino guiado</h2>
+  
+<p>Digite um comando por vez e compare a resposta com a esperada. Os comentários (linhas com <code>#</code>) não são copiados.</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd ~</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">ls</span></span><span class="t-linha t-coment"># procure Documents na lista. Se não achar, procure OneDrive</span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd Documents</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">pwd</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">mkdir treino-terminal</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd treino-terminal</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">touch teste.txt</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">ls</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd ..</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">ls</span></span></code></pre>
+</div><div class="saida">
+  <p class="saida-titulo">O que o pwd e o primeiro ls mostram (seu usuário no lugar de aluno)</p>
+  <pre><code>/c/Users/aluno/Documents
+teste.txt</code></pre>
+</div>
+<p>O último <code>ls</code> mostra a pasta <code>treino-terminal</code> dentro de Documents. Abra o Explorador de Arquivos e confira: ela está lá. O terminal e o Explorador mostram as mesmas pastas.</p>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>bash: cd: Documents: No such file or directory</code>.</p>
+  <p>A pasta não existe onde você está. Rode <code>pwd</code> para ver onde está e <code>ls</code> para ver o que existe ali. Em muitos computadores, os Documentos ficam dentro do OneDrive: tente <code>cd ~/OneDrive/Documentos</code> (ou <code>Documents</code>).</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> nome de pasta com espaço.</p>
+  <p><code>cd Minha Pasta</code> não funciona: o terminal acha que são duas coisas. Use aspas, <code>cd "Minha Pasta"</code>, ou, melhor ainda, nunca use espaço em nome de pasta de projeto.</p>
+</div><div class="voce-tenta">
+  <p class="voce-tenta-titulo">Você tenta</p>
+  <p>Dentro de <code>treino-terminal</code>, crie uma pasta <code>fotos</code> e, dentro dela, um arquivo <code>lista.txt</code>. Depois volte para <code>treino-terminal</code> e rode <code>ls fotos</code>. Deve aparecer <code>lista.txt</code>.</p>
+</div>
+</section><section class="trilha-secao" id="terminal-vscode">
+  <h2>2.4 O terminal dentro do VS Code</h2>
+  
+<p>O VS Code tem um terminal embutido que já abre <strong>na pasta do projeto</strong>. Isso evita o erro mais comum da trilha: rodar comandos na pasta errada.</p>
+<ol class="passos">
+  <li>No VS Code, aperte <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>, digite <strong>Terminal: Select Default Profile</strong> e escolha <strong>Git Bash</strong>.</li>
+  <li>Abra o terminal pelo menu <strong>Terminal &gt; Novo Terminal</strong> (ou <kbd>Ctrl</kbd> + <kbd>'</kbd>, a tecla das aspas, à esquerda do 1).</li>
+  <li>Confira no canto direito do terminal: deve estar escrito <strong>bash</strong>.</li>
+</ol>
+<div class="confira">
+  <p><strong>Confira:</strong> por que é mais seguro usar o terminal do VS Code do que abrir o Git Bash pelo menu Iniciar?</p>
+  <details><summary>Ver a resposta</summary><p>Porque o terminal do VS Code abre na pasta que está aberta no VS Code, que é a pasta do projeto. O Git Bash do menu Iniciar abre na sua pasta pessoal (<code>~</code>), e aí é fácil rodar um comando no lugar errado.</p></details>
+</div>
+</section>
+      <section class="pronto-quando" aria-labelledby="pronto-titulo">
+  <h2 id="pronto-titulo">Pronto quando</h2>
+  <p>Marque cada item só depois de conferir. As marcações ficam salvas neste navegador e aparecem na página inicial da trilha.</p>
+  <ul data-total="4">
+    <li><label><input type="checkbox" data-progresso="passo-2-1"> Sei ler no prompt em que pasta estou</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-2-2"> Criei uma pasta e um arquivo pelo terminal e encontrei os dois no Explorador</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-2-3"> Usei <kbd>Tab</kbd> para completar um nome de pasta</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-2-4"> O terminal do VS Code abre com Git Bash (aparece <em>bash</em>)</label></li>
+  </ul>
+</section>
+      <nav class="passo-nav" aria-label="Navegação entre passos">
+        <a class="passo-ant" href="passo-1-preparar.html"><span>Passo anterior</span>1. Preparar o computador</a>
+        <a class="passo-prox" href="passo-3-projeto.html"><span>Próximo passo</span>3. Criar o projeto</a>
+      </nav>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

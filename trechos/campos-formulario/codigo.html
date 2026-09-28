@@ -1,0 +1,78 @@
+<form class="form-completo" id="form-completo">
+  <fieldset>
+    <legend>Dados</legend>
+    <label for="fc-nome">Nome</label>
+    <input type="text" id="fc-nome" name="nome" placeholder="Seu nome" required>
+
+    <label for="fc-idade">Idade</label>
+    <input type="number" id="fc-idade" name="idade" min="10" max="99">
+
+    <label for="fc-nascimento">Data de nascimento</label>
+    <input type="date" id="fc-nascimento" name="nascimento">
+
+    <label for="fc-telefone">Celular</label>
+    <input type="tel" id="fc-telefone" name="telefone" placeholder="32 99999-9999">
+
+    <label for="fc-site">Site</label>
+    <input type="url" id="fc-site" name="site" placeholder="https://...">
+  </fieldset>
+
+  <fieldset>
+    <legend>Escolhas</legend>
+    <label for="fc-curso">Curso</label>
+    <select id="fc-curso" name="curso">
+      <option value="">Selecione...</option>
+      <optgroup label="Técnico">
+        <option value="Informática">Informática</option>
+        <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
+      </optgroup>
+    </select>
+
+    <label for="fc-linguagem">Linguagem favorita (com sugestões)</label>
+    <input type="text" id="fc-linguagem" name="linguagem" list="fc-sugestoes">
+    <datalist id="fc-sugestoes">
+      <option value="JavaScript"></option>
+      <option value="Python"></option>
+      <option value="Java"></option>
+    </datalist>
+
+    <label for="fc-cor">Cor favorita</label>
+    <input type="color" id="fc-cor" name="cor" value="#2a9d8f">
+
+    <label for="fc-nivel">Nível: <output id="fc-nivel-valor">5</output> de 10</label>
+    <input type="range" id="fc-nivel" name="nivel" min="0" max="10" value="5">
+
+    <label for="fc-horario">Melhor horário</label>
+    <input type="time" id="fc-horario" name="horario">
+  </fieldset>
+
+  <fieldset>
+    <legend>Turno (escolha um)</legend>
+    <label class="fc-opcao"><input type="radio" name="turno" value="Manhã" checked> Manhã</label>
+    <label class="fc-opcao"><input type="radio" name="turno" value="Tarde"> Tarde</label>
+    <label class="fc-opcao"><input type="radio" name="turno" value="Noite"> Noite</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Interesses (escolha vários)</legend>
+    <label class="fc-opcao"><input type="checkbox" name="interesses" value="Front-end"> Front-end</label>
+    <label class="fc-opcao"><input type="checkbox" name="interesses" value="Back-end"> Back-end</label>
+    <label class="fc-opcao"><input type="checkbox" name="interesses" value="Jogos"> Jogos</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Mais</legend>
+    <label for="fc-foto">Foto</label>
+    <input type="file" id="fc-foto" name="foto" accept="image/*">
+
+    <label for="fc-sobre">Sobre você</label>
+    <textarea id="fc-sobre" name="sobre" rows="4"></textarea>
+  </fieldset>
+
+  <div class="fc-acoes">
+    <button type="submit" class="botao">Enviar</button>
+    <button type="reset" class="botao">Limpar</button>
+  </div>
+</form>
+
+<pre class="fc-resultado" id="fc-resultado" hidden></pre>

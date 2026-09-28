@@ -1,0 +1,19 @@
+.imagem-link {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;         /* o zoom não vaza dos cantos arredondados */
+  border-radius: 10px;
+}
+.imagem-link img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+.imagem-link:hover img {
+  transform: scale(1.06);   /* 6% maior */
+}
+.imagem-link:focus-visible {
+  outline: 3px solid #ffb703;
+  outline-offset: 3px;
+}

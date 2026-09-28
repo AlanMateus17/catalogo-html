@@ -1,0 +1,18 @@
+<form class="form-senha" id="form-senha">
+  <div class="campo">
+    <label for="senha-nova">Senha *</label>
+    <div class="campo-com-botao">
+      <input type="password" id="senha-nova" name="senha" required minlength="6" autocomplete="new-password">
+      <button type="button" class="botao" id="btn-mostrar-senha" aria-pressed="false">Mostrar</button>
+    </div>
+    <small>Mínimo de 6 caracteres.</small>
+  </div>
+
+  <div class="campo">
+    <label for="senha-confirma">Confirme a senha *</label>
+    <input type="password" id="senha-confirma" name="confirma" required autocomplete="new-password">
+  </div>
+
+  <button type="submit" class="botao">Cadastrar</button>
+  <p id="senha-resposta" role="status" hidden>Senha cadastrada!</p>
+</form>

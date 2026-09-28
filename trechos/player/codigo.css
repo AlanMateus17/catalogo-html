@@ -1,0 +1,47 @@
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+
+.player {
+  max-width: 800px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(18, 50, 74, 0.12);
+}
+.player-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background-color: #000000;
+}
+.player-controles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+.player-controles progress {
+  flex: 1;                 /* ocupa o espaço que sobrar */
+  min-width: 80px;
+  accent-color: #2a9d8f;
+}
+.player-tempo {
+  font-family: Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}

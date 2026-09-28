@@ -1,0 +1,68 @@
+.carrossel {
+  position: relative;
+  max-width: 800px;
+  overflow: hidden;          /* esconde as fotos que estão fora da área */
+  border-radius: 10px;
+  background-color: #000000;
+}
+.carrossel-trilho {
+  display: flex;             /* fotos lado a lado */
+  transition: transform 0.5s ease;
+}
+.slide {
+  position: relative;
+  flex: 0 0 100%;            /* cada foto ocupa a largura toda */
+  margin: 0;
+}
+.slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.slide figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.5rem 1.5rem 2.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+.carrossel-seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #12324a;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.carrossel-anterior { left: 1rem; }
+.carrossel-proximo  { right: 1rem; }
+.carrossel-pontos {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.carrossel-ponto {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+.carrossel-ponto[aria-current="true"] {
+  background-color: #ffffff;
+}

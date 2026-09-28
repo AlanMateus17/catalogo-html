@@ -1,0 +1,47 @@
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+
+.linha-copiar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.linha-copiar code {
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #eaf0f5;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 300;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  background-color: #12324a;
+  color: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.toast.visivel {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}

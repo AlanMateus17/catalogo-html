@@ -1,0 +1,15 @@
+.pular-para-conteudo {
+  position: absolute;
+  top: -100px;              /* fica fora da tela */
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background-color: #ffb703;
+  color: #12324a;
+  font-weight: 700;
+  transition: top 0.2s;
+}
+.pular-para-conteudo:focus {
+  top: 1rem;                /* desce quando recebe o foco pelo Tab */
+}

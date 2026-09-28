@@ -1,0 +1,38 @@
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+
+.form-calculo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+}
+.campo-calculo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 160px;
+}
+.campo-calculo input {
+  padding: 0.5rem;
+  font: inherit;
+}
+.resultado-calculo {
+  font-weight: 700;
+}
+.resultado-calculo.ok { color: #1e7a4c; }
+.resultado-calculo.atencao { color: #b86e00; }

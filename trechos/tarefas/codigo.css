@@ -1,0 +1,58 @@
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+
+.form-tarefa {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 560px;
+}
+.form-tarefa input {
+  flex: 1;
+  padding: 0.5rem;
+  font: inherit;
+}
+.lista-tarefas {
+  max-width: 560px;
+  list-style: none;
+  padding: 0;
+}
+.tarefa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #cfd9e3;
+}
+/* Tarefa marcada fica riscada (sem JavaScript: o :has confere o checkbox) */
+.tarefa:has(.tarefa-check:checked) .tarefa-texto {
+  text-decoration: line-through;
+  color: #4f5f6f;
+}
+.tarefa-remover {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
+.tarefa-remover:hover {
+  background-color: #c62839;
+  color: #ffffff;
+}

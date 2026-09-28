@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Carrossel de imagens</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+.carrossel {
+  position: relative;
+  max-width: 800px;
+  overflow: hidden;          /* esconde as fotos que estão fora da área */
+  border-radius: 10px;
+  background-color: #000000;
+}
+.carrossel-trilho {
+  display: flex;             /* fotos lado a lado */
+  transition: transform 0.5s ease;
+}
+.slide {
+  position: relative;
+  flex: 0 0 100%;            /* cada foto ocupa a largura toda */
+  margin: 0;
+}
+.slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.slide figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.5rem 1.5rem 2.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+.carrossel-seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #12324a;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.carrossel-anterior { left: 1rem; }
+.carrossel-proximo  { right: 1rem; }
+.carrossel-pontos {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.carrossel-ponto {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+.carrossel-ponto[aria-current="true"] {
+  background-color: #ffffff;
+}
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Carrossel de imagens. Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#exemplo-19">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<div class="carrossel" id="carrossel" aria-roledescription="carrossel" aria-label="Fotos">
+  <div class="carrossel-trilho" id="carrossel-trilho">
+    <figure class="slide">
+      <img src="../img/foto-1.jpg" alt="Descreva a foto 1" width="1200" height="800">
+      <figcaption>Legenda da foto 1</figcaption>
+    </figure>
+    <figure class="slide">
+      <img src="../img/foto-2.jpg" alt="Descreva a foto 2" width="1200" height="800">
+      <figcaption>Legenda da foto 2</figcaption>
+    </figure>
+    <figure class="slide">
+      <img src="../img/foto-3.jpg" alt="Descreva a foto 3" width="1200" height="800">
+      <figcaption>Legenda da foto 3</figcaption>
+    </figure>
+  </div>
+  <button type="button" class="carrossel-seta carrossel-anterior" id="carrossel-anterior" aria-label="Foto anterior">‹</button>
+  <button type="button" class="carrossel-seta carrossel-proximo" id="carrossel-proximo" aria-label="Próxima foto">›</button>
+  <div class="carrossel-pontos" id="carrossel-pontos"></div>
+</div>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+// ----- Carrossel -----
+const carrossel = document.getElementById("carrossel");
+
+if (carrossel) {
+  const trilho = document.getElementById("carrossel-trilho");
+  const slides = trilho.querySelectorAll(".slide");
+  const areaPontos = document.getElementById("carrossel-pontos");
+  let slideAtual = 0;
+  let passarSozinho;
+
+  // Cria uma bolinha para cada foto
+  slides.forEach(function (slide, posicao) {
+    const ponto = document.createElement("button");
+    ponto.type = "button";
+    ponto.className = "carrossel-ponto";
+    ponto.setAttribute("aria-label", "Ir para a foto " + (posicao + 1));
+    ponto.addEventListener("click", function () {
+      irParaSlide(posicao);
+    });
+    areaPontos.appendChild(ponto);
+  });
+  const pontos = areaPontos.querySelectorAll(".carrossel-ponto");
+
+  function irParaSlide(posicao) {
+    slideAtual = (posicao + slides.length) % slides.length;   // dá a volta nas pontas
+    trilho.style.transform = "translateX(-" + (slideAtual * 100) + "%)";
+    pontos.forEach(function (ponto, i) {
+      ponto.setAttribute("aria-current", String(i === slideAtual));
+    });
+  }
+
+  document.getElementById("carrossel-anterior").addEventListener("click", function () {
+    irParaSlide(slideAtual - 1);
+  });
+  document.getElementById("carrossel-proximo").addEventListener("click", function () {
+    irParaSlide(slideAtual + 1);
+  });
+
+  // Passa sozinho a cada 5 segundos; para com o mouse em cima
+  function iniciarCarrossel() {
+    clearInterval(passarSozinho);
+    passarSozinho = setInterval(function () {
+      irParaSlide(slideAtual + 1);
+    }, 5000);
+  }
+  carrossel.addEventListener("mouseenter", function () { clearInterval(passarSozinho); });
+  carrossel.addEventListener("mouseleave", iniciarCarrossel);
+
+  irParaSlide(0);
+  iniciarCarrossel();
+}
+
+</script>
+</body>
+</html>

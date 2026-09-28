@@ -1,0 +1,24 @@
+.escolher-cor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 480px;
+}
+.escolher-cor input[type="color"] {
+  width: 64px;
+  height: 40px;
+  cursor: pointer;
+}
+.amostra-cor {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  height: 64px;
+  border-radius: 6px;
+  background-color: #ffb703;
+}
+.amostra-cor code {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.85);
+}

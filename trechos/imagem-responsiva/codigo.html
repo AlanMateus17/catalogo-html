@@ -1,0 +1,12 @@
+<!-- No celular (até 700px) mostra a foto quadrada; no resto, a larga -->
+<picture>
+  <source media="(max-width: 700px)" srcset="img/banner-quadrado.jpg">
+  <img class="img-responsiva" src="img/banner-largo.jpg" alt="Descreva a foto" width="1600" height="560">
+</picture>
+
+<!-- Mesma foto em dois tamanhos: o navegador escolhe -->
+<img class="img-responsiva"
+     src="img/foto-grande.jpg"
+     srcset="img/foto-pequena.jpg 600w, img/foto-grande.jpg 1200w"
+     sizes="(max-width: 700px) 100vw, 600px"
+     alt="Descreva a foto" width="1200" height="800" loading="lazy">

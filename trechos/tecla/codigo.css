@@ -1,0 +1,11 @@
+#campo-tecla {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;   /* a largura inclui padding e borda */
+  max-width: 320px;
+  padding: 0.5rem;
+  font: inherit;
+}
+.tecla-info {
+  font-family: Consolas, "Courier New", monospace;
+}

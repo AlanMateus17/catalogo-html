@@ -1,0 +1,32 @@
+.btn-curtir {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #cfd9e3;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: #1b2a38;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.coracao {
+  font-size: 1.3rem;
+  color: #4f5f6f;
+}
+/* Estado "curtido": colocado pelo JavaScript */
+.btn-curtir.curtido {
+  border-color: #c62839;
+  color: #c62839;
+}
+.btn-curtir.curtido .coracao {
+  color: #c62839;
+  animation: pulsar 0.4s ease;
+}
+@keyframes pulsar {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}

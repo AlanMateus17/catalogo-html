@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Informações do &lt;head&gt;: ícone, resumo, WhatsApp e fonte</title>
+<!-- Resumo que aparece no Google, embaixo do título -->
+<meta name="description" content="Uma frase dizendo do que o site trata.">
+<meta name="author" content="Seu Nome">
+
+<!-- Cor da barra do navegador no celular -->
+<meta name="theme-color" content="#12324a">
+
+<!-- Ícone da aba (coloque o arquivo na pasta img) -->
+<link rel="icon" type="image/png" href="../img/favicon.png">
+
+<!-- Como o link aparece quando é compartilhado no WhatsApp e nas redes sociais -->
+<meta property="og:title" content="Nome do meu site">
+<meta property="og:description" content="Uma frase dizendo do que o site trata.">
+<meta property="og:image" content="../img/banner-largo.jpg">
+
+<!-- Fonte do Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+/* Usa a fonte do Google; se ela não carregar, usa Arial */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Informações do &lt;head&gt;: ícone, resumo, WhatsApp e fonte. Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#conexao">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<main style="padding:16px"><h1>Título com a fonte nova</h1><p>O texto da página usa a fonte do Google carregada no &lt;head&gt;. Olhe também o ícone na aba do navegador.</p></main>
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+
+</script>
+</body>
+</html>

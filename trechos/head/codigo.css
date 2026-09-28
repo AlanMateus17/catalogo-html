@@ -1,0 +1,4 @@
+/* Usa a fonte do Google; se ela não carregar, usa Arial */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+}

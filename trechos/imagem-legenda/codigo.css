@@ -1,0 +1,23 @@
+.img-responsiva {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.figura {
+  margin: 1.5rem 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(18, 50, 74, 0.12);
+}
+.figura img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.figura figcaption {
+  padding: 0.6rem 1rem;
+  color: #4f5f6f;
+  font-size: 0.92rem;
+}

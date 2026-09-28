@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--
+  TRILHA "PASSO A PASSO" — Passo 8: Guardar no GitHub pelo terminal
+  Página de conteúdo. Os comandos têm botão de copiar e as caixas
+  "Pronto quando" guardam o progresso no navegador (js/trilha.js).
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/trilha.js" defer></script>
+  <title>Passo 8: Guardar no GitHub pelo terminal — Catálogo do HTML</title>
+  <meta name="description" content="Criar o repositório com git init, add, commit e enviar com gh repo create.">
+</head>
+<body class="pagina-trilha">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="passo-a-passo.html">Passo a passo</a></li>
+            <li aria-current="page">Passo 8</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Passo 8 de 10. Tempo: 1 aula</p>
+        <h1 class="heroi-titulo">Guardar no GitHub pelo terminal</h1>
+        <p class="heroi-texto">Agora o seu projeto ganha histórico e vai para o GitHub. São poucos comandos, mas todos precisam ser rodados dentro da pasta do projeto.</p>
+      </div>
+    </section>
+
+    <div class="container trilha-corpo">
+      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-html.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-5-css.html" data-passo="5" data-total="4"><span class="mapa-num">5</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-6-js.html" data-passo="6" data-total="4"><span class="mapa-num">6</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-7-verificar.html" data-passo="7" data-total="4"><span class="mapa-num">7</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-8-github.html" data-passo="8" data-total="4" aria-current="step"><span class="mapa-num">8</span><span class="mapa-nome">Git e GitHub</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
+<section class="trilha-secao" id="ideia">
+  <h2>8.1 A ideia do Git em uma figura</h2>
+  
+<div class="fluxo-git" role="img" aria-label="Fluxo: a pasta do projeto vai para a área de preparação com git add, vira uma versão no histórico com git commit e vai para o GitHub com git push. O GitHub Pages publica o site.">
+  <div class="fluxo-caixa"><strong>Pasta do projeto</strong><span>os arquivos que você edita</span></div>
+  <div class="fluxo-seta"><code>git add</code></div>
+  <div class="fluxo-caixa"><strong>Preparados</strong><span>o que vai entrar na próxima versão</span></div>
+  <div class="fluxo-seta"><code>git commit</code></div>
+  <div class="fluxo-caixa"><strong>Histórico</strong><span>as versões salvas, no seu computador</span></div>
+  <div class="fluxo-seta"><code>git push</code></div>
+  <div class="fluxo-caixa fluxo-destaque"><strong>GitHub</strong><span>a cópia na internet</span></div>
+  <div class="fluxo-seta"><span>Pages</span></div>
+  <div class="fluxo-caixa fluxo-destaque"><strong>Site no ar</strong><span>seu-usuario.github.io</span></div>
+</div>
+<p>Um <strong>commit</strong> é uma foto do projeto num momento, com uma mensagem dizendo o que mudou. Se algo quebrar amanhã, dá para voltar para a foto de hoje.</p>
+
+</section><section class="trilha-secao" id="pasta">
+  <h2>8.2 Estar na pasta certa (antes de tudo)</h2>
+  
+<p>Abra o terminal do VS Code com a pasta do projeto aberta (Passo 2.4) e confira:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">pwd</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">ls</span></span></code></pre>
+</div><div class="saida">
+  <p class="saida-titulo">O que deve aparecer</p>
+  <pre><code>/c/Users/aluno/Documents/turismo-barbacena
+css  img  index.html  js</code></pre>
+</div>
+<p>O <code>pwd</code> precisa terminar com o nome do <strong>seu projeto</strong>, e o <code>ls</code> precisa mostrar <strong>só</strong> os arquivos do site. Se aparecer outra coisa, pare aqui.</p>
+<div class="erro-comum" id="pasta-errada">
+  <p class="erro-comum-titulo"><strong>Erro comum (e perigoso):</strong> rodar <code>git init</code> fora da pasta do projeto.</p>
+  <p>Os sinais: o <code>git add .</code> começa a listar <code>AppData</code>, <code>Desktop</code>, <code>.ssh</code>, ou o prompt mostra <code>(main)</code> na sua pasta pessoal. Aperte <kbd>Ctrl</kbd> + <kbd>C</kbd> na hora: você estaria guardando o seu computador inteiro, com senhas, num repositório público.</p>
+  <p>Para desfazer, vá até a pasta onde deu o <code>git init</code> errado, confira que ela não tem nenhum commit e apague só a pasta oculta <code>.git</code>:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd ~</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git log</span></span><span class="t-linha t-coment"># a resposta tem que ser: does not have any commits yet</span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">rm -rf .git</span></span></code></pre>
+</div>
+  <p>O <code>(main)</code> some do prompt e nenhum arquivo seu é apagado. Se o <code>git log</code> mostrar commits, <strong>não apague</strong>: chame o professor.</p>
+</div>
+
+</section><section class="trilha-secao" id="commit">
+  <h2>8.3 Criar o repositório e fazer o primeiro commit</h2>
+  
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git init</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git status</span></span></code></pre>
+</div><div class="saida">
+  <p class="saida-titulo">O que deve aparecer</p>
+  <pre><code>Initialized empty Git repository in C:/Users/aluno/Documents/turismo-barbacena/.git/
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+        css/
+        img/
+        index.html
+        js/
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
+</div>
+<p>O prompt agora mostra <code>(main)</code>: a pasta virou um repositório. Os arquivos em vermelho ainda não fazem parte de nenhuma versão.</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git add .</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git status</span></span></code></pre>
+</div><div class="saida">
+  <p class="saida-titulo">O que deve aparecer (agora em verde)</p>
+  <pre><code>Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+        new file:   css/estilo.css
+        new file:   img/praca-central.jpg
+        new file:   index.html
+        new file:   js/script.js</code></pre>
+</div>
+<p>O <code>git add .</code> preparou tudo (o ponto quer dizer "esta pasta inteira"). Agora salve a versão:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git commit -m &quot;Primeira versão do site&quot;</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git log --oneline</span></span></code></pre>
+</div><div class="saida">
+  <p class="saida-titulo">O que deve aparecer (o código de letras e números muda)</p>
+  <pre><code>[main (root-commit) 3f2a9c1] Primeira versão do site
+ 4 files changed, 128 insertions(+)
+3f2a9c1 (HEAD -&gt; main) Primeira versão do site</code></pre>
+</div>
+<p>Avisos <code>LF will be replaced by CRLF</code> são normais no Windows e podem ser ignorados.</p>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>Author identity unknown</code> no commit.</p>
+  <p>O Git não sabe o seu nome e e-mail. Faça o <a href="passo-1-preparar.html#config">Passo 1.6</a> e rode o commit de novo.</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> a pasta <code>img</code> sumiu do <code>git status</code>.</p>
+  <p>O Git não guarda pastas vazias. Coloque pelo menos uma foto em <code>img</code> e ela aparece.</p>
+</div><div class="confira">
+  <p><strong>Confira:</strong> qual a diferença entre <code>git add</code> e <code>git commit</code>?</p>
+  <details><summary>Ver a resposta</summary><p>O <code>git add</code> escolhe o que vai entrar na próxima versão. O <code>git commit</code> salva essa versão no histórico, com uma mensagem.</p></details>
+</div>
+</section><section class="trilha-secao" id="enviar">
+  <h2>8.4 Criar o repositório no GitHub e enviar, com um comando</h2>
+  
+<p>Troque <code>turismo-barbacena</code> pelo nome do seu projeto (o mesmo da pasta):</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">gh repo create turismo-barbacena --public --source=. --remote=origin --push</span></span></code></pre>
+</div><div class="saida">
+  <p class="saida-titulo">O que deve aparecer</p>
+  <pre><code>✓ Created repository seu-usuario/turismo-barbacena on GitHub
+  https://github.com/seu-usuario/turismo-barbacena
+✓ Added remote https://github.com/seu-usuario/turismo-barbacena.git
+✓ Pushed commits to https://github.com/seu-usuario/turismo-barbacena.git</code></pre>
+</div>
+<div class="tabela-rolagem"><table class="tabela">
+  <thead><tr><th scope="col">Parte do comando</th><th scope="col">O que quer dizer</th></tr></thead>
+  <tbody>
+    <tr><td><code>gh repo create turismo-barbacena</code></td><td>Cria no GitHub um repositório com esse nome</td></tr>
+    <tr><td><code>--public</code></td><td>Público: qualquer um vê. O GitHub Pages gratuito exige isso.</td></tr>
+    <tr><td><code>--source=.</code></td><td>Usa esta pasta (<code>.</code>) como origem</td></tr>
+    <tr><td><code>--remote=origin</code></td><td>Chama o endereço do GitHub de <code>origin</code>, o nome padrão</td></tr>
+    <tr><td><code>--push</code></td><td>Já envia os commits</td></tr>
+  </tbody>
+</table></div>
+<p>Abra o repositório no navegador para conferir:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">gh repo view --web</span></span></code></pre>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>Name already exists on this account</code>.</p>
+  <p>Você já tem um repositório com esse nome. Escolha outro nome no comando, ou apague o antigo pelo site do GitHub (<em>Settings &gt; Danger Zone</em>) se ele não servir mais.</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>error: src refspec main does not match any</code>.</p>
+  <p>Não existe nenhum commit para enviar. Volte ao 8.3 e confira o <code>git log --oneline</code>.</p>
+</div>
+<details class="alternativa">
+  <summary>Sem o GitHub CLI: criar pelo site e enviar pelo Git</summary>
+  <ol class="passos">
+    <li>No GitHub, clique em <strong>+ &gt; New repository</strong>, dê o nome do projeto, marque <strong>Public</strong> e <strong>não</strong> marque "Add a README". Clique em <strong>Create repository</strong>.</li>
+    <li>No terminal, na pasta do projeto:</li>
+  </ol>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git remote add origin https://github.com/seu-usuario/turismo-barbacena.git</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git push -u origin main</span></span></code></pre>
+</div>
+  <p>No primeiro push, o navegador abre pedindo login. Se aparecer <code>remote origin already exists</code>, troque o endereço com <code>git remote set-url origin</code> e o endereço certo.</p>
+</details>
+
+</section>
+      <section class="pronto-quando" aria-labelledby="pronto-titulo">
+  <h2 id="pronto-titulo">Pronto quando</h2>
+  <p>Marque cada item só depois de conferir. As marcações ficam salvas neste navegador e aparecem na página inicial da trilha.</p>
+  <ul data-total="4">
+    <li><label><input type="checkbox" data-progresso="passo-8-1"> O <code>pwd</code> termina com o nome do meu projeto antes do <code>git init</code></label></li>
+    <li><label><input type="checkbox" data-progresso="passo-8-2"> O <code>git log --oneline</code> mostra o meu primeiro commit</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-8-3"> O <code>gh repo view --web</code> abre o repositório com os meus arquivos</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-8-4"> O <code>index.html</code> aparece na lista principal do repositório, e não dentro de outra pasta</label></li>
+  </ul>
+</section>
+      <nav class="passo-nav" aria-label="Navegação entre passos">
+        <a class="passo-ant" href="passo-7-verificar.html"><span>Passo anterior</span>7. Verificar</a>
+        <a class="passo-prox" href="passo-9-pages.html"><span>Próximo passo</span>9. GitHub Pages</a>
+      </nav>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

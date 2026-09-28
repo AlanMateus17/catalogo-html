@@ -1,0 +1,38 @@
+.cards {
+  display: grid;
+  /* quantas colunas couberem, cada uma com no mínimo 260px */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(18, 50, 74, 0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(18, 50, 74, 0.2);
+}
+.card-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;     /* todas as imagens com a mesma proporção */
+  object-fit: cover;        /* preenche sem esticar */
+}
+.card-corpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem;
+}
+.card-titulo {
+  margin: 0 0 0.5rem;
+}
+.card-link {
+  margin-top: auto;         /* empurra o link para o fim do card */
+  font-weight: 700;
+}

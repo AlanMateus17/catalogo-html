@@ -65,6 +65,8 @@
     == 22 Responsivo (celular)
     == 23 Acessibilidade: menos movimento
     == 24 Impressão
+    == 25 Painéis "Ver código" (ferramenta do Catálogo)
+    == 26 Trilha passo a passo e Verificador (ferramenta do Catálogo)
 */
 
 
@@ -98,6 +100,11 @@
   --cor-titulo: #12324a;
   --cor-codigo-fundo: #0f2233;
   --cor-codigo-texto: #e6f1f8;
+  --cor-confira-fundo: #fff3c4;    /* caixas "Confira" da trilha */
+  --cor-confira-texto: #3d2e00;
+  --cor-erro-fundo: #fdf0f1;       /* caixas "Erro comum" */
+  --cor-ok-fundo: #e3f6ef;         /* "Pronto quando" completo */
+  --cor-terminal: #0b141d;         /* fundo das caixas de terminal */
 
   /* Fontes. A lista depois da vírgula é o PLANO B: se a primeira não carregar, usa a próxima. */
   --fonte-texto: "Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif;
@@ -138,6 +145,11 @@
   --cor-link: #7fd0e6;
   --cor-titulo: #f1f6fa;
   --cor-codigo-fundo: #07121b;
+  --cor-confira-fundo: #3a3212;
+  --cor-confira-texto: #fbecb8;
+  --cor-erro-fundo: #2e1a1e;
+  --cor-ok-fundo: #12302a;
+  --cor-terminal: #03080d;
   --sombra: 0 2px 4px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
   /* color-scheme avisa ao navegador para desenhar barras de rolagem e campos no modo escuro */
   color-scheme: dark;
@@ -2319,4 +2331,862 @@ output {
     font-size: 0.8em;
   }
   .js .revelar { opacity: 1; transform: none; }
+}
+
+
+/* =====================================================================
+   == 25 PAINÉIS "VER CÓDIGO" E PÁGINA DE CÓDIGOS
+   Estilo dos painéis montados pelo js/painel-codigos.js.
+   Isto é da ferramenta do Catálogo: os alunos não precisam copiar esta seção.
+   ===================================================================== */
+.codigo {
+  margin-block: var(--espaco-3) var(--espaco-4);
+}
+.exemplo .codigo {
+  margin-bottom: 0;
+}
+
+.codigo-painel {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background-color: var(--cor-superficie);
+  overflow: hidden;
+}
+.codigo-painel[open] {
+  box-shadow: var(--sombra);
+}
+
+/* A linha clicável */
+.codigo-resumo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-2) var(--espaco-3);
+  padding: 0.7rem var(--espaco-3);
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.95rem;
+}
+.codigo-resumo::-webkit-details-marker { display: none; }
+.codigo-resumo:hover { background-color: var(--cor-superficie-2); }
+
+.codigo-rotulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.2em 0.7em;
+  border-radius: 999px;
+  background-color: var(--cor-tinta);
+  color: #ffffff;
+  font-family: var(--fonte-codigo);
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+[data-tema="escuro"] .codigo-rotulo { background-color: var(--cor-verde); color: #06201c; }
+/* Setinha que gira quando o painel abre */
+.codigo-rotulo::before {
+  content: "▸";
+  transition: transform var(--transicao);
+}
+.codigo-painel[open] .codigo-rotulo::before {
+  transform: rotate(90deg);
+}
+.codigo-titulo {
+  flex: 1;
+  min-width: 12ch;
+  font-weight: 700;
+  color: var(--cor-titulo);
+}
+.codigo-linguagens {
+  display: flex;
+  gap: 0.3rem;
+}
+.codigo-selo {
+  padding: 0.05em 0.5em;
+  border-radius: 4px;
+  font-family: var(--fonte-codigo);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+/* Uma cor por linguagem, a mesma nas abas */
+.codigo-selo-html { background-color: #fde0d6; color: #8a2c0d; }
+.codigo-selo-css  { background-color: #d9e8fb; color: #0f4a8a; }
+.codigo-selo-js   { background-color: #fff1bf; color: #6b5200; }
+
+.codigo-corpo {
+  padding: 0 var(--espaco-3) var(--espaco-3);
+  border-top: 1px solid var(--cor-borda);
+}
+.codigo-nota {
+  margin: var(--espaco-3) 0;
+  max-width: 80ch;
+  font-size: 0.95rem;
+  color: var(--cor-texto-suave);
+}
+.codigo-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2) var(--espaco-4);
+  margin: 0 0 var(--espaco-3);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.codigo-abas {
+  display: flex;
+  gap: var(--espaco-1);
+  overflow-x: auto;
+}
+.codigo-aba {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--cor-borda);
+  border-bottom: 0;
+  border-radius: var(--raio-pequeno) var(--raio-pequeno) 0 0;
+  background-color: var(--cor-superficie-2);
+  color: var(--cor-texto-suave);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.codigo-aba[aria-selected="true"] {
+  background-color: var(--cor-codigo-fundo);
+  border-color: var(--cor-codigo-fundo);
+  color: #ffffff;
+}
+
+.codigo-area {
+  border-radius: 0 var(--raio-pequeno) var(--raio-pequeno) var(--raio-pequeno);
+  background-color: var(--cor-codigo-fundo);
+  overflow: hidden;
+}
+.codigo-topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-2);
+  padding: 0.6rem var(--espaco-3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.codigo-onde {
+  margin: 0;
+  max-width: none;
+  font-size: 0.85rem;
+  color: #b9c9d6;
+}
+.codigo-onde strong {
+  font-family: var(--fonte-codigo);
+  color: var(--cor-destaque);
+  margin-right: 0.3em;
+}
+.codigo-copiar {
+  padding: 0.35rem 0.9rem;
+  border: 0;
+  border-radius: var(--raio-pequeno);
+  background-color: var(--cor-destaque);
+  color: #12324a;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.codigo-copiar.copiado {
+  background-color: #7be0b0;
+}
+.codigo-pre {
+  margin: 0;
+  max-height: 460px;        /* código longo rola dentro da caixa */
+  overflow: auto;
+  padding: var(--espaco-3);
+  color: var(--cor-codigo-texto);
+  font-family: var(--fonte-codigo);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  tab-size: 2;
+}
+.codigo-pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+.codigo-lembrete {
+  margin: var(--espaco-2) 0 0;
+  max-width: none;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+/* Página codigos.html */
+.codigos-como-usar {
+  counter-reset: passo;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--espaco-3);
+  padding: 0;
+  list-style: none;
+}
+.codigos-como-usar li {
+  counter-increment: passo;
+  padding: var(--espaco-3);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background-color: var(--cor-superficie);
+}
+.codigos-como-usar li::before {
+  content: counter(passo);
+  display: inline-grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-bottom: var(--espaco-2);
+  border-radius: 50%;
+  background-color: var(--cor-destaque);
+  color: #12324a;
+  font-family: var(--fonte-codigo);
+  font-weight: 600;
+}
+.codigos-busca {
+  position: sticky;
+  top: calc(var(--altura-cabecalho) - 8px);
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-2) var(--espaco-3);
+  padding: var(--espaco-3) 0;
+  background-color: var(--cor-fundo);
+}
+.codigos-busca input {
+  flex: 1;
+  min-width: 220px;
+  max-width: 480px;
+}
+.codigos-busca p { margin: 0; color: var(--cor-texto-suave); }
+.codigo-grupo {
+  display: grid;
+  gap: var(--espaco-2);
+  margin-bottom: var(--espaco-5);
+}
+.codigo-grupo-titulo {
+  font-size: 1.4rem;
+  margin: 0 0 var(--espaco-2);
+}
+
+@media print {
+  .codigo { display: none; }
+}
+
+
+/* =====================================================================
+   == 26 TRILHA "PASSO A PASSO" E VERIFICADOR
+   Estilo das páginas passo-*.html, passo-a-passo.html e verificador.html.
+   Ferramenta do Catálogo: os alunos não precisam copiar esta seção.
+   ===================================================================== */
+.trilha-corpo {
+  display: grid;
+  gap: var(--espaco-5);
+  padding-block: var(--espaco-5) var(--espaco-6);
+  max-width: 900px;
+}
+.trilha-secao {
+  display: grid;
+  gap: var(--espaco-3);
+}
+.trilha-secao > h2 {
+  font-size: clamp(1.45rem, 1.5vw + 1rem, 1.9rem);
+  padding-top: var(--espaco-3);
+  border-top: 2px solid var(--cor-borda);
+}
+.trilha-secao p,
+.trilha-secao li {
+  max-width: 72ch;
+}
+.trilha-secao > * {
+  margin-block: 0;
+}
+/* Itens de grid não encolhem menos que o conteúdo: um comando longo esticaria a página no celular.
+   min-width: 0 deixa a coluna encolher, e o comando rola dentro da própria caixa. */
+.trilha-corpo > *,
+.trilha-secao > *,
+.erro-comum > *,
+details.alternativa > * {
+  min-width: 0;
+}
+
+/* Mapa com os 10 passos, no topo de cada página */
+.trilha-mapa ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.trilha-mapa a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem 0.3rem 0.3rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+.trilha-mapa a:hover { border-color: var(--cor-verde); }
+.mapa-num {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: var(--cor-superficie-2);
+  font-family: var(--fonte-codigo);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.trilha-mapa a[aria-current="step"] {
+  border-color: var(--cor-tinta);
+  background-color: var(--cor-tinta);
+  color: #ffffff;
+}
+[data-tema="escuro"] .trilha-mapa a[aria-current="step"] { border-color: var(--cor-verde); background-color: var(--cor-verde); color: #06201c; }
+.trilha-mapa a[aria-current="step"] .mapa-num { background-color: var(--cor-destaque); color: #12324a; }
+.trilha-mapa a.feito .mapa-num { background-color: var(--cor-verde); color: #ffffff; }
+.trilha-mapa a.feito .mapa-num::after { content: "✓"; }
+.trilha-mapa a.feito .mapa-num { font-size: 0; }
+.trilha-mapa a.feito .mapa-num::after { font-size: 0.8rem; }
+
+/* Passos numerados dentro das seções */
+ol.passos {
+  display: grid;
+  gap: var(--espaco-2);
+  padding-left: 1.4rem;
+}
+ol.passos li::marker {
+  color: var(--cor-verde);
+  font-weight: 700;
+}
+
+/* Caixa de terminal: comandos com botão de copiar */
+.terminal {
+  border-radius: var(--raio);
+  background-color: var(--cor-terminal);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+.terminal-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-2);
+  padding: 0.45rem var(--espaco-3);
+  background-color: rgba(255, 255, 255, 0.07);
+  color: #9fb3c4;
+  font-family: var(--fonte-codigo);
+  font-size: 0.8rem;
+}
+.terminal-copiar {
+  padding: 0.25rem 0.8rem;
+  border: 0;
+  border-radius: var(--raio-pequeno);
+  background-color: var(--cor-destaque);
+  color: #12324a;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.terminal-copiar.copiado { background-color: #7be0b0; }
+.terminal pre {
+  margin: 0;
+  padding: var(--espaco-3);
+  overflow-x: auto;
+  color: #e8f0f6;
+  font-family: var(--fonte-codigo);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.terminal pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+.t-linha { display: block; white-space: pre; }
+.t-prompt { color: #7be0b0; user-select: none; }
+.t-coment { color: #7f93a5; font-style: italic; }
+.terminal-nota {
+  margin: calc(var(--espaco-2) * -1) 0 0;
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+}
+
+/* "O que deve aparecer" */
+.saida,
+.bloco-exemplo {
+  border: 1px dashed var(--cor-borda);
+  border-radius: var(--raio);
+  background-color: var(--cor-superficie);
+  overflow: hidden;
+}
+.saida-titulo {
+  margin: 0;
+  padding: 0.45rem var(--espaco-3);
+  border-bottom: 1px dashed var(--cor-borda);
+  color: var(--cor-texto-suave);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.saida pre {
+  margin: 0;
+  padding: var(--espaco-3);
+  overflow-x: auto;
+  font-family: var(--fonte-codigo);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.saida pre code { background: none; padding: 0; font-size: inherit; }
+.bloco-exemplo .bloco-codigo { margin: 0; border-radius: 0; }
+
+/* As quatro caixas didáticas */
+.confira {
+  padding: var(--espaco-3) var(--espaco-4);
+  border-radius: var(--raio-pequeno);
+  background-color: var(--cor-confira-fundo);
+  color: var(--cor-confira-texto);
+}
+.confira p { margin: 0; }
+.confira code { background-color: rgba(0, 0, 0, 0.08); color: inherit; }
+.confira details { margin-top: var(--espaco-2); }
+.confira summary {
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.confira details p { margin-top: var(--espaco-2); }
+
+.erro-comum {
+  padding: var(--espaco-3) var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-left: 6px solid var(--cor-erro);
+  border-radius: var(--raio-pequeno);
+  background-color: var(--cor-erro-fundo);
+}
+.erro-comum > * { margin-block: 0 var(--espaco-2); }
+.erro-comum > *:last-child { margin-bottom: 0; }
+.erro-comum-titulo strong { color: var(--cor-erro); }
+[data-tema="escuro"] .erro-comum-titulo strong { color: #ff8a93; }
+
+.voce-tenta {
+  padding: var(--espaco-3) var(--espaco-4);
+  border: 2px dashed var(--cor-verde);
+  border-radius: var(--raio-pequeno);
+}
+.voce-tenta > * { margin-block: 0 var(--espaco-2); }
+.voce-tenta > *:last-child { margin-bottom: 0; }
+.voce-tenta-titulo {
+  color: var(--cor-verde);
+  font-weight: 700;
+}
+
+.pronto-quando {
+  padding: var(--espaco-4);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background-color: var(--cor-superficie);
+  transition: border-color var(--transicao), background-color var(--transicao);
+}
+.pronto-quando h2 { margin: 0 0 var(--espaco-2); font-size: 1.4rem; }
+.pronto-quando > p { color: var(--cor-texto-suave); font-size: 0.92rem; margin: 0 0 var(--espaco-3); }
+.pronto-quando ul {
+  display: grid;
+  gap: var(--espaco-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pronto-quando label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espaco-2);
+  cursor: pointer;
+}
+.pronto-quando input {
+  flex-shrink: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.2rem;
+  accent-color: var(--cor-verde);
+}
+.pronto-quando.completo {
+  border-color: var(--cor-verde);
+  background-color: var(--cor-ok-fundo);
+}
+.pronto-quando.completo h2::after {
+  content: " ✓";
+  color: var(--cor-verde);
+}
+.pronto-exemplo { padding: var(--espaco-3) var(--espaco-4); }
+.pronto-exemplo p { margin: 0; }
+
+/* Anterior / próximo */
+.passo-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-3);
+}
+.passo-nav a {
+  display: grid;
+  gap: 0.2rem;
+  padding: var(--espaco-3) var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background-color: var(--cor-superficie);
+  color: var(--cor-titulo);
+  font-weight: 700;
+  text-decoration: none;
+}
+.passo-nav a:hover { border-color: var(--cor-verde); }
+.passo-nav span {
+  color: var(--cor-texto-suave);
+  font-size: 0.82rem;
+  font-weight: 400;
+}
+.passo-prox { text-align: right; }
+
+/* O prompt do Git Bash com cada parte explicada (Passo 2) */
+.prompt-anotado {
+  padding: var(--espaco-4);
+  border-radius: var(--raio);
+  background-color: var(--cor-terminal);
+  color: #e8f0f6;
+  font-family: var(--fonte-codigo);
+  font-size: 0.95rem;
+  overflow-x: auto;
+}
+.prompt-linha { white-space: pre; }
+.pa { font-weight: 600; }
+.pa-usuario { color: #7be0b0; }
+.pa-sistema { color: #d38cf2; }
+.pa-pasta { color: #ffd166; }
+.pa-repo { color: #7fc8ff; }
+.pa-cifrao { color: #e8f0f6; }
+.cursor { animation: piscar 1s steps(1) infinite; }
+@keyframes piscar { 50% { opacity: 0; } }
+.prompt-legenda {
+  display: grid;
+  gap: var(--espaco-2);
+  margin: var(--espaco-4) 0 0;
+  padding: var(--espaco-3) 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  list-style: none;
+  font-family: var(--fonte-texto);
+  font-size: 0.92rem;
+  white-space: normal;
+}
+.prompt-legenda code { background-color: rgba(255, 255, 255, 0.1); color: #ffffff; }
+.prompt-legenda .pa { font-family: var(--fonte-codigo); margin-right: 0.4rem; }
+
+/* Fluxo do Git (Passo 8) */
+.fluxo-git {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--espaco-2);
+}
+.fluxo-caixa {
+  display: grid;
+  gap: 0.2rem;
+  flex: 1 1 130px;
+  padding: var(--espaco-3);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  background-color: var(--cor-superficie);
+}
+.fluxo-caixa span { color: var(--cor-texto-suave); font-size: 0.85rem; }
+.fluxo-destaque { border: 2px solid var(--cor-verde); }
+.fluxo-seta {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  padding-inline: 0.2rem;
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+}
+.fluxo-seta::after { content: "→"; font-size: 1.2rem; line-height: 1; }
+
+/* Caminho alternativo, recolhido */
+details.alternativa {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  background-color: var(--cor-superficie);
+}
+details.alternativa > summary {
+  padding: var(--espaco-3);
+  font-weight: 700;
+  cursor: pointer;
+}
+details.alternativa > *:not(summary) { margin: 0 var(--espaco-3) var(--espaco-3); }
+
+/* Página inicial da trilha */
+.lista-check-trilha { display: grid; gap: var(--espaco-2); padding-left: 1.2rem; }
+.formato-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--espaco-3);
+}
+.trilha-resumo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--espaco-2) var(--espaco-4);
+  padding-top: var(--espaco-3);
+  border-top: 2px solid var(--cor-borda);
+}
+.trilha-resumo h2 { margin: 0; font-size: clamp(1.45rem, 1.5vw + 1rem, 1.9rem); }
+.trilha-resumo p { margin: 0; color: var(--cor-texto-suave); font-weight: 700; }
+.trilha-lista {
+  display: grid;
+  gap: var(--espaco-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.trilha-card {
+  display: grid;
+  grid-template-columns: auto 1fr 130px;
+  align-items: center;
+  gap: var(--espaco-3) var(--espaco-4);
+  padding: var(--espaco-3) var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background-color: var(--cor-superficie);
+}
+.trilha-card-num {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background-color: var(--cor-superficie-2);
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.trilha-card.feito .trilha-card-num { background-color: var(--cor-verde); color: #ffffff; }
+.trilha-card-corpo h3 { margin: 0 0 0.2rem; font-size: 1.15rem; }
+.trilha-card-corpo h3 a { color: var(--cor-titulo); text-decoration: none; }
+.trilha-card-corpo h3 a:hover { text-decoration: underline; }
+.trilha-card-corpo p { margin: 0; font-size: 0.95rem; }
+.trilha-card-tempo { color: var(--cor-texto-suave); font-size: 0.85rem !important; margin-top: 0.2rem !important; }
+.trilha-card-progresso p { margin: 0.3rem 0 0; font-size: 0.82rem; color: var(--cor-texto-suave); text-align: right; font-variant-numeric: tabular-nums; }
+.barrinha {
+  height: 8px;
+  border-radius: 999px;
+  background-color: var(--cor-superficie-2);
+  overflow: hidden;
+}
+.barrinha span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--cor-verde);
+  transition: width 0.3s ease;
+}
+.ferramentas-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--espaco-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ferramentas-lista li {
+  display: grid;
+  gap: 0.3rem;
+  padding: var(--espaco-3) var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background-color: var(--cor-superficie);
+}
+.ferramentas-lista span { color: var(--cor-texto-suave); font-size: 0.92rem; }
+.tabela-erros td:first-child { min-width: 14rem; }
+.tabela-erros td:first-child code { white-space: normal; }
+
+@media (max-width: 700px) {
+  .trilha-card { grid-template-columns: auto 1fr; }
+  .trilha-card-progresso { grid-column: 1 / -1; }
+  .trilha-card-progresso p { text-align: left; }
+  .passo-nav { grid-template-columns: 1fr; }
+  .passo-prox { text-align: left; }
+  .fluxo-git { flex-direction: column; }
+  .fluxo-seta::after { content: "↓"; }
+}
+@media print {
+  .trilha-mapa, .passo-nav, .terminal-copiar { display: none !important; }
+}
+
+/* ----- Verificador ----- */
+.verif-entrada {
+  display: grid;
+  gap: var(--espaco-2);
+}
+.verif-botao {
+  display: grid;
+  gap: 0.2rem;
+  justify-items: start;
+  padding: var(--espaco-4);
+  border: 2px dashed var(--cor-verde);
+  border-radius: var(--raio);
+  background-color: var(--cor-superficie);
+  cursor: pointer;
+  transition: background-color var(--transicao);
+}
+.verif-botao:hover { background-color: var(--cor-superficie-2); }
+.verif-botao-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cor-titulo);
+}
+.verif-botao span:last-child { color: var(--cor-texto-suave); }
+/* O input fica escondido; o foco do teclado aparece no rótulo */
+#pasta-projeto:focus-visible + .verif-estado,
+.verif-entrada:focus-within .verif-botao {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 3px;
+}
+.verif-estado { margin: 0; color: var(--cor-texto-suave); }
+.verif-exemplos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+}
+.verif-resumo {
+  display: grid;
+  gap: var(--espaco-2);
+  padding: var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background-color: var(--cor-superficie);
+}
+.verif-resumo h2 { margin: 0; font-size: 1.4rem; }
+.verif-resumo p { margin: 0; }
+.verif-contagem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+}
+.verif-selo {
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+.verif-selo.verif-erro { background-color: #fbdde0; color: #8c1624; }
+.verif-selo.verif-aviso { background-color: #ffefc7; color: #7a4a00; }
+.verif-selo.verif-ok { background-color: #d5f2ea; color: #0d5c50; }
+.verif-conclusao { font-weight: 700; }
+.verif-arquivos { color: var(--cor-texto-suave); font-size: 0.85rem; word-break: break-word; }
+.verif-filtro {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  cursor: pointer;
+}
+.verif-filtro input { width: 1.1rem; height: 1.1rem; accent-color: var(--cor-verde); }
+.verif-grupo { display: grid; gap: var(--espaco-2); margin-bottom: var(--espaco-4); }
+.verif-grupo h3 {
+  margin: 0;
+  font-family: var(--fonte-codigo);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.verif-lista {
+  display: grid;
+  gap: var(--espaco-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.verif-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--espaco-3);
+  padding: var(--espaco-3);
+  border: 1px solid var(--cor-borda);
+  border-left-width: 5px;
+  border-radius: var(--raio-pequeno);
+  background-color: var(--cor-superficie);
+}
+.verif-item p { margin: 0 0 0.3rem; max-width: 75ch; }
+.verif-item > div > *:last-child { margin-bottom: 0; }
+.verif-icone {
+  display: grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.verif-item.verif-erro { border-left-color: var(--cor-erro); }
+.verif-item.verif-erro .verif-icone { background-color: var(--cor-erro); }
+.verif-item.verif-aviso { border-left-color: var(--cor-alerta); }
+.verif-item.verif-aviso .verif-icone { background-color: var(--cor-alerta); }
+.verif-item.verif-ok { border-left-color: var(--cor-verde); }
+.verif-item.verif-ok .verif-icone { background-color: var(--cor-verde); }
+.verif-item.verif-info { border-left-color: var(--cor-link); }
+.verif-item.verif-info .verif-icone { background-color: var(--cor-link); }
+.verif-titulo { font-weight: 700; }
+.verif-itens {
+  margin: 0.3rem 0;
+  padding-left: 1.2rem;
+  font-family: var(--fonte-codigo);
+  font-size: 0.82rem;
+  word-break: break-word;
+}
+.verif-corrigir { font-size: 0.95rem; }
+.verif-vazio { color: var(--cor-texto-suave); }
+/* Código no meio do texto (endereços, comandos longos) pode quebrar a linha no celular */
+.trilha-corpo :not(pre) > code {
+  overflow-wrap: anywhere;
+}
+.trilha-secao .saida-titulo,
+.trilha-secao .terminal-nota,
+.trilha-secao .saida p {
+  max-width: none;
+}
+/* Títulos grandes quebram em linhas de tamanho parecido, sem palavra sozinha no fim */
+.heroi-titulo,
+.secao-titulo,
+.trilha-secao > h2 {
+  text-wrap: balance;
+}
+/* Tabelas da trilha: texto sempre à esquerda (a regra de números do boletim não vale aqui) */
+.trilha-secao .tabela tbody td {
+  text-align: left;
+  vertical-align: top;
+}
+.trilha-secao .tabela:not(.tabela-erros) code {
+  white-space: nowrap;          /* comando inteiro numa linha; a tabela rola no celular */
+  overflow-wrap: normal;
+}
+/* Cartões e itens de lista ocupam a largura toda (o limite de 72ch é só para texto corrido) */
+.trilha-secao li.trilha-card,
+.trilha-secao .ferramentas-lista li,
+.trilha-secao li.verif-item {
+  max-width: none;
 }

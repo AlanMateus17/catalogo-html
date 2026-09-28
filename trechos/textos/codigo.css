@@ -1,0 +1,51 @@
+mark {
+  background-color: #ffb703;
+  color: #12324a;
+  padding: 0 0.2em;
+}
+abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+code,
+kbd {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+}
+code {
+  background-color: #eaf0f5;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+}
+kbd {
+  padding: 0.05em 0.45em;
+  border: 1px solid #cfd9e3;
+  border-bottom-width: 3px;  /* imita o relevo de uma tecla */
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+hr {
+  border: 0;
+  height: 2px;
+  margin: 2rem 0;
+  background: linear-gradient(to right, transparent, #cfd9e3, transparent);
+}
+.citacao {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-left: 5px solid #ffb703;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.citacao blockquote {
+  margin: 0;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+.citacao blockquote p {
+  margin: 0;
+}
+.citacao figcaption {
+  margin-top: 0.75rem;
+  color: #4f5f6f;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Quadro para desenhar (canvas)</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+
+.quadro {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  aspect-ratio: 8 / 3;
+  border: 2px dashed #cfd9e3;
+  border-radius: 10px;
+  background-color: #ffffff;
+  cursor: crosshair;
+  touch-action: none;       /* no celular, arrastar desenha em vez de rolar */
+}
+.quadro-controles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Quadro para desenhar (canvas). Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#exemplo-21">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<canvas id="quadro" class="quadro" width="800" height="300">Seu navegador não suporta canvas.</canvas>
+<div class="quadro-controles">
+  <label for="cor-pincel">Cor</label>
+  <input type="color" id="cor-pincel" value="#12324a">
+  <label for="espessura-pincel">Espessura</label>
+  <input type="range" id="espessura-pincel" min="2" max="30" value="6">
+  <button type="button" class="botao" id="limpar-quadro">Limpar</button>
+</div>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+// ----- Quadro para desenhar -----
+const quadro = document.getElementById("quadro");
+
+if (quadro) {
+  const pincel = quadro.getContext("2d");
+  const corPincel = document.getElementById("cor-pincel");
+  const espessuraPincel = document.getElementById("espessura-pincel");
+  let desenhando = false;
+
+  pincel.lineCap = "round";
+  pincel.lineJoin = "round";
+
+  // Converte a posição do mouse na tela para a posição dentro do desenho
+  function posicaoNoQuadro(evento) {
+    const caixa = quadro.getBoundingClientRect();
+    return {
+      x: (evento.clientX - caixa.left) * (quadro.width / caixa.width),
+      y: (evento.clientY - caixa.top) * (quadro.height / caixa.height),
+    };
+  }
+
+  quadro.addEventListener("pointerdown", function (evento) {
+    desenhando = true;
+    const p = posicaoNoQuadro(evento);
+    pincel.beginPath();
+    pincel.moveTo(p.x, p.y);
+    quadro.setPointerCapture(evento.pointerId);
+  });
+
+  quadro.addEventListener("pointermove", function (evento) {
+    if (!desenhando) return;
+    const p = posicaoNoQuadro(evento);
+    pincel.strokeStyle = corPincel.value;
+    pincel.lineWidth = espessuraPincel.value;
+    pincel.lineTo(p.x, p.y);
+    pincel.stroke();
+  });
+
+  quadro.addEventListener("pointerup", function () { desenhando = false; });
+  quadro.addEventListener("pointercancel", function () { desenhando = false; });
+
+  document.getElementById("limpar-quadro").addEventListener("click", function () {
+    pincel.clearRect(0, 0, quadro.width, quadro.height);
+  });
+}
+
+</script>
+</body>
+</html>

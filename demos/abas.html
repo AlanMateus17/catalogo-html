@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Abas</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+/* Garante que o atributo hidden sempre esconda (igual em vários exemplos) */
+[hidden] {
+  display: none !important;
+}
+
+.abas {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 2px solid #cfd9e3;
+}
+.aba {
+  margin-bottom: -2px;
+  padding: 0.5rem 1.25rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: #4f5f6f;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.aba[aria-selected="true"] {   /* a aba ativa */
+  color: #12324a;
+  border-bottom-color: #ffb703;
+}
+.painel-aba {
+  padding: 1rem 0;
+}
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Abas. Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#exemplo-15">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<div class="abas" role="tablist" aria-label="Informações">
+  <button type="button" class="aba" role="tab" id="aba-1" aria-selected="true" aria-controls="painel-1" data-aba="painel-1">Primeira</button>
+  <button type="button" class="aba" role="tab" id="aba-2" aria-selected="false" aria-controls="painel-2" data-aba="painel-2" tabindex="-1">Segunda</button>
+  <button type="button" class="aba" role="tab" id="aba-3" aria-selected="false" aria-controls="painel-3" data-aba="painel-3" tabindex="-1">Terceira</button>
+</div>
+<div class="painel-aba" role="tabpanel" id="painel-1" aria-labelledby="aba-1">
+  <p>Conteúdo da primeira aba.</p>
+</div>
+<div class="painel-aba" role="tabpanel" id="painel-2" aria-labelledby="aba-2" hidden>
+  <p>Conteúdo da segunda aba.</p>
+</div>
+<div class="painel-aba" role="tabpanel" id="painel-3" aria-labelledby="aba-3" hidden>
+  <p>Conteúdo da terceira aba.</p>
+</div>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+// ----- Abas -----
+const abas = document.querySelectorAll(".aba");
+
+if (abas.length > 0) {
+  function ativarAba(abaEscolhida) {
+    // Desativa todas...
+    abas.forEach(function (aba) {
+      aba.setAttribute("aria-selected", "false");
+      aba.setAttribute("tabindex", "-1");
+      document.getElementById(aba.dataset.aba).hidden = true;
+    });
+    // ...e ativa só a escolhida
+    abaEscolhida.setAttribute("aria-selected", "true");
+    abaEscolhida.removeAttribute("tabindex");
+    document.getElementById(abaEscolhida.dataset.aba).hidden = false;
+  }
+
+  abas.forEach(function (aba, posicao) {
+    aba.addEventListener("click", function () {
+      ativarAba(aba);
+    });
+
+    aba.addEventListener("keydown", function (evento) {
+      let nova;
+      if (evento.key === "ArrowRight") nova = abas[(posicao + 1) % abas.length];
+      if (evento.key === "ArrowLeft") nova = abas[(posicao - 1 + abas.length) % abas.length];
+      if (nova) {
+        ativarAba(nova);
+        nova.focus();
+      }
+    });
+  });
+}
+
+</script>
+</body>
+</html>

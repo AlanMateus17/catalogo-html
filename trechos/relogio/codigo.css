@@ -1,0 +1,5 @@
+.relogio time {
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;   /* números com a mesma largura: não "treme" */
+}

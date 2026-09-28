@@ -1,0 +1,459 @@
+[
+  {
+    "id": "estrutura",
+    "grupo": "Comece por aqui",
+    "titulo": "Estrutura de um projeto novo",
+    "nota": "O ponto de partida de todo site. Crie a pasta do projeto com as subpastas css, js e img. Estes são os três arquivos completos: comece com eles e vá acrescentando os outros códigos.",
+    "onde": {
+      "html": "Arquivo index.html inteiro (apague o que tiver e cole isto)",
+      "css": "Arquivo css/estilo.css inteiro",
+      "js": "Arquivo js/script.js inteiro"
+    },
+    "exemplo": "index.html#conexao"
+  },
+  {
+    "id": "head",
+    "grupo": "Comece por aqui",
+    "titulo": "Informações do <head>: ícone, resumo, WhatsApp e fonte",
+    "nota": "Nada disto aparece dentro da página, mas muda o ícone da aba, o resumo no Google, o cartãozinho que aparece quando o link é compartilhado no WhatsApp e a fonte do site. Para trocar a fonte, escolha uma em fonts.google.com e troque Poppins pelo nome dela no link e no CSS.",
+    "onde": {
+      "html": "Cole dentro do <head>, logo depois do <title>"
+    },
+    "exemplo": "index.html#conexao",
+    "local": "head"
+  },
+  {
+    "id": "pular-conteudo",
+    "grupo": "Comece por aqui",
+    "titulo": "Link \"pular para o conteúdo\" (acessibilidade)",
+    "nota": "Um link escondido que aparece quando a pessoa aperta Tab. Leva quem navega pelo teclado direto ao conteúdo, sem passar pelo menu inteiro. Para testar, abra a página e aperte Tab uma vez.",
+    "onde": {
+      "html": "Cole o link logo depois de <body>; o id=\"conteudo\" vai no seu <main>"
+    },
+    "exemplo": "index.html#conexao"
+  },
+  {
+    "id": "cabecalho",
+    "grupo": "Partes da página",
+    "titulo": "Cabeçalho fixo com menu (e menu de celular)",
+    "nota": "Cabeçalho que gruda no topo, encolhe ao rolar, vira menu ≡ no celular e marca a seção que está na tela. Os links do menu levam a seções com o mesmo id (ex.: href=\"#sobre\" leva ao id=\"sobre\").",
+    "onde": {
+      "html": "Cole logo depois de <body>, no index.html"
+    },
+    "exemplo": "index.html#partes-da-pagina"
+  },
+  {
+    "id": "submenu",
+    "grupo": "Partes da página",
+    "titulo": "Menu com submenu suspenso",
+    "nota": "Completa o Cabeçalho fixo com menu: cole os dois. No computador, o submenu abre ao passar o mouse ou ao chegar nele pelo Tab; no celular, ele aparece sempre, com recuo. Não precisa de JavaScript.",
+    "onde": {
+      "html": "No HTML do Cabeçalho, troque um <li> do menu por este"
+    },
+    "exemplo": "index.html#partes-da-pagina",
+    "requer": "cabecalho",
+    "encaixe": "      </ul>\n    </nav>"
+  },
+  {
+    "id": "heroi",
+    "grupo": "Partes da página",
+    "titulo": "Primeira área grande (herói) com foto de fundo",
+    "nota": "A primeira coisa que o visitante vê. A foto de fundo fica no CSS: troque img/fundo.jpg pelo nome da sua foto. Sem a foto, aparece só a cor de fundo.",
+    "onde": {
+      "html": "Cole logo depois de <main>, no index.html"
+    },
+    "exemplo": "index.html#partes-da-pagina"
+  },
+  {
+    "id": "rodape",
+    "grupo": "Partes da página",
+    "titulo": "Rodapé com colunas e ano automático",
+    "nota": "Rodapé com três colunas que viram uma só no celular. O JavaScript coloca o ano atual sozinho.",
+    "onde": {
+      "html": "Cole depois de </main>, antes de </body>"
+    },
+    "exemplo": "index.html#partes-da-pagina"
+  },
+  {
+    "id": "layout-grid",
+    "grupo": "Partes da página",
+    "titulo": "Layout com barra lateral (grid-template-areas)",
+    "nota": "Monta o layout desenhando as áreas com palavras. No celular, tudo vira uma coluna. Troque as palavras de lugar no grid-template-areas para mudar a posição das partes.",
+    "onde": {
+      "html": "Cole dentro de <main>, no lugar do conteúdo"
+    },
+    "exemplo": "index.html#layout"
+  },
+  {
+    "id": "cards",
+    "grupo": "Partes da página",
+    "titulo": "Cards lado a lado",
+    "nota": "Cards que se reorganizam sozinhos: 3 por linha no computador, 1 no celular, sem media query. Repita o <article> quantas vezes quiser.",
+    "onde": {},
+    "exemplo": "index.html#layout"
+  },
+  {
+    "id": "acordeao",
+    "grupo": "Partes da página",
+    "titulo": "Perguntas que abrem e fecham (sem JavaScript)",
+    "nota": "Usa as tags <details> e <summary>, que já abrem e fecham sozinhas. O CSS só troca o triângulo por um + que gira.",
+    "onde": {},
+    "exemplo": "index.html#layout"
+  },
+  {
+    "id": "caixa-dica",
+    "grupo": "Partes da página",
+    "titulo": "Caixa de dica e de atenção (aside)",
+    "nota": "<aside> é para conteúdo ao lado do assunto principal: dicas, avisos, curiosidades. As duas classes mudam só a cor; crie outras do mesmo jeito.",
+    "onde": {},
+    "exemplo": "index.html#layout"
+  },
+  {
+    "id": "migalhas",
+    "grupo": "Partes da página",
+    "titulo": "Caminho de navegação (migalhas de pão)",
+    "nota": "Mostra onde a pessoa está no site. Útil quando o site tem várias páginas. A página atual, a última, não é link.",
+    "onde": {},
+    "exemplo": "sobre.html"
+  },
+  {
+    "id": "perfil",
+    "grupo": "Partes da página",
+    "titulo": "Cartão de perfil (Sobre mim)",
+    "nota": "Foto redonda ao lado do texto; no celular, a foto vai para cima. Troque a foto, o nome, o texto e o link.",
+    "onde": {},
+    "exemplo": "sobre.html#equipe"
+  },
+  {
+    "id": "impressao",
+    "grupo": "Partes da página",
+    "titulo": "Versão para imprimir ou salvar em PDF",
+    "nota": "Regras que só valem quando a página é impressa ou salva em PDF pelo Ctrl + P. Tiram o menu, os botões e os vídeos, deixam o fundo branco e escrevem o endereço dos links, já que no papel não dá para clicar.",
+    "onde": {},
+    "exemplo": "index.html#partes-da-pagina"
+  },
+  {
+    "id": "textos",
+    "grupo": "Textos e links",
+    "titulo": "Textos: títulos, destaques e citação",
+    "nota": "As tags de texto mais usadas. Cada tag diz o SIGNIFICADO do texto; a aparência vem do CSS.",
+    "onde": {},
+    "exemplo": "index.html#textos"
+  },
+  {
+    "id": "entidades",
+    "grupo": "Textos e links",
+    "titulo": "Caracteres especiais (entidades)",
+    "nota": "Alguns caracteres têm significado no HTML (< > &) e precisam ser escritos como entidades. Toda entidade começa com & e termina com ;.",
+    "onde": {},
+    "exemplo": "index.html#textos"
+  },
+  {
+    "id": "listas",
+    "grupo": "Textos e links",
+    "titulo": "Listas: com marcador, numerada, de definição e de conferência",
+    "nota": "ul quando a ordem não importa, ol quando importa, dl para termos e explicações. A lista de conferência (✓) é uma ul comum com um CSS diferente.",
+    "onde": {},
+    "exemplo": "index.html#textos"
+  },
+  {
+    "id": "links",
+    "grupo": "Textos e links",
+    "titulo": "Todos os tipos de link",
+    "nota": "O mesmo <a> serve para tudo: só muda o href. Troque o e-mail, o telefone e o WhatsApp pelos seus (só números, com país e DDD).",
+    "onde": {},
+    "exemplo": "index.html#links"
+  },
+  {
+    "id": "imagem-link",
+    "grupo": "Textos e links",
+    "titulo": "Imagem que é um link",
+    "nota": "Qualquer coisa dentro de um <a> vira clicável. Aqui, a foto pequena abre a versão grande numa nova aba, com um zoom ao passar o mouse.",
+    "onde": {},
+    "exemplo": "index.html#links"
+  },
+  {
+    "id": "imagem-legenda",
+    "grupo": "Imagens e mídia",
+    "titulo": "Imagem simples e imagem com legenda",
+    "nota": "Todo <img> precisa de src (o caminho) e alt (o que aparece na foto, em palavras). width e height são o tamanho original da foto: o CSS deixa ela menor na tela.",
+    "onde": {},
+    "exemplo": "index.html#imagens"
+  },
+  {
+    "id": "imagem-responsiva",
+    "grupo": "Imagens e mídia",
+    "titulo": "Imagem diferente no celular (picture e srcset)",
+    "nota": "<picture> troca de foto conforme a largura da tela. srcset oferece a mesma foto em tamanhos diferentes e o navegador escolhe a menor que serve.",
+    "onde": {},
+    "exemplo": "index.html#imagens"
+  },
+  {
+    "id": "svg",
+    "grupo": "Imagens e mídia",
+    "titulo": "Desenho em SVG",
+    "nota": "SVG é uma imagem feita de código: não perde qualidade no zoom e o CSS muda as cores. role=\"img\" e aria-label fazem o papel do alt.",
+    "onde": {},
+    "exemplo": "index.html#imagens"
+  },
+  {
+    "id": "mapa-imagem",
+    "grupo": "Imagens e mídia",
+    "titulo": "Partes de uma imagem que são links (mapa de imagem)",
+    "nota": "coords são posições em pixels na imagem original: retângulo (x1,y1,x2,y2), círculo (x,y,raio), polígono (x,y de cada ponta). Para descobrir as posições, abra a imagem no Paint: a posição do mouse aparece embaixo. A imagem não pode encolher, senão as áreas saem do lugar; por isso ela rola para o lado no celular.",
+    "onde": {},
+    "exemplo": "index.html#imagens"
+  },
+  {
+    "id": "galeria",
+    "grupo": "Imagens e mídia",
+    "titulo": "Galeria de fotos que amplia ao clicar",
+    "nota": "Fotos em grade; ao clicar, abrem grandes numa janela. Setas do teclado trocam a foto e Esc fecha. Troque os caminhos das fotos pelos seus (data-grande = foto que abre grande).",
+    "onde": {
+      "html": "Cole a galeria onde quiser; a janela (<dialog>) pode ficar logo antes de </body>"
+    },
+    "exemplo": "index.html#imagens"
+  },
+  {
+    "id": "video-audio",
+    "grupo": "Imagens e mídia",
+    "titulo": "Vídeo e áudio do próprio site",
+    "nota": "Coloque os arquivos numa pasta midia. MP4 funciona em quase todos os navegadores. A legenda (.vtt) é um arquivo de texto e só aparece abrindo pelo Live Server ou no site publicado.",
+    "onde": {},
+    "exemplo": "index.html#audio-video"
+  },
+  {
+    "id": "player",
+    "grupo": "Imagens e mídia",
+    "titulo": "Vídeo com botões feitos por você",
+    "nota": "O vídeo sem o atributo controls e com botões comuns do HTML. O JavaScript manda tocar, pausar e ligar o som, e mostra o tempo.",
+    "onde": {},
+    "exemplo": "index.html#audio-video"
+  },
+  {
+    "id": "iframe",
+    "grupo": "Imagens e mídia",
+    "titulo": "Vídeo do YouTube, mapa do Google e PDF na página",
+    "nota": "Pegue o código no próprio site: no YouTube, Compartilhar > Incorporar; no Google Maps, Compartilhar > Incorporar um mapa. Troque só o endereço do src. YouTube e mapa precisam de internet. O PDF precisa estar na pasta docs do seu site.",
+    "onde": {},
+    "exemplo": "index.html#incorporar"
+  },
+  {
+    "id": "botoes",
+    "grupo": "Formulários, tabelas e botões",
+    "titulo": "Botões: variações e estados",
+    "nota": "Uma classe base (.botao) e classes de variação que você soma no HTML: class=\"botao botao-contorno\". Use <button> quando o clique FAZ algo na página e <a> quando LEVA para outro lugar.",
+    "onde": {},
+    "exemplo": "index.html#formularios"
+  },
+  {
+    "id": "campos-formulario",
+    "grupo": "Formulários, tabelas e botões",
+    "titulo": "Formulário com todos os tipos de campo",
+    "nota": "Todos os tipos de campo num formulário só: texto, número, data, telefone, site, lista de opções, sugestões, cor, controle deslizante, horário, radio, checkbox, arquivo e texto longo. Apague os que não usar. O atributo name é o nome do dado: campo sem name não é enviado. O JavaScript mostra os dados coletados, para você conferir.",
+    "onde": {},
+    "exemplo": "index.html#formularios"
+  },
+  {
+    "id": "formulario",
+    "grupo": "Formulários, tabelas e botões",
+    "titulo": "Formulário de contato",
+    "nota": "O HTML confere os campos sozinho (required, type=\"email\"). O JavaScript conta os caracteres e mostra uma mensagem de agradecimento. Atenção: sozinho, ele não manda e-mail de verdade. Para isso é preciso um servidor ou um serviço como o Formspree.",
+    "onde": {},
+    "exemplo": "index.html#formularios"
+  },
+  {
+    "id": "senha",
+    "grupo": "Formulários, tabelas e botões",
+    "titulo": "Senha com mostrar/esconder e confirmação",
+    "nota": "O botão troca o tipo do campo entre password e text. O JavaScript também confere se a confirmação é igual à senha e bloqueia o envio se não for.",
+    "onde": {},
+    "exemplo": "index.html#formularios"
+  },
+  {
+    "id": "progresso-medidor",
+    "grupo": "Formulários, tabelas e botões",
+    "titulo": "Barra de andamento e medidor (progress e meter)",
+    "nota": "progress mostra o andamento de uma tarefa. meter mostra uma medida dentro de uma faixa: com low, high e optimum, o navegador pinta de verde, amarelo ou vermelho sozinho. Para mudar o valor pelo JavaScript: elemento.value = 50.",
+    "onde": {},
+    "exemplo": "index.html#formularios"
+  },
+  {
+    "id": "tabela",
+    "grupo": "Formulários, tabelas e botões",
+    "titulo": "Tabela com título, cabeçalho e rodapé",
+    "nota": "Para dados em linhas e colunas. A div em volta faz a tabela rolar para o lado no celular em vez de quebrar a página. colspan junta colunas; rowspan junta linhas.",
+    "onde": {},
+    "exemplo": "index.html#tabelas"
+  },
+  {
+    "id": "tema",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Tema escuro (fica salvo)",
+    "nota": "As cores ficam em variáveis do CSS. O JavaScript só coloca data-tema=\"escuro\" na tag <html>, e o CSS troca as variáveis. A escolha fica salva no navegador. Para o tema valer no site todo, use var(--cor-fundo), var(--cor-texto) etc. nas suas outras regras.",
+    "onde": {
+      "html": "Cole dentro do <header> (ou onde quiser o botão)"
+    },
+    "exemplo": "index.html#funcoes-da-pagina"
+  },
+  {
+    "id": "barra-progresso",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Barra de progresso da leitura",
+    "nota": "Uma barra fininha no topo que enche conforme a pessoa rola a página.",
+    "onde": {
+      "html": "Cole logo depois de <body>"
+    },
+    "exemplo": "index.html#funcoes-da-pagina"
+  },
+  {
+    "id": "voltar-topo",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Botão de voltar ao topo",
+    "nota": "Aparece depois que a pessoa rola uma tela inteira e sobe a página suavemente ao ser clicado.",
+    "onde": {
+      "html": "Cole logo antes de </body>"
+    },
+    "exemplo": "index.html#funcoes-da-pagina"
+  },
+  {
+    "id": "relogio",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Relógio e data",
+    "nota": "Mostra a hora e a data atuais e atualiza a cada segundo com setInterval.",
+    "onde": {},
+    "exemplo": "index.html#funcoes-da-pagina"
+  },
+  {
+    "id": "revelar",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Elementos que aparecem ao rolar",
+    "nota": "Qualquer elemento com class=\"revelar\" aparece suavemente quando entra na tela. Se o JavaScript falhar, tudo continua visível.",
+    "onde": {},
+    "exemplo": "index.html#funcoes-da-pagina"
+  },
+  {
+    "id": "curtir",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Botão curtir (trocar classe)",
+    "nota": "O exemplo mais simples: o JavaScript coloca e tira a classe curtido, e o CSS decide como ela fica.",
+    "onde": {},
+    "exemplo": "index.html#exemplo-6"
+  },
+  {
+    "id": "contador",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Contador com botões",
+    "nota": "Uma variável guarda o número; cada botão muda a variável e redesenha a tela.",
+    "onde": {},
+    "exemplo": "index.html#exemplo-7"
+  },
+  {
+    "id": "leia-mais",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Leia mais (mostrar e esconder texto)",
+    "nota": "O atributo hidden esconde o parágrafo. O JavaScript liga e desliga o hidden e troca o texto do botão.",
+    "onde": {},
+    "exemplo": "index.html#exemplo-8"
+  },
+  {
+    "id": "cor",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Escolher cor em tempo real",
+    "nota": "O evento input dispara a cada mudança, sem precisar de botão. O JavaScript muda o CSS pelo style.",
+    "onde": {},
+    "exemplo": "index.html#exemplo-9"
+  },
+  {
+    "id": "tamanho",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Tamanho da letra com controle deslizante",
+    "nota": "Enquanto a pessoa arrasta, o JavaScript muda o font-size do texto e mostra o número.",
+    "onde": {},
+    "exemplo": "index.html#exemplo-10"
+  },
+  {
+    "id": "dica",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Frase aleatória",
+    "nota": "Um array guarda as frases e Math.random() sorteia uma. Troque as frases pelas do seu tema: curiosidades, receitas do dia, citações.",
+    "onde": {},
+    "exemplo": "index.html#exemplo-11"
+  },
+  {
+    "id": "tecla",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Descobrir qual tecla foi apertada",
+    "nota": "O evento keydown traz os detalhes da tecla no objeto evento. Base para atalhos de teclado e jogos.",
+    "onde": {},
+    "exemplo": "index.html#exemplo-12"
+  },
+  {
+    "id": "filtro",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Busca que filtra uma lista",
+    "nota": "A cada letra digitada, os itens que não combinam são escondidos. Troque os itens da lista pelos seus (receitas, lugares, produtos...).",
+    "onde": {},
+    "exemplo": "index.html#exemplo-13"
+  },
+  {
+    "id": "tarefas",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Lista de tarefas que fica salva",
+    "nota": "Adiciona, marca e remove tarefas. Tudo fica guardado no navegador (localStorage): recarregue a página e as tarefas continuam lá.",
+    "onde": {},
+    "exemplo": "index.html#exemplo-14"
+  },
+  {
+    "id": "abas",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Abas",
+    "nota": "Só um painel aparece por vez. data-aba liga cada botão ao id do seu painel. As setas do teclado também trocam de aba.",
+    "onde": {},
+    "exemplo": "index.html#exemplo-15"
+  },
+  {
+    "id": "modal",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Janela modal (pop-up)",
+    "nota": "Usa a tag <dialog> do HTML: showModal() abre por cima da página. O botão de dentro fecha sozinho (method=\"dialog\"), e clicar fora também fecha.",
+    "onde": {
+      "html": "Cole o botão onde quiser; o <dialog> pode ficar logo antes de </body>"
+    },
+    "exemplo": "index.html#exemplo-17"
+  },
+  {
+    "id": "carrossel",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Carrossel de imagens",
+    "nota": "As fotos ficam lado a lado numa faixa e o JavaScript desliza a faixa. Passa sozinho a cada 5 segundos e para quando o mouse está em cima. Repita o <figure> para mais fotos.",
+    "onde": {},
+    "exemplo": "index.html#exemplo-19"
+  },
+  {
+    "id": "copiar",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Botão de copiar com aviso",
+    "nota": "Copia um texto para a área de transferência e mostra um aviso rápido embaixo da tela (toast). Serve para copiar um cupom, um e-mail, um código.",
+    "onde": {
+      "html": "Cole o texto e o botão onde quiser; o aviso (toast) pode ficar logo antes de </body>"
+    },
+    "exemplo": "index.html#exemplo-20"
+  },
+  {
+    "id": "canvas",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Quadro para desenhar (canvas)",
+    "nota": "Desenha com o mouse, o dedo ou a caneta. Escolha a cor e a espessura do pincel.",
+    "onde": {},
+    "exemplo": "index.html#exemplo-21"
+  },
+  {
+    "id": "imc",
+    "grupo": "Interatividade com JavaScript",
+    "titulo": "Calculadora (exemplo: IMC)",
+    "nota": "Modelo de qualquer calculadora: lê os campos, converte texto em número, calcula e decide com if. Troque a fórmula para fazer a sua (média, desconto, conversão...).",
+    "onde": {},
+    "exemplo": "index.html#exemplo-22"
+  }
+]

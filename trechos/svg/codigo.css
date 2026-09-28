@@ -1,0 +1,15 @@
+.desenho {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+/* No SVG, a cor de preenchimento é "fill" */
+.forma-1 { fill: #2a9d8f; }
+.forma-2 { fill: #ffb703; }
+.forma-3 { fill: #c62839; }
+.forma {
+  transition: opacity 0.2s;
+}
+.forma:hover {
+  opacity: 0.6;
+}

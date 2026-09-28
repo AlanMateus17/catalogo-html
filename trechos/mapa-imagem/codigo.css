@@ -1,0 +1,6 @@
+.mapa-rolagem {
+  overflow-x: auto;         /* no celular, rola para o lado em vez de encolher */
+}
+.mapa-rolagem img {
+  max-width: none;          /* a imagem mantém o tamanho original */
+}

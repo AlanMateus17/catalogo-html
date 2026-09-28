@@ -1,0 +1,132 @@
+/* Deixa espaço para o cabeçalho fixo não cobrir o título ao clicar num link # */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+.cabecalho {
+  position: sticky;          /* gruda no topo ao rolar */
+  top: 0;
+  z-index: 100;
+  background-color: #12324a;
+  transition: box-shadow 0.2s;
+}
+.cabecalho.encolhido {       /* o JavaScript coloca esta classe ao rolar */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cabecalho-conteudo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1100px;
+  min-height: 72px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  transition: min-height 0.2s;
+}
+.cabecalho.encolhido .cabecalho-conteudo {
+  min-height: 56px;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.menu {
+  margin-left: auto;         /* empurra o menu para a direita */
+}
+.menu-lista {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu-lista a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  color: #dbe7f0;
+  text-decoration: none;
+}
+.menu-lista a:hover,
+.menu-lista a.ativo {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* Esconde da tela, mas o leitor de tela continua lendo */
+.visualmente-escondido {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* Botão ≡ (três linhas: o span, o ::before e o ::after) */
+.btn-menu {
+  display: none;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.btn-menu-linhas,
+.btn-menu-linhas::before,
+.btn-menu-linhas::after {
+  display: block;
+  width: 24px;
+  height: 3px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background-color: #ffffff;
+  transition: transform 0.2s;
+}
+.btn-menu-linhas {
+  position: relative;
+}
+.btn-menu-linhas::before,
+.btn-menu-linhas::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.btn-menu-linhas::before { top: -7px; }
+.btn-menu-linhas::after { top: 7px; }
+/* Menu aberto: as linhas viram um X */
+.btn-menu[aria-expanded="true"] .btn-menu-linhas { background-color: transparent; }
+.btn-menu[aria-expanded="true"] .btn-menu-linhas::before { transform: translateY(7px) rotate(45deg); }
+.btn-menu[aria-expanded="true"] .btn-menu-linhas::after { transform: translateY(-7px) rotate(-45deg); }
+
+/* Celular: o menu vira uma gaveta embaixo do cabeçalho */
+@media (max-width: 800px) {
+  .btn-menu {
+    display: grid;
+    place-items: center;
+  }
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+  }
+  .menu-lista {
+    display: none;
+    flex-direction: column;
+    padding: 0.5rem 1rem 1rem;
+    background-color: #12324a;
+  }
+  .menu-lista.aberto {
+    display: flex;
+  }
+}

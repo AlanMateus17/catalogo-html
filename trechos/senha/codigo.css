@@ -1,0 +1,52 @@
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+/* Garante que o atributo hidden sempre esconda (igual em vários exemplos) */
+[hidden] {
+  display: none !important;
+}
+
+.form-senha {
+  display: grid;
+  gap: 1rem;
+  max-width: 420px;
+}
+.form-senha .campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.form-senha label {
+  font-weight: 700;
+}
+.form-senha input {
+  width: 100%;
+  box-sizing: border-box;   /* a largura inclui padding e borda */
+  padding: 0.6rem 0.8rem;
+  border: 2px solid #cfd9e3;
+  border-radius: 6px;
+  font: inherit;
+}
+.form-senha input:user-invalid {
+  border-color: #c62839;
+}
+.campo-com-botao {
+  display: flex;
+  gap: 0.5rem;
+}
+.campo-com-botao input {
+  flex: 1;
+}

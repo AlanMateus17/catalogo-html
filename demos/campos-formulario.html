@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Formulário com todos os tipos de campo</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+/* Garante que o atributo hidden sempre esconda (igual em vários exemplos) */
+[hidden] {
+  display: none !important;
+}
+
+.form-completo {
+  display: grid;
+  gap: 1rem;
+  max-width: 640px;
+}
+.form-completo fieldset {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid #cfd9e3;
+  border-radius: 8px;
+}
+.form-completo legend {
+  padding: 0 0.4rem;
+  font-weight: 700;
+}
+.form-completo label {
+  margin-top: 0.4rem;
+  font-weight: 700;
+}
+/* Campos de texto: todos com a mesma cara */
+.form-completo input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="color"]):not([type="file"]),
+.form-completo select,
+.form-completo textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 2px solid #cfd9e3;
+  border-radius: 6px;
+  font: inherit;
+}
+.form-completo input:focus,
+.form-completo select:focus,
+.form-completo textarea:focus {
+  outline: none;
+  border-color: #2a9d8f;
+}
+/* Pinta radio, checkbox e o controle deslizante com a cor do site */
+.form-completo input {
+  accent-color: #2a9d8f;
+}
+.form-completo .fc-opcao {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0;
+  font-weight: 400;
+}
+.fc-acoes {
+  display: flex;
+  gap: 0.75rem;
+}
+.fc-resultado {
+  max-width: 640px;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #0f2233;
+  color: #e6f1f8;
+  white-space: pre-wrap;
+}
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Formulário com todos os tipos de campo. Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#formularios">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<form class="form-completo" id="form-completo">
+  <fieldset>
+    <legend>Dados</legend>
+    <label for="fc-nome">Nome</label>
+    <input type="text" id="fc-nome" name="nome" placeholder="Seu nome" required>
+
+    <label for="fc-idade">Idade</label>
+    <input type="number" id="fc-idade" name="idade" min="10" max="99">
+
+    <label for="fc-nascimento">Data de nascimento</label>
+    <input type="date" id="fc-nascimento" name="nascimento">
+
+    <label for="fc-telefone">Celular</label>
+    <input type="tel" id="fc-telefone" name="telefone" placeholder="32 99999-9999">
+
+    <label for="fc-site">Site</label>
+    <input type="url" id="fc-site" name="site" placeholder="https://...">
+  </fieldset>
+
+  <fieldset>
+    <legend>Escolhas</legend>
+    <label for="fc-curso">Curso</label>
+    <select id="fc-curso" name="curso">
+      <option value="">Selecione...</option>
+      <optgroup label="Técnico">
+        <option value="Informática">Informática</option>
+        <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
+      </optgroup>
+    </select>
+
+    <label for="fc-linguagem">Linguagem favorita (com sugestões)</label>
+    <input type="text" id="fc-linguagem" name="linguagem" list="fc-sugestoes">
+    <datalist id="fc-sugestoes">
+      <option value="JavaScript"></option>
+      <option value="Python"></option>
+      <option value="Java"></option>
+    </datalist>
+
+    <label for="fc-cor">Cor favorita</label>
+    <input type="color" id="fc-cor" name="cor" value="#2a9d8f">
+
+    <label for="fc-nivel">Nível: <output id="fc-nivel-valor">5</output> de 10</label>
+    <input type="range" id="fc-nivel" name="nivel" min="0" max="10" value="5">
+
+    <label for="fc-horario">Melhor horário</label>
+    <input type="time" id="fc-horario" name="horario">
+  </fieldset>
+
+  <fieldset>
+    <legend>Turno (escolha um)</legend>
+    <label class="fc-opcao"><input type="radio" name="turno" value="Manhã" checked> Manhã</label>
+    <label class="fc-opcao"><input type="radio" name="turno" value="Tarde"> Tarde</label>
+    <label class="fc-opcao"><input type="radio" name="turno" value="Noite"> Noite</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Interesses (escolha vários)</legend>
+    <label class="fc-opcao"><input type="checkbox" name="interesses" value="Front-end"> Front-end</label>
+    <label class="fc-opcao"><input type="checkbox" name="interesses" value="Back-end"> Back-end</label>
+    <label class="fc-opcao"><input type="checkbox" name="interesses" value="Jogos"> Jogos</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Mais</legend>
+    <label for="fc-foto">Foto</label>
+    <input type="file" id="fc-foto" name="foto" accept="image/*">
+
+    <label for="fc-sobre">Sobre você</label>
+    <textarea id="fc-sobre" name="sobre" rows="4"></textarea>
+  </fieldset>
+
+  <div class="fc-acoes">
+    <button type="submit" class="botao">Enviar</button>
+    <button type="reset" class="botao">Limpar</button>
+  </div>
+</form>
+
+<pre class="fc-resultado" id="fc-resultado" hidden></pre>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+// ----- Formulário com todos os tipos de campo -----
+const formCompleto = document.getElementById("form-completo");
+
+if (formCompleto) {
+  const fcNivel = document.getElementById("fc-nivel");
+  const fcNivelValor = document.getElementById("fc-nivel-valor");
+  const fcResultado = document.getElementById("fc-resultado");
+
+  // Mostra o número do controle deslizante enquanto arrasta
+  fcNivel.addEventListener("input", function () {
+    fcNivelValor.textContent = fcNivel.value;
+  });
+
+  formCompleto.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+
+    // Junta os dados pelo name; checkbox com o mesmo name pode ter vários valores
+    const dados = new FormData(formCompleto);
+    const linhas = [];
+    for (const [nome, valor] of dados) {
+      const texto = valor instanceof File ? valor.name : valor;   // arquivo: só o nome
+      if (texto !== "") linhas.push(nome + ": " + texto);
+    }
+
+    fcResultado.textContent = "Dados que seriam enviados:\n" + linhas.join("\n");
+    fcResultado.hidden = false;
+  });
+
+  formCompleto.addEventListener("reset", function () {
+    fcResultado.hidden = true;
+    fcNivelValor.textContent = "5";
+  });
+}
+
+</script>
+</body>
+</html>

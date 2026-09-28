@@ -1,0 +1,32 @@
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+
+.modal {
+  width: calc(100% - 2rem);
+  max-width: 480px;
+  padding: 2rem;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+.modal h2 {
+  margin-top: 0;
+}
+/* O fundo escuro atrás da janela */
+.modal::backdrop {
+  background-color: rgba(8, 20, 30, 0.7);
+}

@@ -1,0 +1,36 @@
+.so-no-papel {
+  display: none;            /* na tela, este texto fica escondido */
+}
+
+@media print {
+  /* Tira do papel o que só serve na tela */
+  header,
+  nav,
+  footer,
+  button,
+  video,
+  iframe,
+  .so-na-tela {
+    display: none !important;
+  }
+  .so-no-papel {
+    display: block;
+  }
+  body {
+    background: #ffffff;
+    color: #000000;
+    font-size: 12pt;        /* pt é a unidade de impressão, como no Word */
+  }
+  /* Escreve o endereço depois de cada link externo */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+  h2,
+  h3 {
+    break-after: avoid;     /* título não fica sozinho no fim da folha */
+  }
+  img {
+    break-inside: avoid;    /* imagem não é cortada entre duas folhas */
+  }
+}

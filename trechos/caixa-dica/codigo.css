@@ -1,0 +1,16 @@
+.caixa {
+  max-width: 70ch;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid #cfd9e3;
+  border-left-width: 6px;   /* a borda da esquerda mais grossa chama atenção */
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.caixa-dica {
+  border-left-color: #ffb703;
+}
+.caixa-atencao {
+  border-left-color: #c62839;
+  background-color: #fdf0f1;
+}

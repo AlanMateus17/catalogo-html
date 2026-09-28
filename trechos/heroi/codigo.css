@@ -1,0 +1,46 @@
+.heroi {
+  display: grid;
+  place-items: center;       /* centraliza o conteúdo na horizontal e na vertical */
+  min-height: 70vh;          /* 70% da altura da tela */
+  padding: 4rem 1rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: #12324a;
+  /* Duas camadas: uma película escura por cima da foto, para o texto ficar legível.
+     O caminho começa com ../ porque parte da pasta css */
+  background-image:
+    linear-gradient(rgba(18, 50, 74, 0.75), rgba(18, 50, 74, 0.75)),
+    url("../img/fundo.jpg");
+  background-size: cover;    /* a foto cobre a área toda */
+  background-position: center;
+}
+.heroi-conteudo {
+  max-width: 720px;
+}
+.heroi-antetitulo {
+  margin: 0 0 0.5rem;
+  color: #ffb703;
+  font-weight: 700;
+}
+.heroi-titulo {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);   /* cresce com a tela, entre 2rem e 3.5rem */
+  line-height: 1.1;
+}
+.heroi-texto {
+  margin: 0 0 1.5rem;
+  font-size: 1.15rem;
+}
+.heroi-botao {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  background-color: #ffb703;
+  color: #12324a;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.heroi-botao:hover {
+  transform: translateY(-2px);
+}

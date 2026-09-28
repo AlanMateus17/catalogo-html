@@ -1,0 +1,20 @@
+.incorporado {
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+}
+.incorporado iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;    /* mantém o formato de vídeo em qualquer largura */
+  border: 0;
+  border-radius: 10px;
+}
+
+.pdf {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: 480px;
+  border: 1px solid #cfd9e3;
+  border-radius: 10px;
+}

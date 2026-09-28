@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+  TRILHA "PASSO A PASSO" — Passo 7: Verificar se está tudo funcionando
+  Página de conteúdo. Os comandos têm botão de copiar e as caixas
+  "Pronto quando" guardam o progresso no navegador (js/trilha.js).
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/trilha.js" defer></script>
+  <title>Passo 7: Verificar se está tudo funcionando — Catálogo do HTML</title>
+  <meta name="description" content="Usar as ferramentas do navegador (F12), o validador e o Verificador do projeto.">
+</head>
+<body class="pagina-trilha">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="passo-a-passo.html">Passo a passo</a></li>
+            <li aria-current="page">Passo 7</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Passo 7 de 10. Tempo: 1 aula</p>
+        <h1 class="heroi-titulo">Verificar se está tudo funcionando</h1>
+        <p class="heroi-texto">Antes de publicar, confira tudo como um profissional: as ferramentas do navegador mostram o que está errado, e o Verificador confere o seu projeto inteiro de uma vez.</p>
+      </div>
+    </section>
+
+    <div class="container trilha-corpo">
+      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-html.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-5-css.html" data-passo="5" data-total="4"><span class="mapa-num">5</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-6-js.html" data-passo="6" data-total="4"><span class="mapa-num">6</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-7-verificar.html" data-passo="7" data-total="4" aria-current="step"><span class="mapa-num">7</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-8-github.html" data-passo="8" data-total="4"><span class="mapa-num">8</span><span class="mapa-nome">Git e GitHub</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
+<section class="trilha-secao" id="f12">
+  <h2>7.1 As ferramentas do navegador (F12)</h2>
+  
+<p>Aperte <kbd>F12</kbd> no Chrome ou no Edge. Estas são as abas que você vai usar:</p>
+<div class="tabela-rolagem"><table class="tabela">
+  <thead><tr><th scope="col">Aba</th><th scope="col">Para que serve</th><th scope="col">Como usar</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Elementos</strong></td><td>Ver o HTML e o CSS de qualquer parte da página</td><td>Botão direito num elemento, <strong>Inspecionar</strong>. Dá para mudar o CSS ao vivo e testar antes de mexer no arquivo.</td></tr>
+    <tr><td><strong>Console</strong></td><td>Ver os erros e as mensagens do JavaScript</td><td>Erro em vermelho: clique no nome do arquivo para ver a linha.</td></tr>
+    <tr><td><strong>Rede</strong></td><td>Ver se todos os arquivos foram encontrados</td><td>Com a aba aberta, recarregue (<kbd>F5</kbd>). Arquivo em vermelho com <strong>404</strong> = caminho errado.</td></tr>
+    <tr><td><strong>Modo celular</strong></td><td>Simular telas de celular</td><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> com o F12 aberto.</td></tr>
+    <tr><td><strong>Aplicativo</strong></td><td>Ver o que o site guardou no navegador</td><td><em>Armazenamento local</em> mostra, por exemplo, o tema escuro e as tarefas salvas.</td></tr>
+    <tr><td><strong>Lighthouse</strong></td><td>Dar nota para acessibilidade, boas práticas e SEO</td><td>Clique em <strong>Analisar carregamento de página</strong>. Tente chegar a 90 ou mais.</td></tr>
+  </tbody>
+</table></div>
+<div class="confira">
+  <p><strong>Confira:</strong> a sua foto não aparece e o Console não mostra erro de JavaScript. Em qual aba você descobre o problema?</p>
+  <details><summary>Ver a resposta</summary><p>Na aba <strong>Rede</strong>: recarregue a página e procure a foto em vermelho com o código 404. O nome ou a pasta no <code>src</code> está diferente do arquivo real.</p></details>
+</div>
+</section><section class="trilha-secao" id="verificador">
+  <h2>7.2 O Verificador do projeto</h2>
+  
+<p>O <a href="verificador.html">Verificador</a> lê a pasta do seu projeto e confere, de uma vez:</p>
+<ul>
+  <li>se o CSS, o JS e as imagens estão nos caminhos que o HTML diz, inclusive maiúsculas e minúsculas;</li>
+  <li>se o <code>&lt;head&gt;</code> tem o que precisa e se existe um único <code>h1</code>;</li>
+  <li>se toda imagem tem <code>alt</code> e se nenhum <code>id</code> se repete;</li>
+  <li>se o JavaScript procura algum <code>id</code> que não existe no HTML;</li>
+  <li>se sobrou <code>&lt;style&gt;</code> ou <code>&lt;script&gt;</code> dentro do CSS ou do JS, ou uma chave sem fechar.</li>
+</ul>
+<p>Os arquivos não são enviados para lugar nenhum: a análise acontece no seu navegador.</p>
+<p><a class="botao botao-primario" href="verificador.html">Abrir o Verificador</a></p>
+
+</section><section class="trilha-secao" id="validar">
+  <h2>7.3 Validador do W3C e Lighthouse</h2>
+  
+<ol class="passos">
+  <li>Valide o HTML em <strong>validator.w3.org</strong> (aba <em>Validate by Direct Input</em>) e zere os <em>Errors</em>.</li>
+  <li>Rode o <strong>Lighthouse</strong>. Em <em>Acessibilidade</em>, ele aponta, por exemplo, textos com pouco contraste e campos sem <code>label</code>.</li>
+</ol>
+<div class="voce-tenta">
+  <p class="voce-tenta-titulo">Você tenta</p>
+  <p>Rode o Lighthouse no seu site, anote as notas, corrija um dos itens apontados em Acessibilidade e rode de novo. A nota subiu?</p>
+</div>
+</section>
+      <section class="pronto-quando" aria-labelledby="pronto-titulo">
+  <h2 id="pronto-titulo">Pronto quando</h2>
+  <p>Marque cada item só depois de conferir. As marcações ficam salvas neste navegador e aparecem na página inicial da trilha.</p>
+  <ul data-total="4">
+    <li><label><input type="checkbox" data-progresso="passo-7-1"> Achei o meu site na aba Rede sem nenhum 404</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-7-2"> O Verificador não mostra nenhum item vermelho</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-7-3"> O validador do W3C não mostra <em>Errors</em></label></li>
+    <li><label><input type="checkbox" data-progresso="passo-7-4"> Rodei o Lighthouse e anotei as notas</label></li>
+  </ul>
+</section>
+      <nav class="passo-nav" aria-label="Navegação entre passos">
+        <a class="passo-ant" href="passo-6-js.html"><span>Passo anterior</span>6. JavaScript</a>
+        <a class="passo-prox" href="passo-8-github.html"><span>Próximo passo</span>8. Git e GitHub</a>
+      </nav>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

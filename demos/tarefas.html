@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Lista de tarefas que fica salva</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+/* Botão padrão (é igual em todos os exemplos: se já colou uma vez, não precisa repetir) */
+.botao {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #12324a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover {
+  background-color: #1d4a6b;
+}
+
+.form-tarefa {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 560px;
+}
+.form-tarefa input {
+  flex: 1;
+  padding: 0.5rem;
+  font: inherit;
+}
+.lista-tarefas {
+  max-width: 560px;
+  list-style: none;
+  padding: 0;
+}
+.tarefa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #cfd9e3;
+}
+/* Tarefa marcada fica riscada (sem JavaScript: o :has confere o checkbox) */
+.tarefa:has(.tarefa-check:checked) .tarefa-texto {
+  text-decoration: line-through;
+  color: #4f5f6f;
+}
+.tarefa-remover {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
+.tarefa-remover:hover {
+  background-color: #c62839;
+  color: #ffffff;
+}
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Lista de tarefas que fica salva. Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#exemplo-14">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<form class="form-tarefa" id="form-tarefa">
+  <label for="nova-tarefa">Nova tarefa</label>
+  <input type="text" id="nova-tarefa" required maxlength="60" autocomplete="off">
+  <button type="submit" class="botao">Adicionar</button>
+</form>
+
+<ul class="lista-tarefas" id="lista-tarefas"></ul>
+<p id="tarefas-restantes">Nenhuma tarefa.</p>
+
+<!-- Modelo de cada tarefa: não aparece na tela, o JavaScript copia -->
+<template id="modelo-tarefa">
+  <li class="tarefa">
+    <label>
+      <input type="checkbox" class="tarefa-check">
+      <span class="tarefa-texto"></span>
+    </label>
+    <button type="button" class="tarefa-remover" aria-label="Remover tarefa">✕</button>
+  </li>
+</template>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+// ----- Lista de tarefas -----
+const formTarefa = document.getElementById("form-tarefa");
+
+if (formTarefa) {
+  const campoTarefa = document.getElementById("nova-tarefa");
+  const listaTarefas = document.getElementById("lista-tarefas");
+  const modeloTarefa = document.getElementById("modelo-tarefa");
+  const tarefasRestantes = document.getElementById("tarefas-restantes");
+
+  // Carrega as tarefas salvas (o localStorage guarda texto; JSON transforma em lista)
+  let tarefas = [];
+  try {
+    tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+  } catch (erro) {
+    tarefas = [];
+  }
+
+  function salvarTarefas() {
+    try {
+      localStorage.setItem("tarefas", JSON.stringify(tarefas));
+    } catch (erro) {}
+  }
+
+  function desenharTarefas() {
+    listaTarefas.innerHTML = "";
+
+    tarefas.forEach(function (tarefa, indice) {
+      const item = modeloTarefa.content.firstElementChild.cloneNode(true);
+      const check = item.querySelector(".tarefa-check");
+
+      item.querySelector(".tarefa-texto").textContent = tarefa.texto;   // textContent: seguro
+      check.checked = tarefa.feita;
+
+      check.addEventListener("change", function () {
+        tarefas[indice].feita = check.checked;
+        salvarTarefas();
+        contarPendentes();
+      });
+
+      item.querySelector(".tarefa-remover").addEventListener("click", function () {
+        tarefas.splice(indice, 1);   // remove 1 item na posição indice
+        salvarTarefas();
+        desenharTarefas();
+      });
+
+      listaTarefas.appendChild(item);
+    });
+
+    contarPendentes();
+  }
+
+  function contarPendentes() {
+    const pendentes = tarefas.filter(function (t) { return !t.feita; }).length;
+    if (tarefas.length === 0) {
+      tarefasRestantes.textContent = "Nenhuma tarefa.";
+    } else if (pendentes === 0) {
+      tarefasRestantes.textContent = "Tudo feito!";
+    } else {
+      tarefasRestantes.textContent = pendentes + (pendentes === 1 ? " tarefa pendente" : " tarefas pendentes");
+    }
+  }
+
+  formTarefa.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+    const texto = campoTarefa.value.trim();
+    if (texto === "") return;
+
+    tarefas.push({ texto: texto, feita: false });
+    salvarTarefas();
+    desenharTarefas();
+    campoTarefa.value = "";
+    campoTarefa.focus();
+  });
+
+  desenharTarefas();
+}
+
+</script>
+</body>
+</html>

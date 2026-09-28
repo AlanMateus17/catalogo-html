@@ -11,14 +11,25 @@ faz e por quê.
 
   pagina-completa/
   ├── index.html        a página principal (ABRA ESTE)
+  ├── passo-a-passo.html   a trilha em 10 passos: do computador vazio ao site no ar
+  ├── passo-1-preparar.html ... passo-10-atualizar.html   os 10 passos
+  ├── verificador.html  confere a pasta do projeto do aluno
+  ├── codigos.html      todos os códigos prontos, com busca
   ├── sobre.html        segunda página, usa o mesmo CSS e o mesmo JS
   ├── css/
   │   └── estilo.css    toda a aparência (cores, tamanhos, layout)
   ├── js/
-  │   └── script.js     todo o comportamento (cliques, animações...)
+  │   ├── script.js         todo o comportamento (cliques, animações...)
+  │   ├── codigos-dados.js  os códigos dos painéis (gerado, não edite)
+  │   ├── painel-codigos.js monta os painéis "Ver código"
+  │   ├── trilha.js         copiar comandos e progresso da trilha
+  │   └── verificador.js    a análise do Verificador
   ├── img/              fotos e ícone
   ├── midia/            vídeo, áudio e legenda
-  └── docs/             PDF usado nos exemplos de link e download
+  ├── docs/             PDF usado nos exemplos de link e download
+  ├── demos/            uma página de demo para cada código pronto
+  ├── trechos/          os códigos prontos, um por pasta (fonte dos painéis)
+  └── ferramentas/      gerar-codigos.py (só para o professor)
 
 IMPORTANTE: não mude os arquivos de pasta nem troque os nomes.
 As páginas encontram o CSS, o JS e as imagens pelo CAMINHO. Se você
@@ -66,6 +77,53 @@ QUANDO ALGO NÃO FUNCIONA
    elemento: id escrito errado ou script sem defer.
 4. Mudou o arquivo e nada mudou? Salvou? Então aperte Ctrl + F5.
 5. Nomes de arquivos: minúsculas, sem espaço e sem acento.
+
+
+OS BOTÕES "VER CÓDIGO"
+----------------------
+Cada funcionalidade do Catálogo tem um botão "Ver código" com três abas:
+HTML, CSS e JavaScript. É o código completo daquela funcionalidade, e só
+dele, pronto para colar num projeto em branco. Cada aba diz em qual
+arquivo colar e tem um botão Copiar. A página codigos.html reúne todos
+os códigos, agrupados e com busca.
+
+Para o aluno montar o próprio site:
+  1. Copie o código "Estrutura de um projeto novo" (o primeiro da lista).
+  2. Escolha as funcionalidades e cole as três abas de cada uma.
+  3. Troque textos, fotos e cores.
+
+Para o professor editar ou criar um código:
+  1. Edite os arquivos em trechos/<nome>/ (codigo.html, codigo.css, codigo.js)
+     e, se for novo, acrescente-o em trechos/indice.json.
+  2. No terminal, dentro desta pasta:  python ferramentas/gerar-codigos.py
+  3. Para um painel novo no Catálogo, coloque no HTML:
+     <div class="codigo" data-codigo="nome"></div>
+
+
+A TRILHA "PASSO A PASSO"
+------------------------
+Comece por passo-a-passo.html. São 10 passos, do computador vazio ao
+site publicado no GitHub Pages pelo terminal:
+   1 Preparar o computador (VS Code, Git, GitHub CLI, gh auth login)
+   2 Terminal sem medo       6 JavaScript
+   3 Criar o projeto         7 Verificar (F12, validador, Verificador)
+   4 HTML                    8 Git e GitHub pelo terminal
+   5 CSS                     9 GitHub Pages pelo terminal
+                            10 Atualizar o site publicado
+Cada comando tem botão Copiar e "o que deve aparecer" na tela. As caixas
+"Pronto quando" ficam salvas no navegador de cada aluno, e a página
+inicial da trilha mostra o progresso.
+
+Ativar o GitHub Pages pelo terminal só é possível com o GitHub CLI (gh).
+Onde não der para instalar, cada passo mostra também o caminho pelo site.
+
+O VERIFICADOR
+-------------
+verificador.html: o aluno escolhe a pasta do site e a página confere
+caminhos (com maiúsculas), <head>, h1, alt, ids repetidos, links #,
+tags sem fechar, <style> dentro do CSS, chaves, url() do CSS, erro de
+sintaxe do JS e ids que o JS procura e não existem. Os arquivos não
+saem do computador do aluno.
 
 
 COMO ESTUDAR ESTE MATERIAL

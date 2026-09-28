@@ -1,0 +1,9 @@
+.barra-progresso {
+  position: fixed;          /* presa na tela, não sai do lugar ao rolar */
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 0%;                /* o JavaScript muda de 0% a 100% */
+  height: 4px;
+  background: linear-gradient(to right, #2a9d8f, #ffb703);
+}

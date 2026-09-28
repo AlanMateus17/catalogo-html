@@ -1,0 +1,9 @@
+#tamanho-texto {
+  width: 100%;
+  max-width: 320px;
+  accent-color: #2a9d8f;
+}
+.texto-tamanho {
+  font-size: 18px;
+  line-height: 1.2;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Rodapé com colunas e ano automático</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+.rodape {
+  padding-top: 2.5rem;
+  background-color: #12324a;
+  color: #c5d4e0;
+}
+.rodape-grade {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;   /* 1ª coluna com o dobro das outras */
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+.rodape-nome {
+  margin: 0 0 0.5rem;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.rodape-titulo {
+  margin: 0 0 0.5rem;
+  color: #ffb703;
+  font-size: 1rem;
+}
+.rodape ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.rodape a {
+  color: #ffffff;
+}
+.rodape-direitos {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+@media (max-width: 700px) {
+  .rodape-grade {
+    grid-template-columns: 1fr;       /* uma coluna só no celular */
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Rodapé com colunas e ano automático. Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#partes-da-pagina">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<footer class="rodape">
+  <div class="rodape-grade">
+    <div>
+      <p class="rodape-nome">Meu Site</p>
+      <p>Uma frase sobre o site.</p>
+    </div>
+    <nav aria-label="Links do rodapé">
+      <h2 class="rodape-titulo">Seções</h2>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2 class="rodape-titulo">Contato</h2>
+      <ul>
+        <li><a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="rodape-direitos">&copy; <span id="ano-atual">2026</span> Seu Nome</p>
+</footer>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio"><h2>Sobre</h2><p>Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio"><h2>Galeria</h2><p>Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio"><h2>Contato</h2><p>Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+// Ano atual no rodapé
+const anoAtual = document.getElementById("ano-atual");
+if (anoAtual) {
+  anoAtual.textContent = new Date().getFullYear();
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo: Cabeçalho fixo com menu (e menu de celular)</title>
+
+<style>
+
+/* ---- Faixa da demo: NÃO faz parte do código do aluno ---- */
+.demo-faixa {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  margin: 0; padding: 10px 16px;
+  background: #fff3c4; color: #3d2e00; border-bottom: 2px solid #e0b000;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif; text-align: left;
+}
+.demo-faixa strong { font-weight: 700; }
+.demo-faixa span { flex: 1; min-width: 220px; }
+.demo-faixa a { color: #12324a !important; font-weight: 700; text-decoration: underline; }
+.demo-recheio {
+  margin: 32px 16px; padding: 16px; border: 2px dashed #b9c9d6; border-radius: 8px;
+  color: #4f5f6f; font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.demo-recheio.alto { min-height: 110vh; }
+
+</style>
+<style>
+/* ===== CSS do código (aba CSS) ===== */
+/* Deixa espaço para o cabeçalho fixo não cobrir o título ao clicar num link # */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+.cabecalho {
+  position: sticky;          /* gruda no topo ao rolar */
+  top: 0;
+  z-index: 100;
+  background-color: #12324a;
+  transition: box-shadow 0.2s;
+}
+.cabecalho.encolhido {       /* o JavaScript coloca esta classe ao rolar */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cabecalho-conteudo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1100px;
+  min-height: 72px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  transition: min-height 0.2s;
+}
+.cabecalho.encolhido .cabecalho-conteudo {
+  min-height: 56px;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.menu {
+  margin-left: auto;         /* empurra o menu para a direita */
+}
+.menu-lista {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu-lista a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  color: #dbe7f0;
+  text-decoration: none;
+}
+.menu-lista a:hover,
+.menu-lista a.ativo {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* Esconde da tela, mas o leitor de tela continua lendo */
+.visualmente-escondido {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* Botão ≡ (três linhas: o span, o ::before e o ::after) */
+.btn-menu {
+  display: none;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.btn-menu-linhas,
+.btn-menu-linhas::before,
+.btn-menu-linhas::after {
+  display: block;
+  width: 24px;
+  height: 3px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background-color: #ffffff;
+  transition: transform 0.2s;
+}
+.btn-menu-linhas {
+  position: relative;
+}
+.btn-menu-linhas::before,
+.btn-menu-linhas::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.btn-menu-linhas::before { top: -7px; }
+.btn-menu-linhas::after { top: 7px; }
+/* Menu aberto: as linhas viram um X */
+.btn-menu[aria-expanded="true"] .btn-menu-linhas { background-color: transparent; }
+.btn-menu[aria-expanded="true"] .btn-menu-linhas::before { transform: translateY(7px) rotate(45deg); }
+.btn-menu[aria-expanded="true"] .btn-menu-linhas::after { transform: translateY(-7px) rotate(-45deg); }
+
+/* Celular: o menu vira uma gaveta embaixo do cabeçalho */
+@media (max-width: 800px) {
+  .btn-menu {
+    display: grid;
+    place-items: center;
+  }
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+  }
+  .menu-lista {
+    display: none;
+    flex-direction: column;
+    padding: 0.5rem 1rem 1rem;
+    background-color: #12324a;
+  }
+  .menu-lista.aberto {
+    display: flex;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="demo-faixa" role="note"><span><strong>Demo:</strong> Cabeçalho fixo com menu (e menu de celular). Esta página tem só este código, colado num projeto em branco.</span><a href="../codigos.html">Todos os códigos</a><a href="../index.html#partes-da-pagina">Ver no Catálogo</a></div>
+
+<!-- ===== HTML do código (aba HTML) ===== -->
+<header class="cabecalho" id="cabecalho">
+  <div class="cabecalho-conteudo">
+    <a href="#inicio" class="logo">Meu Site</a>
+
+    <!-- Botão ≡: só aparece no celular (o CSS esconde no computador) -->
+    <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span class="btn-menu-linhas" aria-hidden="true"></span>
+      <span class="visualmente-escondido">Abrir menu</span>
+    </button>
+
+    <nav class="menu" aria-label="Menu principal">
+      <ul class="menu-lista" id="menu-principal">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+<!-- ===== Conteúdo de exemplo da demo (não faz parte do código) ===== -->
+<section id="sobre" class="demo-recheio alto"><h2>Sobre</h2><p>Role a página para ver o efeito. Conteúdo de exemplo da demo, para os links com #sobre terem para onde ir. Não faz parte do código.</p></section>
+<section id="galeria" class="demo-recheio alto"><h2>Galeria</h2><p>Role a página para ver o efeito. Conteúdo de exemplo da demo, para os links com #galeria terem para onde ir. Não faz parte do código.</p></section>
+<section id="contato" class="demo-recheio alto"><h2>Contato</h2><p>Role a página para ver o efeito. Conteúdo de exemplo da demo, para os links com #contato terem para onde ir. Não faz parte do código.</p></section>
+
+<script>
+/* ===== JavaScript do código (aba JavaScript) ===== */
+// ----- Cabeçalho: menu do celular, encolher ao rolar e link ativo -----
+const btnMenu = document.getElementById("btn-menu");
+const menuLista = document.getElementById("menu-principal");
+const cabecalho = document.getElementById("cabecalho");
+
+if (btnMenu && menuLista) {
+  // Abre e fecha o menu no celular
+  btnMenu.addEventListener("click", function () {
+    const abriu = menuLista.classList.toggle("aberto");
+    btnMenu.setAttribute("aria-expanded", String(abriu));
+  });
+
+  // Fecha o menu ao clicar num link
+  menuLista.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      menuLista.classList.remove("aberto");
+      btnMenu.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+// Encolhe o cabeçalho depois de rolar 60px
+if (cabecalho) {
+  window.addEventListener("scroll", function () {
+    cabecalho.classList.toggle("encolhido", window.scrollY > 60);
+  }, { passive: true });
+}
+
+// Marca no menu a seção que está na tela
+const linksDoMenu = document.querySelectorAll('.menu-lista a[href^="#"]');
+if (linksDoMenu.length > 0 && "IntersectionObserver" in window) {
+  const vigiaSecoes = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (entrada) {
+      if (!entrada.isIntersecting) return;
+      linksDoMenu.forEach(function (link) {
+        link.classList.toggle("ativo", link.getAttribute("href") === "#" + entrada.target.id);
+      });
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+
+  document.querySelectorAll("section[id]").forEach(function (secao) {
+    vigiaSecoes.observe(secao);
+  });
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<form class="form-contato" id="form-contato">
+  <div class="campo">
+    <label for="contato-nome">Nome *</label>
+    <input type="text" id="contato-nome" name="nome" required minlength="2" autocomplete="name">
+  </div>
+
+  <div class="campo">
+    <label for="contato-email">E-mail *</label>
+    <input type="email" id="contato-email" name="email" required autocomplete="email" placeholder="voce@exemplo.com">
+  </div>
+
+  <div class="campo">
+    <label for="contato-assunto">Assunto</label>
+    <select id="contato-assunto" name="assunto">
+      <option value="duvida">Dúvida</option>
+      <option value="sugestao">Sugestão</option>
+      <option value="outro">Outro</option>
+    </select>
+  </div>
+
+  <div class="campo">
+    <label for="contato-mensagem">Mensagem *</label>
+    <textarea id="contato-mensagem" name="mensagem" rows="5" maxlength="300" required></textarea>
+    <small id="contato-contador">0 de 300 caracteres</small>
+  </div>
+
+  <label class="campo-opcao">
+    <input type="checkbox" name="novidades" value="sim">
+    Quero receber novidades
+  </label>
+
+  <button type="submit" class="botao">Enviar</button>
+</form>
+
+<p class="form-resposta" id="contato-resposta" role="status" hidden></p>

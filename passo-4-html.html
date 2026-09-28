@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+  TRILHA "PASSO A PASSO" — Passo 4: Montar o conteúdo com HTML
+  Página de conteúdo. Os comandos têm botão de copiar e as caixas
+  "Pronto quando" guardam o progresso no navegador (js/trilha.js).
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/trilha.js" defer></script>
+  <script src="js/codigos-dados.js" defer></script>
+  <script src="js/painel-codigos.js" defer></script>
+  <title>Passo 4: Montar o conteúdo com HTML — Catálogo do HTML</title>
+  <meta name="description" content="Planejar a página e montar as seções com os códigos prontos do Catálogo.">
+</head>
+<body class="pagina-trilha">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="passo-a-passo.html">Passo a passo</a></li>
+            <li aria-current="page">Passo 4</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Passo 4 de 10. Tempo: 2 aulas</p>
+        <h1 class="heroi-titulo">Montar o conteúdo com HTML</h1>
+        <p class="heroi-texto">O HTML é o conteúdo e a estrutura da página. Você vai planejar no papel e montar as seções com os códigos prontos do Catálogo, trocando o conteúdo pelo seu.</p>
+      </div>
+    </section>
+
+    <div class="container trilha-corpo">
+      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-html.html" data-passo="4" data-total="4" aria-current="step"><span class="mapa-num">4</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-5-css.html" data-passo="5" data-total="4"><span class="mapa-num">5</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-6-js.html" data-passo="6" data-total="4"><span class="mapa-num">6</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-7-verificar.html" data-passo="7" data-total="4"><span class="mapa-num">7</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-8-github.html" data-passo="8" data-total="4"><span class="mapa-num">8</span><span class="mapa-nome">Git e GitHub</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
+<section class="trilha-secao" id="planejar">
+  <h2>4.1 Planejar antes de digitar</h2>
+  
+<ol class="passos">
+  <li>Escolha o tema e divida o assunto em 4 a 6 seções. Exemplo: Início, História, Lugares (galeria), Como chegar (mapa), Contato (formulário).</li>
+  <li>Desenhe a página numa folha, de cima para baixo: cabeçalho com menu, primeira área grande, uma caixa para cada seção e o rodapé.</li>
+  <li>Ao lado de cada caixa, escreva o <strong>código pronto</strong> que vai usar. A lista está na página <a href="codigos.html">Códigos</a>.</li>
+</ol>
+<div class="confira">
+  <p><strong>Confira:</strong> por que a sua página deve ter um único <code>&lt;h1&gt;</code>?</p>
+  <details><summary>Ver a resposta</summary><p>O <code>h1</code> é o título da página inteira. O Google e os leitores de tela usam ele para saber do que a página trata. As seções usam <code>h2</code>.</p></details>
+</div>
+</section><section class="trilha-secao" id="montar">
+  <h2>4.2 Montar, um bloco de cada vez</h2>
+  
+<p>Para cada caixa do seu desenho:</p>
+<ol class="passos">
+  <li>Abra o painel <strong>Ver código</strong> do bloco (aqui embaixo ou na página <a href="codigos.html">Códigos</a>).</li>
+  <li>Copie a aba <strong>HTML</strong> e cole no <code>index.html</code>, no lugar certo.</li>
+  <li>Copie as abas <strong>CSS</strong> e <strong>JavaScript</strong>, se existirem, para o final do <code>estilo.css</code> e do <code>script.js</code>.</li>
+  <li>Troque textos, fotos (<code>src</code> e <code>alt</code>) e links pelos seus.</li>
+  <li>Salve e confira no navegador <strong>antes</strong> de passar para o próximo bloco.</li>
+</ol>
+<p>Os três blocos que quase todo site tem:</p>
+<div class="codigo" data-codigo="cabecalho"></div>
+<div class="codigo" data-codigo="heroi"></div>
+<div class="codigo" data-codigo="rodape"></div>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> o link do menu não leva para a seção.</p>
+  <p>O <code>href="#lugares"</code> precisa ser exatamente igual ao <code>id="lugares"</code> da seção: mesmas letras, sem acento, sem maiúscula.</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> a página fica torta do meio para baixo.</p>
+  <p>Uma tag abriu e não fechou, ou você copiou um <code>&lt;/div&gt;</code> a mais. No VS Code, clique numa tag de abertura: ele destaca a de fechamento. A setinha ao lado do número da linha recolhe o bloco e mostra onde ele termina.</p>
+</div><div class="voce-tenta">
+  <p class="voce-tenta-titulo">Você tenta</p>
+  <p>Escolha na página <a href="codigos.html">Códigos</a> um bloco que não está aqui (galeria, cards ou tabela), cole no seu site e adapte ao seu tema.</p>
+</div>
+</section><section class="trilha-secao" id="validar">
+  <h2>4.3 Validar o HTML</h2>
+  
+<ol class="passos">
+  <li>Abra <strong>validator.w3.org</strong> e clique na aba <strong>Validate by Direct Input</strong>.</li>
+  <li>Copie todo o seu <code>index.html</code>, cole e clique em <strong>Check</strong>.</li>
+  <li>Corrija os itens marcados como <strong>Error</strong>, de cima para baixo. Um erro no começo costuma causar vários outros depois.</li>
+  <li>Use também o <a href="verificador.html">Verificador do projeto</a>: ele confere os caminhos das imagens e o que o validador não vê.</li>
+</ol>
+
+</section>
+      <section class="pronto-quando" aria-labelledby="pronto-titulo">
+  <h2 id="pronto-titulo">Pronto quando</h2>
+  <p>Marque cada item só depois de conferir. As marcações ficam salvas neste navegador e aparecem na página inicial da trilha.</p>
+  <ul data-total="4">
+    <li><label><input type="checkbox" data-progresso="passo-4-1"> Tenho o desenho da página com as seções e os códigos escolhidos</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-4-2"> Todas as seções têm conteúdo meu (textos e fotos)</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-4-3"> Os links do menu levam às seções certas</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-4-4"> O validador do W3C não mostra nenhum <em>Error</em></label></li>
+  </ul>
+</section>
+      <nav class="passo-nav" aria-label="Navegação entre passos">
+        <a class="passo-ant" href="passo-3-projeto.html"><span>Passo anterior</span>3. Criar o projeto</a>
+        <a class="passo-prox" href="passo-5-css.html"><span>Próximo passo</span>5. CSS</a>
+      </nav>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+  PÁGINA "CÓDIGOS" — todos os códigos prontos, num lugar só.
+
+  Esta página quase não tem conteúdo escrito no HTML: a lista de códigos é
+  montada pelo js/painel-codigos.js a partir do js/codigos-dados.js.
+  O elemento <div id="lista-codigos"> recebe os painéis, agrupados.
+  O campo <input id="filtro-codigos"> filtra pelo nome.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Códigos prontos — Catálogo do HTML</title>
+  <meta name="description" content="HTML, CSS e JavaScript prontos para copiar, uma funcionalidade de cada vez.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <!-- Ferramenta do Catálogo: os dados primeiro, depois o painel -->
+  <script src="js/codigos-dados.js" defer></script>
+  <script src="js/painel-codigos.js" defer></script>
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="codigos.html" aria-current="page">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li aria-current="page">Códigos</li>
+          </ol>
+        </nav>
+        <h1 class="heroi-titulo">Códigos prontos</h1>
+        <p class="heroi-texto">Cada funcionalidade com o HTML, o CSS e o JavaScript de que ela precisa, e nada além disso. Funcionam num projeto em branco.</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <h2 class="secao-titulo">Como usar</h2>
+        <ol class="codigos-como-usar">
+          <li><strong>Comece pela estrutura.</strong> O primeiro código cria os três arquivos do projeto já conectados. Todo o resto é colado dentro deles.</li>
+          <li><strong>Escolha uma funcionalidade</strong> e abra o painel dela. Veja o exemplo funcionando pelo link "Ver funcionando".</li>
+          <li><strong>Copie cada aba no seu arquivo:</strong> HTML no <code>index.html</code>, CSS no <code>estilo.css</code>, JS no <code>script.js</code>. O painel diz onde colar.</li>
+          <li><strong>Troque o conteúdo:</strong> textos, fotos (<code>src</code> e <code>alt</code>) e cores. Salve e confira no navegador antes de colar o próximo.</li>
+        </ol>
+
+        <aside class="dica">
+          <strong>Dá para usar vários juntos.</strong> Os códigos foram feitos para não brigar entre si: nenhum nome de variável se repete.
+          A classe <code>.botao</code> aparece em vários CSS com as mesmas regras; se já colou uma vez, não precisa repetir.
+        </aside>
+
+        <div class="codigos-busca">
+          <label for="filtro-codigos"><strong>Procurar:</strong></label>
+          <input type="search" id="filtro-codigos" placeholder="Ex.: galeria, menu, formulário, tema">
+          <p id="contagem-codigos" aria-live="polite"></p>
+        </div>
+
+        <!-- Os painéis são colocados aqui pelo js/painel-codigos.js -->
+        <div id="lista-codigos"></div>
+
+        <noscript>
+          <p>Os códigos desta página são montados com JavaScript. Com ele desligado, veja os arquivos na pasta <code>trechos/</code> do projeto.</p>
+        </noscript>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="index.html">Voltar ao Catálogo</a>.</small></p>
+  </footer>
+</body>
+</html>

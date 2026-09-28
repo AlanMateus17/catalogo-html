@@ -1,0 +1,31 @@
+/* Cor da bolinha e do número das listas */
+li::marker {
+  color: #2a9d8f;
+  font-weight: 700;
+}
+
+dt {
+  font-weight: 700;
+}
+dd {
+  margin: 0 0 0.75rem 1rem;
+  color: #4f5f6f;
+}
+
+/* Lista de conferência: tira a bolinha e coloca um ✓ */
+.lista-check {
+  list-style: none;
+  padding: 0;
+}
+.lista-check li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.4rem;
+}
+.lista-check li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2a9d8f;
+  font-weight: 700;
+}

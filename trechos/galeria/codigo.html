@@ -1,0 +1,28 @@
+<ul class="galeria">
+  <li>
+    <button type="button" class="galeria-item" data-grande="img/foto-1.jpg" data-legenda="Legenda da foto 1">
+      <img src="img/foto-1.jpg" alt="Descreva a foto 1" width="600" height="400" loading="lazy">
+    </button>
+  </li>
+  <li>
+    <button type="button" class="galeria-item" data-grande="img/foto-2.jpg" data-legenda="Legenda da foto 2">
+      <img src="img/foto-2.jpg" alt="Descreva a foto 2" width="600" height="400" loading="lazy">
+    </button>
+  </li>
+  <li>
+    <button type="button" class="galeria-item" data-grande="img/foto-3.jpg" data-legenda="Legenda da foto 3">
+      <img src="img/foto-3.jpg" alt="Descreva a foto 3" width="600" height="400" loading="lazy">
+    </button>
+  </li>
+</ul>
+
+<!-- Janela da foto ampliada -->
+<dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+  <figure class="lightbox-figura">
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-legenda"></figcaption>
+  </figure>
+  <button type="button" class="lightbox-btn lightbox-anterior" id="lightbox-anterior" aria-label="Foto anterior">‹</button>
+  <button type="button" class="lightbox-btn lightbox-proximo" id="lightbox-proximo" aria-label="Próxima foto">›</button>
+  <button type="button" class="lightbox-btn lightbox-fechar" id="lightbox-fechar" aria-label="Fechar">✕</button>
+</dialog>

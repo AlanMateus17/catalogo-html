@@ -1,0 +1,18 @@
+/* Só esconde quando o JavaScript avisa que está funcionando (classe js no <html>) */
+.js .revelar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.js .revelar.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Quem pediu "menos movimento" no sistema vê tudo sem animação */
+@media (prefers-reduced-motion: reduce) {
+  .js .revelar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
