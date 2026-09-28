@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+  PÁGINA "SOBRE" — a segunda página do site.
+
+  PARA QUE ELA SERVE NESTE PROJETO:
+  mostrar que duas páginas diferentes podem usar os MESMOS arquivos de CSS e JavaScript.
+  Olhe o <head>: as linhas de conexão são iguais às do index.html.
+  Mude uma cor no estilo.css e as DUAS páginas mudam juntas.
+  Essa é a maior vantagem de ter o CSS e o JS em arquivos externos.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre — Catálogo do HTML</title>
+  <meta name="description" content="Sobre o projeto Catálogo do HTML.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+
+  <!-- MESMO CSS e MESMO JS do index.html -->
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <!--
+        Aqui o logo leva para index.html (outra página), e não para #inicio.
+        POR QUÊ: #inicio procuraria um id="inicio" NESTA página, e ele não existe aqui.
+      -->
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <!-- Links para seções de OUTRA página: nome do arquivo + #id -->
+          <li><a href="index.html#conexao">Conexão</a></li>
+          <li><a href="index.html#textos">Textos</a></li>
+          <li><a href="index.html#formularios">Formulários</a></li>
+          <li><a href="index.html#interatividade">JavaScript</a></li>
+          <!--
+            aria-current="page" marca o link da página ATUAL.
+            O CSS usa isso para destacar o item do menu (procure [aria-current] no estilo.css).
+          -->
+          <li><a href="sobre.html" aria-current="page">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <!-- Breadcrumb ("migalhas de pão"): mostra onde você está no site -->
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li aria-current="page">Sobre</li>
+          </ol>
+        </nav>
+        <h1 class="heroi-titulo">Sobre este projeto</h1>
+        <p class="heroi-texto">Uma página de exemplo para consultar quando surgir a dúvida "como se faz isso em HTML?".</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <h2 class="secao-titulo">Por que duas páginas?</h2>
+        <p>Para você ver, na prática, três coisas:</p>
+        <ol>
+          <li><strong>Links entre páginas</strong> funcionam com o nome do arquivo: <code>href="sobre.html"</code>.</li>
+          <li><strong>O mesmo CSS</strong> deixa as duas páginas com a mesma cara, sem copiar nenhuma regra.</li>
+          <li><strong>O mesmo JavaScript</strong> funciona nas duas, mesmo que esta página não tenha a maioria dos exemplos. Veja no <code>script.js</code> como cada parte confere se o elemento existe antes de usar.</li>
+        </ol>
+
+        <aside class="dica">
+          <strong>Teste:</strong> ligue o tema escuro aqui e volte para a página inicial. O tema continua escuro,
+          porque o JavaScript guardou a escolha no <code>localStorage</code> do navegador, que é o mesmo para as duas páginas.
+        </aside>
+      </div>
+    </section>
+
+    <!-- id="equipe" é o destino do link "sobre.html#equipe" que está no index.html -->
+    <section class="secao secao-alternada" id="equipe">
+      <div class="container">
+        <h2 class="secao-titulo">Quem fez</h2>
+        <article class="perfil">
+          <img class="perfil-foto" src="img/avatar.jpg" alt="Ilustração de avatar" width="240" height="240">
+          <div>
+            <h3>Prof. Alan Mateus</h3>
+            <p>Professor do curso técnico. Este material acompanha as aulas de HTML/CSS e Programação Web.</p>
+            <p><a href="index.html#links">Voltar aos exemplos de links</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="index.html">Voltar ao início</a>.</small></p>
+  </footer>
+</body>
+</html>

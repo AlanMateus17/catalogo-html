@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<!--
+  =====================================================================
+  CATÁLOGO DO HTML — página de exemplo com (quase) tudo que existe no HTML
+  Autor: Prof. Alan Mateus
+
+  ESTE PROJETO TEM TRÊS LINGUAGENS, CADA UMA NO SEU ARQUIVO:
+    index.html      -> ESTRUTURA  (o que existe na página: textos, imagens, botões)
+    css/estilo.css  -> APARÊNCIA  (cores, tamanhos, posições, animações)
+    js/script.js    -> COMPORTAMENTO (o que acontece quando o usuário clica, digita, rola)
+
+  Uma forma de lembrar: HTML é o esqueleto, CSS é a roupa e JavaScript é o movimento.
+
+  COMO LER ESTE ARQUIVO:
+  - Tudo que está entre  <!- -  e  - ->  (sem os espaços) é COMENTÁRIO.
+    O navegador ignora comentários. Eles existem só para quem lê o código.
+  - Procure as palavras "POR QUÊ" e "TESTE" nos comentários: são explicações
+    e experiências que você pode fazer mudando o código.
+  =====================================================================
+-->
+
+<!--
+  <!DOCTYPE html> avisa ao navegador: "este documento é HTML5, a versão atual".
+  POR QUÊ: sem essa linha o navegador entra no "modo de compatibilidade"
+  (quirks mode) e alguns tamanhos e margens passam a funcionar de um jeito antigo e estranho.
+  Ele é SEMPRE a PRIMEIRA linha do arquivo, antes de qualquer outra coisa.
+  Por isso ele está lá em cima, antes até do comentário de apresentação.
+-->
+
+<!--
+  <html> é a raiz: todo o resto fica dentro dela.
+  lang="pt-BR" diz o idioma da página.
+  POR QUÊ: leitores de tela (usados por pessoas cegas) escolhem a pronúncia pelo idioma,
+  o Google entende para quem mostrar a página e o navegador sabe quando oferecer tradução.
+-->
+<html lang="pt-BR">
+
+<!--
+  =====================================================================
+  <head> = CABEÇA DA PÁGINA
+  Nada aqui aparece dentro da página. São informações SOBRE a página
+  e as CONEXÕES com outros arquivos (CSS, JavaScript, ícone, fontes).
+  =====================================================================
+-->
+<head>
+  <!--
+    charset="UTF-8" é a tabela de caracteres.
+    POR QUÊ: sem ela, "ção", "é" e "ã" podem virar símbolos estranhos (Ã§Ã£o).
+    Deve ser a primeira coisa dentro do <head>.
+  -->
+  <meta charset="UTF-8">
+
+  <!--
+    viewport controla como a página aparece no CELULAR.
+    width=device-width  -> a largura da página = largura da tela do aparelho
+    initial-scale=1     -> começa sem zoom
+    POR QUÊ: sem isso, o celular finge ter uma tela de computador (980px) e
+    mostra tudo minúsculo. TESTE: apague esta linha e abra no celular.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+    <title> é o texto que aparece na ABA do navegador e no resultado do Google.
+    É obrigatório. Deve ser curto e dizer do que a página trata.
+  -->
+  <title>Catálogo do HTML — tudo que cabe numa página</title>
+
+  <!--
+    Metadados para buscadores (SEO = Search Engine Optimization):
+    description -> o resuminho que aparece embaixo do título no Google
+    author      -> quem fez a página
+  -->
+  <meta name="description" content="Página de exemplo com todos os principais elementos do HTML, estilizada com CSS e com interatividade em JavaScript.">
+  <meta name="author" content="Alan Mateus">
+
+  <!--
+    theme-color pinta a barra do navegador no celular (Android) com a cor do site.
+  -->
+  <meta name="theme-color" content="#12324a">
+
+  <!--
+    Open Graph (og:) define como o link aparece quando é compartilhado
+    no WhatsApp, Instagram, Facebook etc.: título, descrição e imagem do "cartãozinho".
+  -->
+  <meta property="og:title" content="Catálogo do HTML">
+  <meta property="og:description" content="Todos os elementos do HTML numa página só.">
+  <meta property="og:image" content="img/banner-largo.jpg">
+
+  <!--
+    FAVICON: o iconezinho que aparece na aba do navegador.
+    rel="icon" diz o que é o arquivo; href diz onde ele está.
+  -->
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!--
+    FONTES DO GOOGLE (Google Fonts).
+    preconnect abre a conexão com o servidor de fontes antes, para carregar mais rápido.
+    POR QUÊ usar fonte externa: todo computador tem Arial, mas nem todo tem a fonte que você quer.
+    Se estiver sem internet, o CSS usa uma fonte reserva (veja "font-family" no estilo.css).
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+
+  <!--
+    =================================================================
+    CONEXÃO 1: HTML -> CSS
+    =================================================================
+    <link rel="stylesheet" href="css/estilo.css">
+      rel="stylesheet" -> "este arquivo é uma folha de estilos"
+      href="css/estilo.css" -> CAMINHO do arquivo, a partir da pasta onde está este index.html
+                              (entre na pasta "css" e pegue "estilo.css")
+
+    POR QUÊ no <head>: o navegador precisa das regras de estilo ANTES de desenhar a página.
+    Se o CSS viesse no final, a página apareceria sem estilo por um instante e depois "pularia".
+
+    POR QUÊ em arquivo separado (e não tudo dentro de <style>):
+      1. Várias páginas usam o MESMO arquivo (veja sobre.html). Mudou a cor lá, mudou em todas.
+      2. O navegador guarda o arquivo (cache) e não baixa de novo em cada página.
+      3. Cada arquivo fica menor e mais fácil de ler.
+
+    TESTE: escreva "estilos.css" (com s) no href e recarregue. A página fica "pelada".
+    Esse é o erro mais comum de todos: caminho errado. Nenhuma mensagem aparece na tela,
+    mas no F12 > Console aparece um erro 404 (arquivo não encontrado).
+  -->
+  <link rel="stylesheet" href="css/estilo.css">
+
+  <!--
+    =================================================================
+    CONEXÃO 2: HTML -> JavaScript
+    =================================================================
+    <script src="js/script.js" defer></script>
+      src   -> caminho do arquivo JavaScript (mesma lógica do href do CSS)
+      defer -> "baixe agora, mas só EXECUTE depois que o HTML inteiro for lido"
+
+    POR QUÊ o defer é importante: o JavaScript procura elementos da página
+    (ex.: document.getElementById("btn-tema")). Sem defer, o script rodaria aqui no
+    <head>, quando o botão ainda NÃO EXISTE, e daria erro "Cannot read properties of null".
+
+    Duas soluções corretas (escolha UMA):
+      a) <script src="..." defer></script> dentro do <head>   <- usamos esta
+      b) <script src="..."></script> no FINAL do <body>, antes de </body>
+
+    ATENÇÃO: a tag <script> SEMPRE precisa do </script> de fechamento, mesmo vazia.
+  -->
+  <script src="js/script.js" defer></script>
+</head>
+
+<!--
+  =====================================================================
+  <body> = CORPO DA PÁGINA
+  Tudo que o usuário VÊ fica aqui dentro.
+  =====================================================================
+-->
+<body>
+
+  <!--
+    LINK DE PULAR (skip link). Fica escondido e só aparece quando alguém
+    navega pelo TECLADO (apertando Tab). Leva direto ao conteúdo.
+    POR QUÊ: quem não usa mouse teria que passar por todos os links do menu
+    em todas as páginas. TESTE: recarregue a página e aperte Tab uma vez.
+  -->
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!--
+    <noscript> só aparece se o JavaScript estiver DESLIGADO no navegador.
+  -->
+  <noscript>
+    <p class="aviso-noscript">O JavaScript está desligado. A página funciona, mas os exemplos interativos não.</p>
+  </noscript>
+
+  <!--
+    Barra fininha no topo que enche conforme você rola a página.
+    Ela está vazia no HTML: quem controla a largura é o JavaScript (veja script.js, parte 4).
+    aria-hidden="true" esconde dos leitores de tela, porque é só decoração.
+  -->
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <!--
+    =====================================================================
+    <header> = CABEÇALHO DO SITE (logo + menu). Semântico: diz O QUE é, não como é.
+    POR QUÊ usar tags semânticas (header, nav, main, section, article, footer)
+    em vez de só <div>: o Google e os leitores de tela entendem a página;
+    o visual é o mesmo, mas o significado muda.
+    =====================================================================
+  -->
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+
+      <!-- Logo: um link que leva ao topo da página. Link pode envolver outros elementos. -->
+      <a href="#inicio" class="logo" aria-label="Catálogo do HTML, voltar ao início">
+        <!--
+          SVG = imagem feita de CÓDIGO (vetor). Nunca perde qualidade ao aumentar.
+          Aqui desenhamos os sinais < > direto no HTML.
+        -->
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <!--
+        Botão HAMBÚRGUER (≡): só aparece em telas pequenas (o CSS esconde no computador).
+        aria-expanded diz ao leitor de tela se o menu está aberto (true) ou fechado (false).
+        aria-controls diz QUAL elemento este botão controla.
+        O JavaScript troca aria-expanded quando você clica (script.js, parte 2).
+      -->
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <!--
+        <nav> = navegação. Use para os menus PRINCIPAIS do site.
+        aria-label dá um nome ao menu para leitores de tela.
+        O menu é uma LISTA (<ul>) de links, porque é isso que ele é: uma lista de destinos.
+      -->
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="#conexao">Conexão</a></li>
+          <li><a href="#textos">Textos</a></li>
+          <li><a href="#links">Links</a></li>
+
+          <!--
+            SUBMENU (menu suspenso): uma lista DENTRO de um item da lista.
+            No computador ele aparece ao passar o mouse (CSS :hover) ou ao chegar pelo Tab (:focus-within).
+          -->
+          <li class="tem-submenu">
+            <a href="#imagens">Mídia</a>
+            <ul class="submenu">
+              <li><a href="#imagens">Imagens</a></li>
+              <li><a href="#audio-video">Áudio e vídeo</a></li>
+              <li><a href="#incorporar">Incorporações</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#tabelas">Tabelas</a></li>
+          <li><a href="#formularios">Formulários</a></li>
+          <li><a href="#layout">Layout</a></li>
+          <li><a href="#interatividade">JavaScript</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <!--
+        Botão de TEMA ESCURO. type="button" é importante:
+        POR QUÊ: um <button> sem type, dentro de um formulário, vira "enviar" por padrão.
+        Colocar type="button" deixa claro que ele só roda JavaScript.
+      -->
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <!--
+    =====================================================================
+    <main> = CONTEÚDO PRINCIPAL. Só pode existir UM por página.
+    id="conteudo" é o destino do "Pular para o conteúdo" lá de cima.
+    =====================================================================
+  -->
+  <main id="conteudo">
+
+    <!--
+      ===================================================================
+      HERÓI (hero): a primeira área grande que o visitante vê.
+      ===================================================================
+    -->
+    <section class="heroi" id="inicio">
+      <div class="container heroi-conteudo">
+        <p class="heroi-antetitulo">Material de apoio — HTML, CSS e JavaScript</p>
+
+        <!--
+          <h1> = título PRINCIPAL da página. Use só UM <h1> por página.
+          POR QUÊ: o Google usa o h1 para saber o assunto da página, e leitores de tela
+          deixam o usuário pular direto para ele.
+        -->
+        <h1 class="heroi-titulo">
+          <span class="heroi-tag" aria-hidden="true">&lt;html&gt;</span>
+          Tudo que cabe numa página
+          <span class="heroi-tag" aria-hidden="true">&lt;/html&gt;</span>
+        </h1>
+
+        <p class="heroi-texto">
+          Cada seção abaixo mostra um grupo de elementos do HTML funcionando.
+          Abra o arquivo <code>index.html</code> no VS Code ao lado do navegador
+          e leia os comentários: eles explicam <strong>o que</strong> cada linha faz e <strong>por quê</strong>.
+        </p>
+
+        <div class="heroi-acoes">
+          <!-- Link com cara de botão: continua sendo <a>, porque LEVA para outro lugar. -->
+          <a class="botao botao-primario" href="#conexao">Começar pela conexão</a>
+          <a class="botao botao-contorno" href="#interatividade">Ir para os exemplos de JavaScript</a>
+        </div>
+
+        <!-- Relógio: o texto é trocado a cada segundo pelo JavaScript (script.js, parte 23). -->
+        <p class="heroi-relogio">Agora são <time id="relogio">--:--:--</time></p>
+      </div>
+    </section>
+
+    <!--
+      ===================================================================
+      SEÇÃO 1 — COMO OS TRÊS ARQUIVOS SE CONECTAM
+      <section> agrupa um bloco de conteúdo com o MESMO assunto.
+      Toda section deve ter um título (h2, h3...).
+      ===================================================================
+    -->
+    <section class="secao" id="conexao">
+      <div class="container">
+        <h2 class="secao-titulo">1. Como conectar HTML, CSS e JavaScript</h2>
+        <p class="secao-intro">O HTML é o arquivo principal. É ele que "chama" os outros dois, com duas linhas dentro do <code>&lt;head&gt;</code>.</p>
+
+        <div class="grade-2">
+          <div class="revelar">
+            <h3>A estrutura de pastas</h3>
+            <!--
+              <pre> = texto PRÉ-formatado: mantém espaços e quebras de linha exatamente como estão.
+              <code> = marca que é código. Juntos, mostram código com a formatação preservada.
+            -->
+            <pre class="bloco-codigo"><code>pagina-completa/
+├── index.html      ← você abre este
+├── sobre.html
+├── css/
+│   └── estilo.css
+├── js/
+│   └── script.js
+├── img/            ← fotos
+├── midia/          ← vídeo, áudio, legendas
+└── docs/           ← PDF para download</code></pre>
+            <p>Os caminhos (<code>href</code> e <code>src</code>) são <strong>relativos</strong>: partem da pasta onde está o arquivo HTML. <code>css/estilo.css</code> quer dizer "entre na pasta <em>css</em> e pegue <em>estilo.css</em>".</p>
+          </div>
+
+          <div class="revelar">
+            <h3>As duas linhas de conexão</h3>
+            <!--
+              Para MOSTRAR uma tag na tela (em vez de o navegador executar), trocamos
+              < por &lt; (less than = menor que) e > por &gt; (greater than = maior que).
+              Isso se chama ENTIDADE HTML. Veja mais na seção de textos.
+            -->
+            <pre class="bloco-codigo"><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Minha página&lt;/title&gt;
+
+  &lt;!-- CSS: no head, antes de desenhar --&gt;
+  &lt;link rel="stylesheet" href="css/estilo.css"&gt;
+
+  &lt;!-- JS: defer = roda depois do HTML --&gt;
+  &lt;script src="js/script.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3>Erros que quase todo mundo comete</h3>
+        <!--
+          <ul> = lista NÃO ordenada (a ordem não importa, aparece com bolinhas).
+        -->
+        <ul class="lista-erros">
+          <li><strong>Caminho errado.</strong> <code>href="estilo.css"</code> quando o arquivo está dentro da pasta <code>css</code>. A página abre sem estilo e só o F12 mostra o erro 404.</li>
+          <li><strong>Maiúscula e minúscula.</strong> No Windows, <code>Estilo.css</code> e <code>estilo.css</code> funcionam igual. Quando o site vai para a internet (servidor Linux), não. Use sempre minúsculas e sem acentos nos nomes de arquivos.</li>
+          <li><strong>Script sem <code>defer</code> no head.</strong> O JavaScript roda antes dos botões existirem e dá <code>Cannot read properties of null</code>.</li>
+          <li><strong>Esquecer o <code>&lt;/script&gt;</code>.</strong> A tag de script nunca fecha sozinha.</li>
+          <li><strong>Cache.</strong> Mudou o CSS e nada aconteceu? Aperte <kbd>Ctrl</kbd> + <kbd>F5</kbd> para recarregar sem usar a cópia guardada.</li>
+        </ul>
+
+        <!--
+          <aside> = conteúdo RELACIONADO, mas que não é o assunto principal
+          (dica, observação, propaganda, barra lateral).
+        -->
+        <aside class="dica">
+          <strong>Como conferir se conectou:</strong> aperte <kbd>F12</kbd>, abra a aba <em>Rede</em> (Network) e recarregue a página.
+          Aparecem <code>estilo.css</code> e <code>script.js</code> com status <strong>200</strong> (encontrado).
+          Se aparecer <strong>404</strong>, o caminho está errado. Abrindo pelo Live Server do VS Code, a lista fica completa.
+        </aside>
+      </div>
+    </section>
+
+    <!--
+      ===================================================================
+      SEÇÃO 2 — TEXTOS
+      ===================================================================
+    -->
+    <section class="secao secao-alternada" id="textos">
+      <div class="container">
+        <h2 class="secao-titulo">2. Textos</h2>
+        <p class="secao-intro">A maior parte de uma página é texto. O HTML tem uma tag para cada <strong>significado</strong> de texto, e não para cada aparência.</p>
+
+        <h3>Títulos: do h1 ao h6</h3>
+        <!--
+          Existem 6 níveis de título. Eles formam uma HIERARQUIA, como o sumário de um livro:
+          h1 = título do livro, h2 = capítulo, h3 = subcapítulo...
+          POR QUÊ não escolher o título pelo tamanho: o tamanho é do CSS.
+          Nunca pule níveis (h2 direto para h4) só porque "o h4 é menor".
+          ATENÇÃO: os títulos abaixo são só uma DEMONSTRAÇÃO. Numa página real use um único h1.
+        -->
+        <div class="demo-titulos">
+          <h1>h1 — Título da página</h1>
+          <h2>h2 — Seção</h2>
+          <h3>h3 — Subseção</h3>
+          <h4>h4 — Parte da subseção</h4>
+          <h5>h5 — Nível 5</h5>
+          <h6>h6 — Nível 6 (quase nunca usado)</h6>
+        </div>
+
+        <h3>Parágrafos e marcações dentro do texto</h3>
+        <!-- <p> = parágrafo. O navegador coloca espaço antes e depois automaticamente. -->
+        <p>
+          Este é um parágrafo. Dentro dele posso ter
+          <strong>texto importante</strong> (strong: importância, aparece em negrito),
+          <em>texto com ênfase</em> (em: ênfase na fala, aparece em itálico),
+          <mark>texto marcado</mark> (mark: marca-texto),
+          <small>letras miúdas</small> (small: observações e direitos autorais),
+          <del>texto apagado</del> e <ins>texto inserido</ins> (del/ins: correções),
+          H<sub>2</sub>O (sub: subscrito) e 10<sup>2</sup> (sup: sobrescrito).
+        </p>
+
+        <!--
+          POR QUÊ <strong> e não <b>? <b> e <i> só mudam a aparência.
+          <strong> e <em> dizem que o texto É importante: o leitor de tela muda a entonação.
+          <b> e <i> ainda existem para casos sem importância (ex.: nome científico em itálico).
+        -->
+        <p>
+          Também existem <b>b (negrito sem importância)</b>, <i>i (itálico, ex.: <i lang="la">Homo sapiens</i>)</i>
+          e <u>u (sublinhado; evite, parece link)</u>.
+          <br>
+          A tag <code>&lt;br&gt;</code> que está no código acima quebrou esta linha sem criar outro parágrafo.
+          Use <code>br</code> só em poemas e endereços, e nunca para dar espaço: espaço é trabalho do CSS.
+        </p>
+
+        <!--
+          <hr> = linha horizontal: separa MUDANÇA DE ASSUNTO dentro de uma seção.
+          br e hr são tags VAZIAS: não têm conteúdo nem tag de fechamento.
+        -->
+        <hr>
+
+        <h3>Tags de significado especial</h3>
+        <ul>
+          <!-- <abbr> = abreviação. O title aparece ao passar o mouse. -->
+          <li><abbr title="HyperText Markup Language">HTML</abbr> e <abbr title="Cascading Style Sheets">CSS</abbr> (abbr: passe o mouse)</li>
+          <!-- <code> = trecho de código dentro do texto -->
+          <li>O comando <code>console.log()</code> mostra mensagens no console (code)</li>
+          <!-- <kbd> = tecla do teclado -->
+          <li>Salve com <kbd>Ctrl</kbd> + <kbd>S</kbd> (kbd: teclas)</li>
+          <!-- <samp> = saída de um programa -->
+          <li>O terminal respondeu <samp>Arquivo salvo com sucesso</samp> (samp: saída)</li>
+          <!-- <var> = variável em matemática ou programação -->
+          <li>A área do retângulo é <var>b</var> × <var>h</var> (var: variável)</li>
+          <!-- <time> = data ou hora que a máquina consegue ler (atributo datetime) -->
+          <li>Aula marcada para <time datetime="2026-10-05T07:00">5 de outubro, às 7h</time> (time)</li>
+          <!-- <q> = citação curta dentro da frase: o navegador coloca as aspas sozinho -->
+          <li>Como diz o ditado, <q>a prática leva à perfeição</q> (q: citação curta)</li>
+          <!-- <dfn> = o termo que está sendo definido -->
+          <li><dfn>Algoritmo</dfn> é uma sequência de passos para resolver um problema (dfn: definição)</li>
+          <!-- <span> = "caixinha" sem significado, usada só para aplicar estilo ou JavaScript num pedaço de texto -->
+          <li>A <span class="texto-destaque">span</span> não tem significado: serve para o CSS ou o JS pegarem um pedaço do texto</li>
+        </ul>
+
+        <!--
+          <blockquote> = citação LONGA, em bloco. cite="" guarda a fonte (link).
+          <cite> = nome da OBRA citada.
+          <figure> + <figcaption> agrupam a citação com a legenda.
+        -->
+        <figure class="citacao">
+          <blockquote cite="https://www.w3.org/">
+            <p>O poder da Web está na sua universalidade. O acesso por todos, independentemente de deficiência, é um aspecto essencial.</p>
+          </blockquote>
+          <figcaption>— Tim Berners-Lee, criador da Web, em <cite>W3C Web Accessibility Initiative</cite></figcaption>
+        </figure>
+
+        <h3>Entidades: caracteres especiais</h3>
+        <!--
+          Alguns caracteres têm significado no HTML (< > &) e não podem ser escritos direto.
+          Usamos ENTIDADES: começam com & e terminam com ;
+        -->
+        <div class="tabela-rolagem tabela-compacta">
+        <table class="tabela">
+          <caption>Entidades mais usadas</caption>
+          <thead>
+            <tr><th scope="col">Você escreve</th><th scope="col">Aparece</th><th scope="col">Para quê</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>&amp;lt;</code></td><td>&lt;</td><td>Menor que (mostrar tags)</td></tr>
+            <tr><td><code>&amp;gt;</code></td><td>&gt;</td><td>Maior que</td></tr>
+            <tr><td><code>&amp;amp;</code></td><td>&amp;</td><td>O próprio &amp;</td></tr>
+            <tr><td><code>&amp;copy;</code></td><td>&copy;</td><td>Direitos autorais</td></tr>
+            <tr><td><code>&amp;nbsp;</code></td><td>R$&nbsp;10,00</td><td>Espaço que não quebra linha</td></tr>
+            <tr><td><code>&amp;quot;</code></td><td>&quot;</td><td>Aspas dentro de atributos</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h3>Endereço e contato</h3>
+        <!-- <address> = informações de CONTATO de quem é responsável pela página -->
+        <address>
+          Escola Estadual de Exemplo<br>
+          Rua dos Programadores, 404<br>
+          Barbacena — MG<br>
+          <a href="mailto:contato@escola-exemplo.edu.br">contato@escola-exemplo.edu.br</a>
+        </address>
+
+        <h3>Listas</h3>
+        <div class="grade-3">
+          <div>
+            <h4>Não ordenada <code>&lt;ul&gt;</code></h4>
+            <!-- ul = Unordered List. Cada item é um <li> (List Item). -->
+            <ul>
+              <li>HTML</li>
+              <li>CSS
+                <!-- Lista DENTRO de lista (aninhada): fica dentro do <li>, e não solta. -->
+                <ul>
+                  <li>Flexbox</li>
+                  <li>Grid</li>
+                </ul>
+              </li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Ordenada <code>&lt;ol&gt;</code></h4>
+            <!--
+              ol = Ordered List: a ORDEM importa (passos de uma receita, ranking).
+              start="3" começa do 3. type="a" usa letras (a, b, c). reversed conta ao contrário.
+            -->
+            <ol>
+              <li>Criar a pasta</li>
+              <li>Criar o index.html</li>
+              <li>Conectar o CSS</li>
+            </ol>
+            <ol type="a" start="4">
+              <li>Conectar o JS (começou no "d")</li>
+            </ol>
+          </div>
+          <div>
+            <h4>De definição <code>&lt;dl&gt;</code></h4>
+            <!-- dl = lista de termos (dt) e suas descrições (dd). Ótima para glossários. -->
+            <dl>
+              <dt>Tag</dt>
+              <dd>Marcação entre sinais de menor e maior, como <code>&lt;p&gt;</code>.</dd>
+              <dt>Atributo</dt>
+              <dd>Informação extra dentro da tag, como <code>href</code> ou <code>src</code>.</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      ===================================================================
+      SEÇÃO 3 — LINKS
+      <a> = âncora (anchor). O atributo href diz PARA ONDE o link vai.
+      ===================================================================
+    -->
+    <section class="secao" id="links">
+      <div class="container">
+        <h2 class="secao-titulo">3. Links</h2>
+        <p class="secao-intro">Links são o que tornam a Web uma "teia". O mesmo <code>&lt;a&gt;</code> serve para muitos destinos: muda só o <code>href</code>.</p>
+
+        <ul class="lista-links">
+          <!--
+            LINK EXTERNO: endereço completo com https://
+            target="_blank" abre em NOVA ABA.
+            rel="noopener noreferrer" é SEGURANÇA: impede que a página aberta controle a sua.
+            Sempre use rel="noopener" junto com target="_blank".
+          -->
+          <li>
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">Documentação do HTML na MDN</a>
+            <span class="link-tipo">externo, abre em nova aba</span>
+          </li>
+
+          <!-- LINK INTERNO para OUTRA PÁGINA do mesmo site: caminho relativo, sem https -->
+          <li>
+            <a href="sobre.html">Página Sobre</a>
+            <span class="link-tipo">outra página do mesmo site</span>
+          </li>
+
+          <!--
+            LINK ÂNCORA: # + id de um elemento. Rola a página até ele.
+            O elemento de destino precisa ter id="formularios".
+          -->
+          <li>
+            <a href="#formularios">Pular para Formulários</a>
+            <span class="link-tipo">âncora na mesma página (#id)</span>
+          </li>
+
+          <!-- Outra página + âncora: abre sobre.html já rolada até id="equipe" -->
+          <li>
+            <a href="sobre.html#equipe">Equipe, na página Sobre</a>
+            <span class="link-tipo">outra página + âncora</span>
+          </li>
+
+          <!-- mailto: abre o programa de e-mail. ?subject= já preenche o assunto -->
+          <li>
+            <a href="mailto:professor@escola-exemplo.edu.br?subject=D%C3%BAvida%20de%20HTML">Mandar e-mail ao professor</a>
+            <span class="link-tipo">mailto: (e-mail)</span>
+          </li>
+
+          <!-- tel: no celular, abre o discador. Números sem espaço, com código do país -->
+          <li>
+            <a href="tel:+5532999999999">(32) 99999-9999</a>
+            <span class="link-tipo">tel: (ligação)</span>
+          </li>
+
+          <!-- WhatsApp: wa.me/ + número com país e DDD, só dígitos. ?text= preenche a mensagem -->
+          <li>
+            <a href="https://wa.me/5532999999999?text=Ol%C3%A1%2C%20vim%20pelo%20site" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a>
+            <span class="link-tipo">wa.me (número fictício)</span>
+          </li>
+
+          <!-- download: baixa o arquivo em vez de abrir. O valor é o nome sugerido -->
+          <li>
+            <a href="docs/material-exemplo.pdf" download="apostila-html.pdf">Baixar a apostila (PDF)</a>
+            <span class="link-tipo">download</span>
+          </li>
+
+          <!-- Link para arquivo SEM download: o navegador abre o PDF numa aba -->
+          <li>
+            <a href="docs/material-exemplo.pdf" target="_blank" rel="noopener">Abrir o PDF no navegador</a>
+            <span class="link-tipo">abre o arquivo</span>
+          </li>
+
+          <!-- title = dica que aparece ao passar o mouse -->
+          <li>
+            <a href="#links" title="Eu sou o texto do atributo title">Passe o mouse aqui</a>
+            <span class="link-tipo">com title</span>
+          </li>
+        </ul>
+
+        <h3>Imagem como link</h3>
+        <!-- Qualquer coisa dentro do <a> vira clicável, inclusive imagens. -->
+        <a href="img/foto-2.jpg" target="_blank" rel="noopener" class="link-imagem">
+          <img src="img/foto-2-pequena.jpg" alt="Montanhas verdes sob céu azul. Clique para abrir em tamanho grande" width="300" height="200" loading="lazy">
+        </a>
+
+        <aside class="dica">
+          <strong>Link ou botão?</strong> Se ele <em>leva</em> a outro lugar (página, seção, arquivo), é <code>&lt;a&gt;</code>.
+          Se ele <em>faz</em> alguma coisa na página (abrir menu, somar, trocar tema), é <code>&lt;button&gt;</code>.
+          A aparência não importa: o CSS pode deixar um parecido com o outro.
+        </aside>
+      </div>
+    </section>
+
+    <!--
+      ===================================================================
+      SEÇÃO 4 — IMAGENS
+      ===================================================================
+    -->
+    <section class="secao secao-alternada" id="imagens">
+      <div class="container">
+        <h2 class="secao-titulo">4. Imagens</h2>
+        <p class="secao-intro">Imagem tem dois atributos obrigatórios: <code>src</code> (onde está o arquivo) e <code>alt</code> (o que ela mostra, em palavras).</p>
+
+        <div class="grade-2">
+          <div>
+            <h3>Imagem simples</h3>
+            <!--
+              <img> é uma tag VAZIA (não tem </img>).
+              src     -> caminho do arquivo
+              alt     -> descrição. Lida por leitores de tela e mostrada se a imagem não carregar.
+                         POR QUÊ é obrigatório: uma pessoa cega "vê" a imagem por este texto.
+                         Descreva o que importa, sem começar com "imagem de".
+              width/height -> tamanho ORIGINAL. O navegador reserva o espaço antes de carregar,
+                         e a página não "pula". O CSS ainda pode deixar a imagem menor.
+              loading="lazy" -> só carrega quando o usuário rolar até perto. Economiza internet.
+              TESTE: troque o src para "img/nao-existe.jpg" e veja o alt aparecer no lugar.
+            -->
+            <img class="img-responsiva img-arredondada" src="img/foto-1.jpg" alt="Pôr do sol alaranjado atrás de montanhas roxas" width="1200" height="800" loading="lazy">
+          </div>
+
+          <div>
+            <h3>Imagem com legenda</h3>
+            <!--
+              <figure> agrupa uma imagem (ou gráfico, código, citação) com sua legenda <figcaption>.
+              POR QUÊ: a legenda fica LIGADA à imagem. Leitores de tela leem as duas juntas.
+            -->
+            <figure class="figura">
+              <img class="img-responsiva" src="img/foto-3.jpg" alt="Céu estrelado com lua cheia sobre montanhas escuras" width="1200" height="800" loading="lazy">
+              <figcaption>Figura 1 — Noite estrelada. O texto da legenda fica no <code>&lt;figcaption&gt;</code>.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <h3>Imagem que muda conforme a tela: <code>&lt;picture&gt;</code></h3>
+        <!--
+          <picture> escolhe QUAL arquivo mostrar de acordo com a tela.
+          O navegador lê os <source> de cima para baixo e usa o primeiro cuja "media" for verdadeira.
+          Se nenhum servir, usa o <img> do final (que é obrigatório).
+          POR QUÊ: no celular (tela em pé) um banner largo fica fininho demais; aqui trocamos por um quadrado.
+          TESTE: diminua a largura da janela do navegador e veja a imagem trocar.
+        -->
+        <picture>
+          <source media="(max-width: 700px)" srcset="img/banner-quadrado.jpg">
+          <img class="img-responsiva img-arredondada" src="img/banner-largo.jpg" alt="Paisagem estilizada com montanhas amarelas e azuis" width="1600" height="560" loading="lazy">
+        </picture>
+
+        <h3>Várias resoluções da mesma imagem: <code>srcset</code></h3>
+        <!--
+          srcset oferece VERSÕES da mesma imagem em tamanhos diferentes (600w = 600px de largura).
+          sizes diz quanto espaço a imagem ocupa na tela.
+          O navegador escolhe sozinho: celular baixa a pequena, tela grande baixa a grande.
+          POR QUÊ: não faz sentido baixar uma imagem de 1200px para mostrar em 300px.
+        -->
+        <img class="img-responsiva img-arredondada img-media"
+             src="img/foto-5.jpg"
+             srcset="img/foto-5-pequena.jpg 600w, img/foto-5.jpg 1200w"
+             sizes="(max-width: 700px) 100vw, 600px"
+             alt="Colinas verdes em camadas sob céu claro" width="1200" height="800" loading="lazy">
+
+        <h3>Imagem desenhada com código: SVG</h3>
+        <!--
+          SVG é uma imagem VETORIAL escrita em código. Cada forma é uma tag:
+          <circle> círculo, <rect> retângulo, <polygon> polígono, <text> texto.
+          Não perde qualidade com zoom e o CSS consegue mudar as cores.
+          role="img" + aria-label = o "alt" do SVG.
+        -->
+        <svg class="svg-demo" viewBox="0 0 300 120" role="img" aria-label="Um círculo, um quadrado e um triângulo desenhados em SVG">
+          <circle cx="50" cy="60" r="40" class="svg-forma-1" />
+          <rect x="110" y="20" width="80" height="80" rx="8" class="svg-forma-2" />
+          <polygon points="220,100 260,20 300,100" class="svg-forma-3" />
+        </svg>
+
+        <h3>Mapa de imagem: partes clicáveis</h3>
+        <!--
+          <map> + <area> transformam PEDAÇOS de uma imagem em links.
+          usemap="#formas" liga a imagem ao mapa name="formas".
+          coords = coordenadas em pixels: retângulo (x1,y1,x2,y2), círculo (x,y,raio), polígono (x,y,x,y...).
+          Hoje é pouco usado (não se adapta bem ao celular), mas ainda aparece em provas e sites antigos.
+        -->
+        <img src="img/mapa-formas.png" usemap="#formas" alt="Três formas: quadrado verde, círculo amarelo e triângulo vermelho" width="600" height="300" class="img-mapa">
+        <map name="formas">
+          <area shape="rect" coords="40,60,200,240" href="#textos" alt="Quadrado: vai para Textos">
+          <area shape="circle" coords="320,150,90" href="#links" alt="Círculo: vai para Links">
+          <area shape="poly" coords="440,240,520,60,580,240" href="#tabelas" alt="Triângulo: vai para Tabelas">
+        </map>
+        <p class="legenda-pequena">Clique no quadrado, no círculo ou no triângulo.</p>
+
+        <h3>Galeria (clique para ampliar)</h3>
+        <!--
+          Galeria: várias imagens dentro de uma lista.
+          data-grande="..." é um ATRIBUTO DE DADOS: você inventa o nome depois de "data-".
+          O navegador ignora; quem lê é o JavaScript (script.js, parte 16), que abre a versão grande.
+          O CSS organiza as fotos em grade com "display: grid".
+        -->
+        <ul class="galeria">
+          <li><button type="button" class="galeria-item" data-grande="img/foto-1.jpg" data-legenda="Pôr do sol laranja"><img src="img/foto-1-pequena.jpg" alt="Pôr do sol laranja" width="600" height="400" loading="lazy"></button></li>
+          <li><button type="button" class="galeria-item" data-grande="img/foto-2.jpg" data-legenda="Dia claro nas montanhas"><img src="img/foto-2-pequena.jpg" alt="Dia claro nas montanhas" width="600" height="400" loading="lazy"></button></li>
+          <li><button type="button" class="galeria-item" data-grande="img/foto-3.jpg" data-legenda="Noite estrelada"><img src="img/foto-3-pequena.jpg" alt="Noite estrelada" width="600" height="400" loading="lazy"></button></li>
+          <li><button type="button" class="galeria-item" data-grande="img/foto-4.jpg" data-legenda="Montanhas vermelhas"><img src="img/foto-4-pequena.jpg" alt="Montanhas vermelhas" width="600" height="400" loading="lazy"></button></li>
+          <li><button type="button" class="galeria-item" data-grande="img/foto-5.jpg" data-legenda="Colinas verdes"><img src="img/foto-5-pequena.jpg" alt="Colinas verdes" width="600" height="400" loading="lazy"></button></li>
+          <li><button type="button" class="galeria-item" data-grande="img/foto-6.jpg" data-legenda="Crepúsculo roxo"><img src="img/foto-6-pequena.jpg" alt="Crepúsculo roxo" width="600" height="400" loading="lazy"></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!--
+      ===================================================================
+      SEÇÃO 5 — ÁUDIO E VÍDEO
+      ===================================================================
+    -->
+    <section class="secao" id="audio-video">
+      <div class="container">
+        <h2 class="secao-titulo">5. Áudio e vídeo</h2>
+        <p class="secao-intro">Desde o HTML5, o navegador toca áudio e vídeo sozinho, sem plugin.</p>
+
+        <div class="grade-2">
+          <div>
+            <h3>Vídeo com legenda</h3>
+            <!--
+              <video>:
+                controls  -> mostra play, volume, tela cheia. Sem ele, o vídeo aparece "travado".
+                poster    -> imagem mostrada antes de dar play
+                preload="metadata" -> baixa só a duração e o tamanho, não o vídeo todo
+                width/height -> reservam o espaço (igual à imagem)
+              <source> -> formatos alternativos. O navegador usa o PRIMEIRO que conseguir tocar.
+                          POR QUÊ dois: nem todo navegador toca todo formato. MP4 funciona em quase todos.
+              <track>  -> legenda (arquivo .vtt). kind="subtitles", srclang = idioma, default = já ligada.
+              O texto dentro de <video> só aparece em navegadores muito antigos.
+              OUTROS ATRIBUTOS: autoplay (começa sozinho; o navegador só deixa se tiver muted),
+              muted (sem som), loop (repete).
+            -->
+            <video class="video" controls poster="midia/poster.jpg" preload="metadata" width="854" height="480">
+              <source src="midia/video-exemplo.webm" type="video/webm">
+              <source src="midia/video-exemplo.mp4" type="video/mp4">
+              <track src="midia/legendas-pt.vtt" kind="subtitles" srclang="pt-BR" label="Português" default>
+              Seu navegador não toca vídeo. <a href="midia/video-exemplo.mp4">Baixe o vídeo</a>.
+            </video>
+            <p class="legenda-pequena">A legenda funciona quando a página é aberta pelo Live Server. Abrindo o arquivo direto (duplo clique), o Chrome bloqueia o .vtt por segurança.</p>
+          </div>
+
+          <div>
+            <h3>Áudio</h3>
+            <!-- <audio> funciona igual ao <video>, mas sem imagem. -->
+            <audio controls preload="metadata" class="audio">
+              <source src="midia/melodia.ogg" type="audio/ogg">
+              <source src="midia/melodia.mp3" type="audio/mpeg">
+              Seu navegador não toca áudio.
+            </audio>
+
+            <h3>Vídeo com controles feitos por nós</h3>
+            <!--
+              Mesmo vídeo, SEM o atributo controls. Os botões abaixo são HTML comum,
+              e o JavaScript (script.js, parte 18) manda o vídeo tocar, pausar e silenciar.
+              POR QUÊ mostrar isso: é assim que sites fazem players com a cara deles.
+            -->
+            <div class="player">
+              <video id="video-custom" class="video" poster="midia/poster.jpg" preload="metadata" width="854" height="480" muted playsinline>
+                <source src="midia/video-exemplo.webm" type="video/webm">
+                <source src="midia/video-exemplo.mp4" type="video/mp4">
+              </video>
+              <div class="player-controles">
+                <button type="button" class="botao botao-pequeno" id="btn-play">▶ Tocar</button>
+                <button type="button" class="botao botao-pequeno botao-contorno" id="btn-mudo">Ligar som</button>
+                <!-- <progress> = barra de progresso. value vai de 0 até max. -->
+                <progress id="video-progresso" max="100" value="0" aria-label="Progresso do vídeo"></progress>
+                <span id="video-tempo" class="player-tempo">0:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      ===================================================================
+      SEÇÃO 6 — INCORPORAÇÕES (iframe)
+      ===================================================================
+    -->
+    <section class="secao secao-alternada" id="incorporar">
+      <div class="container">
+        <h2 class="secao-titulo">6. Conteúdo de outros sites: <code>&lt;iframe&gt;</code></h2>
+        <p class="secao-intro">O <code>iframe</code> é uma "janela" que mostra outra página dentro da sua. É assim que se coloca vídeo do YouTube e mapa do Google. <strong>Precisa de internet.</strong></p>
+
+        <div class="grade-2">
+          <div>
+            <h3>Vídeo do YouTube</h3>
+            <!--
+              COMO PEGAR ESSE CÓDIGO: no YouTube, clique em Compartilhar > Incorporar e copie.
+              O endereço usa /embed/ + o código do vídeo (o que vem depois de "v=" no link normal).
+              title é obrigatório por acessibilidade: diz o que tem dentro da janela.
+              allowfullscreen permite tela cheia.
+              O CSS usa aspect-ratio: 16/9 para o vídeo não ficar achatado.
+            -->
+            <div class="incorporado">
+              <iframe src="https://www.youtube.com/embed/ok-plXXHlWw" title="HTML in 100 Seconds, vídeo do canal Fireship" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div>
+            <h3>Mapa do Google</h3>
+            <!--
+              No Google Maps: procure o lugar > Compartilhar > Incorporar um mapa.
+              Este é o formato mais simples: ?q= + nome do lugar + &output=embed
+            -->
+            <div class="incorporado">
+              <iframe src="https://maps.google.com/maps?q=Barbacena%2C%20MG&amp;z=13&amp;output=embed" title="Mapa de Barbacena, Minas Gerais" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <h3>Um arquivo do próprio site dentro da página</h3>
+        <!-- O iframe também mostra arquivos locais, como este PDF. -->
+        <iframe class="iframe-pdf" src="docs/material-exemplo.pdf" title="Apostila de exemplo em PDF" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!--
+      ===================================================================
+      SEÇÃO 7 — TABELAS
+      Use tabela para DADOS em linhas e colunas (notas, horários, preços).
+      Nunca use tabela para montar o layout da página: isso é trabalho do CSS.
+      ===================================================================
+    -->
+    <section class="secao" id="tabelas">
+      <div class="container">
+        <h2 class="secao-titulo">7. Tabelas</h2>
+        <p class="secao-intro">Uma tabela é formada por linhas (<code>tr</code>) e, dentro delas, células (<code>td</code> para dados e <code>th</code> para títulos).</p>
+
+        <!--
+          A div com "tabela-rolagem" deixa a tabela rolar para o lado no celular,
+          em vez de estourar a tela. (veja no CSS: overflow-x: auto)
+        -->
+        <div class="tabela-rolagem">
+          <table class="tabela">
+            <!-- <caption> = título da tabela. Fica logo depois de <table>. -->
+            <caption>Boletim do 2º EMTI — 1º semestre</caption>
+
+            <!-- <thead> = cabeçalho da tabela -->
+            <thead>
+              <tr>
+                <!--
+                  rowspan="2" -> a célula ocupa 2 LINHAS (para baixo)
+                  colspan="2" -> a célula ocupa 2 COLUNAS (para o lado)
+                  scope="col" -> este th é título da COLUNA; scope="row" -> título da LINHA.
+                  POR QUÊ scope: o leitor de tela lê "Ana, 1º bimestre, 8" em vez de só "8".
+                -->
+                <th scope="col" rowspan="2">Aluno</th>
+                <th scope="colgroup" colspan="2">Notas</th>
+                <th scope="col" rowspan="2">Média</th>
+                <th scope="col" rowspan="2">Situação</th>
+              </tr>
+              <tr>
+                <th scope="col">1º bim.</th>
+                <th scope="col">2º bim.</th>
+              </tr>
+            </thead>
+
+            <!-- <tbody> = corpo, onde ficam os dados -->
+            <tbody>
+              <tr>
+                <th scope="row">Ana</th>
+                <td>8,0</td><td>9,0</td><td>8,5</td>
+                <td><span class="etiqueta etiqueta-ok">Aprovada</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Bruno</th>
+                <td>5,0</td><td>4,0</td><td>4,5</td>
+                <td><span class="etiqueta etiqueta-alerta">Recuperação</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Carla</th>
+                <td>7,0</td><td>6,0</td><td>6,5</td>
+                <td><span class="etiqueta etiqueta-ok">Aprovada</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Diego</th>
+                <td>3,0</td><td>2,5</td><td>2,75</td>
+                <td><span class="etiqueta etiqueta-erro">Reprovado</span></td>
+              </tr>
+            </tbody>
+
+            <!-- <tfoot> = rodapé: totais, médias, observações -->
+            <tfoot>
+              <tr>
+                <th scope="row" colspan="3">Média da turma</th>
+                <td>5,56</td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      ===================================================================
+      SEÇÃO 8 — FORMULÁRIOS
+      O formulário é como o usuário ENVIA informação: cadastro, login, busca.
+      ===================================================================
+    -->
+    <section class="secao secao-alternada" id="formularios">
+      <div class="container">
+        <h2 class="secao-titulo">8. Formulários</h2>
+        <p class="secao-intro">Todos os tipos de campo do HTML. Os campos com <span aria-hidden="true">*</span> são obrigatórios. Ao clicar em Enviar, o JavaScript mostra os dados coletados em vez de mandar para um servidor.</p>
+
+        <!--
+          <form>:
+            action = para ONDE os dados vão (endereço do servidor). "#" = lugar nenhum, só exemplo.
+            method = COMO vão: "get" (aparecem no endereço, para buscas) ou "post" (escondidos, para cadastros e senhas).
+          Aqui o JavaScript intercepta o envio (script.js, parte 27).
+        -->
+        <form class="formulario" id="form-cadastro" action="#" method="post">
+
+          <!--
+            <fieldset> agrupa campos relacionados e desenha uma borda.
+            <legend> é o título do grupo.
+          -->
+          <fieldset>
+            <legend>Dados pessoais</legend>
+
+            <div class="grade-form">
+              <!--
+                <label> + for="id" LIGA o texto ao campo.
+                POR QUÊ: clicar no texto coloca o cursor no campo, e o leitor de tela lê o nome certo.
+                O "for" do label tem que ser IGUAL ao "id" do input.
+
+                ATRIBUTOS DE VALIDAÇÃO (o navegador confere sozinho, sem JavaScript):
+                  required    -> obrigatório
+                  minlength   -> mínimo de caracteres
+                  maxlength   -> máximo de caracteres
+                  placeholder -> texto de exemplo em cinza (NÃO substitui o label)
+                  autocomplete -> ajuda o navegador a preencher automático
+                name -> NOME do dado quando o formulário é enviado. Sem name, o campo não é enviado!
+              -->
+              <div class="campo">
+                <label for="nome">Nome completo *</label>
+                <input type="text" id="nome" name="nome" required minlength="3" maxlength="60" placeholder="Ex.: Ana Souza" autocomplete="name">
+              </div>
+
+              <!-- type="email" confere se tem @ e mostra teclado com @ no celular -->
+              <div class="campo">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" required placeholder="ana@exemplo.com" autocomplete="email">
+              </div>
+
+              <!--
+                type="tel" mostra teclado numérico no celular.
+                pattern = regra com expressão regular. Aqui: 2 dígitos, espaço opcional, 4 ou 5 dígitos, hífen opcional, 4 dígitos.
+                title explica a regra quando o usuário erra.
+              -->
+              <div class="campo">
+                <label for="telefone">Celular</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="32 99999-9999" pattern="[0-9]{2} ?[0-9]{4,5}-?[0-9]{4}" title="DDD e número. Ex.: 32 99999-9999" autocomplete="tel">
+              </div>
+
+              <!-- type="date" abre um calendário -->
+              <div class="campo">
+                <label for="nascimento">Data de nascimento</label>
+                <input type="date" id="nascimento" name="nascimento" min="1950-01-01" max="2015-12-31">
+              </div>
+
+              <!-- type="number": só números. min, max e step (de quanto em quanto) -->
+              <div class="campo">
+                <label for="idade">Idade</label>
+                <input type="number" id="idade" name="idade" min="10" max="99" step="1" placeholder="16">
+              </div>
+
+              <!-- type="url": confere se é um endereço de site -->
+              <div class="campo">
+                <label for="site">Seu site ou GitHub</label>
+                <input type="url" id="site" name="site" placeholder="https://github.com/seu-usuario">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Acesso</legend>
+            <div class="grade-form">
+              <!-- type="password": esconde o que é digitado -->
+              <div class="campo">
+                <label for="senha">Senha *</label>
+                <div class="campo-com-botao">
+                  <input type="password" id="senha" name="senha" required minlength="6" autocomplete="new-password" aria-describedby="senha-ajuda">
+                  <!-- Este botão alterna entre mostrar e esconder a senha (script.js, parte 25) -->
+                  <button type="button" class="botao botao-pequeno botao-contorno" id="btn-ver-senha" aria-pressed="false">Mostrar</button>
+                </div>
+                <!-- aria-describedby no input aponta para este texto de ajuda -->
+                <small id="senha-ajuda" class="ajuda">Mínimo de 6 caracteres.</small>
+              </div>
+
+              <div class="campo">
+                <label for="confirma-senha">Confirme a senha *</label>
+                <!-- O JavaScript confere se é igual à senha (validação personalizada) -->
+                <input type="password" id="confirma-senha" name="confirma-senha" required autocomplete="new-password">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Escolhas</legend>
+            <div class="grade-form">
+
+              <!--
+                <select> = lista de opções (caixa de seleção).
+                <optgroup> agrupa opções com um título.
+                A primeira opção com value="" + required obriga a escolher de verdade.
+              -->
+              <div class="campo">
+                <label for="curso">Curso *</label>
+                <select id="curso" name="curso" required>
+                  <option value="">Selecione...</option>
+                  <optgroup label="Técnico">
+                    <option value="informatica">Técnico em Informática</option>
+                    <option value="ds">Técnico em Desenvolvimento de Sistemas</option>
+                  </optgroup>
+                  <optgroup label="Livres">
+                    <option value="web">Criação de sites</option>
+                    <option value="robotica">Robótica</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <!--
+                <datalist> = SUGESTÕES para um input de texto.
+                O usuário pode escolher uma sugestão OU digitar outra coisa.
+                O list="" do input aponta para o id do datalist.
+              -->
+              <div class="campo">
+                <label for="linguagem">Linguagem favorita</label>
+                <input type="text" id="linguagem" name="linguagem" list="lista-sugestoes" placeholder="Comece a digitar...">
+                <datalist id="lista-sugestoes">
+                  <option value="JavaScript"></option>
+                  <option value="Python"></option>
+                  <option value="Java"></option>
+                  <option value="C#"></option>
+                  <option value="PHP"></option>
+                </datalist>
+              </div>
+
+              <!-- type="color" abre um seletor de cor -->
+              <div class="campo">
+                <label for="cor-favorita">Cor favorita</label>
+                <input type="color" id="cor-favorita" name="cor-favorita" value="#2a9d8f">
+              </div>
+
+              <!--
+                type="range" = controle deslizante.
+                <output> mostra um RESULTADO calculado; o JavaScript atualiza o número ao arrastar (script.js, parte 26).
+              -->
+              <div class="campo">
+                <label for="nivel">Nível em programação: <output id="nivel-valor" for="nivel">5</output>/10</label>
+                <input type="range" id="nivel" name="nivel" min="0" max="10" value="5">
+              </div>
+
+              <!-- Outros tipos de data e hora -->
+              <div class="campo">
+                <label for="horario">Melhor horário para aula</label>
+                <input type="time" id="horario" name="horario" value="07:00">
+              </div>
+              <div class="campo">
+                <label for="mes-inicio">Mês de início</label>
+                <input type="month" id="mes-inicio" name="mes-inicio">
+              </div>
+              <div class="campo">
+                <label for="semana">Semana da prova</label>
+                <input type="week" id="semana" name="semana">
+              </div>
+              <div class="campo">
+                <label for="data-hora">Data e hora da entrega</label>
+                <input type="datetime-local" id="data-hora" name="data-hora">
+              </div>
+            </div>
+
+            <!--
+              RADIO: escolha ÚNICA. Todos do grupo têm o MESMO name.
+              POR QUÊ o mesmo name: é o que faz marcar um desmarcar os outros.
+              checked = já vem marcado.
+            -->
+            <fieldset class="grupo-opcoes">
+              <legend>Turno *</legend>
+              <label class="opcao"><input type="radio" name="turno" value="manha" required checked> Manhã</label>
+              <label class="opcao"><input type="radio" name="turno" value="tarde"> Tarde</label>
+              <label class="opcao"><input type="radio" name="turno" value="noite"> Noite</label>
+            </fieldset>
+
+            <!--
+              CHECKBOX: escolha MÚLTIPLA. Cada um é independente.
+              Aqui o label ENVOLVE o input: outra forma válida de ligar os dois (sem for/id).
+            -->
+            <fieldset class="grupo-opcoes">
+              <legend>O que você quer aprender?</legend>
+              <label class="opcao"><input type="checkbox" name="interesses" value="front"> Front-end</label>
+              <label class="opcao"><input type="checkbox" name="interesses" value="back"> Back-end</label>
+              <label class="opcao"><input type="checkbox" name="interesses" value="jogos"> Jogos</label>
+              <label class="opcao"><input type="checkbox" name="interesses" value="dados"> Banco de dados</label>
+            </fieldset>
+          </fieldset>
+
+          <fieldset>
+            <legend>Mais informações</legend>
+
+            <!--
+              <textarea> = texto de VÁRIAS linhas. rows = altura inicial em linhas.
+              Diferente do input, ele tem tag de fechamento, e o texto padrão fica entre as tags.
+            -->
+            <div class="campo">
+              <label for="mensagem">Conte sobre você</label>
+              <textarea id="mensagem" name="mensagem" rows="4" maxlength="200" placeholder="Escreva até 200 caracteres" aria-describedby="contador-caracteres"></textarea>
+              <!-- Contador atualizado pelo JavaScript a cada tecla (script.js, parte 24) -->
+              <small class="ajuda" id="contador-caracteres" aria-live="polite">0 de 200 caracteres</small>
+            </div>
+
+            <!-- type="file" = enviar arquivo. accept limita os tipos. multiple permite vários. -->
+            <div class="campo">
+              <label for="arquivo">Foto de perfil</label>
+              <input type="file" id="arquivo" name="arquivo" accept="image/*">
+            </div>
+
+            <!-- type="search" = campo de busca (alguns navegadores mostram um X para limpar) -->
+            <div class="campo">
+              <label for="busca-form">Busca</label>
+              <input type="search" id="busca-form" name="busca" placeholder="Pesquisar...">
+            </div>
+
+            <!-- type="hidden" = campo INVISÍVEL que é enviado junto (ex.: de qual página veio o cadastro) -->
+            <input type="hidden" name="origem" value="catalogo-html">
+
+            <!-- Campo desabilitado (disabled): não pode ser editado e NÃO é enviado -->
+            <div class="campo">
+              <label for="escola">Escola</label>
+              <input type="text" id="escola" value="Escola Estadual de Exemplo" disabled>
+            </div>
+
+            <label class="opcao opcao-termos">
+              <input type="checkbox" name="termos" value="aceito" required>
+              Li e aceito os termos de uso *
+            </label>
+          </fieldset>
+
+          <!--
+            TRÊS TIPOS DE BOTÃO:
+              type="submit" -> ENVIA o formulário (dispara a validação)
+              type="reset"  -> LIMPA todos os campos
+              type="button" -> não faz nada sozinho; serve para JavaScript
+          -->
+          <div class="form-acoes">
+            <button type="submit" class="botao botao-primario">Enviar cadastro</button>
+            <button type="reset" class="botao botao-contorno">Limpar</button>
+            <button type="button" class="botao botao-desabilitado" disabled>Desabilitado</button>
+          </div>
+        </form>
+
+        <!-- Área onde o JavaScript mostra os dados enviados -->
+        <div class="resultado-form" id="resultado-form" aria-live="polite" hidden></div>
+
+        <h3>Indicadores: <code>&lt;progress&gt;</code> e <code>&lt;meter&gt;</code></h3>
+        <!--
+          progress = andamento de uma TAREFA (download, etapa do cadastro).
+          meter    = uma MEDIDA dentro de uma faixa conhecida (bateria, nota, espaço em disco).
+                     low/high/optimum fazem o navegador mudar a cor (verde, amarelo, vermelho).
+        -->
+        <div class="grade-2 indicadores">
+          <p><label for="prog-exemplo">Download: 70%</label><br><progress id="prog-exemplo" value="70" max="100">70%</progress></p>
+          <p><label for="meter-exemplo">Disco usado: 9 de 10 GB</label><br><meter id="meter-exemplo" value="9" min="0" max="10" low="4" high="8" optimum="2">9 de 10</meter></p>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      ===================================================================
+      SEÇÃO 9 — ELEMENTOS DE LAYOUT E SEMÂNTICA
+      ===================================================================
+    -->
+    <section class="secao" id="layout">
+      <div class="container">
+        <h2 class="secao-titulo">9. Layout: organizando a página</h2>
+        <p class="secao-intro">As tags semânticas dividem a página em partes com significado. O CSS decide onde cada parte fica.</p>
+
+        <!-- Desenho da estrutura de uma página típica, feito só com HTML e CSS Grid -->
+        <div class="esqueleto" aria-label="Estrutura típica de uma página" role="img">
+          <div class="esq-header">&lt;header&gt;</div>
+          <div class="esq-nav">&lt;nav&gt;</div>
+          <div class="esq-main">&lt;main&gt;
+            <div class="esq-section">&lt;section&gt;</div>
+            <div class="esq-article">&lt;article&gt;</div>
+          </div>
+          <div class="esq-aside">&lt;aside&gt;</div>
+          <div class="esq-footer">&lt;footer&gt;</div>
+        </div>
+
+        <h3>Artigos em cards</h3>
+        <!--
+          <article> = conteúdo que faz sentido SOZINHO, fora da página:
+          um post de blog, uma notícia, um produto, um comentário.
+          Um article pode ter seu próprio <header> e <footer>.
+          O CSS coloca os cards lado a lado com grid e, no celular, um embaixo do outro.
+        -->
+        <div class="cards">
+          <article class="card revelar">
+            <img class="card-img" src="img/foto-4-pequena.jpg" alt="" width="600" height="400" loading="lazy">
+            <!-- alt="" (vazio) = imagem DECORATIVA. O leitor de tela pula. Use quando o texto já diz tudo. -->
+            <div class="card-corpo">
+              <header>
+                <h4 class="card-titulo">Flexbox em 5 minutos</h4>
+                <p class="card-meta">Publicado em <time datetime="2026-09-10">10/09/2026</time></p>
+              </header>
+              <p>Como alinhar itens em linha ou coluna com poucas propriedades do CSS.</p>
+              <footer class="card-rodape">
+                <a href="#layout" class="card-link">Ler artigo</a>
+              </footer>
+            </div>
+          </article>
+
+          <article class="card revelar">
+            <img class="card-img" src="img/foto-5-pequena.jpg" alt="" width="600" height="400" loading="lazy">
+            <div class="card-corpo">
+              <header>
+                <h4 class="card-titulo">Grid para iniciantes</h4>
+                <p class="card-meta">Publicado em <time datetime="2026-09-17">17/09/2026</time></p>
+              </header>
+              <p>Linhas e colunas de verdade, como numa planilha, para montar layouts.</p>
+              <footer class="card-rodape">
+                <a href="#layout" class="card-link">Ler artigo</a>
+              </footer>
+            </div>
+          </article>
+
+          <article class="card revelar">
+            <img class="card-img" src="img/foto-6-pequena.jpg" alt="" width="600" height="400" loading="lazy">
+            <div class="card-corpo">
+              <header>
+                <h4 class="card-titulo">Seu primeiro evento de clique</h4>
+                <p class="card-meta">Publicado em <time datetime="2026-09-24">24/09/2026</time></p>
+              </header>
+              <p>Fazer um botão responder ao usuário com addEventListener.</p>
+              <footer class="card-rodape">
+                <a href="#interatividade" class="card-link">Ler artigo</a>
+              </footer>
+            </div>
+          </article>
+        </div>
+
+        <h3>Elementos que abrem e fecham sem JavaScript</h3>
+        <!--
+          <details> + <summary> = um "sanfona" (acordeão) NATIVO.
+          summary é o título clicável; o resto aparece ao abrir.
+          open = começa aberto.
+          POR QUÊ usar: funciona sem JavaScript, com teclado e com leitor de tela.
+        -->
+        <div class="acordeao">
+          <details open>
+            <summary>O que é HTML?</summary>
+            <p>É a linguagem de marcação que dá estrutura à página: diz o que é título, parágrafo, imagem, link.</p>
+          </details>
+          <details>
+            <summary>HTML é linguagem de programação?</summary>
+            <p>Não. HTML não tem variáveis, decisões nem repetições. É uma linguagem de <strong>marcação</strong>. A programação da página fica com o JavaScript.</p>
+          </details>
+          <details>
+            <summary>Preciso decorar todas as tags?</summary>
+            <p>Não. Você precisa saber que elas existem e onde consultar. Os programadores consultam a documentação o tempo todo.</p>
+          </details>
+        </div>
+
+        <h3>Divisões genéricas: <code>&lt;div&gt;</code></h3>
+        <p>A <code>div</code> é uma caixa sem significado. Use quando nenhuma tag semântica serve e você só precisa agrupar coisas para o CSS, como as colunas desta página. Primeiro pergunte: "é um header? um article? uma section?". Se não for nada disso, aí sim é div.</p>
+      </div>
+    </section>
+
+    <!--
+      ===================================================================
+      SEÇÃO 10 — INTERATIVIDADE COM JAVASCRIPT
+      Todo o HTML abaixo é "parado". Quem dá vida é o script.js.
+      Cada exemplo tem um número; procure o mesmo número no script.js.
+      ===================================================================
+    -->
+    <section class="secao secao-alternada" id="interatividade">
+      <div class="container">
+        <h2 class="secao-titulo">10. Interatividade com JavaScript</h2>
+        <p class="secao-intro">Os exemplos estão em ordem de dificuldade. Cada um tem um número, e o <strong>mesmo número</strong> aparece no <code>script.js</code>, junto com a explicação.</p>
+
+        <!--
+          A lista abaixo usa a mesma "caixa" (.exemplo) para todos.
+          Os exemplos 1 a 4 (tema escuro, menu, cabeçalho e barra de progresso)
+          já estão funcionando na página toda: role e clique para ver.
+        -->
+        <p class="dica">Os exemplos <strong>1 a 5</strong> já estão pela página: <strong>1</strong> tema escuro, <strong>2</strong> menu no celular, <strong>3</strong> cabeçalho que encolhe, <strong>4</strong> barra de progresso no topo e <strong>5</strong> botão de voltar ao topo.</p>
+
+        <div class="exemplos">
+
+          <!-- EXEMPLO 6: trocar classe e texto -->
+          <div class="exemplo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">6</span> Curtir: trocar classe</h3>
+            <p>O JavaScript adiciona ou tira uma classe do CSS. É a interação mais usada da Web.</p>
+            <button type="button" class="btn-curtir" id="btn-curtir" aria-pressed="false">
+              <span class="coracao" aria-hidden="true">♥</span> <span id="curtir-texto">Curtir</span>
+            </button>
+          </div>
+
+          <!-- EXEMPLO 7: contador -->
+          <div class="exemplo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">7</span> Contador</h3>
+            <p>Uma variável guarda o número; cada botão muda a variável e reescreve a tela.</p>
+            <div class="contador">
+              <button type="button" class="botao botao-pequeno botao-contorno" id="btn-menos" aria-label="Diminuir">−</button>
+              <output id="contador-valor" class="contador-valor" aria-live="polite">0</output>
+              <button type="button" class="botao botao-pequeno" id="btn-mais" aria-label="Aumentar">+</button>
+              <button type="button" class="botao botao-pequeno botao-texto" id="btn-zerar">Zerar</button>
+            </div>
+          </div>
+
+          <!-- EXEMPLO 8: mostrar e esconder -->
+          <div class="exemplo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">8</span> Leia mais</h3>
+            <p>O atributo <code>hidden</code> esconde um elemento. O JavaScript liga e desliga.</p>
+            <p id="texto-extra" hidden>Este parágrafo estava escondido com o atributo <code>hidden</code>. Clicar no botão tirou o atributo.</p>
+            <button type="button" class="botao botao-pequeno botao-contorno" id="btn-leia-mais" aria-expanded="false" aria-controls="texto-extra">Leia mais</button>
+          </div>
+
+          <!-- EXEMPLO 9: cor em tempo real -->
+          <div class="exemplo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">9</span> Escolher cor</h3>
+            <p>O evento <code>input</code> dispara a cada mudança, sem precisar de botão.</p>
+            <div class="linha-cor">
+              <label for="escolher-cor">Cor:</label>
+              <input type="color" id="escolher-cor" value="#ffb703">
+              <div class="amostra-cor" id="amostra-cor"><code id="codigo-cor">#ffb703</code></div>
+            </div>
+          </div>
+
+          <!-- EXEMPLO 10: range muda tamanho -->
+          <div class="exemplo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">10</span> Tamanho da letra</h3>
+            <p>O JavaScript muda o CSS (<code>style.fontSize</code>) enquanto você arrasta.</p>
+            <label for="tamanho-texto">Tamanho: <output id="saida-tamanho">18</output>px</label>
+            <input type="range" id="tamanho-texto" min="12" max="48" value="18">
+            <p id="texto-tamanho" class="texto-tamanho">Aa Bb Cc</p>
+          </div>
+
+          <!-- EXEMPLO 11: frase aleatória -->
+          <div class="exemplo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">11</span> Dica aleatória</h3>
+            <p>Um array guarda as frases; <code>Math.random()</code> sorteia uma.</p>
+            <blockquote class="frase" id="frase" aria-live="polite">Clique no botão para sortear uma dica.</blockquote>
+            <button type="button" class="botao botao-pequeno" id="btn-frase">Sortear dica</button>
+          </div>
+
+          <!-- EXEMPLO 12: teclado -->
+          <div class="exemplo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">12</span> Qual tecla?</h3>
+            <p>O evento <code>keydown</code> diz qual tecla foi apertada. Clique no campo e digite.</p>
+            <label for="campo-tecla" class="visualmente-escondido">Campo para apertar teclas</label>
+            <input type="text" id="campo-tecla" placeholder="Aperte qualquer tecla aqui" autocomplete="off">
+            <p class="tecla-info" id="tecla-info" aria-live="polite">Nenhuma tecla ainda.</p>
+          </div>
+
+          <!-- EXEMPLO 13: filtro -->
+          <div class="exemplo exemplo-largo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">13</span> Busca em tempo real</h3>
+            <p>A cada letra, o JavaScript esconde os itens que não combinam.</p>
+            <label for="filtro-busca">Filtrar linguagens:</label>
+            <input type="search" id="filtro-busca" placeholder="Digite, ex.: java">
+            <ul class="lista-filtro" id="lista-linguagens">
+              <li>JavaScript</li><li>Java</li><li>Python</li><li>C#</li><li>C++</li>
+              <li>PHP</li><li>TypeScript</li><li>Kotlin</li><li>Swift</li><li>Go</li><li>Ruby</li><li>Rust</li>
+            </ul>
+            <p class="legenda-pequena" id="filtro-contagem" aria-live="polite">12 linguagens</p>
+          </div>
+
+          <!-- EXEMPLO 14: lista de tarefas -->
+          <div class="exemplo exemplo-largo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">14</span> Lista de tarefas (salva no navegador)</h3>
+            <p>Cria elementos novos na página e guarda no <code>localStorage</code>. Recarregue a página: as tarefas continuam lá.</p>
+            <form class="form-tarefa" id="form-tarefa">
+              <label for="nova-tarefa" class="visualmente-escondido">Nova tarefa</label>
+              <input type="text" id="nova-tarefa" placeholder="Ex.: estudar flexbox" required maxlength="60" autocomplete="off">
+              <button type="submit" class="botao botao-pequeno">Adicionar</button>
+            </form>
+            <ul class="lista-tarefas" id="lista-tarefas"></ul>
+            <p class="legenda-pequena" id="tarefas-restantes">Nenhuma tarefa.</p>
+
+            <!--
+              <template> guarda um pedaço de HTML que NÃO aparece na tela.
+              O JavaScript faz uma cópia dele para cada tarefa nova.
+              POR QUÊ: o HTML da tarefa fica aqui, no HTML, e não escrito dentro do JavaScript.
+            -->
+            <template id="modelo-tarefa">
+              <li class="tarefa">
+                <label class="tarefa-label">
+                  <input type="checkbox" class="tarefa-check">
+                  <span class="tarefa-texto"></span>
+                </label>
+                <button type="button" class="tarefa-remover" aria-label="Remover tarefa">✕</button>
+              </li>
+            </template>
+          </div>
+
+          <!-- EXEMPLO 15: abas -->
+          <div class="exemplo exemplo-largo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">15</span> Abas</h3>
+            <!--
+              role="tablist", "tab" e "tabpanel" dizem ao leitor de tela que isto é um conjunto de abas.
+              data-aba liga cada botão ao seu painel.
+            -->
+            <div class="abas" role="tablist" aria-label="Linguagens da Web">
+              <button type="button" class="aba" role="tab" id="aba-html" aria-selected="true" aria-controls="painel-html" data-aba="painel-html">HTML</button>
+              <button type="button" class="aba" role="tab" id="aba-css" aria-selected="false" aria-controls="painel-css" data-aba="painel-css" tabindex="-1">CSS</button>
+              <button type="button" class="aba" role="tab" id="aba-js" aria-selected="false" aria-controls="painel-js" data-aba="painel-js" tabindex="-1">JavaScript</button>
+            </div>
+            <div class="painel" role="tabpanel" id="painel-html" aria-labelledby="aba-html">
+              <p><strong>HTML</strong> dá a estrutura: títulos, parágrafos, imagens, links, formulários.</p>
+            </div>
+            <div class="painel" role="tabpanel" id="painel-css" aria-labelledby="aba-css" hidden>
+              <p><strong>CSS</strong> dá a aparência: cores, fontes, espaçamentos, posições e animações.</p>
+            </div>
+            <div class="painel" role="tabpanel" id="painel-js" aria-labelledby="aba-js" hidden>
+              <p><strong>JavaScript</strong> dá o comportamento: responde a cliques, calcula, busca dados, muda a página.</p>
+            </div>
+          </div>
+
+          <!-- EXEMPLO 16 (galeria) está na seção de Imagens. Aqui fica o 17: modal -->
+          <div class="exemplo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">16</span> Galeria ampliada</h3>
+            <p>Volte à <a href="#imagens">galeria de imagens</a> e clique numa foto. Use as setas do teclado para trocar e <kbd>Esc</kbd> para fechar.</p>
+          </div>
+
+          <div class="exemplo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">17</span> Janela modal</h3>
+            <p>O elemento <code>&lt;dialog&gt;</code> do HTML abre por cima de tudo com <code>showModal()</code>.</p>
+            <button type="button" class="botao botao-pequeno" id="btn-abrir-modal">Abrir janela</button>
+          </div>
+
+          <!-- EXEMPLO 18 é o player de vídeo (seção Áudio e vídeo) -->
+          <div class="exemplo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">18</span> Player de vídeo</h3>
+            <p>Os botões do <a href="#audio-video">vídeo com controles próprios</a> usam <code>play()</code>, <code>pause()</code> e <code>muted</code>.</p>
+          </div>
+
+          <!-- EXEMPLO 19: carrossel -->
+          <div class="exemplo exemplo-largo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">19</span> Carrossel de imagens</h3>
+            <div class="carrossel" id="carrossel" aria-roledescription="carrossel" aria-label="Paisagens">
+              <div class="carrossel-trilho" id="carrossel-trilho">
+                <figure class="slide"><img src="img/foto-1.jpg" alt="Pôr do sol laranja" width="1200" height="800" loading="lazy"><figcaption>1 de 4 — Pôr do sol</figcaption></figure>
+                <figure class="slide"><img src="img/foto-3.jpg" alt="Noite estrelada" width="1200" height="800" loading="lazy"><figcaption>2 de 4 — Noite</figcaption></figure>
+                <figure class="slide"><img src="img/foto-4.jpg" alt="Montanhas vermelhas" width="1200" height="800" loading="lazy"><figcaption>3 de 4 — Vermelho</figcaption></figure>
+                <figure class="slide"><img src="img/foto-6.jpg" alt="Crepúsculo roxo" width="1200" height="800" loading="lazy"><figcaption>4 de 4 — Crepúsculo</figcaption></figure>
+              </div>
+              <button type="button" class="carrossel-seta carrossel-anterior" id="carrossel-anterior" aria-label="Imagem anterior">‹</button>
+              <button type="button" class="carrossel-seta carrossel-proximo" id="carrossel-proximo" aria-label="Próxima imagem">›</button>
+              <!-- As bolinhas são criadas pelo JavaScript, uma para cada slide -->
+              <div class="carrossel-pontos" id="carrossel-pontos"></div>
+            </div>
+          </div>
+
+          <!-- EXEMPLO 20: copiar + toast -->
+          <div class="exemplo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">20</span> Copiar e avisar</h3>
+            <p>Copia um texto para a área de transferência e mostra um aviso rápido (toast).</p>
+            <div class="linha-copiar">
+              <code id="texto-copiar">&lt;link rel="stylesheet" href="css/estilo.css"&gt;</code>
+              <button type="button" class="botao botao-pequeno" id="btn-copiar">Copiar</button>
+            </div>
+          </div>
+
+          <!-- EXEMPLO 21: canvas -->
+          <div class="exemplo exemplo-largo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">21</span> Desenhar no <code>&lt;canvas&gt;</code></h3>
+            <p>O <code>canvas</code> é uma tela em branco onde o JavaScript desenha pixel a pixel. Desenhe com o mouse ou com o dedo.</p>
+            <!--
+              width e height do canvas são o tamanho REAL da área de desenho.
+              O texto dentro dele só aparece se o navegador não suportar canvas.
+            -->
+            <canvas id="quadro" class="quadro" width="800" height="300">Seu navegador não suporta canvas.</canvas>
+            <div class="quadro-controles">
+              <label for="cor-pincel">Cor do pincel</label>
+              <input type="color" id="cor-pincel" value="#12324a">
+              <label for="espessura-pincel">Espessura</label>
+              <input type="range" id="espessura-pincel" min="2" max="30" value="6">
+              <button type="button" class="botao botao-pequeno botao-contorno" id="limpar-quadro">Limpar</button>
+            </div>
+          </div>
+
+          <!-- EXEMPLO 22: IMC -->
+          <div class="exemplo exemplo-largo">
+            <h3 class="exemplo-titulo"><span class="exemplo-num">22</span> Calculadora de IMC</h3>
+            <p>Lê valores de campos, converte texto em número, calcula e decide com <code>if</code>.</p>
+            <form class="form-imc" id="form-imc">
+              <div class="campo">
+                <label for="peso">Peso (kg)</label>
+                <input type="number" id="peso" min="20" max="300" step="0.1" required placeholder="60">
+              </div>
+              <div class="campo">
+                <label for="altura">Altura (m)</label>
+                <input type="number" id="altura" min="1" max="2.5" step="0.01" required placeholder="1.70">
+              </div>
+              <button type="submit" class="botao botao-pequeno">Calcular</button>
+            </form>
+            <p class="resultado-imc" id="resultado-imc" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--
+    =====================================================================
+    <dialog> = JANELA MODAL. Fica escondida até o JavaScript chamar showModal().
+    Colocamos fora do <main> porque ela aparece por cima da página toda.
+    =====================================================================
+  -->
+  <dialog class="modal" id="modal" aria-labelledby="modal-titulo">
+    <h2 id="modal-titulo">Eu sou um &lt;dialog&gt;</h2>
+    <p>Enquanto estou aberta, o resto da página fica bloqueado. Aperte <kbd>Esc</kbd>, clique fora de mim ou use o botão abaixo para fechar.</p>
+    <!--
+      method="dialog" num form dentro do dialog: o botão submit FECHA a janela, sem JavaScript.
+    -->
+    <form method="dialog">
+      <button type="submit" class="botao botao-primario">Entendi</button>
+    </form>
+  </dialog>
+
+  <!-- Janela da galeria ampliada (script.js, parte 16) -->
+  <dialog class="lightbox" id="lightbox" aria-label="Imagem ampliada">
+    <figure class="lightbox-figura">
+      <img id="lightbox-img" src="" alt="">
+      <figcaption id="lightbox-legenda"></figcaption>
+    </figure>
+    <button type="button" class="lightbox-btn lightbox-anterior" id="lightbox-anterior" aria-label="Foto anterior">‹</button>
+    <button type="button" class="lightbox-btn lightbox-proximo" id="lightbox-proximo" aria-label="Próxima foto">›</button>
+    <button type="button" class="lightbox-fechar" id="lightbox-fechar" aria-label="Fechar">✕</button>
+  </dialog>
+
+  <!--
+    Área dos avisos rápidos (toast). role="status" faz o leitor de tela anunciar o texto
+    quando o JavaScript colocar uma mensagem aqui.
+  -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Botão de voltar ao topo: aparece depois de rolar (script.js, parte 5) -->
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <!--
+    =====================================================================
+    <footer> = RODAPÉ do site: contato, links úteis, direitos autorais.
+    =====================================================================
+  -->
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <div>
+        <p class="rodape-logo">Catálogo do HTML</p>
+        <p>Material de apoio para as aulas de HTML, CSS e JavaScript.</p>
+      </div>
+
+      <!-- Um segundo <nav>, para links do rodapé. aria-label diferencia do menu principal. -->
+      <nav aria-label="Links do rodapé">
+        <h2 class="rodape-titulo">Seções</h2>
+        <ul>
+          <li><a href="#textos">Textos</a></li>
+          <li><a href="#formularios">Formulários</a></li>
+          <li><a href="#interatividade">JavaScript</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="rodape-titulo">Para estudar</h2>
+        <ul>
+          <li><a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+          <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">Validador de HTML do W3C</a></li>
+          <li><a href="https://caniuse.com/" target="_blank" rel="noopener noreferrer">Can I use (compatibilidade)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- &copy; = © | <small> = texto de letras miúdas, típico de direitos autorais -->
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. Feito com HTML, CSS e JavaScript.</small></p>
+  </footer>
+
+</body>
+</html>

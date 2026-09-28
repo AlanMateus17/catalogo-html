@@ -1,0 +1,79 @@
+CATÁLOGO DO HTML — LEIA ANTES DE COMEÇAR
+Prof. Alan Mateus
+=====================================================================
+
+O QUE TEM AQUI
+--------------
+Uma página de exemplo com os principais elementos do HTML, estilizada
+com um CSS externo e com 30 exemplos de interatividade em JavaScript.
+Os três arquivos estão todos comentados, explicando o que cada parte
+faz e por quê.
+
+  pagina-completa/
+  ├── index.html        a página principal (ABRA ESTE)
+  ├── sobre.html        segunda página, usa o mesmo CSS e o mesmo JS
+  ├── css/
+  │   └── estilo.css    toda a aparência (cores, tamanhos, layout)
+  ├── js/
+  │   └── script.js     todo o comportamento (cliques, animações...)
+  ├── img/              fotos e ícone
+  ├── midia/            vídeo, áudio e legenda
+  └── docs/             PDF usado nos exemplos de link e download
+
+IMPORTANTE: não mude os arquivos de pasta nem troque os nomes.
+As páginas encontram o CSS, o JS e as imagens pelo CAMINHO. Se você
+mover estilo.css para fora da pasta css/, a página perde o estilo.
+
+
+COMO ABRIR
+----------
+Jeito 1 (mais simples): dois cliques no index.html.
+  Quase tudo funciona. Só a legenda do vídeo não aparece, porque o
+  navegador bloqueia arquivos .vtt abertos direto do computador.
+
+Jeito 2 (recomendado): pelo VS Code com a extensão Live Server.
+  1. Abra a PASTA pagina-completa no VS Code (Arquivo > Abrir Pasta).
+  2. Clique com o botão direito no index.html > "Open with Live Server".
+  Tudo funciona, e a página recarrega sozinha quando você salva.
+
+O vídeo do YouTube, o mapa e as fontes precisam de internet.
+Sem internet, a página continua funcionando, com uma fonte reserva.
+
+
+COMO OS TRÊS ARQUIVOS SE CONECTAM
+---------------------------------
+O HTML é o arquivo principal. Ele chama os outros dois com duas linhas
+dentro do <head>:
+
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+
+  - href e src são CAMINHOS, a partir da pasta onde está o HTML.
+    "css/estilo.css" = entre na pasta css e pegue estilo.css.
+  - O CSS vai no <head> para a página já nascer com estilo.
+  - O "defer" no script faz o JavaScript esperar o HTML inteiro ser
+    lido. Sem ele, o JS procura botões que ainda não existem e dá erro.
+    (A alternativa é colocar o <script> no final do <body>, sem defer.)
+  - Dentro do .css e do .js NÃO se escreve <style> nem <script>.
+
+
+QUANDO ALGO NÃO FUNCIONA
+------------------------
+1. Aperte F12 e olhe a aba Console. O erro diz o arquivo e a linha.
+2. Página sem estilo nenhum? Caminho do CSS errado. Confira no F12,
+   aba Rede (Network): o arquivo aparece com 404.
+3. "Cannot read properties of null"? O JavaScript não achou um
+   elemento: id escrito errado ou script sem defer.
+4. Mudou o arquivo e nada mudou? Salvou? Então aperte Ctrl + F5.
+5. Nomes de arquivos: minúsculas, sem espaço e sem acento.
+
+
+COMO ESTUDAR ESTE MATERIAL
+--------------------------
+- Deixe o VS Code e o navegador lado a lado.
+- Leia uma seção da página e procure o mesmo trecho no código.
+- Procure nos comentários as palavras "TESTE" e "POR QUÊ".
+  TESTE = uma mudança para você fazer e ver o que acontece.
+- Os exemplos de JavaScript são numerados de 1 a 30. O número na
+  página é o mesmo da "PARTE" no script.js.
+- Para desfazer um estrago, apague a pasta e extraia o .zip de novo.
