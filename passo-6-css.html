@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--
+  TRILHA "PASSO A PASSO" — Passo 6: Dar a cara do site com CSS
+  Página de conteúdo. Os comandos têm botão de copiar e as caixas
+  "Pronto quando" guardam o progresso no navegador (js/trilha.js).
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/trilha.js" defer></script>
+  <title>Passo 6: Dar a cara do site com CSS — Catálogo do HTML</title>
+  <meta name="description" content="Suas cores e sua fonte, regras suas e o ajuste para o celular com @media.">
+</head>
+<body class="pagina-trilha">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="passo-a-passo.html">Passo a passo</a></li>
+            <li aria-current="page">Passo 6</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Passo 6 de 10. Tempo: 2 aulas</p>
+        <h1 class="heroi-titulo">Dar a cara do site com CSS</h1>
+        <p class="heroi-texto">Com o conteúdo pronto, o CSS dá a cara do site: as suas cores, a sua fonte, regras escritas por você e o ajuste para o celular.</p>
+      </div>
+    </section>
+
+    <div class="container trilha-corpo">
+      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-github.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">Guardar no GitHub</span></a></li><li><a href="passo-5-html.html" data-passo="5" data-total="5"><span class="mapa-num">5</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-6-css.html" data-passo="6" data-total="5" aria-current="step"><span class="mapa-num">6</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-7-js.html" data-passo="7" data-total="5"><span class="mapa-num">7</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-8-verificar.html" data-passo="8" data-total="5"><span class="mapa-num">8</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
+<aside class="doc-nota trilha-teoria">
+  <p class="doc-nota-titulo">Para entender a fundo</p>
+  <p>Este passo usa o que está explicado na Documentação. Leia antes, ou volte lá quando uma palavra não fizer sentido:</p>
+  <ul><li><a href="formacao.html#anatomia">Anatomia de uma regra CSS</a></li><li><a href="formacao.html#seletores">Seletores (com um testador)</a></li><li><a href="formacao.html#cascata">Por que uma regra vence a outra</a></li><li><a href="formacao.html#responsivo">Site responsivo e @media</a></li></ul>
+</aside><section class="trilha-secao" id="cores">
+  <h2>6.1 As suas cores</h2>
+  
+<p>O <code>estilo.css</code> da estrutura começa com as variáveis de cor. Troque pelos códigos das suas cores (um site como <strong>coolors.co</strong> ajuda a escolher):</p>
+<div class="bloco-exemplo"><p class="saida-titulo">Exemplo em css/estilo.css</p><pre class="bloco-codigo"><code>:root {
+  --cor-principal: #5a189a;  /* cabeçalho, botões, links */
+  --cor-destaque: #ff9e00;   /* realces */
+  --cor-fundo: #f7f4fb;
+  --cor-texto: #1d1330;
+}</code></pre></div>
+<p>Os códigos prontos usam cores fixas, como <code>#12324a</code> e <code>#ffb703</code>. Troque todas de uma vez pelas variáveis:</p>
+<ol class="passos">
+  <li>Antes, confira que o <code>:root</code> já tem as <strong>suas</strong> cores. Se ele ainda tiver <code>#12324a</code>, a troca cria <code>--cor-principal: var(--cor-principal);</code> e todas as cores quebram.</li>
+  <li>No <code>estilo.css</code>, aperte <kbd>Ctrl</kbd> + <kbd>H</kbd> (Localizar e substituir).</li>
+  <li>Em cima, <code>#12324a</code>; embaixo, <code>var(--cor-principal)</code>. Clique em <strong>Substituir tudo</strong>.</li>
+  <li>Repita com <code>#ffb703</code> → <code>var(--cor-destaque)</code>.</li>
+</ol>
+<div class="confira">
+  <p><strong>Confira:</strong> qual é a vantagem de escrever <code>var(--cor-principal)</code> em vez de <code>#5a189a</code> em cada regra?</p>
+  <details><summary>Ver a resposta</summary><p>Se um dia você quiser outra cor, troca uma linha só, no <code>:root</code>, e todas as regras mudam juntas.</p></details>
+</div>
+</section><section class="trilha-secao" id="fonte">
+  <h2>6.2 A sua fonte</h2>
+  
+<p>Escolha uma fonte em <strong>fonts.google.com</strong> (clique na fonte, depois em <strong>Get font</strong> e <strong>Get embed code</strong>). São duas partes:</p>
+<div class="bloco-exemplo"><p class="saida-titulo">No index.html, dentro do &lt;head&gt;, antes do link do estilo.css</p><pre class="bloco-codigo"><code>&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap&quot;&gt;</code></pre></div><div class="bloco-exemplo"><p class="saida-titulo">No css/estilo.css</p><pre class="bloco-codigo"><code>body {
+  font-family: &quot;Poppins&quot;, Arial, sans-serif;
+}</code></pre></div>
+<p>Troque <code>Poppins</code> pelo nome da fonte que você escolheu, nas duas partes. O <code>Arial, sans-serif</code> depois dela é a reserva, se a fonte não carregar.</p>
+
+</section><section class="trilha-secao" id="celular">
+  <h2>6.3 Ajustar para o celular</h2>
+  
+<p>Primeiro, veja como está:</p>
+<ol class="passos">
+  <li>No navegador, aperte <kbd>F12</kbd> e depois <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd>.</li>
+  <li>No topo, escolha uma largura de celular, como <strong>390</strong>.</li>
+  <li>Role a página toda. Rolagem para o lado ou algo cortado mostra onde precisa de ajuste.</li>
+</ol>
+<p>Depois, corrija com <code>@media</code>: as regras de dentro só valem em telas até aquela largura. Coloque no <strong>final</strong> do <code>estilo.css</code>:</p>
+<div class="bloco-exemplo"><p class="saida-titulo">No final do css/estilo.css (troque .grade e .cards pelas classes do seu site)</p><pre class="bloco-codigo"><code>@media (max-width: 700px) {
+  /* colunas lado a lado viram uma coluna só */
+  .grade, .cards {
+    grid-template-columns: 1fr;
+  }
+  /* título menor no celular */
+  h1 {
+    font-size: 2rem;
+  }
+}</code></pre></div>
+<p>As imagens a estrutura já resolve: a regra <code>img { max-width: 100%; }</code> dela impede que uma foto fique maior que a tela.</p>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> mudei o CSS e nada aconteceu.</p>
+  <p>Clique com o botão direito no elemento e escolha <strong>Inspecionar</strong>. À direita aparecem todas as regras que valem para ele. Uma regra <s>riscada</s> está perdendo para outra mais forte ou que vem depois no arquivo. Por isso o <code>@media</code> vai no final.</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> a imagem de fundo do CSS não aparece.</p>
+  <p>Dentro do CSS, o caminho parte da pasta <code>css</code>. O certo é <code>url("../img/foto.jpg")</code>: o <code>../</code> volta uma pasta antes de entrar em <code>img</code>.</p>
+</div><aside class="trilha-ia">
+  <p class="trilha-ia-titulo">E a IA, neste passo?</p>
+  <p><strong>Pode:</strong> pedir para explicar por que uma regra não funciona, ou para revisar o seu CSS e apontar repetições.</p>
+  <p><strong>Não:</strong> pedir o CSS do site inteiro pronto. Você não vai saber mudar depois.</p>
+  <p>Por quê, e prompts prontos para usar do jeito certo: <a href="ia.html">Usar IA do jeito certo</a>.</p>
+</aside><div class="voce-tenta">
+  <p class="voce-tenta-titulo">Você tenta</p>
+  <p>Escreva três regras suas, que não vieram prontas: um <code>:hover</code> diferente nos links, uma borda nos títulos <code>h2</code> e uma cor de fundo alternada nas seções (<code>section:nth-child(even)</code>).</p>
+</div>
+</section><section class="trilha-secao" id="guardar">
+  <h2>6.4 Guardar no GitHub</h2>
+  
+<p>Terminou este passo? Registre a versão e envie. Assim, se o computador do laboratório for formatado, o seu trabalho estará salvo no GitHub.</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git status</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git add .</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git commit -m &quot;Aplica cores, fonte e ajuste para celular&quot;</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git push</span></span></code></pre>
+</div><p class="terminal-nota">Troque a mensagem se quiser: ela deve dizer o que mudou. O site ainda não está no ar; publicar é o Passo 9.</p>
+<p>Outro computador, ou começou a aula agora? Antes de editar, traga o que já está no GitHub: veja o <a href="passo-10-atualizar.html#outro-pc">Passo 10.3</a>.</p>
+
+</section>
+      <section class="pronto-quando" aria-labelledby="pronto-titulo">
+  <h2 id="pronto-titulo">Pronto quando</h2>
+  <p>Marque cada item só depois de conferir. As marcações ficam salvas neste navegador e aparecem na página inicial da trilha.</p>
+  <ul data-total="5">
+    <li><label><input type="checkbox" data-progresso="passo-6-1"> O site usa as minhas cores pelas variáveis</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-6-2"> Troquei a fonte</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-6-3"> Numa tela de 390 px não aparece rolagem para o lado</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-6-4"> Escrevi pelo menos 3 regras minhas</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-6-5"> Guardei no GitHub (<code>git push</code>)</label></li>
+  </ul>
+</section>
+      <nav class="passo-nav" aria-label="Navegação entre passos">
+        <a class="passo-ant" href="passo-5-html.html"><span>Passo anterior</span>5. HTML</a>
+        <a class="passo-prox" href="passo-7-js.html"><span>Próximo passo</span>7. JavaScript</a>
+      </nav>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

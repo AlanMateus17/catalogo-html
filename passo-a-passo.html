@@ -41,6 +41,9 @@
         <ul class="menu-lista" id="menu-principal">
           <li><a href="index.html">Catálogo</a></li>
           <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
           <li><a href="codigos.html">Códigos</a></li>
           <li><a href="verificador.html">Verificador</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -65,7 +68,7 @@
         </nav>
         <p class="heroi-antetitulo">Trilha em 10 passos</p>
         <h1 class="heroi-titulo">Do computador vazio ao seu site no ar</h1>
-        <p class="heroi-texto">Você vai instalar as ferramentas, criar o projeto pelo terminal, montar o site com HTML, CSS e JavaScript, guardar tudo no GitHub e publicar no GitHub Pages. Cada passo diz o que digitar, o que deve aparecer na tela e o que fazer quando der errado.</p>
+        <p class="heroi-texto">Você vai instalar as ferramentas, criar o projeto pelo terminal, guardar tudo no GitHub desde o começo, montar o site com HTML, CSS e JavaScript e publicar no GitHub Pages. Cada passo diz o que digitar, o que deve aparecer na tela e o que fazer quando der errado.</p>
         <div class="heroi-acoes">
           <a class="botao botao-primario" href="passo-1-preparar.html">Começar pelo Passo 1</a>
           <a class="botao botao-contorno" href="#passos">Ver os 10 passos</a>
@@ -78,9 +81,25 @@
         <h2>O que você vai ter no fim</h2>
         <ul class="lista-check-trilha">
           <li>Um site seu, no endereço <code>https://seu-usuario.github.io/nome-do-projeto/</code>, que abre em qualquer celular.</li>
-          <li>O código do site num repositório do GitHub, com o histórico de cada mudança.</li>
-          <li>Saber atualizar o site com cinco comandos, de qualquer computador.</li>
+          <li>O código do site num repositório do GitHub, com o histórico de cada mudança, guardado desde o Passo 4.</li>
+          <li>A habilidade de atualizar o site com cinco comandos, de qualquer computador.</li>
         </ul>
+      </section>
+
+      <section class="trilha-secao" id="como-se-encaixa">
+        <h2>Como a trilha se encaixa no site</h2>
+        <div class="tabela-rolagem"><table class="tabela">
+          <thead><tr><th scope="col">Parte do site</th><th scope="col">Para quê</th><th scope="col">Quando usar</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Passo a passo</strong> (esta página)</td><td>Fazer o seu site, do zero ao ar</td><td>É o caminho principal: siga em ordem</td></tr>
+            <tr><td><a href="codigos.html"><strong>Códigos</strong></a></td><td>Copiar o HTML, o CSS e o JavaScript de cada parte do site, com a explicação de cada palavra</td><td>Nos passos 5, 6 e 7</td></tr>
+            <tr><td><a href="documentacao.html"><strong>Documentação</strong></a></td><td>Entender a fundo como o HTML, o CSS e o JavaScript funcionam</td><td>Antes de cada passo de código, e quando algo não fizer sentido</td></tr>
+            <tr><td><a href="index.html"><strong>Catálogo</strong></a></td><td>Ver todos os elementos funcionando numa página só</td><td>Para ter ideias</td></tr>
+            <tr><td><a href="verificador.html"><strong>Verificador</strong></a></td><td>Conferir a pasta do seu projeto</td><td>No fim dos passos 5 e 8</td></tr>
+            <tr><td><a href="ia.html"><strong>Usar IA do jeito certo</strong></a></td><td>Saber quando a IA ajuda e quando atrapalha o seu aprendizado</td><td>Antes de começar</td></tr>
+          </tbody>
+        </table></div>
+        <p>Tempo total: de 12 a 14 aulas de 50 minutos.</p>
       </section>
 
       <section class="trilha-secao" id="formato">
@@ -90,7 +109,7 @@
           <div class="confira"><p><strong>Confira:</strong> uma pergunta rápida. Responda de cabeça antes de abrir a resposta.</p></div>
           <div class="erro-comum"><p class="erro-comum-titulo"><strong>Erro comum:</strong> o erro que quase todo mundo comete naquele ponto, com a solução.</p></div>
           <div class="voce-tenta"><p class="voce-tenta-titulo">Você tenta</p><p>Um exercício para fazer sozinho, sem resposta pronta.</p></div>
-          <div class="pronto-quando pronto-exemplo"><p><strong>Pronto quando:</strong> a lista do que precisa estar funcionando antes do próximo passo. As marcações ficam salvas neste navegador.</p></div>
+          <div class="pronto-quando pronto-exemplo"><p><strong>Pronto quando:</strong> a lista do que precisa estar funcionando antes do próximo passo. As marcações ficam salvas <strong>só neste navegador, neste computador</strong>: em outro computador do laboratório, elas não aparecem.</p></div>
         </div>
       </section>
 
@@ -105,7 +124,7 @@
           <div class="trilha-card-corpo">
             <h3><a href="passo-1-preparar.html">Preparar o computador</a></h3>
             <p>Criar a conta no GitHub, instalar VS Code, Git e GitHub CLI e entrar na sua conta pelo terminal.</p>
-            <p class="trilha-card-tempo">Tempo: 40 min</p>
+            <p class="trilha-card-tempo">Tempo: 1 a 2 aulas</p>
           </div>
           <div class="trilha-card-progresso" data-passo="1" data-total="5">
             <div class="barrinha"><span></span></div>
@@ -117,7 +136,7 @@
           <div class="trilha-card-corpo">
             <h3><a href="passo-2-terminal.html">Terminal sem medo</a></h3>
             <p>Ler o prompt, andar entre pastas e criar arquivos com pwd, ls, cd, mkdir e touch.</p>
-            <p class="trilha-card-tempo">Tempo: 30 min</p>
+            <p class="trilha-card-tempo">Tempo: 1 aula</p>
           </div>
           <div class="trilha-card-progresso" data-passo="2" data-total="4">
             <div class="barrinha"><span></span></div>
@@ -129,7 +148,7 @@
           <div class="trilha-card-corpo">
             <h3><a href="passo-3-projeto.html">Criar o projeto pelo terminal</a></h3>
             <p>Criar a pasta e os três arquivos, colar a estrutura e ver o site no Live Server.</p>
-            <p class="trilha-card-tempo">Tempo: 30 min</p>
+            <p class="trilha-card-tempo">Tempo: 1 aula</p>
           </div>
           <div class="trilha-card-progresso" data-passo="3" data-total="5">
             <div class="barrinha"><span></span></div>
@@ -139,9 +158,9 @@
         <li class="trilha-card">
           <span class="trilha-card-num" aria-hidden="true">4</span>
           <div class="trilha-card-corpo">
-            <h3><a href="passo-4-html.html">Montar o conteúdo com HTML</a></h3>
-            <p>Planejar a página e montar as seções com os códigos prontos do Catálogo.</p>
-            <p class="trilha-card-tempo">Tempo: 2 aulas</p>
+            <h3><a href="passo-4-github.html">Guardar o projeto no GitHub</a></h3>
+            <p>Criar o repositório com git init e commit e enviar com gh repo create. Daqui em diante, o seu trabalho nunca fica só num computador.</p>
+            <p class="trilha-card-tempo">Tempo: 1 aula</p>
           </div>
           <div class="trilha-card-progresso" data-passo="4" data-total="4">
             <div class="barrinha"><span></span></div>
@@ -151,57 +170,57 @@
         <li class="trilha-card">
           <span class="trilha-card-num" aria-hidden="true">5</span>
           <div class="trilha-card-corpo">
-            <h3><a href="passo-5-css.html">Dar a cara do site com CSS</a></h3>
-            <p>Cores, fonte, estilo de cada bloco e ajuste para o celular.</p>
+            <h3><a href="passo-5-html.html">Montar o conteúdo com HTML</a></h3>
+            <p>Planejar a página e montar as seções com os códigos prontos, trocando o conteúdo pelo seu.</p>
             <p class="trilha-card-tempo">Tempo: 2 aulas</p>
           </div>
-          <div class="trilha-card-progresso" data-passo="5" data-total="4">
+          <div class="trilha-card-progresso" data-passo="5" data-total="5">
             <div class="barrinha"><span></span></div>
-            <p><span class="feitos">0</span> de 4</p>
+            <p><span class="feitos">0</span> de 5</p>
           </div>
         </li>
         <li class="trilha-card">
           <span class="trilha-card-num" aria-hidden="true">6</span>
           <div class="trilha-card-corpo">
-            <h3><a href="passo-6-js.html">Dar vida com JavaScript</a></h3>
-            <p>Colocar 2 ou 3 interações e aprender a ler os erros do Console.</p>
-            <p class="trilha-card-tempo">Tempo: 1 a 2 aulas</p>
+            <h3><a href="passo-6-css.html">Dar a cara do site com CSS</a></h3>
+            <p>Suas cores e sua fonte, regras suas e o ajuste para o celular com @media.</p>
+            <p class="trilha-card-tempo">Tempo: 2 aulas</p>
           </div>
-          <div class="trilha-card-progresso" data-passo="6" data-total="4">
+          <div class="trilha-card-progresso" data-passo="6" data-total="5">
             <div class="barrinha"><span></span></div>
-            <p><span class="feitos">0</span> de 4</p>
+            <p><span class="feitos">0</span> de 5</p>
           </div>
         </li>
         <li class="trilha-card">
           <span class="trilha-card-num" aria-hidden="true">7</span>
           <div class="trilha-card-corpo">
-            <h3><a href="passo-7-verificar.html">Verificar se está tudo funcionando</a></h3>
-            <p>Usar as ferramentas do navegador (F12), o validador e o Verificador do projeto.</p>
-            <p class="trilha-card-tempo">Tempo: 1 aula</p>
+            <h3><a href="passo-7-js.html">Dar vida com JavaScript</a></h3>
+            <p>Colocar 2 ou 3 interações e aprender a ler os erros do Console.</p>
+            <p class="trilha-card-tempo">Tempo: 1 a 2 aulas</p>
           </div>
-          <div class="trilha-card-progresso" data-passo="7" data-total="4">
+          <div class="trilha-card-progresso" data-passo="7" data-total="5">
             <div class="barrinha"><span></span></div>
-            <p><span class="feitos">0</span> de 4</p>
+            <p><span class="feitos">0</span> de 5</p>
           </div>
         </li>
         <li class="trilha-card">
           <span class="trilha-card-num" aria-hidden="true">8</span>
           <div class="trilha-card-corpo">
-            <h3><a href="passo-8-github.html">Guardar no GitHub pelo terminal</a></h3>
-            <p>Criar o repositório com git init, add, commit e enviar com gh repo create.</p>
+            <h3><a href="passo-8-verificar.html">Verificar se está tudo funcionando</a></h3>
+            <p>Usar as ferramentas do navegador (F12), o Verificador do projeto, o validador e o Lighthouse.</p>
             <p class="trilha-card-tempo">Tempo: 1 aula</p>
           </div>
-          <div class="trilha-card-progresso" data-passo="8" data-total="4">
+          <div class="trilha-card-progresso" data-passo="8" data-total="5">
             <div class="barrinha"><span></span></div>
-            <p><span class="feitos">0</span> de 4</p>
+            <p><span class="feitos">0</span> de 5</p>
           </div>
         </li>
         <li class="trilha-card">
           <span class="trilha-card-num" aria-hidden="true">9</span>
           <div class="trilha-card-corpo">
             <h3><a href="passo-9-pages.html">Publicar no GitHub Pages pelo terminal</a></h3>
-            <p>Ativar o GitHub Pages com um comando e abrir o seu site na internet.</p>
-            <p class="trilha-card-tempo">Tempo: 30 min</p>
+            <p>Ativar o GitHub Pages com um comando, abrir o seu site na internet e caprichar no link compartilhado.</p>
+            <p class="trilha-card-tempo">Tempo: 1 aula</p>
           </div>
           <div class="trilha-card-progresso" data-passo="9" data-total="5">
             <div class="barrinha"><span></span></div>
@@ -212,8 +231,8 @@
           <span class="trilha-card-num" aria-hidden="true">10</span>
           <div class="trilha-card-corpo">
             <h3><a href="passo-10-atualizar.html">Atualizar o site publicado</a></h3>
-            <p>O ciclo de todo dia: editar, testar, commit, push. E como trabalhar em outro computador.</p>
-            <p class="trilha-card-tempo">Tempo: 20 min</p>
+            <p>O ciclo de todo dia (pull, status, add, commit, push), voltar a uma versão antiga e continuar em outro computador.</p>
+            <p class="trilha-card-tempo">Tempo: 1 aula</p>
           </div>
           <div class="trilha-card-progresso" data-passo="10" data-total="4">
             <div class="barrinha"><span></span></div>
@@ -227,9 +246,11 @@
       <section class="trilha-secao" id="ferramentas">
         <h2>Ferramentas da trilha</h2>
         <ul class="ferramentas-lista">
-          <li><a href="codigos.html"><strong>Códigos prontos</strong></a><span>HTML, CSS e JavaScript de 53 funcionalidades, cada um com demo.</span></li>
+          <li><a href="codigos.html"><strong>Códigos prontos</strong></a><span>HTML, CSS e JavaScript de 53 funcionalidades, cada um com demo e a explicação de cada palavra.</span></li>
           <li><a href="verificador.html"><strong>Verificador do projeto</strong></a><span>Confere a pasta do seu site e aponta o que corrigir.</span></li>
-          <li><a href="index.html"><strong>Catálogo do HTML</strong></a><span>Todos os elementos funcionando, com o código comentado.</span></li>
+          <li><a href="documentacao.html"><strong>Documentação</strong></a><span>A teoria de HTML, CSS e JavaScript, com exemplos clicáveis e experimentos.</span></li>
+          <li><a href="dicionario.html"><strong>Dicionário</strong></a><span>O que é cada tag, propriedade e comando, com busca.</span></li>
+          <li><a href="ia.html"><strong>Usar IA do jeito certo</strong></a><span>Onde a IA ajuda e onde ela atrapalha o seu aprendizado.</span></li>
         </ul>
       </section>
 
@@ -242,15 +263,20 @@
             <tbody>
             <tr><td><code>bash: comando: command not found</code></td><td>O programa não está instalado, ou o terminal foi aberto antes da instalação.</td><td>Feche e abra o terminal. Se continuar, reinstale. <a href="passo-1-preparar.html#conferir">Ver o passo</a></td></tr>
             <tr><td><code>No such file or directory</code></td><td>A pasta ou o arquivo não existe onde você está.</td><td>Rode <code>pwd</code> e <code>ls</code> para ver onde está e o que existe ali. <a href="passo-2-terminal.html#treino">Ver o passo</a></td></tr>
-            <tr><td><code>(main) na sua pasta pessoal</code></td><td>Alguém rodou <code>git init</code> fora do projeto.</td><td>Apague o <code>.git</code> dessa pasta, com cuidado. <a href="passo-8-github.html#pasta-errada">Ver o passo</a></td></tr>
-            <tr><td><code>Author identity unknown</code></td><td>O Git não sabe o seu nome e e-mail.</td><td>Rode os <code>git config</code> do Passo 1.6. <a href="passo-1-preparar.html#config">Ver o passo</a></td></tr>
+            <tr><td><code>fatal: not a git repository</code></td><td>Você rodou um comando do Git fora da pasta do projeto.</td><td>Vá para a pasta do projeto (<code>cd ~/projetos/nome-do-projeto</code>). <a href="passo-4-github.html#pasta">Ver o passo</a></td></tr>
+            <tr><td><code>(main) na sua pasta pessoal</code></td><td>Alguém rodou <code>git init</code> fora do projeto.</td><td>Apague o <code>.git</code> dessa pasta, com cuidado. <a href="passo-4-github.html#pasta-errada">Ver o passo</a></td></tr>
+            <tr><td><code>Author identity unknown</code></td><td>O Git não sabe o seu nome e e-mail.</td><td>Rode os comandos <code>git config</code> do Passo 1.6 (ou do 4.3, no laboratório). <a href="passo-4-github.html#commit">Ver o passo</a></td></tr>
             <tr><td><code>nothing to commit, working tree clean</code></td><td>Nada mudou desde o último commit.</td><td>Salve os arquivos e confira se está na pasta certa. <a href="passo-10-atualizar.html#ciclo">Ver o passo</a></td></tr>
-            <tr><td><code>src refspec main does not match any</code></td><td>Não existe commit para enviar.</td><td>Faça o <code>git commit</code> antes do push. <a href="passo-8-github.html#commit">Ver o passo</a></td></tr>
-            <tr><td><code>Name already exists on this account</code></td><td>Você já tem um repositório com esse nome.</td><td>Use outro nome no <code>gh repo create</code>. <a href="passo-8-github.html#enviar">Ver o passo</a></td></tr>
-            <tr><td><code>remote origin already exists</code></td><td>O projeto já tem um endereço do GitHub.</td><td>Veja com <code>git remote -v</code>; troque com <code>git remote set-url origin</code>. <a href="passo-8-github.html#enviar">Ver o passo</a></td></tr>
-            <tr><td><code>[rejected] ... (fetch first)</code></td><td>O GitHub tem mudanças que o seu computador não tem.</td><td>Rode <code>git pull</code> e depois <code>git push</code>. <a href="passo-10-atualizar.html#outro-pc">Ver o passo</a></td></tr>
+            <tr><td><code>src refspec main does not match any</code></td><td>Não existe commit para enviar.</td><td>Faça o <code>git commit</code> antes do push. <a href="passo-4-github.html#commit">Ver o passo</a></td></tr>
+            <tr><td><code>Name already exists on this account</code></td><td>Você já tem um repositório com esse nome.</td><td>Use outro nome no <code>gh repo create</code>. <a href="passo-4-github.html#enviar">Ver o passo</a></td></tr>
+            <tr><td><code>remote origin already exists</code></td><td>O projeto já tem um endereço do GitHub.</td><td>Veja com <code>git remote -v</code>; troque com <code>git remote set-url origin</code>. <a href="passo-4-github.html#enviar">Ver o passo</a></td></tr>
+            <tr><td><code>To get started with GitHub CLI, please run: gh auth login</code></td><td>O terminal não está logado na sua conta.</td><td>Rode <code>gh auth login</code>. <a href="passo-1-preparar.html#login">Ver o passo</a></td></tr>
+            <tr><td><code>[rejected] ... (fetch first) / Updates were rejected</code></td><td>O GitHub tem mudanças que o seu computador não tem.</td><td>Rode <code>git pull</code> e depois <code>git push</code>. <a href="passo-10-atualizar.html#ciclo">Ver o passo</a></td></tr>
+            <tr><td><code>Need to specify how to reconcile divergent branches</code></td><td>Falta dizer ao Git como juntar as mudanças.</td><td>Rode <code>git config --global pull.rebase false</code> e o <code>git pull</code> de novo. <a href="passo-1-preparar.html#config">Ver o passo</a></td></tr>
+            <tr><td><code>CONFLICT (content): Merge conflict</code></td><td>A mesma linha mudou em dois lugares.</td><td>Escolha a versão no VS Code, salve, faça add, commit e push. <a href="passo-10-atualizar.html#ciclo">Ver o passo</a></td></tr>
             <tr><td><code>HTTP 409 ao ativar o Pages</code></td><td>O Pages já está ativo.</td><td>Só confira o endereço com o comando do 9.2. <a href="passo-9-pages.html#conferir">Ver o passo</a></td></tr>
-            <tr><td><code>HTTP 422 ao ativar o Pages</code></td><td>Faltou o <code>MSYS_NO_PATHCONV=1</code>.</td><td>Copie o comando de novo pelo botão. <a href="passo-9-pages.html#ativar">Ver o passo</a></td></tr>
+            <tr><td><code>HTTP 422 ao ativar o Pages</code></td><td>Faltou o <code>MSYS_NO_PATHCONV=1</code>, o repositório é privado ou o push não foi feito.</td><td>Veja as três causas no Passo 9. <a href="passo-9-pages.html#conferir">Ver o passo</a></td></tr>
+            <tr><td><code>The term &#x27;MSYS_NO_PATHCONV=1&#x27; is not recognized</code></td><td>O terminal é o PowerShell, não o Git Bash.</td><td>Troque o terminal para Git Bash. <a href="passo-2-terminal.html#terminal-vscode">Ver o passo</a></td></tr>
             <tr><td><code>404 There isn&#x27;t a GitHub Pages site here</code></td><td>O site ainda está publicando, ou o <code>index.html</code> não está na raiz.</td><td>Espere; confira o nome e o lugar do <code>index.html</code>. <a href="passo-9-pages.html#conferir">Ver o passo</a></td></tr>
             <tr><td><code>Terminal parado com : ou (END)</code></td><td>O <code>git log</code> ou o <code>git diff</code> abriu uma tela de leitura.</td><td>Aperte <kbd>q</kbd>. <a href="passo-10-atualizar.html#historico">Ver o passo</a></td></tr>
             </tbody>
@@ -264,7 +290,7 @@
   <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
 
   <footer class="rodape">
-    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
   </footer>
 </body>
 </html>

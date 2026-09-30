@@ -16,7 +16,7 @@
   <script src="js/script.js" defer></script>
   <script src="js/trilha.js" defer></script>
   <title>Passo 10: Atualizar o site publicado — Catálogo do HTML</title>
-  <meta name="description" content="O ciclo de todo dia: editar, testar, commit, push. E como trabalhar em outro computador.">
+  <meta name="description" content="O ciclo de todo dia (pull, status, add, commit, push), voltar a uma versão antiga e continuar em outro computador.">
 </head>
 <body class="pagina-trilha">
   <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
@@ -42,6 +42,9 @@
         <ul class="menu-lista" id="menu-principal">
           <li><a href="index.html">Catálogo</a></li>
           <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
           <li><a href="codigos.html">Códigos</a></li>
           <li><a href="verificador.html">Verificador</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -65,24 +68,30 @@
             <li aria-current="page">Passo 10</li>
           </ol>
         </nav>
-        <p class="heroi-antetitulo">Passo 10 de 10. Tempo: 20 min</p>
+        <p class="heroi-antetitulo">Passo 10 de 10. Tempo: 1 aula</p>
         <h1 class="heroi-titulo">Atualizar o site publicado</h1>
-        <p class="heroi-texto">O site está no ar. Daqui em diante, toda mudança segue o mesmo ciclo de cinco comandos. Este passo também mostra como continuar o projeto em outro computador.</p>
+        <p class="heroi-texto">O site está no ar. Daqui em diante, toda mudança segue o mesmo ciclo de cinco comandos. Este passo também mostra como buscar uma versão antiga e como continuar o projeto em outro computador.</p>
       </div>
     </section>
 
     <div class="container trilha-corpo">
-      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-html.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-5-css.html" data-passo="5" data-total="4"><span class="mapa-num">5</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-6-js.html" data-passo="6" data-total="4"><span class="mapa-num">6</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-7-verificar.html" data-passo="7" data-total="4"><span class="mapa-num">7</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-8-github.html" data-passo="8" data-total="4"><span class="mapa-num">8</span><span class="mapa-nome">Git e GitHub</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4" aria-current="step"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
+      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-github.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">Guardar no GitHub</span></a></li><li><a href="passo-5-html.html" data-passo="5" data-total="5"><span class="mapa-num">5</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-6-css.html" data-passo="6" data-total="5"><span class="mapa-num">6</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-7-js.html" data-passo="7" data-total="5"><span class="mapa-num">7</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-8-verificar.html" data-passo="8" data-total="5"><span class="mapa-num">8</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4" aria-current="step"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
 <section class="trilha-secao" id="ciclo">
   <h2>10.1 O ciclo de todo dia</h2>
   
 <ol class="passos">
+  <li>Traga o que mudou em outro lugar: <code>git pull</code>.</li>
   <li>Edite e salve no VS Code.</li>
   <li>Confira no Live Server.</li>
-  <li>Registre e envie:</li>
+  <li>Registre e envie.</li>
 </ol>
 <div class="terminal">
-  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <div class="terminal-topo"><span>Git Bash: antes de editar</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git pull</span></span></code></pre>
+</div>
+<p>Depois de editar, salvar e conferir no Live Server:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash: depois de editar</span><button type="button" class="terminal-copiar">Copiar</button></div>
   <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git status</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git add .</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git commit -m &quot;Adiciona galeria de fotos&quot;</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git push</span></span></code></pre>
 </div>
 <p>Espere um ou dois minutos e recarregue o site no ar com <kbd>Ctrl</kbd> + <kbd>F5</kbd>.</p>
@@ -93,9 +102,15 @@
 </div><div class="erro-comum">
   <p class="erro-comum-titulo"><strong>Erro comum:</strong> o <code>git push</code> respondeu <code>Everything up-to-date</code> e o site não mudou.</p>
   <p>Faltou o <code>git commit</code>. O push só envia o que já virou commit.</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>! [rejected] main -> main (fetch first)</code> ou <code>Updates were rejected</code> no push.</p>
+  <p>O GitHub tem mudanças que o seu computador não tem (você mexeu em outro computador ou pelo site). Rode <code>git pull</code> e depois <code>git push</code> de novo. Se o VS Code abrir um arquivo de mensagem, feche a aba: o Git continua sozinho.</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>CONFLICT (content): Merge conflict in index.html</code> no pull.</p>
+  <p>Você mudou a mesma linha em dois computadores. Abra o arquivo no VS Code: ele mostra as duas versões com os botões <em>Accept Current</em> e <em>Accept Incoming</em>. Escolha, salve e rode <code>git add .</code>, <code>git commit -m "Resolve conflito"</code> e <code>git push</code>.</p>
 </div>
 </section><section class="trilha-secao" id="historico">
-  <h2>10.2 Ver o que mudou e desfazer</h2>
+  <h2>10.2 Ver o que mudou e voltar a uma versão</h2>
   
 <div class="terminal">
   <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
@@ -103,10 +118,14 @@
 </div>
 <ul>
   <li><code>git diff</code> mostra o que você mudou desde o último commit: linhas com <code>-</code> saíram, com <code>+</code> entraram.</li>
-  <li><code>git log --oneline</code> lista os commits, do mais novo para o mais antigo.</li>
+  <li><code>git log --oneline</code> lista os commits, do mais novo para o mais antigo, cada um com um código (<code>3f2a9c1</code>).</li>
   <li><code>git restore index.html</code> desfaz as mudanças do <code>index.html</code> que ainda <strong>não</strong> viraram commit. Cuidado: o que você tinha mudado se perde.</li>
 </ul>
-<div class="erro-comum">
+<p>Estragou um arquivo e já fez commit? Traga de volta a versão dele de um commit antigo, usando o código que aparece no <code>git log --oneline</code>:</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git restore --source=3f2a9c1 css/estilo.css</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git add .</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git commit -m &quot;Volta o estilo.css para a versão anterior&quot;</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git push</span></span></code></pre>
+</div><p class="terminal-nota">Troque <code>3f2a9c1</code> pelo código do commit em que o arquivo estava bom, e o nome do arquivo pelo seu.</p><div class="erro-comum">
   <p class="erro-comum-titulo"><strong>Erro comum:</strong> o terminal "travou" com um <code>:</code> ou <code>(END)</code> no final.</p>
   <p>O <code>git log</code> e o <code>git diff</code> abrem uma tela de leitura. Use as setas para rolar e aperte <kbd>q</kbd> para sair.</p>
 </div><div class="confira">
@@ -116,18 +135,18 @@
 </section><section class="trilha-secao" id="outro-pc">
   <h2>10.3 Continuar em outro computador</h2>
   
-<p>No laboratório, em casa ou num computador novo, baixe o projeto do GitHub com <code>clone</code>:</p>
+<p>No laboratório, em casa ou num computador novo, entre na sua conta e baixe o projeto do GitHub com <code>clone</code>:</p>
 <div class="terminal">
   <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
-  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd ~/Documents</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">gh repo clone seu-usuario/turismo-barbacena</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd turismo-barbacena</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">code .</span></span></code></pre>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">gh auth status</span></span><span class="t-linha t-coment"># se não estiver logado: gh auth login (Passo 1.7)</span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">mkdir -p ~/projetos</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd ~/projetos</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">gh repo clone seu-usuario/turismo-barbacena</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd turismo-barbacena</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">code .</span></span></code></pre>
 </div>
-<p>Já tem o projeto nesse computador? Então comece toda sessão trazendo o que mudou em outro lugar:</p>
-<div class="terminal">
-  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
-  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git pull</span></span></code></pre>
+<p>No laboratório, depois do <code>clone</code>, rode os dois <code>git config</code> sem <code>--global</code> do <a href="passo-4-github.html#commit">Passo 4.3</a>. Já tem o projeto nesse computador? Então comece toda sessão com <code>git pull</code> (10.1).</p>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>To get started with GitHub CLI, please run: gh auth login</code>.</p>
+  <p>O terminal não está logado (normal no laboratório, depois do logout da aula anterior). Rode <code>gh auth login</code> (Passo 1.7).</p>
 </div><div class="erro-comum">
-  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>! [rejected] main -> main (fetch first)</code> no push.</p>
-  <p>O GitHub tem mudanças que o seu computador não tem (você mexeu em outro computador ou pelo site). Rode <code>git pull</code> e depois <code>git push</code> de novo. Se o VS Code abrir um arquivo de mensagem, feche a aba: o Git continua sozinho.</p>
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>fatal: not a git repository</code>.</p>
+  <p>Você está fora da pasta do projeto. Rode <code>cd ~/projetos/turismo-barbacena</code> e repita.</p>
 </div><div class="erro-comum">
   <p class="erro-comum-titulo"><strong>Erro comum:</strong> sair do laboratório logado.</p>
   <p>No fim da aula, rode <code>gh auth logout</code>. Na próxima, faça o <code>gh auth login</code> de novo (Passo 1.7).</p>
@@ -157,7 +176,7 @@
   <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
 
   <footer class="rodape">
-    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
   </footer>
 </body>
 </html>

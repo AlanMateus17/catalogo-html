@@ -15,8 +15,13 @@
   <link rel="stylesheet" href="css/estilo.css">
   <script src="js/script.js" defer></script>
   <script src="js/trilha.js" defer></script>
+  <script src="js/codigos-dados.js" defer></script>
+  <script src="js/dicionario-dados.js" defer></script>
+  <script src="js/analisador.js" defer></script>
+  <script src="js/entenda.js" defer></script>
+  <script src="js/painel-codigos.js" defer></script>
   <title>Passo 9: Publicar no GitHub Pages pelo terminal — Catálogo do HTML</title>
-  <meta name="description" content="Ativar o GitHub Pages com um comando e abrir o seu site na internet.">
+  <meta name="description" content="Ativar o GitHub Pages com um comando, abrir o seu site na internet e caprichar no link compartilhado.">
 </head>
 <body class="pagina-trilha">
   <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
@@ -42,6 +47,9 @@
         <ul class="menu-lista" id="menu-principal">
           <li><a href="index.html">Catálogo</a></li>
           <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
           <li><a href="codigos.html">Códigos</a></li>
           <li><a href="verificador.html">Verificador</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -65,18 +73,18 @@
             <li aria-current="page">Passo 9</li>
           </ol>
         </nav>
-        <p class="heroi-antetitulo">Passo 9 de 10. Tempo: 30 min</p>
+        <p class="heroi-antetitulo">Passo 9 de 10. Tempo: 1 aula</p>
         <h1 class="heroi-titulo">Publicar no GitHub Pages pelo terminal</h1>
-        <p class="heroi-texto">O GitHub Pages transforma o repositório num site com endereço público. Um comando ativa, e em poucos minutos qualquer pessoa consegue abrir o seu site, até pelo celular.</p>
+        <p class="heroi-texto">O GitHub Pages transforma o repositório num site com endereço público. Um comando o ativa e, em poucos minutos, qualquer pessoa consegue abrir o seu site, até pelo celular.</p>
       </div>
     </section>
 
     <div class="container trilha-corpo">
-      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-html.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-5-css.html" data-passo="5" data-total="4"><span class="mapa-num">5</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-6-js.html" data-passo="6" data-total="4"><span class="mapa-num">6</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-7-verificar.html" data-passo="7" data-total="4"><span class="mapa-num">7</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-8-github.html" data-passo="8" data-total="4"><span class="mapa-num">8</span><span class="mapa-nome">Git e GitHub</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5" aria-current="step"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
+      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-github.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">Guardar no GitHub</span></a></li><li><a href="passo-5-html.html" data-passo="5" data-total="5"><span class="mapa-num">5</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-6-css.html" data-passo="6" data-total="5"><span class="mapa-num">6</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-7-js.html" data-passo="7" data-total="5"><span class="mapa-num">7</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-8-verificar.html" data-passo="8" data-total="5"><span class="mapa-num">8</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5" aria-current="step"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
 <section class="trilha-secao" id="ativar">
   <h2>9.1 Ativar o GitHub Pages pelo terminal</h2>
   
-<p>Na pasta do projeto (confira com <code>pwd</code>), rode:</p>
+<p>No terminal do VS Code (tem que mostrar <strong>bash</strong>, Passo 2.4), na pasta do projeto (confira com <code>pwd</code>), rode:</p>
 <div class="terminal">
   <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
   <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">MSYS_NO_PATHCONV=1 gh api --method POST &quot;repos/{owner}/{repo}/pages&quot; -f &quot;source[branch]=main&quot; -f &quot;source[path]=/&quot;</span></span></code></pre>
@@ -118,7 +126,7 @@
   <pre><code>https://seu-usuario.github.io/turismo-barbacena/
 building</code></pre>
 </div>
-<p>O segundo comando mostra a situação da publicação: <code>building</code> quer dizer que ainda está publicando. Espere um ou dois minutos e rode de novo (seta <kbd>↑</kbd>). Quando aparecer <code>built</code>, abra o endereço no navegador.</p>
+<p>O segundo comando mostra a situação da publicação: <code>building</code> quer dizer que ainda está publicando. Espere um ou dois minutos e rode de novo (seta <kbd>↑</kbd>). Quando aparecer <code>built</code>, abra o endereço no navegador. Se esse comando responder <code>404</code> logo depois de ativar, a primeira publicação ainda não começou: espere um minuto e rode de novo.</p>
 <p>Abra também no celular, fora do Wi-Fi da escola: se abrir, o site está mesmo na internet.</p>
 <div class="erro-comum">
   <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>HTTP 409</code> ao ativar.</p>
@@ -127,8 +135,11 @@ building</code></pre>
   <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>HTTP 404: Not Found</code> ao ativar.</p>
   <p>O <code>gh</code> não achou o repositório. Confira se você está na pasta do projeto (<code>pwd</code>), se o <code>git remote -v</code> mostra o endereço do GitHub e se o <code>gh auth status</code> mostra a sua conta.</p>
 </div><div class="erro-comum">
-  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>HTTP 422</code> falando de <code>source</code> ou <code>path</code>.</p>
-  <p>Faltou o <code>MSYS_NO_PATHCONV=1</code> no começo do comando. Copie o comando de novo pelo botão.</p>
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>HTTP 422</code> ao ativar.</p>
+  <p>Três causas possíveis: faltou o <code>MSYS_NO_PATHCONV=1</code> no começo (copie o comando de novo pelo botão); o repositório está como privado (numa conta gratuita, o Pages exige público); ou o ramo <code>main</code> não chegou ao GitHub (faça o <code>git push</code> do Passo 4).</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>The term 'MSYS_NO_PATHCONV=1' is not recognized</code>.</p>
+  <p>O terminal é o PowerShell, não o Git Bash. Troque para Git Bash (Passo 2.4) e rode de novo.</p>
 </div><div class="erro-comum">
   <p class="erro-comum-titulo"><strong>Erro comum:</strong> o endereço abre com <em>404 There isn't a GitHub Pages site here</em>.</p>
   <p>Espere mais uns minutos. Se continuar, confira se o arquivo se chama exatamente <code>index.html</code> (minúsculo) e se está na raiz do repositório.</p>
@@ -143,17 +154,30 @@ building</code></pre>
   </ol>
 </details>
 
-</section><section class="trilha-secao" id="portfolio">
-  <h2>9.3 Bônus: o seu endereço principal</h2>
+</section><section class="trilha-secao" id="compartilhar">
+  <h2>9.3 Como o link aparece no WhatsApp</h2>
   
-<p>Um repositório com o nome <strong>exatamente igual</strong> a <code>seu-usuario.github.io</code> vira o endereço principal, sem nada depois da barra: <code>https://seu-usuario.github.io/</code>. É o lugar ideal para o seu portfólio.</p>
+<p>Quando alguém compartilha o endereço do seu site, o WhatsApp mostra um cartãozinho com título, descrição e imagem. Quem decide o que aparece são linhas no <code>&lt;head&gt;</code>. O painel abaixo tem essas linhas, mais o ícone da aba:</p>
+<div class="codigo" data-codigo="head"></div>
+<ul>
+  <li>Cole dentro do <code>&lt;head&gt;</code>, logo depois do <code>&lt;title&gt;</code>. O <code>description</code> já existe na estrutura: não repita a linha, só troque o texto.</li>
+  <li>A imagem do <code>og:image</code> precisa do <strong>endereço completo</strong> do site publicado: <code>https://seu-usuario.github.io/turismo-barbacena/img/capa.jpg</code>. Com caminho curto (<code>img/capa.jpg</code>), o WhatsApp não mostra a imagem.</li>
+  <li>Sem os arquivos <code>favicon.png</code> e <code>capa.jpg</code> na pasta <code>img</code>, apague essas duas linhas: elas dariam 404.</li>
+  <li>As linhas da fonte você já colocou no Passo 6. Não repita.</li>
+</ul>
 <div class="terminal">
   <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
-  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">gh repo create seu-usuario.github.io --public --source=. --remote=origin --push</span></span></code></pre>
-</div><p class="terminal-nota">Rode numa pasta de projeto nova, que ainda não foi enviada para o GitHub (um projeto já enviado tem o seu próprio <code>origin</code>). Troque <code>seu-usuario</code> pelo seu usuário. Se o site não aparecer em alguns minutos, rode o comando do 9.1 nesse repositório.</p><div class="voce-tenta">
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git add .</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git commit -m &quot;Adiciona informações para compartilhar o link&quot;</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git push</span></span></code></pre>
+</div><div class="voce-tenta">
   <p class="voce-tenta-titulo">Você tenta</p>
-  <p>Mande o endereço do seu site para você mesmo no WhatsApp e abra pelo celular. Veja como o link aparece na conversa: é o que o painel <em>Informações do &lt;head&gt;</em> (Open Graph) controla.</p>
+  <p>Espere a publicação (9.2), mande o endereço do seu site para o seu próprio WhatsApp e veja o cartãozinho. O WhatsApp guarda a primeira versão do cartão por um tempo: se você mudar depois, teste com um contato diferente.</p>
 </div>
+</section><section class="trilha-secao" id="portfolio">
+  <h2>9.4 Depois da trilha: o seu endereço principal</h2>
+  
+<p>Um repositório com o nome <strong>exatamente igual</strong> a <code>seu-usuario.github.io</code> vira o endereço principal, sem nada depois da barra: <code>https://seu-usuario.github.io/</code>. É o lugar ideal para um portfólio com links para todos os seus projetos.</p>
+<p>Isso é um projeto <strong>novo</strong>, numa pasta nova: repita os passos 3 e 4 com o nome <code>seu-usuario.github.io</code> (o seu usuário no lugar de <code>seu-usuario</code>). No <code>gh repo create</code> do Passo 4.4, use esse nome. O Pages desse repositório costuma ativar sozinho; se o site não aparecer em alguns minutos, rode o comando do 9.1 nele.</p>
+
 </section>
       <section class="pronto-quando" aria-labelledby="pronto-titulo">
   <h2 id="pronto-titulo">Pronto quando</h2>
@@ -167,7 +191,7 @@ building</code></pre>
   </ul>
 </section>
       <nav class="passo-nav" aria-label="Navegação entre passos">
-        <a class="passo-ant" href="passo-8-github.html"><span>Passo anterior</span>8. Git e GitHub</a>
+        <a class="passo-ant" href="passo-8-verificar.html"><span>Passo anterior</span>8. Verificar</a>
         <a class="passo-prox" href="passo-10-atualizar.html"><span>Próximo passo</span>10. Atualizar</a>
       </nav>
     </div>
@@ -177,7 +201,7 @@ building</code></pre>
   <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
 
   <footer class="rodape">
-    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
   </footer>
 </body>
 </html>

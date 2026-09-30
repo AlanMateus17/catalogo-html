@@ -6,6 +6,9 @@ O que faz:
      que é o que os painéis "Ver código" do site mostram.
   2. Gera uma DEMO de cada código na pasta demos/: uma página que tem só
      aquele código, como se o aluno tivesse colado as abas num projeto em branco.
+  3. Gera o js/dicionario-dados.js a partir de trechos/dicionario.json: as explicações
+     de cada tag, atributo, propriedade, seletor, comando e evento, usadas no
+     "Entenda o código" dos painéis e nas páginas de Documentação.
 
 Quando usar:
   Sempre que você editar, criar ou apagar um trecho em trechos/.
@@ -24,6 +27,14 @@ Como a pasta trechos/ é organizada:
   trechos/<id>/codigo.css     -> o CSS do trecho    (opcional)
   trechos/<id>/codigo.js      -> o JS do trecho     (opcional)
 
+Como acrescentar um termo ao dicionário (trechos/dicionario.json):
+  Dentro de "termos", copie um item parecido e mude o id (ex.: "css-prop-float"),
+  "chave" (a palavra como aparece no código), "nome", "o" (o que é), "quando",
+  "como" e "onde". Coloque o id também na lista "ids" do grupo certo em "grupos".
+  "alias" lista outras palavras que usam a mesma explicação.
+  A página dicionario.html mostra os termos usados nos códigos que ainda
+  não têm explicação.
+
 Para criar um trecho novo:
   1. crie a pasta trechos/<id-novo>/ com codigo.html, codigo.css e/ou codigo.js;
   2. acrescente um item com o mesmo id no trechos/indice.json;
@@ -40,6 +51,7 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PASTA_TRECHOS = os.path.join(RAIZ, "trechos")
 PASTA_DEMOS = os.path.join(RAIZ, "demos")
 SAIDA = os.path.join(RAIZ, "js", "codigos-dados.js")
+SAIDA_DIC = os.path.join(RAIZ, "js", "dicionario-dados.js")
 
 # Nas demos, os nomes genéricos dos códigos ("minha-foto.jpg") viram arquivos que existem no Catálogo.
 # As demos ficam na pasta demos/, por isso os caminhos ganham "../".
@@ -234,6 +246,20 @@ def main():
 
     print(f"{len(dados['ordem'])} trechos gravados em js/codigos-dados.js")
     print(f"{len(dados['ordem'])} demos gravadas em demos/")
+
+    # 3. O dicionário (trechos/dicionario.json) vira js/dicionario-dados.js
+    caminho_dic = os.path.join(PASTA_TRECHOS, "dicionario.json")
+    if os.path.exists(caminho_dic):
+        with open(caminho_dic, encoding="utf-8") as arquivo:
+            dicionario = json.load(arquivo)
+        with open(SAIDA_DIC, "w", encoding="utf-8", newline="\n") as arquivo:
+            arquivo.write(cabecalho.replace("codigos-dados.js", "dicionario-dados.js").replace(
+                "Os códigos vêm da pasta trechos/. Para mudar um código, edite o arquivo em trechos/",
+                "As explicações vêm de trechos/dicionario.json. Para mudar ou acrescentar um termo, edite esse arquivo"))
+            arquivo.write("window.DICIONARIO = ")
+            json.dump(dicionario, arquivo, ensure_ascii=False, separators=(",", ":"))
+            arquivo.write(";\n")
+        print(f"{len(dicionario['termos'])} termos gravados em js/dicionario-dados.js")
 
 
 if __name__ == "__main__":

@@ -4,23 +4,37 @@ Prof. Alan Mateus
 
 O QUE TEM AQUI
 --------------
-Uma página de exemplo com os principais elementos do HTML, estilizada
-com um CSS externo e com 30 exemplos de interatividade em JavaScript.
-Os três arquivos estão todos comentados, explicando o que cada parte
-faz e por quê.
+Um site para aprender a criar sites e sistemas. As partes:
+  - Passo a passo: do computador vazio ao seu site no ar (COMECE AQUI).
+  - Documentação: a teoria de HTML, CSS e JavaScript, o guia de uso de
+    IA e o roteiro de estudos até a primeira vaga de desenvolvedor.
+  - Códigos: o HTML, o CSS e o JavaScript de 53 partes de site, prontos
+    para copiar, com a explicação de cada palavra.
+  - Catálogo (index.html): todos os elementos funcionando numa página,
+    com o HTML, o CSS e o JavaScript comentados (30 partes de JS).
+  - Verificador: confere a pasta do projeto do aluno.
+  - Dicionário: o que é cada tag, propriedade e comando.
 
   pagina-completa/
-  ├── index.html        a página principal (ABRA ESTE)
-  ├── passo-a-passo.html   a trilha em 10 passos: do computador vazio ao site no ar
+  ├── index.html        o Catálogo: todos os elementos funcionando
+  ├── documentacao.html  a Documentação: módulos, do HTML ao sistema completo
+  ├── doc-html.html, doc-css.html, doc-js.html   módulo 2 (sintaxe e semântica)
+  ├── dicionario.html   todas as palavras explicadas, com busca
+  ├── ia.html           onde usar IA, onde usar com cuidado e onde não usar
+  ├── passo-a-passo.html   COMECE AQUI: a trilha em 10 passos, do computador vazio ao site no ar
   ├── passo-1-preparar.html ... passo-10-atualizar.html   os 10 passos
   ├── verificador.html  confere a pasta do projeto do aluno
   ├── codigos.html      todos os códigos prontos, com busca
-  ├── sobre.html        segunda página, usa o mesmo CSS e o mesmo JS
+  ├── sobre.html        como o site está organizado (e exemplo de segunda página)
   ├── css/
   │   └── estilo.css    toda a aparência (cores, tamanhos, layout)
   ├── js/
   │   ├── script.js         todo o comportamento (cliques, animações...)
   │   ├── codigos-dados.js  os códigos dos painéis (gerado, não edite)
+  │   ├── dicionario-dados.js as explicações de cada palavra (gerado, não edite)
+  │   ├── analisador.js     separa o código em palavras e acha a explicação
+  │   ├── entenda.js        o "Entenda este código" dos painéis
+  │   ├── documentacao.js   exemplos clicáveis, experimentos e referência
   │   ├── painel-codigos.js monta os painéis "Ver código"
   │   ├── trilha.js         copiar comandos e progresso da trilha
   │   └── verificador.js    a análise do Verificador
@@ -102,20 +116,54 @@ Para o professor editar ou criar um código:
 
 A TRILHA "PASSO A PASSO"
 ------------------------
-Comece por passo-a-passo.html. São 10 passos, do computador vazio ao
-site publicado no GitHub Pages pelo terminal:
-   1 Preparar o computador (VS Code, Git, GitHub CLI, gh auth login)
-   2 Terminal sem medo       6 JavaScript
-   3 Criar o projeto         7 Verificar (F12, validador, Verificador)
-   4 HTML                    8 Git e GitHub pelo terminal
-   5 CSS                     9 GitHub Pages pelo terminal
-                            10 Atualizar o site publicado
-Cada comando tem botão Copiar e "o que deve aparecer" na tela. As caixas
-"Pronto quando" ficam salvas no navegador de cada aluno, e a página
-inicial da trilha mostra o progresso.
+Comece por passo-a-passo.html. São 10 passos (de 12 a 14 aulas), do
+computador vazio ao site publicado no GitHub Pages pelo terminal:
+   1 Preparar o computador   6 CSS (e @media para o celular)
+   2 Terminal sem medo       7 JavaScript
+   3 Criar o projeto         8 Verificar (F12, Verificador, validador)
+   4 Guardar no GitHub       9 GitHub Pages pelo terminal
+   5 HTML                   10 Atualizar o site publicado
+O GitHub entra cedo (Passo 4) para o trabalho nunca ficar preso a um
+computador do laboratório: os passos 5 a 8 terminam com git push.
+Os passos 5, 6 e 7 indicam o capítulo da Documentação e dizem onde a IA
+pode ajudar e onde não.
 
-Ativar o GitHub Pages pelo terminal só é possível com o GitHub CLI (gh).
-Onde não der para instalar, cada passo mostra também o caminho pelo site.
+Cada comando tem botão Copiar e "o que deve aparecer" na tela. As caixas
+"Pronto quando" ficam salvas no navegador (só naquele computador), e a
+página inicial da trilha mostra o progresso.
+
+O jeito mais simples de ativar o GitHub Pages pelo terminal é o GitHub
+CLI (gh). Onde não der para instalar, cada passo mostra também o
+caminho pelo site.
+
+A DOCUMENTAÇÃO E O "ENTENDA ESTE CÓDIGO"
+---------------------------------------
+Todo código do site (painéis "Ver código" e exemplos da Documentação)
+fica colorido e clicável. Clicar numa palavra mostra o que ela é, quando
+usar, como usar e onde escrever. Cada painel tem a lista "Entenda este
+código" com TODAS as palavras daquele código, separadas em:
+  - palavras da linguagem (tags, atributos, propriedades, comandos...);
+  - nomes criados por você (classes, ids, variáveis, funções...), com as
+    linhas do HTML, do CSS e do JS em que cada nome aparece;
+  - sinais (; { } ( ) . e comentários).
+
+As páginas doc-html, doc-css e doc-js explicam a sintaxe e a semântica
+de cada linguagem, com experimentos (modelo de caixa, flexbox, grid,
+position, seletores, especificidade, console de JavaScript e árvore do
+HTML) e, no fim, a referência das palavras usadas no site.
+
+Para o professor: as explicações ficam em trechos/dicionario.json.
+Depois de editar, rode  python ferramentas/gerar-codigos.py
+A página dicionario.html lista, no fim, as palavras dos códigos que
+ainda não têm explicação (útil quando você cria um código novo).
+
+A página documentacao.html organiza tudo em 17 módulos, mais um
+opcional (o módulo 2, HTML, CSS e JavaScript, é o que já está pronto),
+um roteiro de 10 etapas até a primeira vaga fullstack, as habilidades
+além do código e os estudos paralelos. Os módulos que ainda não existem
+aparecem como "Em construção". A página ia.html mostra onde usar IA,
+onde usar com cuidado e onde ela prejudica o aprendizado.
+
 
 O VERIFICADOR
 -------------
@@ -126,12 +174,37 @@ sintaxe do JS e ids que o JS procura e não existem. Os arquivos não
 saem do computador do aluno.
 
 
+OS PROJETOS
+-----------
+projetos.html mostra os 12 projetos da formação, cada um ligado a um
+sistema AM. Os projetos 1 a 4 já têm página completa (projeto-1.html a
+projeto-4.html): resultado esperado, o que estudar antes, requisitos,
+marcos com "Pronto quando", dicas em camadas (nunca código), casos de
+teste, erros comuns, uso de IA e entrega. Os outros aparecem como
+"Libera após o módulo X". 
+
+AS AULAS (lições em Markdown)
+-----------------------------
+As lições ficam em conteudo/ (um arquivo .md por lição). Depois de
+escrever ou mudar uma lição, rode:
+  py -m pip install markdown      (só na primeira vez)
+  py ferramentas/gerar-aulas.py
+Ele cria as páginas aula-*.html, checkpoint-*.html, aulas.html,
+revisar.html e certificado.html. Tudo sobre como escrever (blocos,
+analogias, exercícios, checkpoint): conteudo/COMO-ESCREVER.md
+Modelo para copiar: conteudo/_modelo-licao.md
+
+
+
 COMO ESTUDAR ESTE MATERIAL
 --------------------------
 - Deixe o VS Code e o navegador lado a lado.
 - Leia uma seção da página e procure o mesmo trecho no código.
 - Procure nos comentários as palavras "TESTE" e "POR QUÊ".
   TESTE = uma mudança para você fazer e ver o que acontece.
-- Os exemplos de JavaScript são numerados de 1 a 30. O número na
-  página é o mesmo da "PARTE" no script.js.
+- O script.js tem 30 partes (PARTE 1 a PARTE 30). Os exemplos numerados
+  na página (1 a 22) usam o mesmo número da PARTE. As partes 23 a 30
+  (relógio, contador, mostrar senha, validação...) aparecem sem número,
+  nos formulários e no rodapé; a lista completa está no começo do
+  script.js.
 - Para desfazer um estrago, apague a pasta e extraia o .zip de novo.

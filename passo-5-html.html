@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--
+  TRILHA "PASSO A PASSO" — Passo 5: Montar o conteúdo com HTML
+  Página de conteúdo. Os comandos têm botão de copiar e as caixas
+  "Pronto quando" guardam o progresso no navegador (js/trilha.js).
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/trilha.js" defer></script>
+  <script src="js/codigos-dados.js" defer></script>
+  <script src="js/dicionario-dados.js" defer></script>
+  <script src="js/analisador.js" defer></script>
+  <script src="js/entenda.js" defer></script>
+  <script src="js/painel-codigos.js" defer></script>
+  <title>Passo 5: Montar o conteúdo com HTML — Catálogo do HTML</title>
+  <meta name="description" content="Planejar a página e montar as seções com os códigos prontos, trocando o conteúdo pelo seu.">
+</head>
+<body class="pagina-trilha">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="passo-a-passo.html">Passo a passo</a></li>
+            <li aria-current="page">Passo 5</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Passo 5 de 10. Tempo: 2 aulas</p>
+        <h1 class="heroi-titulo">Montar o conteúdo com HTML</h1>
+        <p class="heroi-texto">O HTML é o conteúdo e a estrutura da página. Você vai planejar no papel e montar as seções com os códigos prontos, trocando o conteúdo pelo seu.</p>
+      </div>
+    </section>
+
+    <div class="container trilha-corpo">
+      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-github.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">Guardar no GitHub</span></a></li><li><a href="passo-5-html.html" data-passo="5" data-total="5" aria-current="step"><span class="mapa-num">5</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-6-css.html" data-passo="6" data-total="5"><span class="mapa-num">6</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-7-js.html" data-passo="7" data-total="5"><span class="mapa-num">7</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-8-verificar.html" data-passo="8" data-total="5"><span class="mapa-num">8</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
+<aside class="doc-nota trilha-teoria">
+  <p class="doc-nota-titulo">Para entender a fundo</p>
+  <p>Este passo usa o que está explicado na Documentação. Leia antes, ou volte lá quando uma palavra não fizer sentido:</p>
+  <ul><li><a href="doc-html.html#anatomia">Anatomia de um elemento: tag, atributo, aninhamento</a></li><li><a href="doc-html.html#semantica">Semântica: qual tag usar para cada coisa</a></li><li><a href="doc-html.html#textos-links">Links, imagens e o atributo alt</a></li></ul>
+</aside><section class="trilha-secao" id="planejar">
+  <h2>5.1 Planejar antes de digitar</h2>
+  
+<ol class="passos">
+  <li>Escolha o tema e divida o assunto em 4 a 6 seções. Exemplo: Início, História, Lugares (galeria), Como chegar (mapa), Contato.</li>
+  <li>Desenhe a página numa folha, de cima para baixo: cabeçalho com menu, primeira área grande, uma caixa para cada seção e o rodapé.</li>
+  <li>Ao lado de cada caixa, escreva o <strong>código pronto</strong> que vai usar. A lista está na página <a href="codigos.html">Códigos</a>.</li>
+</ol>
+<p>Sobre o formulário de contato: no seu site ele funciona na tela, mas não envia e-mail sozinho, porque um site no GitHub Pages não tem servidor. A nota do código <a href="codigos.html">Formulário</a> mostra como usar um serviço gratuito que recebe as mensagens.</p>
+<div class="confira">
+  <p><strong>Confira:</strong> por que a sua página deve ter um único <code>&lt;h1&gt;</code>?</p>
+  <details><summary>Ver a resposta</summary><p>O <code>h1</code> é o título da página inteira. O Google e os leitores de tela o usam para saber do que a página trata. As seções usam <code>h2</code>.</p></details>
+</div>
+</section><section class="trilha-secao" id="trocar">
+  <h2>5.2 Trocar as partes da estrutura pelos blocos completos</h2>
+  
+<p>A estrutura do Passo 3 tem um cabeçalho, uma primeira seção e um rodapé <strong>simples</strong>. Os blocos abaixo são as versões completas. Cada um <strong>substitui</strong> uma parte da estrutura: não cole os dois, senão a página fica com dois cabeçalhos e dois <code>h1</code>.</p>
+<div class="tabela-rolagem"><table class="tabela">
+  <thead><tr><th scope="col">Bloco</th><th scope="col">No index.html, apague...</th><th scope="col">...e cole no mesmo lugar</th></tr></thead>
+  <tbody>
+    <tr><td>Cabeçalho com menu</td><td>o <code>&lt;header class="topo"&gt;</code> inteiro, até o <code>&lt;/header&gt;</code></td><td>a aba HTML do cabeçalho</td></tr>
+    <tr><td>Herói (primeira área grande)</td><td>a <code>&lt;section id="inicio"&gt;</code> inteira, até o <code>&lt;/section&gt;</code></td><td>a aba HTML do herói</td></tr>
+    <tr><td>Rodapé</td><td>o <code>&lt;footer class="rodape-simples"&gt;</code> inteiro</td><td>a aba HTML do rodapé</td></tr>
+  </tbody>
+</table></div>
+<p>As abas CSS e JavaScript vão para o final do <code>estilo.css</code> e do <code>script.js</code>. No menu do cabeçalho, deixe só os links das seções que o seu site tem: um link <code>#galeria</code> sem uma seção <code>id="galeria"</code> não leva a lugar nenhum.</p>
+<div class="codigo" data-codigo="cabecalho"></div>
+<div class="codigo" data-codigo="heroi"></div>
+<div class="codigo" data-codigo="rodape"></div>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> dois cabeçalhos, dois rodapés ou dois <code>h1</code> na página.</p>
+  <p>Você colou o bloco completo sem apagar a parte simples da estrutura. Apague a versão simples (veja a tabela acima). O Verificador acusa isso como <code>id</code> repetido (<code>inicio</code>).</p>
+</div>
+</section><section class="trilha-secao" id="montar">
+  <h2>5.3 Montar as outras seções, um bloco de cada vez</h2>
+  
+<p>Para cada caixa do seu desenho:</p>
+<ol class="passos">
+  <li>Abra o painel <strong>Ver código</strong> do bloco na página <a href="codigos.html">Códigos</a>.</li>
+  <li>Leia o <strong>Entenda este código</strong>: cada palavra colorida tem explicação. Não cole o que você não entendeu.</li>
+  <li>Copie a aba <strong>HTML</strong> e cole no <code>index.html</code>, dentro do <code>&lt;main&gt;</code>, no ponto onde essa seção fica no seu desenho.</li>
+  <li>Copie as abas <strong>CSS</strong> e <strong>JavaScript</strong>, se existirem, para o final do <code>estilo.css</code> e do <code>script.js</code>.</li>
+  <li>Troque textos, fotos (<code>src</code> e <code>alt</code>) e links pelos seus.</li>
+  <li>Salve e confira no navegador <strong>antes</strong> de passar para o próximo bloco.</li>
+</ol>
+<aside class="trilha-ia">
+  <p class="trilha-ia-titulo">E a IA, neste passo?</p>
+  <p><strong>Pode:</strong> pedir para explicar uma tag ou um erro, ou para revisar o seu HTML pronto e apontar problemas de semântica e acessibilidade.</p>
+  <p><strong>Não:</strong> pedir para a IA gerar a página ou uma seção inteira. Montar e entender cada bloco é o que este passo ensina.</p>
+  <p>Por quê, e prompts prontos para usar do jeito certo: <a href="ia.html">Usar IA do jeito certo</a>.</p>
+</aside><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> o link do menu não leva para a seção.</p>
+  <p>O <code>href="#lugares"</code> precisa ser exatamente igual ao <code>id="lugares"</code> da seção: mesmas letras, sem acento, sem maiúscula.</p>
+</div><div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> a página fica torta do meio para baixo.</p>
+  <p>Uma tag abriu e não fechou, ou você copiou um <code>&lt;/div&gt;</code> a mais. No VS Code, clique numa tag de abertura: ele destaca a de fechamento. A setinha ao lado do número da linha recolhe o bloco e mostra onde ele termina.</p>
+</div><div class="voce-tenta">
+  <p class="voce-tenta-titulo">Você tenta</p>
+  <p>Escolha na página <a href="codigos.html">Códigos</a> um bloco que ainda não está no seu site (galeria, cards ou tabela), cole e adapte ao seu tema.</p>
+</div>
+</section><section class="trilha-secao" id="conferir">
+  <h2>5.4 Conferir o HTML</h2>
+  
+<p>Abra o <a href="verificador.html">Verificador do projeto</a>, escolha a pasta do seu site e corrija os itens em vermelho: ele encontra <code>id</code> repetido, imagem sem <code>alt</code>, caminho errado e tag sem fechar. A conferência completa, com o validador oficial, fica para o <a href="passo-8-verificar.html">Passo 8</a>.</p>
+
+</section><section class="trilha-secao" id="guardar">
+  <h2>5.5 Guardar no GitHub</h2>
+  
+<p>Terminou este passo? Registre a versão e envie. Assim, se o computador do laboratório for formatado, o seu trabalho estará salvo no GitHub.</p>
+<div class="terminal">
+  <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git status</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git add .</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git commit -m &quot;Adiciona o conteúdo do site&quot;</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">git push</span></span></code></pre>
+</div><p class="terminal-nota">Troque a mensagem se quiser: ela deve dizer o que mudou. O site ainda não está no ar; publicar é o Passo 9.</p>
+<p>Outro computador, ou começou a aula agora? Antes de editar, traga o que já está no GitHub: veja o <a href="passo-10-atualizar.html#outro-pc">Passo 10.3</a>.</p>
+
+</section>
+      <section class="pronto-quando" aria-labelledby="pronto-titulo">
+  <h2 id="pronto-titulo">Pronto quando</h2>
+  <p>Marque cada item só depois de conferir. As marcações ficam salvas neste navegador e aparecem na página inicial da trilha.</p>
+  <ul data-total="5">
+    <li><label><input type="checkbox" data-progresso="passo-5-1"> Tenho o desenho da página com as seções e os códigos escolhidos</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-5-2"> A página tem um só cabeçalho, um só rodapé e um só <code>h1</code></label></li>
+    <li><label><input type="checkbox" data-progresso="passo-5-3"> Todas as seções têm conteúdo meu (textos e fotos) e os links do menu levam a elas</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-5-4"> Conferi no Verificador e corrigi os itens vermelhos</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-5-5"> Guardei no GitHub (<code>git push</code>)</label></li>
+  </ul>
+</section>
+      <nav class="passo-nav" aria-label="Navegação entre passos">
+        <a class="passo-ant" href="passo-4-github.html"><span>Passo anterior</span>4. Guardar no GitHub</a>
+        <a class="passo-prox" href="passo-6-css.html"><span>Próximo passo</span>6. CSS</a>
+      </nav>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

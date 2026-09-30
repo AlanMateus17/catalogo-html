@@ -1,0 +1,84 @@
+{
+ "modulos": [
+  {
+   "numero": 1,
+   "titulo": "Lógica de programação com JavaScript",
+   "licoes": [
+    {
+     "id": "aula-1-01-algoritmos",
+     "titulo": "O que é um algoritmo",
+     "tempo": "30 min",
+     "exercicios": 6,
+     "acesso": "livre"
+    },
+    {
+     "id": "aula-1-02-variaveis",
+     "titulo": "Variáveis: nomes para valores",
+     "tempo": "40 min",
+     "exercicios": 6,
+     "acesso": "conta"
+    },
+    {
+     "id": "aula-1-03-operadores",
+     "titulo": "Contas no código: operadores aritméticos",
+     "tempo": "40 min",
+     "exercicios": 6,
+     "acesso": "pago"
+    },
+    {
+     "id": "aula-1-04-logica",
+     "titulo": "Verdadeiro ou falso: comparações e lógica",
+     "tempo": "45 min",
+     "exercicios": 7,
+     "acesso": "pago"
+    },
+    {
+     "id": "aula-1-05-decisoes",
+     "titulo": "Decisões: if, else e switch",
+     "tempo": "50 min",
+     "exercicios": 6,
+     "acesso": "pago"
+    },
+    {
+     "id": "aula-1-06-repeticao",
+     "titulo": "Repetição: for, while e do...while",
+     "tempo": "50 min",
+     "exercicios": 6,
+     "acesso": "pago"
+    },
+    {
+     "id": "aula-1-07-listas-objetos",
+     "titulo": "Listas e objetos: guardar muitos dados",
+     "tempo": "55 min",
+     "exercicios": 6,
+     "acesso": "pago"
+    },
+    {
+     "id": "aula-1-08-funcoes",
+     "titulo": "Funções: dar nome a um pedaço de lógica",
+     "tempo": "55 min",
+     "exercicios": 6,
+     "acesso": "pago"
+    },
+    {
+     "id": "aula-1-09-depuracao",
+     "titulo": "Depuração: ler erros e achar bugs",
+     "tempo": "50 min",
+     "exercicios": 5,
+     "acesso": "pago"
+    },
+    {
+     "id": "aula-1-10-recursao-custo",
+     "titulo": "Recursão e o custo de um algoritmo",
+     "tempo": "50 min",
+     "exercicios": 5,
+     "acesso": "pago"
+    }
+   ],
+   "checkpoint": {
+    "id": "checkpoint-1",
+    "questoes": 14
+   }
+  }
+ ]
+}

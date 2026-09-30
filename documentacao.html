@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!--
+  DOCUMENTAÇÃO — página inicial
+  Os módulos da documentação, do HTML até o sistema completo, o roteiro
+  para a primeira vaga de desenvolvedor fullstack e as trilhas paralelas.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/documentacao.js" defer></script>
+  <title>Documentação — Catálogo do HTML</title>
+  <meta name="description" content="Documentação didática para chegar à primeira vaga de desenvolvedor fullstack: lógica, HTML, CSS, JavaScript, TypeScript, Next.js, C#, ASP.NET Core, PostgreSQL, testes, Docker e deploy.">
+</head>
+<body class="pagina-trilha pagina-doc">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html" aria-current="page">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li aria-current="page">Documentação</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Documentação</p>
+        <h1 class="heroi-titulo">Do HTML à primeira vaga fullstack</h1>
+        <p class="heroi-texto">Tudo o que você precisa entender para construir um sistema de verdade e trabalhar bem na área, explicado do jeito que se aprende: o que é, para que serve, quando usar e como usar.</p>
+      </div>
+    </section>
+
+    <div class="container doc-layout">
+      <nav class="doc-indice" aria-label="Nesta página">
+        <details class="doc-indice-caixa" open>
+          <summary>Nesta página</summary>
+          <ol><li><a href="#como-usar">Como estudar por aqui</a></li><li><a href="#hoje">Comece por aqui</a></li><li><a href="#mapa">O mapa de um sistema</a></li><li><a href="#modulos">Os módulos</a></li><li><a href="#roteiro">Roteiro para a primeira vaga</a></li><li><a href="#habilidades">Além do código</a></li><li><a href="#ia">Usar IA do jeito certo</a></li><li><a href="#trilhas">Estudos paralelos</a></li><li><a href="#dicionario">Dicionário</a></li></ol>
+        </details>
+      </nav>
+      <div class="trilha-corpo doc-corpo">
+      <section class="trilha-secao" id="como-usar">
+        <h2>Como estudar por aqui</h2>
+        <ol class="passos">
+          <li><strong>Leia a explicação</strong> de um capítulo. Os capítulos estão em ordem: um prepara o próximo.</li>
+          <li><strong>Clique nas palavras coloridas</strong> dos exemplos. Cada uma abre a explicação dela. Sublinhado tracejado = nome criado por você.</li>
+          <li><strong>Mexa nos experimentos</strong> (caixas "Experimente"). Mude valores e veja o que acontece. Nada ali estraga.</li>
+          <li><strong>Faça os "Você tenta"</strong> no seu próprio projeto e responda os "Confira" antes de abrir a resposta.</li>
+          <li><strong>Feche o material e explique</strong> com as suas palavras o que acabou de aprender, em 3 a 5 frases. Se não conseguir, volte. É o que transforma "eu vi" em "eu sei".</li>
+        </ol>
+        <aside class="doc-nota"><p class="doc-nota-titulo">Antes de começar: e a inteligência artificial?</p><p>Use IA como professor e revisor, nunca como quem faz o exercício por você. O guia <a href="ia.html">Usar IA do jeito certo</a> mostra onde ela ajuda, onde precisa de cuidado e onde ela tira o seu aprendizado.</p></aside>
+        <p>Os módulos têm dois níveis. O <strong>nível aluno</strong> (módulos 1 a 6) vai da lógica ao front-end moderno. O <strong>nível profissional</strong> (7 a 17) continua até um sistema com back-end, banco de dados e deploy: é o caminho para a primeira vaga.</p>
+      </section>
+
+      <section class="trilha-secao" id="hoje">
+        <h2>Comece por aqui: o que já dá para estudar hoje</h2>
+        <ol class="passos">
+          <li>Leia o guia <a href="ia.html">Usar IA do jeito certo</a> (10 minutos).</li>
+          <li>Siga o <a href="passo-a-passo.html">Passo a passo</a>: do computador vazio ao seu site no ar.</li>
+          <li>Junto com ele, estude o <strong>módulo 2</strong>: <a href="doc-html.html">HTML</a>, <a href="formacao.html">CSS</a> e <a href="formacao.html">JavaScript</a>. Cada passo de código da trilha indica o capítulo certo.</li>
+        </ol>
+        <p>O próximo módulo publicado será o 1 (Lógica de programação). Os outros aparecem abaixo como "Em construção", para você já ver o caminho inteiro.</p>
+      </section>
+
+      <section class="trilha-secao" id="mapa">
+        <h2>O mapa: como as peças de um sistema se conectam</h2>
+        <p>Um sistema completo tem três partes que conversam entre si. Este é o destino: não precisa entender tudo agora. Os primeiros sites, como o do Passo a passo, só têm a parte 1 e ficam no GitHub Pages, que é gratuito. Quando o sistema ganha API e banco de dados, ele precisa de um servidor (módulo 15).</p>
+        <div class="mapa-sistema" role="img" aria-label="Navegador com HTML, CSS, JavaScript e Next.js conversa por HTTP e JSON com a API em C# e ASP.NET Core, que guarda dados no PostgreSQL e usa Redis e SignalR. Docker, GitHub Actions e o servidor publicam tudo.">
+          <div class="mapa-bloco mapa-front">
+            <p class="mapa-titulo">1. Front-end</p>
+            <p>O que roda no navegador da pessoa</p>
+            <ul><li>HTML, CSS, JavaScript</li><li>TypeScript</li><li>React + Next.js</li><li>Tailwind</li></ul>
+          </div>
+          <div class="mapa-seta"><span>pedido HTTP →</span><span>← resposta JSON</span></div>
+          <div class="mapa-bloco mapa-back">
+            <p class="mapa-titulo">2. Back-end (API)</p>
+            <p>O que roda no servidor: regras e segurança</p>
+            <ul><li>C# + .NET 10</li><li>ASP.NET Core</li><li>Clean Architecture + DDD</li><li>SignalR (tempo real)</li></ul>
+          </div>
+          <div class="mapa-seta"><span>consulta SQL →</span><span>← dados</span></div>
+          <div class="mapa-bloco mapa-dados">
+            <p class="mapa-titulo">3. Dados</p>
+            <p>Onde as informações ficam guardadas</p>
+            <ul><li>PostgreSQL (+ PostGIS)</li><li>Redis (cache e filas)</li></ul>
+          </div>
+        </div>
+        <p class="mapa-base"><strong>Por baixo de tudo:</strong> Git e GitHub (guardar e colaborar), testes automatizados, Docker (empacotar), GitHub Actions (testar e publicar sozinho), servidor com domínio e HTTPS (hospedar) e observabilidade (saber o que está acontecendo).</p>
+      </section>
+
+      <section class="trilha-secao" id="modulos">
+        <h2>Os módulos</h2>
+        <p>Cada módulo tem páginas como as de <a href="doc-html.html">HTML</a>, <a href="formacao.html">CSS</a> e <a href="formacao.html">JavaScript</a>: explicação, exemplos clicáveis, experimentos, exercícios e referência. Eles são publicados um de cada vez.</p>
+        <ol class="modulos-lista">
+<li class="modulo-card" id="modulo-1">
+  <p class="modulo-num">Módulo 1</p>
+  <h3>Lógica de programação</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-aluno">Nível aluno</span></p>
+  <p>Pensar como o computador: variável, decisão, repetição, função e coleção, antes de qualquer linguagem.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> Pseudocódigo, JavaScript no navegador</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapa 1</p>
+  
+</li>
+<li class="modulo-card modulo-ativo" id="modulo-2">
+  <p class="modulo-num">Módulo 2</p>
+  <h3>HTML, CSS e JavaScript</h3>
+  <p class="modulo-selos"><span class="modulo-selo modulo-disponivel">Disponível</span><span class="modulo-selo modulo-aluno">Nível aluno</span></p>
+  <p>A base de toda página: sintaxe, semântica, layout e interação.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> HTML, CSS, JavaScript, DOM, F12</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapa 2</p>
+  <p class="modulo-links"><a class="botao botao-primario botao-pequeno" href="doc-html.html">HTML</a><a class="botao botao-primario botao-pequeno" href="formacao.html">CSS</a><a class="botao botao-primario botao-pequeno" href="formacao.html">JavaScript</a></p>
+</li>
+<li class="modulo-card" id="modulo-3">
+  <p class="modulo-num">Módulo 3</p>
+  <h3>Ferramentas e Git em equipe</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-aluno">Nível aluno</span></p>
+  <p>Terminal, VS Code, Git e GitHub de verdade: branch, pull request, conflito, code review, Conventional Commits. Node.js, npm e Docker básico.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> Git Bash, VS Code, Git, GitHub, GitHub CLI, Node.js, npm, Docker</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapas 2 e 3</p>
+  
+</li>
+<li class="modulo-card" id="modulo-4">
+  <p class="modulo-num">Módulo 4</p>
+  <h3>Como a web funciona</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-aluno">Nível aluno</span></p>
+  <p>Cliente e servidor, DNS, IP e portas, HTTP e HTTPS, cookies, CORS. O que acontece entre digitar o endereço e a página aparecer.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> Navegador (aba Rede), curl</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapa 3</p>
+  
+</li>
+<li class="modulo-card" id="modulo-5">
+  <p class="modulo-num">Módulo 5</p>
+  <h3>TypeScript</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-aluno">Nível aluno</span></p>
+  <p>JavaScript com tipos: o editor avisa o erro antes de você rodar.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> TypeScript, tsc, tsconfig</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapa 4</p>
+  
+</li>
+<li class="modulo-card" id="modulo-6">
+  <p class="modulo-num">Módulo 6</p>
+  <h3>React e Next.js, com Tailwind</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-aluno">Nível aluno</span></p>
+  <p>Componentes, rotas, formulários, consumo de API com TanStack Query, estado com Zustand, design tokens, PWA.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> React, Next.js, Tailwind CSS, TanStack Query, Zustand</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapa 4</p>
+  
+</li>
+<li class="modulo-card" id="modulo-7">
+  <p class="modulo-num">Módulo 7</p>
+  <h3>C# e Programação Orientada a Objetos</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-prof">Nível profissional</span></p>
+  <p>Tipos, classes, herança, interfaces, coleções, LINQ, nullable, async/await e injeção de dependência.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> C#, .NET 10 SDK, dotnet CLI</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapa 5</p>
+  
+</li>
+<li class="modulo-card" id="modulo-8">
+  <p class="modulo-num">Módulo 8</p>
+  <h3>SOLID e padrões de projeto</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-prof">Nível profissional</span></p>
+  <p>Os princípios que deixam o código fácil de mudar, e os padrões mais usados no dia a dia.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> C#</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapa 5</p>
+  
+</li>
+<li class="modulo-card" id="modulo-9">
+  <p class="modulo-num">Módulo 9</p>
+  <h3>API REST com ASP.NET Core</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-prof">Nível profissional</span></p>
+  <p>Rotas, Controllers, DTO, validação, códigos HTTP, OpenAPI, versionamento e rate limiting. GraphQL com Hot Chocolate como capítulo opcional.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> ASP.NET Core, OpenAPI/Swagger, Hot Chocolate</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapa 7</p>
+  
+</li>
+<li class="modulo-card" id="modulo-10">
+  <p class="modulo-num">Módulo 10</p>
+  <h3>Modelagem de dados, SQL, PostgreSQL e EF Core</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-prof">Nível profissional</span></p>
+  <p>Do diagrama de entidades às consultas: normalização, índices, EXPLAIN ANALYZE, migrations, N+1, concorrência (RowVersion), Row-Level Security e PostGIS.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> PostgreSQL, SQL, Entity Framework Core, PostGIS</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapas 6 e 7</p>
+  
+</li>
+<li class="modulo-card" id="modulo-11">
+  <p class="modulo-num">Módulo 11</p>
+  <h3>Clean Architecture, DDD e multi-tenant</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-prof">Nível profissional</span></p>
+  <p>Organizar o sistema em camadas e em torno do negócio, isolar clientes com tenant_id, idempotência e Outbox.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> Clean Architecture, DDD, injeção de dependência</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Depois da primeira vaga</p>
+  
+</li>
+<li class="modulo-card" id="modulo-12">
+  <p class="modulo-num">Módulo 12</p>
+  <h3>Autenticação e segurança</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-prof">Nível profissional</span></p>
+  <p>Login com JWT, senhas com BCrypt, papéis e permissões, OWASP Top 10, 2FA e LGPD.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> JWT, BCrypt, ASP.NET Core, OWASP Top 10</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapa 7</p>
+  
+</li>
+<li class="modulo-card" id="modulo-13">
+  <p class="modulo-num">Módulo 13</p>
+  <h3>Redis e SignalR</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-prof">Nível profissional</span></p>
+  <p>Cache para deixar o sistema rápido, filas com Redis Streams e atualização em tempo real.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> Redis, Redis Streams, SignalR</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Depois da primeira vaga</p>
+  
+</li>
+<li class="modulo-card" id="modulo-14">
+  <p class="modulo-num">Módulo 14</p>
+  <h3>Testes automatizados</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-prof">Nível profissional</span></p>
+  <p>Pirâmide de testes, unitário, integração, TDD, testes de componente e de ponta a ponta.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> xUnit, Moq, Vitest, Testing Library, Playwright</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapa 8</p>
+  
+</li>
+<li class="modulo-card" id="modulo-15">
+  <p class="modulo-num">Módulo 15</p>
+  <h3>Docker, CI/CD, deploy e observabilidade</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-prof">Nível profissional</span></p>
+  <p>Empacotar com Docker, testar e publicar sozinho com GitHub Actions, colocar no ar com domínio e HTTPS, e saber o que está acontecendo em produção.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> Docker, Docker Compose, GitHub Actions, Nginx/Caddy, logs e métricas, Terraform</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapa 9</p>
+  
+</li>
+<li class="modulo-card" id="modulo-16">
+  <p class="modulo-num">Módulo 16</p>
+  <h3>Performance</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-prof">Nível profissional</span></p>
+  <p>Medir antes de otimizar: benchmark, memória, garbage collector e teste de carga.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> BenchmarkDotNet, Span&lt;T&gt;, k6</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Depois da primeira vaga</p>
+  
+</li>
+<li class="modulo-card" id="modulo-17">
+  <p class="modulo-num">Módulo 17</p>
+  <h3>Projeto final: sistema completo</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-prof">Nível profissional</span></p>
+  <p>Um sistema de ponta a ponta, construído módulo a módulo, do banco ao deploy.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> Toda a stack</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> Etapa 9</p>
+  
+</li>
+<li class="modulo-card modulo-opcional">
+  <p class="modulo-num">Opcional</p>
+  <h3>Python e FastAPI</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span><span class="modulo-selo modulo-prof">Nível profissional</span></p>
+  <p>Para análise de dados, otimização (OR-Tools) e serviços pequenos de IA.</p>
+  <p class="modulo-ferramentas"><strong>Assuntos e ferramentas:</strong> Python, FastAPI, OR-Tools, pytest</p>
+  <p class="modulo-ferramentas"><strong>No roteiro:</strong> opcional</p>
+</li>
+        </ol>
+      </section>
+
+      <section class="trilha-secao" id="roteiro">
+        <h2>Roteiro para a primeira vaga fullstack</h2>
+        <p>Os módulos são a teoria organizada por assunto. O roteiro é a ordem de estudo, em <strong>etapas</strong>: cada etapa junta alguns módulos e termina com algo funcionando. Não pule etapas: cada uma se apoia na anterior.</p>
+        <ol class="roteiro-lista">
+<li class="roteiro-passo">
+  <p class="roteiro-titulo"><span class="roteiro-num">Etapa 1</span> Lógica de programação</p>
+  <p>Variável, decisão, repetição, função e coleção, resolvendo problemas antes de pensar em linguagem.</p>
+  <p class="roteiro-pronto"><strong>Pronto quando:</strong> Resolve exercícios de lógica sem travar e explica a solução em voz alta.</p>
+  <p class="roteiro-mods">Módulo: <a href="#modulo-1">1</a></p>
+</li>
+<li class="roteiro-passo">
+  <p class="roteiro-titulo"><span class="roteiro-num">Etapa 2</span> O primeiro site no ar</p>
+  <p>HTML, CSS e JavaScript na prática, seguindo o Passo a passo até publicar no GitHub Pages.</p>
+  <p class="roteiro-pronto"><strong>Pronto quando:</strong> O seu site está no ar e você explica cada linha dele.</p>
+  <p class="roteiro-mods">Módulos: <a href="#modulo-2">2</a>, <a href="#modulo-3">3</a></p>
+</li>
+<li class="roteiro-passo">
+  <p class="roteiro-titulo"><span class="roteiro-num">Etapa 3</span> Trabalhar como equipe e entender a web</p>
+  <p>Git com branch e pull request, e o que acontece entre o navegador e o servidor (HTTP, DNS, CORS).</p>
+  <p class="roteiro-pronto"><strong>Pronto quando:</strong> Abriu um pull request num projeto e explica o que é um pedido HTTP.</p>
+  <p class="roteiro-mods">Módulos: <a href="#modulo-3">3</a>, <a href="#modulo-4">4</a></p>
+</li>
+<li class="roteiro-passo">
+  <p class="roteiro-titulo"><span class="roteiro-num">Etapa 4</span> Front-end moderno</p>
+  <p>TypeScript, React e Next.js, com Tailwind.</p>
+  <p class="roteiro-pronto"><strong>Pronto quando:</strong> Refez o seu site (ou parte dele) em Next.js, com componentes.</p>
+  <p class="roteiro-mods">Módulos: <a href="#modulo-5">5</a>, <a href="#modulo-6">6</a></p>
+</li>
+<li class="roteiro-passo">
+  <p class="roteiro-titulo"><span class="roteiro-num">Etapa 5</span> C# e orientação a objetos</p>
+  <p>A linguagem do back-end: classes, interfaces, coleções, LINQ, async/await.</p>
+  <p class="roteiro-pronto"><strong>Pronto quando:</strong> Modela um problema real com classes e explica cada decisão.</p>
+  <p class="roteiro-mods">Módulos: <a href="#modulo-7">7</a>, <a href="#modulo-8">8</a></p>
+</li>
+<li class="roteiro-passo">
+  <p class="roteiro-titulo"><span class="roteiro-num">Etapa 6</span> Banco de dados</p>
+  <p>Modelar tabelas, escrever SQL e usar o PostgreSQL.</p>
+  <p class="roteiro-pronto"><strong>Pronto quando:</strong> Criou o banco de um sistema pequeno e escreve as consultas dele.</p>
+  <p class="roteiro-mods">Módulo: <a href="#modulo-10">10</a></p>
+</li>
+<li class="roteiro-passo">
+  <p class="roteiro-titulo"><span class="roteiro-num">Etapa 7</span> API com ASP.NET Core</p>
+  <p>Criar a API, ligar ao banco com EF Core e proteger com login.</p>
+  <p class="roteiro-pronto"><strong>Pronto quando:</strong> Uma API com cadastro, listagem e login funcionando.</p>
+  <p class="roteiro-mods">Módulos: <a href="#modulo-9">9</a>, <a href="#modulo-10">10</a>, <a href="#modulo-12">12</a></p>
+</li>
+<li class="roteiro-passo">
+  <p class="roteiro-titulo"><span class="roteiro-num">Etapa 8</span> Testes automatizados</p>
+  <p>Testar o back-end e o front-end para mudar sem medo.</p>
+  <p class="roteiro-pronto"><strong>Pronto quando:</strong> O fluxo principal do sistema tem testes que rodam sozinhos.</p>
+  <p class="roteiro-mods">Módulo: <a href="#modulo-14">14</a></p>
+</li>
+<li class="roteiro-passo">
+  <p class="roteiro-titulo"><span class="roteiro-num">Etapa 9</span> Projeto de portfólio no ar</p>
+  <p>Um sistema completo (front, API e banco) empacotado com Docker, publicado e com deploy automático.</p>
+  <p class="roteiro-pronto"><strong>Pronto quando:</strong> Qualquer pessoa abre o seu sistema pela internet, e o README explica como ele funciona.</p>
+  <p class="roteiro-mods">Módulos: <a href="#modulo-15">15</a>, <a href="#modulo-17">17</a></p>
+</li>
+<li class="roteiro-passo">
+  <p class="roteiro-titulo"><span class="roteiro-num">Etapa 10</span> Preparar-se para as vagas</p>
+  <p>Portfólio, GitHub organizado, algoritmos básicos e treino de entrevista.</p>
+  <p class="roteiro-pronto"><strong>Pronto quando:</strong> Apresenta o seu projeto em 2 minutos e responde perguntas técnicas sobre ele.</p>
+  <p class="roteiro-mods">Módulos: <a href="#habilidades">Além do código</a></p>
+</li>
+        </ol>
+        <aside class="doc-nota"><p class="doc-nota-titulo">E depois da primeira vaga?</p><p>Alguns assuntos fazem mais sentido quando você já trabalha num sistema de verdade: <a href="#modulo-11">Clean Architecture, DDD e multi-tenant</a>, <a href="#modulo-13">Redis e SignalR</a>, <a href="#modulo-16">Performance</a>. Eles continuam na lista de módulos, marcados como "Depois da primeira vaga".</p><p>A stack desta documentação (C# com .NET, PostgreSQL e Next.js) é uma das usadas no mercado. Outras stacks, como Java ou Node.js no back-end, seguem as mesmas etapas: o que muda é a linguagem.</p></aside>
+      </section>
+
+      <section class="trilha-secao" id="habilidades">
+        <h2>Além do código: o que faz alguém trabalhar bem na área</h2>
+        <p>Saber programar é o começo. Estas habilidades separam quem só escreve código de quem é contratado e cresce.</p>
+        <div class="tabela-rolagem"><table class="tabela doc-tabela">
+          <thead><tr><th scope="col">Habilidade</th><th scope="col">O que é</th><th scope="col">Quando</th></tr></thead>
+          <tbody><tr><td><strong>Trabalhar em equipe com Git</strong></td><td>Branch, pull request, resolver conflito, escrever mensagens de commit que os outros entendem.</td><td>Etapa 3</td></tr><tr><td><strong>Code review</strong></td><td>Ler o código de outra pessoa, apontar problemas com respeito e receber crítica sem levar para o lado pessoal.</td><td>Etapa 3 em diante</td></tr><tr><td><strong>Metodologia ágil</strong></td><td>Scrum e Kanban na prática: backlog, sprint, história de usuário, estimativa.</td><td>Leitura curta, a partir da etapa 3</td></tr><tr><td><strong>Documentar decisões</strong></td><td>README que explica o projeto, registro das decisões de arquitetura (ADR), documentação da API.</td><td>Etapas 3 e 9</td></tr><tr><td><strong>Ler documentação e código alheio</strong></td><td>Aprender uma ferramenta nova sozinho, pela documentação oficial. É a habilidade que mais se usa no emprego.</td><td>Todas as etapas</td></tr><tr><td><strong>Inglês técnico</strong></td><td>Ler documentação e mensagens de erro, e escrever README em inglês.</td><td>Contínuo, desde a etapa 1</td></tr><tr><td><strong>Estruturas de dados e algoritmos</strong></td><td>Listas, pilhas, filas, árvores, grafos e complexidade (Big O). Aparecem em quase toda entrevista técnica.</td><td>Estudo paralelo, a partir da etapa 5</td></tr><tr><td><strong>System Design</strong></td><td>Explicar como montar um sistema grande: cache, fila, balanceamento, escala. Tem formato próprio de entrevista.</td><td>Etapa 10</td></tr><tr><td><strong>Portfólio e presença pública</strong></td><td>GitHub organizado, projetos no ar, LinkedIn, um texto técnico publicado.</td><td>A partir do primeiro site no ar (etapa 2)</td></tr><tr><td><strong>Entrevista</strong></td><td>Apresentar o seu projeto em 2 minutos e responder perguntas de comportamento pelo método STAR (Situação, Tarefa, Ação, Resultado).</td><td>Etapa 10</td></tr></tbody>
+        </table></div>
+      </section>
+
+      <section class="trilha-secao" id="ia">
+        <h2>Usar IA do jeito certo</h2>
+        <p>A inteligência artificial vai estar no seu trabalho. Mas usada no lugar errado ela faz o exercício por você e o aprendizado não acontece. O guia mostra, com pesquisas, o semáforo do que usar, do que usar com cuidado e do que não usar, e traz prompts prontos para usar a IA como professor e revisor.</p>
+        <p><a class="botao botao-primario" href="ia.html">Abrir o guia de IA</a></p>
+      </section>
+
+      <section class="trilha-secao" id="trilhas">
+        <h2>Estudos paralelos</h2>
+        <p>Assuntos longos que correm junto com o roteiro, sem travar as etapas. Reserve um horário fixo por semana para eles.</p>
+        <ul class="modulos-lista">
+<li class="modulo-card">
+  <h3>Estruturas de dados e algoritmos</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span></p>
+  <p>O que a entrevista técnica cobra e o que deixa o código rápido.</p>
+  <p class="modulo-ferramentas"><strong>Quando:</strong> A partir da etapa 5</p>
+</li><li class="modulo-card">
+  <h3>Linux</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span></p>
+  <p>Linha de comando a fundo, permissões, processos, serviços e servidor.</p>
+  <p class="modulo-ferramentas"><strong>Quando:</strong> A partir da etapa 2</p>
+</li><li class="modulo-card">
+  <h3>Redes</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span></p>
+  <p>Modelo TCP/IP, endereçamento, roteamento, DNS e firewall.</p>
+  <p class="modulo-ferramentas"><strong>Quando:</strong> Junto com a etapa 3</p>
+</li><li class="modulo-card">
+  <h3>Segurança da informação</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span></p>
+  <p>Da base de segurança até testes de invasão (pentest), para quem quer seguir essa área.</p>
+  <p class="modulo-ferramentas"><strong>Quando:</strong> Depois da etapa 7</p>
+</li><li class="modulo-card">
+  <h3>C e C++</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span></p>
+  <p>Memória, ponteiros e o funcionamento de baixo nível do computador.</p>
+  <p class="modulo-ferramentas"><strong>Quando:</strong> Depois da etapa 5</p>
+</li><li class="modulo-card">
+  <h3>Matemática para computação</h3>
+  <p class="modulo-selos"><span class="modulo-selo">Em construção</span></p>
+  <p>Lógica, conjuntos, aritmética modular, estatística, álgebra linear e probabilidade, cada uma ligada a um uso no código.</p>
+  <p class="modulo-ferramentas"><strong>Quando:</strong> Contínua, desde a etapa 1</p>
+</li>
+        </ul>
+      </section>
+
+      <section class="trilha-secao" id="dicionario">
+        <h2>Dicionário completo</h2>
+        <p>Todas as palavras explicadas no site, das três linguagens, numa página só, com busca: <a href="dicionario.html">abrir o dicionário</a>.</p>
+      </section>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

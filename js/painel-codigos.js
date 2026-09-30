@@ -12,6 +12,10 @@
 
   Na página codigos.html, o elemento #lista-codigos recebe TODOS os painéis,
   agrupados, e o campo #filtro-codigos filtra pelo nome.
+
+  Se a página também carregar dicionario-dados.js, analisador.js e entenda.js
+  (antes deste arquivo), cada aba ganha o código colorido e clicável e a lista
+  "Entenda este código" com a explicação de cada palavra.
 */
 "use strict";
 
@@ -118,6 +122,7 @@
 
     const botoes = [];
     const paineis = [];
+    const codigosPorAba = [];
 
     linguagens.forEach(function (l, i) {
       const botao = document.createElement("button");
@@ -174,7 +179,19 @@
       area.append(topo, pre);
       corpo.appendChild(area);
       paineis.push(area);
+      codigosPorAba.push({ area: area, code: code, lang: l });
     });
+
+    // "Entenda este código": montado só na primeira vez que o painel abre
+    // (a página de códigos tem 53 painéis; montar todos de uma vez deixaria a página lenta)
+    if (window.Analisador && window.Entenda) {
+      painel.addEventListener("toggle", function montarEntenda() {
+        if (!painel.open) return;
+        painel.removeEventListener("toggle", montarEntenda);
+        const analise = window.Analisador.analisar(trecho);
+        codigosPorAba.forEach(function (aba) { window.Entenda.montar(aba.area, aba.code, analise, aba.lang); });
+      });
+    }
 
     function ativar(i) {
       botoes.forEach(function (b, k) {

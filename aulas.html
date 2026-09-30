@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- Página gerada por ferramentas/gerar-aulas.py a partir da pasta conteudo/. Não edite aqui: edite o .md e gere de novo. -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/aulas.js" defer></script>
+  <title>Aulas — Catálogo do HTML</title>
+  <meta name="description" content="Aulas guiadas do Catálogo do HTML: lições com exercícios e revisão.">
+</head>
+<body class="pagina-trilha pagina-doc pagina-licao">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="aulas.html" aria-current="page">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas"><ol><li><a href="index.html">Início</a></li><li aria-current="page">Aulas</li></ol></nav>
+        <p class="heroi-antetitulo">Aulas guiadas</p>
+        <h1 class="heroi-titulo">Aulas</h1>
+        <p class="heroi-texto">Lições curtas, com exemplo resolvido, analogias, exercícios corrigidos na hora e revisão nos dias seguintes.</p>
+      </div>
+    </section>
+    <div class="container">
+      <div class="aulas-topo">
+        <a class="botao botao-primario" href="revisar.html" id="btn-revisar">Revisar hoje</a>
+        <p class="aulas-revisao" id="aulas-revisao" aria-live="polite"></p>
+      </div>
+      <div id="meus-certificados"></div>
+      <section class="modulo-aulas" id="modulo-1">
+  <h2>Módulo 1 · Lógica de programação com JavaScript</h2>
+  <p>Antes de HTML, CSS ou qualquer sistema, você precisa pensar como o computador executa: um passo de cada vez, na ordem, sem adivinhar nada. Neste módulo você aprende a transformar um problema em passos exatos e a escrever esses passos em JavaScript.</p>
+  <p class="modulo-progresso" data-modulo="1"></p>
+  <ol class="aula-lista"><li class="aula-item" data-licao="aula-1-01-algoritmos"><a href="aula-1-01-algoritmos.html"><span class="aula-num">1</span><span class="aula-nome">O que é um algoritmo</span><span class="aula-meta">30 min · grátis</span><span class="aula-estado" aria-hidden="true"></span></a></li><li class="aula-item" data-licao="aula-1-02-variaveis"><a href="aula-1-02-variaveis.html"><span class="aula-num">2</span><span class="aula-nome">Variáveis: nomes para valores</span><span class="aula-meta">40 min · conta grátis</span><span class="aula-estado" aria-hidden="true"></span></a></li><li class="aula-item" data-licao="aula-1-03-operadores"><a href="formacao.html"><span class="aula-num">3</span><span class="aula-nome">Contas no código: operadores aritméticos</span><span class="aula-meta">40 min</span><span class="aula-estado" aria-hidden="true"></span></a></li><li class="aula-item" data-licao="aula-1-04-logica"><a href="formacao.html"><span class="aula-num">4</span><span class="aula-nome">Verdadeiro ou falso: comparações e lógica</span><span class="aula-meta">45 min</span><span class="aula-estado" aria-hidden="true"></span></a></li><li class="aula-item" data-licao="aula-1-05-decisoes"><a href="formacao.html"><span class="aula-num">5</span><span class="aula-nome">Decisões: if, else e switch</span><span class="aula-meta">50 min</span><span class="aula-estado" aria-hidden="true"></span></a></li><li class="aula-item" data-licao="aula-1-06-repeticao"><a href="formacao.html"><span class="aula-num">6</span><span class="aula-nome">Repetição: for, while e do...while</span><span class="aula-meta">50 min</span><span class="aula-estado" aria-hidden="true"></span></a></li><li class="aula-item" data-licao="aula-1-07-listas-objetos"><a href="formacao.html"><span class="aula-num">7</span><span class="aula-nome">Listas e objetos: guardar muitos dados</span><span class="aula-meta">55 min</span><span class="aula-estado" aria-hidden="true"></span></a></li><li class="aula-item" data-licao="aula-1-08-funcoes"><a href="formacao.html"><span class="aula-num">8</span><span class="aula-nome">Funções: dar nome a um pedaço de lógica</span><span class="aula-meta">55 min</span><span class="aula-estado" aria-hidden="true"></span></a></li><li class="aula-item" data-licao="aula-1-09-depuracao"><a href="formacao.html"><span class="aula-num">9</span><span class="aula-nome">Depuração: ler erros e achar bugs</span><span class="aula-meta">50 min</span><span class="aula-estado" aria-hidden="true"></span></a></li><li class="aula-item" data-licao="aula-1-10-recursao-custo"><a href="formacao.html"><span class="aula-num">10</span><span class="aula-nome">Recursão e o custo de um algoritmo</span><span class="aula-meta">50 min</span><span class="aula-estado" aria-hidden="true"></span></a></li></ol>
+  <p class="aula-checkpoint"><a class="botao botao-contorno" href="formacao.html">Checkpoint do módulo (14 questões)</a></p>
+</section>
+    </div>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

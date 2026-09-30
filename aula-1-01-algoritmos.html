@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!-- Página gerada por ferramentas/gerar-aulas.py a partir da pasta conteudo/. Não edite aqui: edite o .md e gere de novo. -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/dicionario-dados.js" defer></script>
+  <script src="js/analisador.js" defer></script>
+  <script src="js/documentacao.js" defer></script>
+  <script src="js/vendor/acorn.js" defer></script>
+  <script src="js/laboratorio.js" defer></script>
+  <script src="js/visualizador.js" defer></script>
+  <script src="js/licao.js" defer></script>
+  <title>O que é um algoritmo — Catálogo do HTML</title>
+  <meta name="description" content="Ao final, você consegue explicar o que é um algoritmo, escrever um em passos numerados e rodar seus primeiros comandos em JavaScript.">
+</head>
+<body class="pagina-trilha pagina-doc pagina-licao" data-licao="aula-1-01-algoritmos" data-exercicios="6">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="aulas.html" aria-current="page">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas"><ol><li><a href="index.html">Início</a></li><li><a href="aulas.html">Aulas</a></li><li><a href="aulas.html#modulo-1">Módulo 1</a></li><li aria-current="page">O que é um algoritmo</li></ol></nav>
+        <p class="heroi-antetitulo">Módulo 1 · Lógica de programação com JavaScript · Lição 1 de 10</p>
+        <h1 class="heroi-titulo">O que é um algoritmo</h1>
+        <p class="heroi-texto">Ao final, você consegue explicar o que é um algoritmo, escrever um em passos numerados e rodar seus primeiros comandos em JavaScript.</p><ul class="licao-fatos"><li><strong>Tempo:</strong> 30 min</li><li><strong>Antes, saiba:</strong> nenhum. Esta é a primeira lição.</li><li><strong>Exercícios:</strong> 6</li></ul>
+      </div>
+    </section>
+    <div class="container doc-layout">
+      <nav class="doc-indice" aria-label="Nesta lição">
+        <details class="doc-indice-caixa" open><summary>Nesta lição</summary><ol><li><a href="#um-problema-antes-do-codigo">Um problema antes do código</a></li><li><a href="#as-tres-formas-de-organizar-passos">As três formas de organizar passos</a></li><li><a href="#veja-o-computador-seguindo-os-passos">Veja o computador seguindo os passos</a></li><li><a href="#seus-primeiros-comandos">Seus primeiros comandos</a></li><li><a href="#exercicios">Exercícios</a></li></ol></details>
+      </nav>
+      <div class="trilha-corpo doc-corpo licao-corpo">
+<h2 id="um-problema-antes-do-codigo">Um problema antes do código</h2>
+<p>Imagine que você trabalha no caixa de uma padaria. Um cliente leva 2 pães de R$ 1,50 e um café de R$ 4,00. Você sabe fazer a conta sem pensar. Agora imagine explicar essa conta para alguém que <strong>nunca viu uma padaria, não sabe o que é "total" e faz exatamente o que você manda, nem mais nem menos</strong>.</p>
+<p>Esse alguém é o computador. Programar é escrever essa explicação.</p>
+<p>Um <strong>algoritmo</strong> é uma sequência finita de passos, sem ambiguidade, que resolve um problema. Três palavras importam aí:</p>
+<ul>
+<li><strong>Sequência:</strong> os passos têm ordem. Trocar a ordem muda o resultado.</li>
+<li><strong>Finita:</strong> o algoritmo termina.</li>
+<li><strong>Sem ambiguidade:</strong> cada passo tem um único jeito de ser entendido.</li>
+</ul>
+<aside class="analogia"><p class="analogia-titulo"><span aria-hidden="true">💡</span> Analogia: Uma receita de bolo</p><p>Um algoritmo é como uma receita: ingredientes (os dados), modo de preparo (os passos, em ordem) e o bolo pronto (o resultado). Se você bater os ovos depois de assar, não sai bolo.</p><div class="analogia-limite"><p class="analogia-limite-titulo">Onde a analogia para de funcionar</p><p>Uma receita confia no bom senso de quem cozinha: "uma pitada de sal", "asse até dourar". O computador não tem bom senso. Ele não sabe quanto é "uma pitada" nem o que é "dourar". Num algoritmo para computador, <strong>todo</strong> passo precisa ser exato: quanto, quando e o que fazer se algo der errado.</p></div></aside>
+<h2 id="as-tres-formas-de-organizar-passos">As três formas de organizar passos</h2>
+<p>Todo programa, do mais simples ao mais complexo, é montado com só três estruturas:</p>
+<div class="tabela-rolagem"><table class="tabela doc-tabela">
+<thead>
+<tr>
+<th>Estrutura</th>
+<th>O que faz</th>
+<th>Exemplo na padaria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sequência</td>
+<td>Um passo depois do outro</td>
+<td>Registrar o pão, depois o café, depois somar</td>
+</tr>
+<tr>
+<td>Decisão</td>
+<td>Escolhe um caminho conforme uma condição</td>
+<td>Se o total passar de R$ 50, dar 5% de desconto</td>
+</tr>
+<tr>
+<td>Repetição</td>
+<td>Repete passos enquanto for preciso</td>
+<td>Para cada item da cesta, somar o preço ao total</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nesta lição você usa só a <strong>sequência</strong>. Decisão e repetição têm lições próprias neste módulo.</p>
+<section class="resolvido"><p class="resolvido-titulo">Exemplo resolvido: O total da compra, em passos</p><p><strong>Problema:</strong> calcular quanto o cliente paga por 2 pães de R$ 1,50 e 1 café de R$ 4,00.</p>
+<ol>
+<li>Anotar o preço do pão: 1,50.</li>
+<li>Anotar a quantidade de pães: 2.</li>
+<li>Multiplicar preço por quantidade: 1,50 × 2 = 3,00.</li>
+<li>Anotar o preço do café: 4,00.</li>
+<li>Somar os dois valores: 3,00 + 4,00 = 7,00.</li>
+<li>Mostrar o total: 7,00.</li>
+</ol>
+<p>Repare: cada passo faz <strong>uma</strong> coisa, e o passo 5 só funciona porque os passos 3 e 4 vieram antes. O mesmo algoritmo em JavaScript:</p>
+<figure class="doc-exemplo"><figcaption class="doc-ex-titulo">O algoritmo do total em JavaScript</figcaption><pre class="doc-codigo codigo-pre" data-lang="js" tabindex="0"><code>const precoPao = 1.5;
+const quantidadePaes = 2;
+const totalPaes = precoPao * quantidadePaes;
+const precoCafe = 4;
+const total = totalPaes + precoCafe;
+console.log(total);</code></pre></figure>
+<p>Em JavaScript o separador decimal é o <strong>ponto</strong> (1.5), não a vírgula. E <code>console.log(...)</code> é o comando que <strong>mostra</strong> um valor. Clique em qualquer palavra colorida do código para ver o que ela é.</p></section>
+<h2 id="veja-o-computador-seguindo-os-passos">Veja o computador seguindo os passos</h2>
+<p>Use o botão <strong>Próximo passo</strong> e observe duas coisas: qual linha está destacada (a próxima a rodar) e como as variáveis vão aparecendo à direita. Uma variável que ainda não foi criada aparece como "(ainda não criada)": a próxima lição explica por quê.</p>
+<div class="visualizador"><p class="visualizador-titulo">Veja o computador executar, linha por linha</p><textarea class="visualizador-codigo" hidden>const precoPao = 1.5;
+const quantidadePaes = 2;
+const totalPaes = precoPao * quantidadePaes;
+const precoCafe = 4;
+const total = totalPaes + precoCafe;
+console.log(&quot;Total a pagar:&quot;, total);</textarea></div>
+
+<details class="nivel nivel2"><summary><span class="nivel-selo">Nível 2</span> Por dentro: Como o processador segue os passos</summary><div class="nivel-corpo"><p>O processador do computador trabalha num ciclo que se repete bilhões de vezes por segundo: <strong>buscar</strong> a próxima instrução na memória, <strong>decodificar</strong> (entender qual operação é) e <strong>executar</strong>. Ele guarda, num registrador chamado <em>contador de programa</em>, o endereço da próxima instrução. Por isso a ordem importa tanto: o processador não "olha o programa inteiro", ele só sabe qual é a próxima instrução.</p>
+<p>O JavaScript não roda direto no processador: o navegador tem um programa (o <em>motor</em> JavaScript, como o V8 do Chrome) que lê o seu código e o transforma em instruções que o processador entende. Mas a ideia de "um passo de cada vez, em ordem" continua valendo.</p></div></details>
+
+<details class="nivel nivel3"><summary><span class="nivel-selo">Nível 3</span> Na documentação oficial: Onde isso está na documentação</summary><div class="nivel-corpo"><p>Na MDN (a documentação de referência da web, mantida pela Mozilla), procure <strong>"JavaScript First Steps"</strong> e a página de <strong>console.log()</strong>. Repare que a documentação de <code>console.log</code> fala em "mensagens" e "objetos": é o mesmo comando que você usou, só que descrito com mais precisão. Ler a documentação oficial é uma habilidade de trabalho: vale começar desde já, mesmo entendendo só parte.</p></div></details>
+<h2 id="seus-primeiros-comandos">Seus primeiros comandos</h2>
+<div class="laboratorio"><p class="laboratorio-titulo">Experimente</p><p>Rode o código abaixo. Depois mude a ordem das linhas e rode de novo: a saída muda junto. Tente também trocar um texto e mostrar o seu nome.</p><script type="application/json" class="laboratorio-dados">{"arquivos": {"js": "console.log(\"Bom dia!\");\nconsole.log(\"Hoje eu comecei a programar.\");\nconsole.log(2 + 3);\nconsole.log(\"2 + 3\");"}}</script></div>
+<p>Repare na diferença entre as duas últimas linhas: <code>2 + 3</code> sem aspas é uma <strong>conta</strong> (mostra 5); <code>"2 + 3"</code> entre aspas é um <strong>texto</strong> (mostra exatamente o que está escrito).</p>
+<div class="erro-comum"><p class="erro-comum-titulo"><strong>Erro comum:</strong> esquecer as aspas de um texto</p><p><code>console.log(Bom dia)</code> dá erro: sem aspas, o JavaScript acha que <code>Bom</code> e <code>dia</code> são nomes de coisas que você criou, e elas não existem. A mensagem é <em>ReferenceError: Bom is not defined</em>. Todo texto vai entre aspas: <code>console.log("Bom dia")</code>.</p></div>
+<h2 id="exercicios">Exercícios</h2>
+<div class="exercicio" id="ex-1" data-numero="1">
+  <p class="exercicio-tipo">Exercício 1 · Escolha a resposta</p>
+  <div class="exercicio-pergunta"><p>Qual destas opções é um algoritmo, no sentido da programação?</p></div>
+  <div class="exercicio-area"></div>
+  <script type="application/json" class="exercicio-dados">{"tipo": "escolha", "opcoes": [{"html": "\"Faça um bolo gostoso.\"", "certa": false, "retorno": "Não diz os passos: \"gostoso\" não é uma instrução, é um desejo."}, {"html": "\"1. Ligue o forno em 180 °C. 2. Misture 3 ovos e 2 xícaras de farinha. 3. Asse por 40 minutos.\"", "certa": true, "retorno": "Isso: passos em ordem, exatos e que terminam."}, {"html": "\"Asse, misture e ligue o forno, na ordem que preferir.\"", "certa": false, "retorno": "A ordem importa: assar antes de misturar não funciona."}, {"html": "\"Repita: mexa a massa.\"", "certa": false, "retorno": "Não termina nunca: um algoritmo precisa ser finito."}], "dica": "", "explicacao": ""}</script>
+</div>
+
+<div class="exercicio" id="ex-2" data-numero="2">
+  <p class="exercicio-tipo">Exercício 2 · Coloque na ordem</p>
+  <div class="exercicio-pergunta"><p>Coloque os passos na ordem para calcular a média de duas notas.</p></div>
+  <div class="exercicio-area"></div>
+  <script type="application/json" class="exercicio-dados">{"tipo": "ordene", "linhas": ["const notas = [7, 9];", "const media = soma / 2;", "console.log(media);", "const soma = notas[0] + notas[1];"], "lang": "js", "ordem": ["const notas = [7, 9];", "const soma = notas[0] + notas[1];", "const media = soma / 2;", "console.log(media);"], "dica": "", "explicacao": "Cada linha usa algo criado na linha de cima: a soma precisa das notas, a média precisa da soma, e só dá para mostrar a média depois de calculá-la. (O [7, 9] é uma lista; você vai estudar listas mais adiante.)"}</script>
+</div>
+
+<div class="exercicio" id="ex-3" data-numero="3">
+  <p class="exercicio-tipo">Exercício 3 · Preveja o resultado</p>
+  <div class="exercicio-pergunta"><p>O que aparece no console, na ordem? Escreva as três saídas separadas por espaço.</p><figure class="doc-exemplo"><pre class="doc-codigo codigo-pre" data-lang="js" tabindex="0"><code>console.log(&quot;A&quot;);
+console.log(1 + 1);
+console.log(&quot;C&quot;);</code></pre></figure></div>
+  <div class="exercicio-area"></div>
+  <script type="application/json" class="exercicio-dados">{"tipo": "preveja", "respostas": ["A 2 C", "A, 2, C", "A,2,C", "A2C"], "dica": "Cada console.log mostra uma linha, de cima para baixo. O 1 + 1 está sem aspas.", "explicacao": "O computador executa em sequência: primeiro \"A\", depois a conta 1 + 1 (que dá 2), depois \"C\"."}</script>
+</div>
+
+<div class="exercicio" id="ex-4" data-numero="4">
+  <p class="exercicio-tipo">Exercício 4 · Complete o código</p>
+  <div class="exercicio-pergunta"><p>Complete para mostrar a palavra Olá no console.</p></div>
+  <div class="exercicio-area"></div>
+  <script type="application/json" class="exercicio-dados">{"tipo": "complete", "codigo": "console.___(\"Olá\");", "lang": "js", "respostas": [["log"]], "dica": "", "explicacao": "console.log é o comando que mostra valores. O ponto liga o objeto console ao comando log."}</script>
+</div>
+
+<div class="exercicio" id="ex-5" data-numero="5">
+  <p class="exercicio-tipo">Exercício 5 · Ache o erro</p>
+  <div class="exercicio-pergunta"><p>Este programa deveria mostrar o total, mas dá erro. Em qual linha está o problema?</p></div>
+  <div class="exercicio-area"></div>
+  <script type="application/json" class="exercicio-dados">{"tipo": "ache-erro", "linhas": ["const preco = 10;", "const quantidade = 3;", "const total = preco * quantidade;", "console.log(Total);"], "lang": "js", "linha": 4, "dica": "", "explicacao": "O nome criado foi total, com t minúsculo. Para o JavaScript, Total e total são nomes diferentes (maiúsculas contam), então Total \"não existe\"."}</script>
+</div>
+
+<div class="exercicio" id="ex-6" data-numero="6">
+  <p class="exercicio-tipo">Exercício 6 · Escreva o código</p>
+  <div class="exercicio-pergunta"><p>Escreva um programa que mostre no console, nesta ordem: o texto <code>Meu primeiro programa</code> e, na linha seguinte, o resultado da conta 10 + 5.</p></div>
+  <div class="exercicio-area"></div>
+  <script type="application/json" class="exercicio-dados">{"tipo": "codigo", "lang": "js", "arquivos": {"js": "// Escreva aqui\n"}, "testes": [{"expr": "saida().split(\"\\n\")[0] === \"Meu primeiro programa\"", "msg": "a primeira linha mostra Meu primeiro programa (igualzinho, com M maiúsculo)"}, {"expr": "saida().split(\"\\n\")[1] === \"15\"", "msg": "a segunda linha mostra o resultado da conta (15), não o texto \"10 + 5\""}], "dica": "Use dois console.log. O texto vai entre aspas; a conta, sem aspas.", "explicacao": ""}</script>
+</div>
+
+<aside class="resumo-licao"><p class="resumo-titulo">Resumo</p><ul>
+<li>Algoritmo é uma sequência <strong>finita</strong> de passos <strong>sem ambiguidade</strong> que resolve um problema.</li>
+<li>Todo programa é feito de três estruturas: <strong>sequência</strong>, <strong>decisão</strong> e <strong>repetição</strong>.</li>
+<li>O computador executa <strong>um passo de cada vez, na ordem</strong>, e não adivinha nada.</li>
+<li><code>console.log(...)</code> mostra um valor. Texto vai <strong>entre aspas</strong>; conta vai <strong>sem aspas</strong>.</li>
+<li>Em JavaScript, o decimal usa <strong>ponto</strong> (1.5) e <strong>maiúsculas contam</strong> (<code>total</code> ≠ <code>Total</code>).</li>
+</ul></aside>
+        <section class="licao-fim" id="concluir">
+          <h2>Terminou a lição?</h2>
+          <p>Marque como concluída. Os exercícios que você errou voltam na página <a href="revisar.html">Revisar</a> nos próximos dias: é assim que o conteúdo fica na memória.</p>
+          <button class="botao botao-primario" type="button" id="btn-concluir">Marcar lição como concluída</button>
+          <p class="licao-fim-estado" id="estado-concluir" aria-live="polite"></p>
+        </section>
+        <section class="duvidas" id="duvidas" hidden>
+          <h2>Dúvidas desta lição</h2>
+          <div id="duvidas-lista"></div>
+        </section>
+        <nav class="passo-nav" aria-label="Lições"><a class="passo-ant" href="aulas.html"><span>Voltar</span>Todas as aulas</a><a class="passo-prox" href="aula-1-02-variaveis.html"><span>Próxima lição</span>Variáveis: nomes para valores</a></nav>
+      </div>
+    </div>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

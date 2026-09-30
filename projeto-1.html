@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--
+  PROJETO 1 — Caixa Rápido
+  Enunciado, resultado esperado e dicas em camadas. Sem código pronto: o aluno constrói do zero.
+  As caixas "Pronto quando" guardam o progresso (js/trilha.js, prefixo "projeto:").
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/trilha.js" defer></script>
+  <title>Projeto 1: Caixa Rápido — Catálogo do HTML</title>
+  <meta name="description" content="O caixa de uma padaria: soma a venda, aplica o desconto certo e diz quais cédulas e moedas devolver de troco.">
+</head>
+<body class="pagina-trilha" data-prefixo="projeto:">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li aria-current="page">Projeto 1</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Projeto 1 de 12 · Etapa 1 · 2 a 3 semanas · individual</p>
+        <h1 class="heroi-titulo">Caixa Rápido</h1>
+        <p class="heroi-texto">A padaria do bairro fecha as vendas numa calculadora e erra o troco no fim do dia. O dono quer um programa que some a venda, aplique o desconto certo e diga exatamente quais cédulas e moedas devolver.</p>
+      </div>
+    </section>
+
+    <div class="container trilha-corpo">
+      <nav class="trilha-mapa" aria-label="Projetos disponíveis"><ol><li><a href="projeto-1.html" data-passo="p1" data-total="4" aria-current="step"><span class="mapa-num">1</span><span class="mapa-nome">Caixa Rápido</span></a></li><li><a href="formacao.html" data-passo="p2" data-total="6"><span class="mapa-num">2</span><span class="mapa-nome">Linha do Tempo</span></a></li><li><a href="formacao.html" data-passo="p3" data-total="5"><span class="mapa-num">3</span><span class="mapa-nome">Portfólio pessoal</span></a></li><li><a href="formacao.html" data-passo="p4" data-total="6"><span class="mapa-num">4</span><span class="mapa-nome">Quadro Kanban</span></a></li></ol></nav>
+      <p><span class="selo">Inspirado no AM Kaixara (PDV)</span> <span class="selo">JavaScript puro</span> <span class="selo">Módulo 1</span></p>
+
+<section class="trilha-secao" id="resultado">
+  <h2>1. O resultado esperado</h2>
+  <p>É aqui que você precisa chegar. Não existe código para copiar: você constrói do zero e confere cada linha da tabela no seu projeto.</p>
+  <div class="resultado-esperado"><p class="resultado-pendente">O vídeo do resultado esperado está sendo gravado. Enquanto isso, a tabela de casos de teste abaixo mostra exatamente o que o seu projeto precisa fazer.</p></div>
+  <h3>Casos de teste</h3>
+  <p>Faça exatamente estas entradas. A saída do seu projeto precisa ser igual, número por número.</p>
+  <div class="tabela-rolagem"><table class="tabela casos"><thead><tr><th scope="col">#</th><th scope="col">Entrada</th><th scope="col">Saída esperada</th></tr></thead><tbody><tr><td>1</td><td>2 × R$ 12,50 e 1 × R$ 80,00; dinheiro R$ 100,00</td><td>Subtotal R$ 105,00 · desconto R$ 5,25 · total R$ 99,75 · troco R$ 0,25 = 1 moeda de 0,25</td></tr><tr><td>2</td><td>Itens somando R$ 250,00; dinheiro R$ 300,00</td><td>Desconto R$ 25,00 · total R$ 225,00 · troco R$ 75,00 = 1 × 50 + 1 × 20 + 1 × 5</td></tr><tr><td>3</td><td>Subtotal R$ 100,00; cartão em 3 vezes</td><td>Sem desconto · parcelas R$ 33,34 + R$ 33,33 + R$ 33,33</td></tr><tr><td>4</td><td>Total R$ 45,90; cartão em 2 vezes</td><td>Recusado: "Parcelamento só acima de R$ 60,00"</td></tr><tr><td>5</td><td>Total R$ 99,75; dinheiro R$ 90,00</td><td>Recusado: "Faltam R$ 9,75"</td></tr><tr><td>6</td><td>Nenhum item; finalizar</td><td>Recusado: "Adicione pelo menos um item"</td></tr><tr><td>7</td><td>Preço 0 ou quantidade -1</td><td>Item não entra, com a mensagem do erro</td></tr></tbody></table></div>
+</section>
+
+<section class="trilha-secao" id="antes">
+  <h2>2. Antes de começar</h2>
+  <p><strong>O que você vai praticar:</strong> variáveis, decisões, laços, funções, listas de objetos e o cuidado que dinheiro exige num programa.</p>
+  <aside class="doc-nota trilha-teoria">
+  <p class="doc-nota-titulo">O que estudar antes (ou durante)</p>
+  <p>Tudo o que este projeto usa está explicado na Documentação:</p>
+  <ul><li><a href="formacao.html#variaveis">Variáveis e tipos</a></li><li><a href="formacao.html#operadores">Operadores: aritmética, comparação e resto da divisão</a></li><li><a href="formacao.html#lacos">Laços de repetição</a></li><li><a href="formacao.html#funcoes">Funções</a></li><li><a href="formacao.html#listas-objetos">Listas e objetos</a></li><li><a href="formacao.html#erros">Erros e o Console</a></li></ul>
+</aside>
+  <p>O módulo 1 (Lógica de programação) está em produção. Até ele sair, o capítulo de JavaScript do módulo 2 explica tudo o que este projeto usa.</p>
+</section>
+
+<section class="trilha-secao" id="requisitos">
+  <h2>3. O que o sistema precisa fazer</h2>
+  <h3>Requisitos</h3>
+  <ol><li>RF01 — Adicionar item: nome, preço unitário e quantidade.</li><li>RF02 — Remover item e alterar a quantidade.</li><li>RF03 — Mostrar subtotal, desconto e total a qualquer momento.</li><li>RF04 — Finalizar com dinheiro, Pix ou cartão.</li><li>RF05 — No dinheiro, mostrar o troco separado por cédulas e moedas.</li><li>RF06 — Emitir um recibo em texto com itens, totais e forma de pagamento.</li></ol>
+  <h3>Regras de negócio</h3>
+  <ul><li>RN01 — Desconto de 5% no subtotal acima de R$ 100,00 e de 10% acima de R$ 200,00 (acima = maior que, não igual).</li><li>RN02 — Todo valor é guardado em centavos, como número inteiro. Nenhuma conta usa número com vírgula.</li><li>RN03 — Troco com o menor número de peças: R$ 100, 50, 20, 10, 5, 2, 1 e 0,50, 0,25, 0,10, 0,05, 0,01.</li><li>RN04 — Cartão em até 3 vezes sem juros, só para total acima de R$ 60,00. Os centavos que sobram da divisão vão na primeira parcela.</li><li>RN05 — Quantidade e preço precisam ser maiores que zero. Venda sem itens não finaliza.</li></ul>
+  
+</section>
+
+<section class="trilha-secao" id="marcos">
+  <h2>4. Construa em 4 marcos</h2>
+  <p>Não tente fazer tudo de uma vez. Termine um marco, confira que funciona, faça um commit e só então passe para o próximo.</p>
+  <div class="marco" id="marco-1">
+  <h3>Marco 1: As funções de cálculo no Console</h3>
+  <p><strong>Funciona quando:</strong> você chama à mão, no Console (F12), as funções de desconto e de troco, e elas devolvem os valores dos casos 1 e 2.</p>
+  <p>Travou? Abra uma dica de cada vez, e só depois de tentar de verdade.</p>
+  <div class="dicas">
+    <details><summary>Dica 1: uma pergunta para pensar</summary><div><p>O preço é R$ 12,50. Qual número <em>inteiro</em> representa esse valor, sem vírgula? E como você transforma esse número de volta no texto "12,50" só na hora de mostrar?</p></div></details>
+    <details><summary>Dica 2: o conceito que resolve</summary><div><p>Guarde tudo em centavos (1250) e só divida por 100 para mostrar. O troco com menos peças é um algoritmo "guloso": tente sempre a maior peça que ainda cabe no valor que falta. A divisão inteira (<code>Math.floor</code>) diz quantas peças cabem; o resto (<code>%</code>) é o que sobra para as próximas.</p></div></details>
+    <details><summary>Dica 3: onde estudar isso</summary><div><ul><li><a href="formacao.html#variaveis">Variáveis e tipos</a></li><li><a href="formacao.html#operadores">Operadores, incluindo o resto da divisão</a></li><li><a href="formacao.html#funcoes">Funções que recebem e devolvem valores</a></li></ul></div></details>
+  </div>
+</div>
+<div class="marco" id="marco-2">
+  <h3>Marco 2: A venda como uma lista de itens</h3>
+  <p><strong>Funciona quando:</strong> você adiciona, remove e muda a quantidade de itens, e o subtotal, o desconto e o total se ajustam sozinhos.</p>
+  <p>Travou? Abra uma dica de cada vez, e só depois de tentar de verdade.</p>
+  <div class="dicas">
+    <details><summary>Dica 1: uma pergunta para pensar</summary><div><p>Um item tem nome, preço e quantidade. Que tipo de dado guarda essas três informações juntas? E vários itens?</p></div></details>
+    <details><summary>Dica 2: o conceito que resolve</summary><div><p>Um array de objetos. Não guarde o subtotal numa variável que você atualiza à mão: calcule de novo, percorrendo a lista, sempre que precisar. Assim ele nunca fica desatualizado.</p></div></details>
+    <details><summary>Dica 3: onde estudar isso</summary><div><ul><li><a href="formacao.html#listas-objetos">Listas e objetos</a></li><li><a href="formacao.html#lacos">Percorrer uma lista com laço</a></li></ul></div></details>
+  </div>
+</div>
+<div class="marco" id="marco-3">
+  <h3>Marco 3: As formas de pagamento, com os erros</h3>
+  <p><strong>Funciona quando:</strong> os casos 3 a 7 dão as mensagens da tabela, e nenhum erro derruba o programa.</p>
+  <p>Travou? Abra uma dica de cada vez, e só depois de tentar de verdade.</p>
+  <div class="dicas">
+    <details><summary>Dica 1: uma pergunta para pensar</summary><div><p>Quando o pagamento dá certo, a função devolve o quê? E quando não dá? Como quem chamou a função sabe a diferença?</p></div></details>
+    <details><summary>Dica 2: o conceito que resolve</summary><div><p>Duas saídas comuns: devolver um objeto do tipo <code>{ ok: false, mensagem: "..." }</code>, ou lançar um erro com <code>throw</code> e tratar com <code>try/catch</code>. Nas parcelas, divida os centavos com divisão inteira; o resto vai para a primeira parcela.</p></div></details>
+    <details><summary>Dica 3: onde estudar isso</summary><div><ul><li><a href="formacao.html#erros">Erros e try/catch</a></li><li><a href="formacao.html#operadores">Divisão inteira e resto</a></li></ul></div></details>
+  </div>
+</div>
+<div class="marco" id="marco-4">
+  <h3>Marco 4: A página com formulário</h3>
+  <p><strong>Funciona quando:</strong> uma página simples usa as MESMAS funções dos marcos anteriores e mostra o recibo na tela.</p>
+  <p>Travou? Abra uma dica de cada vez, e só depois de tentar de verdade.</p>
+  <div class="dicas">
+    <details><summary>Dica 1: uma pergunta para pensar</summary><div><p>Suas funções de cálculo precisam mudar para funcionar na página? Se precisarem, o que isso diz sobre como elas foram escritas?</p></div></details>
+    <details><summary>Dica 2: o conceito que resolve</summary><div><p>Não deveriam mudar. Separe as funções que só calculam das que mexem na tela. A página lê os campos no evento <code>submit</code> (com <code>preventDefault</code>), chama as funções de cálculo e escreve o resultado com <code>textContent</code>.</p></div></details>
+    <details><summary>Dica 3: onde estudar isso</summary><div><ul><li><a href="formacao.html#dom">Pegar e mudar elementos da página</a></li><li><a href="formacao.html#eventos">Eventos</a></li><li><a href="doc-html.html#formularios">Formulários no HTML</a></li></ul></div></details>
+  </div>
+</div>
+</section>
+
+<section class="trilha-secao" id="pensar">
+  <h2>5. Perguntas para pensar antes de programar</h2>
+  <p>Responda no papel (ou no README). Elas apontam as armadilhas do projeto antes de você cair nelas. As respostas não estão aqui de propósito: é o que o projeto ensina.</p>
+  <ul><li>Por que 0,1 + 0,2 não dá 0,3 no JavaScript, e como os centavos resolvem isso?</li><li>O troco com o menor número de peças: qual peça você tenta primeiro, e até quando?</li><li>Quais funções só calculam e quais mostram coisas na tela? Por que separar as duas?</li></ul>
+  <div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> o total aparece como R$ 99,74999.</p>
+  <p>Você fez a conta com reais e vírgula. Converta para centavos logo na entrada: <code>Math.round(valor * 100)</code>. Daí em diante, só números inteiros.</p>
+</div>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> o desconto aparece numa compra de exatamente R$ 100,00.</p>
+  <p>A regra diz "acima de": use <code>&gt;</code>, não <code>&gt;=</code>. Releia as regras de negócio com lápis na mão: cada palavra vira código.</p>
+</div>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> a página trava ao calcular o troco.</p>
+  <p>Um laço que nunca termina: dentro dele, o valor que falta não está diminuindo. Use <code>console.log</code> dentro do laço para ver o valor a cada volta.</p>
+</div>
+  <aside class="trilha-ia">
+  <p class="trilha-ia-titulo">E a IA, neste passo?</p>
+  <p><strong>Pode:</strong> pedir para explicar por que 0,1 + 0,2 dá 0,30000000000000004, explicar uma mensagem de erro do Console, ou revisar os nomes das suas funções depois de prontas.</p>
+  <p><strong>Não:</strong> pedir a função de troco ou a de parcelas. Elas são o coração do projeto: é resolvendo essas duas que você aprende lógica.</p>
+  <p>Por quê, e prompts prontos para usar do jeito certo: <a href="ia.html">Usar IA do jeito certo</a>.</p>
+</aside>
+</section>
+
+<section class="trilha-secao" id="entrega">
+  <h2>6. Entrega</h2>
+  <ul><li>Repositório no GitHub, com commits ao longo do trabalho (um por marco, pelo menos).</li><li>README com o que o projeto faz, como rodar, as decisões que você tomou e o que ficou de fora.</li><li>Link publicado, ou o código com instruções para rodar.</li><li>Vídeo de até 2 minutos mostrando os casos de teste funcionando.</li></ul>
+  <p>A avaliação é a mesma nos 12 projetos: funciona como pedido (50%), qualidade do código (20%), documentação (15%) e explicação oral (15%). Detalhes em <a href="projetos.html#avaliacao">Como os projetos funcionam</a>.</p>
+  <div class="voce-tenta">
+  <p class="voce-tenta-titulo">Você tenta</p>
+  <p><strong>Desafio extra:</strong> o caixa começa o dia com uma quantidade limitada de cada cédula e moeda. O troco passa a respeitar o que existe no caixa e avisa quando não há troco possível.</p>
+</div>
+</section>
+      <section class="pronto-quando" aria-labelledby="pronto-titulo">
+  <h2 id="pronto-titulo">Pronto quando</h2>
+  <p>Marque cada critério de aceite só depois de conferir. O progresso fica salvo e aparece no mapa dos projetos.</p>
+  <ul data-total="4">
+    <li><label><input type="checkbox" data-progresso="passo-p1-1"> Os 7 casos de teste dão exatamente a saída da tabela.</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-p1-2"> Nenhuma conta de dinheiro usa números com vírgula (RN02).</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-p1-3"> Cada regra está numa função própria, com nome que diz o que ela faz.</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-p1-4"> O recibo mostra itens, subtotal, desconto, total, forma de pagamento e troco ou parcelas.</label></li>
+  </ul>
+</section>
+      <nav class="passo-nav" aria-label="Navegação entre projetos">
+        <a class="passo-ant" href="projetos.html"><span>Voltar</span>Todos os projetos</a>
+        <a class="passo-prox" href="formacao.html"><span>Próximo projeto</span>2. Linha do Tempo</a>
+      </nav>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

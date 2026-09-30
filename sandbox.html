@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+  sandbox.html — CAIXA DE AREIA dos exercícios (ferramenta do site; os alunos não precisam copiar).
+
+  O código do aluno roda AQUI, dentro de um iframe isolado (sandbox): ele não enxerga
+  a página da aula, os cookies nem a conta. A página da aula manda o código por
+  postMessage; esta página monta um documento novo com ele, roda, confere os testes
+  e devolve o resultado (saída do console, erros, testes que passaram).
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Caixa de areia</title>
+</head>
+<body>
+<script>
+"use strict";
+(function () {
+  // Código que vai dentro do documento do aluno, antes de tudo: captura o console e os erros
+  function preparo(modo, limite) {
+    return "(" + function (MODO, LIMITE) {
+      var saida = [], passos = [], erro = null, inicio = Date.now(), voltas = 0, enviado = false;
+      function fmt(v, fundo) {
+        fundo = fundo || 0;
+        try {
+          if (v === undefined) return "undefined";
+          if (v === null) return "null";
+          if (typeof v === "string") return fundo ? JSON.stringify(v) : v;
+          if (typeof v === "number" || typeof v === "boolean" || typeof v === "bigint") return String(v);
+          if (typeof v === "function") return "função " + (v.name || "sem nome");
+          if (typeof v === "symbol") return v.toString();
+          if (Array.isArray(v)) {
+            if (fundo > 2) return "[…]";
+            var itens = v.slice(0, 12).map(function (x) { return fmt(x, fundo + 1); });
+            return "[" + itens.join(", ") + (v.length > 12 ? ", … (" + v.length + " itens)" : "") + "]";
+          }
+          if (v instanceof Error) return v.name + ": " + v.message;
+          if (typeof Node !== "undefined" && v instanceof Node) return "<" + (v.nodeName || "nó").toLowerCase() + ">";
+          if (fundo > 2) return "{…}";
+          var chaves = Object.keys(v);
+          var partes = chaves.slice(0, 8).map(function (k) { return k + ": " + fmt(v[k], fundo + 1); });
+          return "{ " + partes.join(", ") + (chaves.length > 8 ? ", …" : "") + " }";
+        } catch (e) { return "(valor)"; }
+      }
+      function escrever(nivel, args) {
+        if (saida.length < 300) saida.push({ nivel: nivel, texto: Array.prototype.map.call(args, function (a) { return fmt(a); }).join(" "), passo: passos.length });
+      }
+      var falso = {
+        log: function () { escrever("log", arguments); }, info: function () { escrever("log", arguments); },
+        warn: function () { escrever("aviso", arguments); }, error: function () { escrever("erro", arguments); },
+        table: function () { escrever("log", arguments); }, clear: function () {}
+      };
+      try { Object.defineProperty(window, "console", { value: falso, configurable: true }); } catch (e) { window.console = falso; }
+      window.addEventListener("error", function (e) {
+        erro = { nome: (e.error && e.error.name) || "Erro", mensagem: (e.error && e.error.message) || e.message, linha: e.lineno };
+      });
+      // Usados pelo visualizador passo a passo e pela proteção contra laço sem fim
+      window.__v = function (f) { try { return fmt(f(), 1); } catch (e) { return "⟂"; } };
+      window.__p = function (linha, quadros) {
+        if (MODO !== "trace") return;
+        if (passos.length >= 2000) throw new Error("Passos demais: o visualizador mostra no máximo 2000 passos.");
+        passos.push({ linha: linha, quadros: quadros, nsaida: saida.length });
+      };
+      window.__laco = function () {
+        if (++voltas > 200000 || Date.now() - inicio > LIMITE) throw new Error("O código rodou tempo demais. Tem algum laço que nunca termina?");
+      };
+      // Ajudantes dos testes
+      window.existe = function (s) { return !!document.querySelector(s); };
+      window.contar = function (s) { return document.querySelectorAll(s).length; };
+      window.texto = function (s) { var e = document.querySelector(s); return e ? e.textContent.trim() : null; };
+      window.atributo = function (s, a) { var e = document.querySelector(s); return e ? e.getAttribute(a) : null; };
+      window.estilo = function (s, p) { var e = document.querySelector(s); return e ? getComputedStyle(e).getPropertyValue(p).trim() : null; };
+      // saida(): tudo o que o código mostrou com console.log, em texto (uma linha por log)
+      window.saida = function () { return window.__saidaTexto(); };
+      window.__saidaTexto = function () { return saida.filter(function (x) { return x.nivel === "log"; }).map(function (x) { return x.texto; }).join("\n"); };
+      window.__fim = function (testes) {
+        if (enviado) return; enviado = true;
+        var resultados = (testes || []).map(function (t) {
+          try { return { ok: !!(0, eval)(t.expr), msg: t.msg }; }
+          catch (e) { return { ok: false, msg: t.msg, erro: e.name + ": " + e.message }; }
+        });
+        parent.postMessage({ tipo: "resultado", saida: saida, erro: erro, testes: resultados, passos: passos }, "*");
+      };
+    } + ")(" + JSON.stringify(modo) + "," + (limite || 3000) + ");";
+  }
+
+  function semFechar(t) { return String(t || "").replace(/<\/script/gi, "<\\/script"); }
+
+  window.addEventListener("message", function (e) {
+    if (e.source !== parent) return;
+    var d = e.data || {};
+    if (d.tipo !== "rodar") return;
+    var testes = JSON.stringify(d.testes || []);
+    // Sem try em volta: assim let/const/function do aluno ficam globais e os testes enxergam
+    var js = d.js ? "<script>" + semFechar(d.js) + "\n<\/script>" : "";
+    var fim = "<script>window.addEventListener('load',function(){setTimeout(function(){__fim(" + semFechar(testes) + ");},30);});<\/script>";
+    var doc = "<!DOCTYPE html><html lang=\"pt-BR\"><head><meta charset=\"UTF-8\"><base href=\"" + (d.base || "") + "\">" +
+      "<script>" + preparo(d.modo, d.limite) + "<\/script>" +
+      "<style>body{font-family:system-ui,Arial,sans-serif;margin:12px;line-height:1.5}" + semFechar(d.css || "").replace(/<\/style/gi, "<\\/style") + "</style>" +
+      "</head><body>" + (d.html || "") + js + fim + "</body></html>";
+    document.open();
+    document.write(doc);
+    document.close();
+  });
+  parent.postMessage({ tipo: "pronto" }, "*");
+})();
+</script>
+</body>
+</html>

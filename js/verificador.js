@@ -151,7 +151,7 @@
       else anotar(G, "erro", "Falta <meta charset=\"UTF-8\">", "Sem ele, acentos podem virar símbolos estranhos.", 'Coloque <meta charset="UTF-8"> logo no começo do <head>.', "passo-3-projeto.html#abrir");
 
       if (doc.querySelector('meta[name="viewport"]')) anotar(G, "ok", "Tem <meta name=\"viewport\">");
-      else anotar(G, "erro", "Falta o <meta name=\"viewport\">", "Sem ele, o celular mostra o site minúsculo.", 'Coloque <meta name="viewport" content="width=device-width, initial-scale=1.0"> no <head>.', "passo-5-css.html#celular");
+      else anotar(G, "erro", "Falta o <meta name=\"viewport\">", "Sem ele, o celular mostra o site minúsculo.", 'Coloque <meta name="viewport" content="width=device-width, initial-scale=1.0"> no <head>.', "passo-6-css.html#celular");
 
       const titulo = doc.querySelector("title");
       if (titulo && titulo.textContent.trim()) anotar(G, "ok", `Título: "${titulo.textContent.trim()}"`);
@@ -159,8 +159,8 @@
 
       const h1s = doc.querySelectorAll("h1").length;
       if (h1s === 1) anotar(G, "ok", "Tem exatamente um <h1>");
-      else if (h1s === 0) anotar(G, "erro", "Não tem nenhum <h1>", "O h1 é o título principal da página.", "Coloque um <h1> com o título do site, normalmente na primeira seção.", "passo-4-html.html#planejar");
-      else anotar(G, "aviso", `Tem ${h1s} títulos <h1>`, "O ideal é um h1 por página; as seções usam h2.", "Troque os h1 extras por h2.", "passo-4-html.html#planejar");
+      else if (h1s === 0) anotar(G, "erro", "Não tem nenhum <h1>", "O h1 é o título principal da página.", "Coloque um <h1> com o título do site, normalmente na primeira seção.", "passo-5-html.html#planejar");
+      else anotar(G, "aviso", `Tem ${h1s} títulos <h1>`, "O ideal é um h1 por página; as seções usam h2.", "Troque os h1 extras por h2.", "passo-5-html.html#planejar");
 
       const faltamPartes = ["header", "nav", "main", "footer"].filter((t) => !doc.querySelector(t));
       if (faltamPartes.length === 0) anotar(G, "ok", "Tem <header>, <nav>, <main> e <footer>");
@@ -197,7 +197,7 @@
         }
         const noHead = s.closest("head") !== null;
         if (noHead && !s.hasAttribute("defer") && !s.hasAttribute("async") && s.getAttribute("type") !== "module") {
-          anotar(G, "erro", `O <script src="${src}"> está no <head> sem defer`, "Ele vai rodar antes de a página existir e dar erro \"Cannot read properties of null\".", 'Acrescente defer: <script src="js/script.js" defer></script>.', "passo-6-js.html#erros");
+          anotar(G, "erro", `O <script src="${src}"> está no <head> sem defer`, "Ele vai rodar antes de a página existir e dar erro \"Cannot read properties of null\".", 'Acrescente defer: <script src="js/script.js" defer></script>.', "passo-7-js.html#erros");
         }
       });
 
@@ -225,16 +225,16 @@
         }
       }
       const totalImgs = doc.querySelectorAll("img").length;
-      if (semAlt.length) anotar(G, "erro", `${semAlt.length} imagem(ns) sem alt`, "O alt é o que uma pessoa cega \"ouve\" no lugar da foto.", 'Coloque alt="descrição da foto" em cada <img>. Imagem só decorativa: alt="".', "passo-4-html.html#montar", semAlt);
+      if (semAlt.length) anotar(G, "erro", `${semAlt.length} imagem(ns) sem alt`, "O alt é o que uma pessoa cega \"ouve\" no lugar da foto.", 'Coloque alt="descrição da foto" em cada <img>. Imagem só decorativa: alt="".', "passo-5-html.html#montar", semAlt);
       else if (totalImgs) anotar(G, "ok", `Todas as ${totalImgs} imagens têm alt`);
-      if (imgsFaltando.length) anotar(G, "erro", "Imagem ou mídia não encontrada", "O navegador vai mostrar um espaço vazio no lugar.", "Confira o nome e a pasta de cada arquivo, letra por letra.", "passo-7-verificar.html#f12", imgsFaltando);
+      if (imgsFaltando.length) anotar(G, "erro", "Imagem ou mídia não encontrada", "O navegador vai mostrar um espaço vazio no lugar.", "Confira o nome e a pasta de cada arquivo, letra por letra.", "passo-8-verificar.html#f12", imgsFaltando);
       else if (totalImgs) anotar(G, "ok", "Todas as imagens foram encontradas na pasta");
 
       // ids repetidos
       const contagem = new Map();
       doc.querySelectorAll("[id]").forEach((el) => contagem.set(el.id, (contagem.get(el.id) || 0) + 1));
       const repetidos = Array.from(contagem).filter(([, n]) => n > 1).map(([id, n]) => `id="${id}" aparece ${n} vezes`);
-      if (repetidos.length) anotar(G, "erro", "ids repetidos", "Um id só pode existir uma vez por página. O JavaScript sempre pega o primeiro.", "Troque os repetidos por outro nome, ou use class.", "passo-4-html.html#montar", repetidos);
+      if (repetidos.length) anotar(G, "erro", "ids repetidos", "Um id só pode existir uma vez por página. O JavaScript sempre pega o primeiro.", "Troque os repetidos por outro nome, ou use class.", "passo-5-html.html#trocar", repetidos);
       else anotar(G, "ok", "Nenhum id repetido");
 
       // Links do menu (#id) e links para outras páginas
@@ -250,7 +250,7 @@
           if (p) paginasFaltando.push(explicarReferencia(p));
         }
       });
-      if (ancorasQuebradas.length) anotar(G, "erro", "Links que apontam para ids que não existem", "O clique não leva a lugar nenhum.", 'O href="#contato" precisa de um elemento com id="contato", escrito igual.', "passo-4-html.html#montar", ancorasQuebradas);
+      if (ancorasQuebradas.length) anotar(G, "erro", "Links que apontam para ids que não existem", "O clique não leva a lugar nenhum.", 'O href="#contato" precisa de um elemento com id="contato", escrito igual.', "passo-5-html.html#montar", ancorasQuebradas);
       else anotar(G, "ok", "Todos os links com # levam a ids que existem");
       if (paginasFaltando.length) anotar(G, "aviso", "Links para arquivos que não existem", "", "Crie a página ou arquivo, ou corrija o href.", "", paginasFaltando);
 
@@ -270,7 +270,7 @@
         const fecha = (semCodigo.match(new RegExp("</" + tag + "\\s*>", "gi")) || []).length;
         if (abre !== fecha) desiguais.push(`<${tag}> abre ${abre} vez(es) e fecha ${fecha}`);
       });
-      if (desiguais.length) anotar(G, "erro", "Tags abertas e fechadas em número diferente", "Uma tag sem fechar (ou fechada a mais) deixa a página torta dali para baixo.", "Procure no VS Code: clique na tag de abertura e veja qual é a de fechamento. O validador do W3C mostra a linha.", "passo-4-html.html#validar", desiguais);
+      if (desiguais.length) anotar(G, "erro", "Tags abertas e fechadas em número diferente", "Uma tag sem fechar (ou fechada a mais) deixa a página torta dali para baixo.", "Procure no VS Code: clique na tag de abertura e veja qual é a de fechamento. O validador do W3C mostra a linha.", "passo-8-verificar.html#validar", desiguais);
       else anotar(G, "ok", "As tags principais abrem e fecham em número igual");
     });
 
@@ -283,16 +283,16 @@
       if (!usados.has(arq.caminho)) anotar(G, "aviso", "Nenhum HTML conecta este CSS", "As regras dele não valem em nenhuma página.", 'Confira o <link rel="stylesheet" href="..."> no <head>.', "passo-3-projeto.html#live-server");
 
       const tag = texto.search(/<\/?style\b/i);
-      if (tag !== -1) anotar(G, "erro", `Tem <style> dentro do arquivo CSS (linha ${linhaDe(texto, tag)})`, "Dentro do .css não existe tag: o arquivo inteiro já é CSS.", "Apague <style> e </style>.", "passo-5-css.html#cores");
+      if (tag !== -1) anotar(G, "erro", `Tem <style> dentro do arquivo CSS (linha ${linhaDe(texto, tag)})`, "Dentro do .css não existe tag: o arquivo inteiro já é CSS.", "Apague <style> e </style>.", "passo-6-css.html#cores");
 
       const abertos = (texto.match(/\/\*/g) || []).length;
       const fechados = (texto.match(/\*\//g) || []).length;
-      if (abertos > fechados) anotar(G, "erro", "Comentário /* sem o */ de fechamento", "Tudo depois dele vira comentário e é ignorado.", "Feche o comentário com */.", "passo-5-css.html#cores");
+      if (abertos > fechados) anotar(G, "erro", "Comentário /* sem o */ de fechamento", "Tudo depois dele vira comentário e é ignorado.", "Feche o comentário com */.", "passo-6-css.html#cores");
 
       const semComent = tiraComentariosCss(texto).replace(/"[^"\n]*"|'[^'\n]*'/g, '""');
       const chavesAbre = (semComent.match(/{/g) || []).length;
       const chavesFecha = (semComent.match(/}/g) || []).length;
-      if (chavesAbre !== chavesFecha) anotar(G, "erro", `Chaves desiguais: ${chavesAbre} "{" e ${chavesFecha} "}"`, "Uma regra sem } faz o navegador ignorar as regras seguintes.", "Procure a regra que ficou sem fechar, normalmente perto do fim do último código colado.", "passo-5-css.html#celular");
+      if (chavesAbre !== chavesFecha) anotar(G, "erro", `Chaves desiguais: ${chavesAbre} "{" e ${chavesFecha} "}"`, "Uma regra sem } faz o navegador ignorar as regras seguintes.", "Procure a regra que ficou sem fechar, normalmente perto do fim do último código colado.", "passo-6-css.html#celular");
       else anotar(G, "ok", `As chaves estão fechadas (${chavesAbre} regras)`);
 
       const urls = [];
@@ -307,10 +307,10 @@
           urls.push(`linha ${linhaDe(texto, m.index)}: ${dica}`);
         }
       }
-      if (urls.length) anotar(G, "erro", "Arquivo de url(...) não encontrado", "", 'No CSS, o caminho parte da pasta css: use url("../img/foto.jpg").', "passo-5-css.html#celular", urls);
+      if (urls.length) anotar(G, "erro", "Arquivo de url(...) não encontrado", "", 'No CSS, o caminho parte da pasta css: use url("../img/foto.jpg").', "passo-6-css.html#celular", urls);
 
       if (/@media/.test(texto)) anotar(G, "ok", "Tem regras para telas diferentes (@media)");
-      else anotar(G, "aviso", "Nenhum @media", "Pode estar tudo certo, mas confira o site numa tela de celular.", "Teste com F12 + Ctrl + Shift + M.", "passo-5-css.html#celular");
+      else anotar(G, "aviso", "Nenhum @media", "Pode estar tudo certo, mas confira o site numa tela de celular.", "Teste com F12 + Ctrl + Shift + M.", "passo-6-css.html#celular");
     });
 
     /* ---------- Cada JS ---------- */
@@ -321,14 +321,14 @@
       if (!usados.has(arq.caminho)) anotar(G, "aviso", "Nenhum HTML conecta este JavaScript", "O código dele não roda em nenhuma página.", 'Confira o <script src="..." defer></script> no <head>.', "passo-3-projeto.html#live-server");
 
       const tag = texto.search(/<\/?script\b/i);
-      if (tag !== -1) anotar(G, "erro", `Tem <script> dentro do arquivo JS (linha ${linhaDe(texto, tag)})`, "Dentro do .js não existe tag: o arquivo inteiro já é JavaScript.", "Apague <script> e </script>.", "passo-6-js.html#erros");
+      if (tag !== -1) anotar(G, "erro", `Tem <script> dentro do arquivo JS (linha ${linhaDe(texto, tag)})`, "Dentro do .js não existe tag: o arquivo inteiro já é JavaScript.", "Apague <script> e </script>.", "passo-7-js.html#erros");
 
       try {
         new Function(texto);   // só confere se o código está bem escrito; não executa nada
         anotar(G, "ok", "Sem erro de sintaxe");
       } catch (erro) {
         if (erro instanceof SyntaxError) {
-          anotar(G, "erro", "Erro de sintaxe: " + erro.message, "Com um erro de sintaxe, nenhuma linha do arquivo roda.", "Procure parênteses, chaves ou aspas sem fechar, normalmente no último código colado. O Console (F12) mostra a linha.", "passo-6-js.html#erros");
+          anotar(G, "erro", "Erro de sintaxe: " + erro.message, "Com um erro de sintaxe, nenhuma linha do arquivo roda.", "Procure parênteses, chaves ou aspas sem fechar, normalmente no último código colado. O Console (F12) mostra a linha.", "passo-7-js.html#erros");
         } else {
           anotar(G, "info", "Não foi possível conferir a sintaxe nesta página", "Abra o site com o F12 e confira a aba Console.");
         }
@@ -342,7 +342,7 @@
         }
       });
       const naoExistem = Array.from(procurados).filter(([id]) => !idsDoSite.has(id)).map(([id, linha]) => `linha ${linha}: id="${id}"`);
-      if (naoExistem.length) anotar(G, "aviso", "O JavaScript procura ids que não existem em nenhum HTML", "O código dessas partes não vai fazer nada (ou vai dar erro de null).", "Deixe o id igual no HTML e no JS. Se você não usa aquela funcionalidade, apague o trecho do JS.", "passo-6-js.html#erros", naoExistem);
+      if (naoExistem.length) anotar(G, "aviso", "O JavaScript procura ids que não existem em nenhum HTML", "O código dessas partes não vai fazer nada (ou vai dar erro de null).", "Deixe o id igual no HTML e no JS. Se você não usa aquela funcionalidade, apague o trecho do JS.", "passo-7-js.html#erros", naoExistem);
       else if (procurados.size) anotar(G, "ok", `Os ${procurados.size} ids que o JavaScript procura existem no HTML`);
     });
 

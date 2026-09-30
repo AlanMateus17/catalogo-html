@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!-- Página gerada por ferramentas/gerar-aulas.py a partir da pasta conteudo/. Não edite aqui: edite o .md e gere de novo. -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/dicionario-dados.js" defer></script>
+  <script src="js/analisador.js" defer></script>
+  <script src="js/documentacao.js" defer></script>
+  <script src="js/vendor/acorn.js" defer></script>
+  <script src="js/laboratorio.js" defer></script>
+  <script src="js/visualizador.js" defer></script>
+  <script src="js/licao.js" defer></script>
+  <title>Variáveis: nomes para valores — Catálogo do HTML</title>
+  <meta name="description" content="Ao final, você cria variáveis com let e const, escolhe entre as duas, troca valores e prevê o que um programa mostra só lendo o código.">
+</head>
+<body class="pagina-trilha pagina-doc pagina-licao" data-licao="aula-1-02-variaveis" data-exercicios="6">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="aulas.html" aria-current="page">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas"><ol><li><a href="index.html">Início</a></li><li><a href="aulas.html">Aulas</a></li><li><a href="aulas.html#modulo-1">Módulo 1</a></li><li aria-current="page">Variáveis: nomes para valores</li></ol></nav>
+        <p class="heroi-antetitulo">Módulo 1 · Lógica de programação com JavaScript · Lição 2 de 10</p>
+        <h1 class="heroi-titulo">Variáveis: nomes para valores</h1>
+        <p class="heroi-texto">Ao final, você cria variáveis com let e const, escolhe entre as duas, troca valores e prevê o que um programa mostra só lendo o código.</p><ul class="licao-fatos"><li><strong>Tempo:</strong> 40 min</li><li><strong>Antes, saiba:</strong> a lição <a href="aula-1-01-algoritmos.html">O que é um algoritmo</a>.</li><li><strong>Exercícios:</strong> 6</li></ul>
+      </div>
+    </section>
+    <div class="container doc-layout">
+      <nav class="doc-indice" aria-label="Nesta lição">
+        <details class="doc-indice-caixa" open><summary>Nesta lição</summary><ol><li><a href="#por-que-o-programa-precisa-guardar-coisas">Por que o programa precisa guardar coisas</a></li><li><a href="#let-e-const">let e const</a></li><li><a href="#tipos-de-valor">Tipos de valor</a></li><li><a href="#pratique">Pratique</a></li></ol></details>
+      </nav>
+      <div class="trilha-corpo doc-corpo licao-corpo">
+<h2 id="por-que-o-programa-precisa-guardar-coisas">Por que o programa precisa guardar coisas</h2>
+<p>Na lição anterior, o total da padaria dependia de valores calculados antes: o total dos pães precisava existir quando o café fosse somado. O programa precisa <strong>guardar</strong> um valor agora para usar depois. É para isso que servem as variáveis.</p>
+<p>Uma <strong>variável</strong> é um nome que aponta para um valor guardado na memória. Você cria o nome uma vez e usa quantas vezes quiser:</p>
+<figure class="doc-exemplo"><pre class="doc-codigo codigo-pre" data-lang="js" tabindex="0"><code>let pontos = 10;
+console.log(pontos);</code></pre></figure>
+<p>Lendo em voz alta: "crie a variável <code>pontos</code> e coloque nela o valor 10; depois, mostre o valor de <code>pontos</code>".</p>
+<aside class="analogia"><p class="analogia-titulo"><span aria-hidden="true">💡</span> Analogia: Uma etiqueta colada num valor</p><p>Pense na variável como uma <strong>etiqueta com um nome</strong>, colada num valor. <code>let pontos = 10</code> cola a etiqueta "pontos" no número 10. Quando você escreve <code>pontos</code> no código, o computador segue a etiqueta até o valor.</p>
+<p>Trocar o valor (<code>pontos = 15</code>) é descolar a etiqueta do 10 e colar no 15. O 10 não "vira" 15: a etiqueta passa a apontar para outro valor.</p><div class="analogia-limite"><p class="analogia-limite-titulo">Onde a analogia para de funcionar</p><p>Muita gente aprende que variável é uma "caixa que guarda um valor". Para números e textos, as duas imagens funcionam igual. A diferença aparece com listas e objetos: <code>const b = a</code> cola uma <strong>segunda etiqueta na mesma lista</strong>, não faz uma cópia. Mudar a lista por <code>b</code> muda o que você vê por <code>a</code>. Com a imagem da caixa, você esperaria duas listas separadas. Isso aparece de verdade na lição de listas e objetos (lição 7): guarde a imagem da etiqueta.</p></div></aside>
+<h2 id="let-e-const">let e const</h2>
+<p>JavaScript tem duas palavras para criar variáveis no código moderno:</p>
+<div class="tabela-rolagem"><table class="tabela doc-tabela">
+<thead>
+<tr>
+<th>Palavra</th>
+<th>Pode receber outro valor depois?</th>
+<th>Quando usar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>const</code></td>
+<td>Não</td>
+<td>Quando o valor não muda: um preço fixo, um nome, um resultado já calculado</td>
+</tr>
+<tr>
+<td><code>let</code></td>
+<td>Sim</td>
+<td>Quando o valor muda: um placar, um contador, um saldo</td>
+</tr>
+</tbody>
+</table></div>
+<p>A regra prática é: <strong>comece com <code>const</code></strong>; troque para <code>let</code> só quando precisar mudar o valor. Assim, quem lê o código sabe na hora o que pode mudar.</p>
+<figure class="doc-exemplo"><figcaption class="doc-ex-titulo">let muda, const não</figcaption><pre class="doc-codigo codigo-pre" data-lang="js" tabindex="0"><code>let placar = 0;
+placar = placar + 3;   // pode: placar é let
+console.log(placar);   // 3
+
+const nome = &quot;Ana&quot;;
+nome = &quot;Bia&quot;;          // ERRO: nome é const</code></pre></figure>
+<p>A segunda linha, <code>placar = placar + 3</code>, confunde muita gente. O <code>=</code> em programação <strong>não é igualdade</strong>: é <strong>atribuição</strong>. Leia assim: "calcule <code>placar + 3</code> com o valor atual (0 + 3) e cole a etiqueta <code>placar</code> no resultado (3)". Primeiro o lado direito, depois o esquerdo.</p>
+<div class="erro-comum"><p class="erro-comum-titulo"><strong>Erro comum:</strong> usar a variável antes de criar</p><figure class="doc-exemplo"><pre class="doc-codigo codigo-pre" data-lang="js" tabindex="0"><code>console.log(total);
+let total = 7;</code></pre></figure>
+<p>Dá erro (<em>Cannot access 'total' before initialization</em>). O computador lê de cima para baixo: na linha 1, a variável ainda não foi criada. É por isso que o visualizador mostra "(ainda não criada)" antes da linha do <code>let</code> ou do <code>const</code>.</p></div>
+
+<div class="erro-comum"><p class="erro-comum-titulo"><strong>Erro comum:</strong> criar a mesma variável duas vezes</p><p><code>let x = 1;</code> e depois <code>let x = 2;</code> dá erro: o nome <code>x</code> já existe. Para trocar o valor, escreva só <code>x = 2;</code>, sem o <code>let</code>.</p></div>
+<h2 id="tipos-de-valor">Tipos de valor</h2>
+<p>Todo valor tem um <strong>tipo</strong>. Os três que você mais vai usar agora:</p>
+<div class="tabela-rolagem"><table class="tabela doc-tabela">
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Exemplos</th>
+<th>Para quê</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>number (número)</td>
+<td><code>7</code>, <code>1.5</code>, <code>-3</code></td>
+<td>contas</td>
+</tr>
+<tr>
+<td>string (texto)</td>
+<td><code>"Ana"</code>, <code>'pão'</code>, <code>`olá`</code></td>
+<td>palavras e frases, sempre entre aspas ou crases</td>
+</tr>
+<tr>
+<td>boolean (lógico)</td>
+<td><code>true</code>, <code>false</code></td>
+<td>respostas de sim ou não</td>
+</tr>
+</tbody>
+</table></div>
+<p>O comando <code>typeof</code> diz o tipo de um valor: <code>typeof 7</code> é <code>"number"</code>; <code>typeof "7"</code> é <code>"string"</code>. Essa diferença importa: <code>7 + 1</code> dá <code>8</code>, mas <code>"7" + 1</code> dá <code>"71"</code>, porque <code>+</code> com texto <strong>junta</strong> em vez de somar.</p>
+<section class="resolvido"><p class="resolvido-titulo">Exemplo resolvido: Trocar o valor de duas variáveis</p><p><strong>Problema:</strong> <code>a</code> vale 1 e <code>b</code> vale 2. Queremos que <code>a</code> passe a valer 2 e <code>b</code> passe a valer 1.</p>
+<p><strong>Tentativa ingênua:</strong> <code>a = b;</code> e depois <code>b = a;</code>. Não funciona: depois da primeira linha, <code>a</code> já vale 2, e o valor 1 se perdeu. As duas terminam valendo 2.</p>
+<p><strong>Solução:</strong> guardar o valor antigo numa terceira variável antes de sobrescrever.</p>
+<ol>
+<li>Guardar o valor de <code>a</code> em <code>temporaria</code> (temporaria = 1).</li>
+<li>Colar <code>a</code> no valor de <code>b</code> (a = 2).</li>
+<li>Colar <code>b</code> no valor guardado (b = 1).</li>
+</ol>
+<p>Veja cada passo no visualizador abaixo: observe em amarelo a variável que acabou de mudar.</p></section>
+
+<div class="visualizador"><p class="visualizador-titulo">Veja o computador executar, linha por linha</p><textarea class="visualizador-codigo" hidden>let a = 1;
+let b = 2;
+let temporaria = a;
+a = b;
+b = temporaria;
+console.log(&quot;a =&quot;, a, &quot;e b =&quot;, b);</textarea></div>
+
+<details class="nivel nivel2"><summary><span class="nivel-selo">Nível 2</span> Por dentro: O que acontece na memória</summary><div class="nivel-corpo"><p>Quando o motor JavaScript roda <code>let pontos = 10</code>, ele reserva um espaço na memória para o número 10 e anota, numa tabela chamada <strong>ambiente léxico</strong> (o "caderno de nomes" daquele trecho do código), que o nome <code>pontos</code> aponta para esse valor.</p>
+<p>Com <code>let</code> e <code>const</code>, o nome é registrado no caderno assim que o bloco começa, mas fica marcado como "não pode usar" até a linha da criação rodar. Esse intervalo tem nome: <strong>zona morta temporal</strong> (<em>temporal dead zone</em>). É exatamente o que o visualizador mostra como "(ainda não criada)", e é por isso que usar antes dá erro, em vez de dar <code>undefined</code>.</p>
+<p>Existe uma terceira forma antiga, <code>var</code>, que não tem essa proteção e tem outras regras de alcance. Você vai encontrar <code>var</code> em códigos antigos; em código novo, use <code>let</code> e <code>const</code>.</p></div></details>
+
+<details class="nivel nivel3"><summary><span class="nivel-selo">Nível 3</span> Na documentação oficial: Onde isso está na documentação</summary><div class="nivel-corpo"><p>Na MDN, leia as páginas de <strong>let</strong>, <strong>const</strong> e <strong>typeof</strong>. Procure nelas as expressões <em>temporal dead zone</em> e <em>block scope</em> (alcance de bloco): são os dois conceitos que você acabou de ver com outros nomes. A página da especificação oficial (ECMAScript) é bem mais difícil: por enquanto, basta saber que ela existe e que a MDN é a porta de entrada.</p></div></details>
+<h2 id="pratique">Pratique</h2>
+<div class="laboratorio"><p class="laboratorio-titulo">Experimente</p><p>Mude os valores e rode. Depois tente: troque <code>const preco</code> por um preço novo numa linha abaixo (<code>preco = 20;</code>) e leia o erro. Em seguida troque <code>const</code> por <code>let</code> e rode de novo.</p><script type="application/json" class="laboratorio-dados">{"arquivos": {"js": "const preco = 12.5;\nlet quantidade = 2;\nquantidade = quantidade + 1;\nconst total = preco * quantidade;\nconsole.log(\"Quantidade:\", quantidade);\nconsole.log(\"Total:\", total);\nconsole.log(typeof total);"}}</script></div>
+
+<div class="exercicio" id="ex-1" data-numero="1">
+  <p class="exercicio-tipo">Exercício 1 · Preveja o resultado</p>
+  <div class="exercicio-pergunta"><p>O que aparece no console?</p><figure class="doc-exemplo"><pre class="doc-codigo codigo-pre" data-lang="js" tabindex="0"><code>let x = 5;
+x = x + 2;
+x = x * 2;
+console.log(x);</code></pre></figure></div>
+  <div class="exercicio-area"></div>
+  <script type="application/json" class="exercicio-dados">{"tipo": "preveja", "respostas": ["14"], "dica": "Anote o valor de x depois de cada linha: 5, depois 5 + 2, depois esse resultado vezes 2.", "explicacao": "x começa em 5; depois vale 5 + 2 = 7; depois 7 × 2 = 14. Cada linha usa o valor que x tem naquele momento."}</script>
+</div>
+
+<div class="exercicio" id="ex-2" data-numero="2">
+  <p class="exercicio-tipo">Exercício 2 · Escolha a resposta</p>
+  <div class="exercicio-pergunta"><p>Um programa guarda a data de nascimento de uma pessoa e o saldo da conta dela. Qual combinação faz mais sentido?</p></div>
+  <div class="exercicio-area"></div>
+  <script type="application/json" class="exercicio-dados">{"tipo": "escolha", "opcoes": [{"html": "let para os dois", "certa": false, "retorno": "Funciona, mas esconde uma informação: quem lê não sabe que a data de nascimento nunca muda."}, {"html": "const para a data de nascimento e let para o saldo", "certa": true, "retorno": "Isso: a data não muda; o saldo muda a cada compra ou depósito."}, {"html": "const para os dois", "certa": false, "retorno": "O saldo muda: com const, dá erro na primeira compra."}, {"html": "let para a data e const para o saldo", "certa": false, "retorno": "Ao contrário: é o saldo que muda."}], "dica": "", "explicacao": ""}</script>
+</div>
+
+<div class="exercicio" id="ex-3" data-numero="3">
+  <p class="exercicio-tipo">Exercício 3 · Ache o erro</p>
+  <div class="exercicio-pergunta"><p>Este programa dá erro. Em qual linha?</p></div>
+  <div class="exercicio-area"></div>
+  <script type="application/json" class="exercicio-dados">{"tipo": "ache-erro", "linhas": ["const desconto = 5;", "let preco = 50;", "preco = preco - desconto;", "desconto = 10;", "console.log(preco);"], "lang": "js", "linha": 4, "dica": "", "explicacao": "desconto foi criado com const: não pode receber outro valor. A mensagem seria TypeError: Assignment to constant variable."}</script>
+</div>
+
+<div class="exercicio" id="ex-4" data-numero="4">
+  <p class="exercicio-tipo">Exercício 4 · Complete o código</p>
+  <div class="exercicio-pergunta"><p>Complete para que o programa mostre 6.</p></div>
+  <div class="exercicio-area"></div>
+  <script type="application/json" class="exercicio-dados">{"tipo": "complete", "codigo": "___ contador = 5;\ncontador = contador ___ 1;\nconsole.log(contador);", "lang": "js", "respostas": [["let"], ["+"]], "dica": "", "explicacao": "O contador muda de valor, então precisa ser let. E 5 + 1 = 6."}</script>
+</div>
+
+<div class="exercicio" id="ex-5" data-numero="5">
+  <p class="exercicio-tipo">Exercício 5 · Preveja o resultado</p>
+  <div class="exercicio-pergunta"><p>O que aparece no console? (Atenção às aspas.)</p><figure class="doc-exemplo"><pre class="doc-codigo codigo-pre" data-lang="js" tabindex="0"><code>const a = &quot;7&quot;;
+const b = 1;
+console.log(a + b);</code></pre></figure></div>
+  <div class="exercicio-area"></div>
+  <script type="application/json" class="exercicio-dados">{"tipo": "preveja", "respostas": ["71"], "dica": "a está entre aspas. O que o + faz quando um dos lados é texto?", "explicacao": "Com texto de um dos lados, o + junta em vez de somar: \"7\" + 1 vira \"71\". Esse é um dos erros mais comuns em formulários, porque tudo o que vem de um campo de texto é string."}</script>
+</div>
+
+<div class="exercicio" id="ex-6" data-numero="6">
+  <p class="exercicio-tipo">Exercício 6 · Escreva o código</p>
+  <div class="exercicio-pergunta"><p>Crie a variável <code>preco</code> com o valor 12.5 e a variável <code>quantidade</code> com o valor 3. Depois crie <code>total</code> com o preço vezes a quantidade e mostre <code>total</code> no console.</p></div>
+  <div class="exercicio-area"></div>
+  <script type="application/json" class="exercicio-dados">{"tipo": "codigo", "lang": "js", "arquivos": {"js": "// Crie as variáveis aqui\n"}, "testes": [{"expr": "typeof preco !== \"undefined\" && preco === 12.5", "msg": "existe a variável preco valendo 12.5 (com ponto, não vírgula)"}, {"expr": "typeof quantidade !== \"undefined\" && quantidade === 3", "msg": "existe a variável quantidade valendo 3"}, {"expr": "typeof total !== \"undefined\" && total === 37.5", "msg": "total vale preco vezes quantidade (37.5)"}, {"expr": "saida().includes(\"37.5\")", "msg": "o console mostra o total"}], "dica": "Três linhas criando variáveis e uma com console.log(total).", "explicacao": ""}</script>
+</div>
+
+<aside class="resumo-licao"><p class="resumo-titulo">Resumo</p><ul>
+<li>Variável é um <strong>nome</strong> (uma etiqueta) que aponta para um <strong>valor</strong>.</li>
+<li><code>const</code> para o que não muda; <code>let</code> para o que muda. Na dúvida, comece com <code>const</code>.</li>
+<li>O <code>=</code> é <strong>atribuição</strong>: calcula o lado direito e cola a etiqueta do lado esquerdo no resultado.</li>
+<li>Não dá para usar a variável antes da linha que a cria, nem criar o mesmo nome duas vezes.</li>
+<li>Tipos principais: <strong>number</strong>, <strong>string</strong> e <strong>boolean</strong>. Com texto, o <code>+</code> <strong>junta</strong>: <code>"7" + 1</code> dá <code>"71"</code>.</li>
+</ul></aside>
+        <section class="licao-fim" id="concluir">
+          <h2>Terminou a lição?</h2>
+          <p>Marque como concluída. Os exercícios que você errou voltam na página <a href="revisar.html">Revisar</a> nos próximos dias: é assim que o conteúdo fica na memória.</p>
+          <button class="botao botao-primario" type="button" id="btn-concluir">Marcar lição como concluída</button>
+          <p class="licao-fim-estado" id="estado-concluir" aria-live="polite"></p>
+        </section>
+        <section class="duvidas" id="duvidas" hidden>
+          <h2>Dúvidas desta lição</h2>
+          <div id="duvidas-lista"></div>
+        </section>
+        <nav class="passo-nav" aria-label="Lições"><a class="passo-ant" href="aula-1-01-algoritmos.html"><span>Lição anterior</span>O que é um algoritmo</a><a class="passo-prox" href="formacao.html"><span>Próxima lição</span>Contas no código: operadores aritméticos</a></nav>
+      </div>
+    </div>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

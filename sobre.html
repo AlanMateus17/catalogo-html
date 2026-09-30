@@ -24,6 +24,9 @@
   <script src="js/script.js" defer></script>
   <!-- Ferramenta do Catálogo: painéis "Ver código" (os alunos não precisam copiar) -->
   <script src="js/codigos-dados.js" defer></script>
+  <script src="js/dicionario-dados.js" defer></script>
+  <script src="js/analisador.js" defer></script>
+  <script src="js/entenda.js" defer></script>
   <script src="js/painel-codigos.js" defer></script>
 </head>
 <body>
@@ -54,6 +57,9 @@
         <ul class="menu-lista" id="menu-principal">
           <li><a href="index.html">Catálogo</a></li>
           <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
           <li><a href="codigos.html">Códigos</a></li>
           <li><a href="verificador.html">Verificador</a></li>
           <li><a href="sobre.html" aria-current="page">Sobre</a></li>
@@ -77,14 +83,28 @@
             <li aria-current="page">Sobre</li>
           </ol>
         </nav>
-        <h1 class="heroi-titulo">Sobre este projeto</h1>
-        <p class="heroi-texto">Uma página de exemplo para consultar quando surgir a dúvida "como se faz isso em HTML?".</p>
+        <h1 class="heroi-titulo">Sobre este site</h1>
+        <p class="heroi-texto">Um site para aprender a criar sites e sistemas: ver funcionando, entender cada palavra do código, fazer o seu e publicar.</p>
       </div>
     </section>
 
     <section class="secao">
       <div class="container">
-        <h2 class="secao-titulo">Por que duas páginas?</h2>
+        <h2 class="secao-titulo">Como o site está organizado</h2>
+        <div class="tabela-rolagem"><table class="tabela tabela-mapa-site">
+          <thead><tr><th scope="col">Parte</th><th scope="col">Para quê</th></tr></thead>
+          <tbody>
+            <tr><td><a href="passo-a-passo.html"><strong>Passo a passo</strong></a></td><td>Fazer o seu site, do computador vazio ao site no ar. É o caminho principal para quem está começando.</td></tr>
+            <tr><td><a href="documentacao.html"><strong>Documentação</strong></a></td><td>Entender a fundo: sintaxe e semântica de HTML, CSS e JavaScript, e o roteiro até a primeira vaga de desenvolvedor.</td></tr>
+            <tr><td><a href="codigos.html"><strong>Códigos</strong></a></td><td>Copiar o HTML, o CSS e o JavaScript de cada parte de um site, com a explicação de cada palavra.</td></tr>
+            <tr><td><a href="index.html"><strong>Catálogo</strong></a></td><td>Ver todos os elementos funcionando numa página só, com o código comentado.</td></tr>
+            <tr><td><a href="verificador.html"><strong>Verificador</strong></a></td><td>Conferir a pasta do seu projeto e descobrir o que corrigir.</td></tr>
+            <tr><td><a href="dicionario.html"><strong>Dicionário</strong></a></td><td>Consultar o que é uma tag, propriedade ou comando.</td></tr>
+            <tr><td><a href="ia.html"><strong>Usar IA do jeito certo</strong></a></td><td>Saber quando a IA ajuda e quando atrapalha o seu aprendizado.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2 class="secao-titulo">Por que esta segunda página existe?</h2>
         <p>Para você ver, na prática, três coisas:</p>
         <ol>
           <li><strong>Links entre páginas</strong> funcionam com o nome do arquivo: <code>href="sobre.html"</code>.</li>
@@ -107,7 +127,7 @@
           <img class="perfil-foto" src="img/avatar.jpg" alt="Ilustração de avatar" width="240" height="240">
           <div>
             <h3>Prof. Alan Mateus</h3>
-            <p>Professor do curso técnico. Este material acompanha as aulas de HTML/CSS e Programação Web.</p>
+            <p>Professor do curso técnico de informática. Este site acompanha as aulas e reúne o material para os alunos criarem e publicarem os próprios sites e seguirem estudando até a primeira vaga.</p>
             <p><a href="index.html#links">Voltar aos exemplos de links</a></p>
           </div>
         </article>
@@ -125,7 +145,7 @@
   <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
 
   <footer class="rodape">
-    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="index.html">Voltar ao início</a>.</small></p>
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
   </footer>
 </body>
 </html>

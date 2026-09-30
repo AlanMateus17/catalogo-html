@@ -9,7 +9,9 @@
 "use strict";
 
 (function () {
-  const PREFIXO = "trilha:";
+  // "trilha2:" na trilha ("2": a ordem dos passos mudou); as páginas de projetos usam
+  // <body data-prefixo="projeto:"> para guardar o progresso separado.
+  const PREFIXO = document.body.dataset.prefixo || "trilha2:";
 
   /* ---------- Guardar e ler do navegador sem quebrar a página ---------- */
   function ler(chave) {
@@ -24,6 +26,8 @@
       if (valor === null) localStorage.removeItem(PREFIXO + chave);
       else localStorage.setItem(PREFIXO + chave, valor);
     } catch (erro) {}
+    // Logado no sistema? O progresso também vai para a conta (plataforma.js)
+    if (window.Plataforma) window.Plataforma.salvarProgresso(PREFIXO + chave, valor);
   }
 
   // Quantos itens de um passo estão marcados
@@ -105,6 +109,16 @@
   atualizarMapa();
   atualizarPronto();
 
+  // Quando o progresso da conta chega do servidor, redesenha as marcações
+  document.addEventListener("plataforma:progresso", function () {
+    document.querySelectorAll("[data-progresso]").forEach(function (caixa) {
+      caixa.checked = ler(caixa.dataset.progresso) === "1";
+    });
+    atualizarMapa();
+    atualizarPronto();
+    if (typeof atualizarInicio === "function" && cartoes.length > 0) atualizarInicio();
+  });
+
   /* ---------- 3. Página inicial da trilha ---------- */
   const cartoes = document.querySelectorAll(".trilha-card-progresso");
   const geral = document.getElementById("progresso-geral");
@@ -122,9 +136,11 @@
       if (completo) completos++;
     });
     if (geral) {
-      if (completos === 0) geral.textContent = "Nenhum passo completo ainda.";
-      else if (completos === cartoes.length) geral.textContent = "Todos os " + completos + " passos completos. Parabéns: o seu site está no ar!";
-      else geral.textContent = "Passos completos: " + completos + " de " + cartoes.length + ".";
+      // Na página de projetos: <p id="progresso-geral" data-item="projeto" data-fim="...">
+      const item = geral.dataset.item || "passo";
+      if (completos === 0) geral.textContent = "Nenhum " + item + " completo ainda.";
+      else if (completos === cartoes.length) geral.textContent = geral.dataset.fim || ("Todos os " + completos + " passos completos. Parabéns: o seu site está no ar!");
+      else geral.textContent = item.charAt(0).toUpperCase() + item.slice(1) + "s completos: " + completos + " de " + cartoes.length + ".";
     }
   }
 
@@ -149,7 +165,10 @@
         clearTimeout(espera);
         try {
           Object.keys(localStorage).forEach(function (k) {
-            if (k.indexOf(PREFIXO) === 0) localStorage.removeItem(k);
+            if (k.indexOf(PREFIXO) === 0) {
+              localStorage.removeItem(k);
+              if (window.Plataforma) window.Plataforma.salvarProgresso(k, null);
+            }
           });
         } catch (erro) {}
         confirmando = false;

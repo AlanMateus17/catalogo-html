@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--
+  DOCUMENTAÇÃO — HTML: sintaxe e semântica
+  Página gerada pela ferramenta do professor. Os exemplos ficam coloridos e
+  clicáveis com js/documentacao.js, que usa o dicionário (js/dicionario-dados.js).
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/dicionario-dados.js" defer></script>
+  <script src="js/analisador.js" defer></script>
+  <script src="js/documentacao.js" defer></script>
+  <title>HTML: sintaxe e semântica — Catálogo do HTML</title>
+  <meta name="description" content="Documentação de HTML para alunos: anatomia dos elementos, estrutura, semântica, formulários, acessibilidade e referência completa.">
+</head>
+<body class="pagina-trilha pagina-doc">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html" aria-current="page">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="documentacao.html">Documentação</a></li>
+            <li aria-current="page">HTML: sintaxe e semântica</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Documentação · Módulo 2 · HTML</p>
+        <h1 class="heroi-titulo">HTML: sintaxe e semântica</h1>
+        <p class="heroi-texto">Sintaxe (como se escreve) e semântica (o que significa) de cada parte do HTML, com exemplos que você pode clicar para entender cada palavra.</p>
+      </div>
+    </section>
+
+    <div class="container doc-layout">
+      <nav class="doc-indice" aria-label="Nesta página">
+        <details class="doc-indice-caixa" open>
+          <summary>Nesta página</summary>
+          <ol><li><a href="#o-que-e">O que é HTML</a></li><li><a href="#anatomia">Anatomia de um elemento</a></li><li><a href="#estrutura">A estrutura do arquivo</a></li><li><a href="#semantica">Semântica</a></li><li><a href="#textos-links">Textos, links e mídia</a></li><li><a href="#formularios">Formulários</a></li><li><a href="#acessibilidade">Acessibilidade</a></li><li><a href="#erros">Erros comuns e validador</a></li><li><a href="#ler-docs">Ler a documentação oficial</a></li><li><a href="#referencia">Referência</a></li></ol>
+        </details>
+      </nav>
+      <div class="trilha-corpo doc-corpo">
+<section class="trilha-secao doc-secao" id="o-que-e">
+  <h2>1. O que é HTML (e o que ele não é)</h2>
+  
+<p>HTML quer dizer <strong>HyperText Markup Language</strong>: linguagem de <em>marcação</em> de hipertexto. Marcação é isto: você pega um texto e <strong>marca</strong> cada pedaço dizendo o que ele é. "Isto é um título." "Isto é um parágrafo." "Isto é um link que leva para outra página."</p><p>HTML não é linguagem de programação: ele não faz contas, não toma decisões e não repete nada. Ele só descreve o conteúdo. Cada linguagem do site tem uma função:</p>
+<div class="tabela-rolagem"><table class="tabela doc-tabela"><thead><tr><th scope="col">Linguagem</th><th scope="col">Pergunta que responde</th><th scope="col">Arquivo</th><th scope="col">Comparação</th></tr></thead><tbody><tr><td>HTML</td><td><strong>O que</strong> é cada coisa da página?</td><td><code>index.html</code></td><td>O esqueleto e os órgãos</td></tr><tr><td>CSS</td><td><strong>Como</strong> cada coisa aparece?</td><td><code>css/estilo.css</code></td><td>A roupa e a aparência</td></tr><tr><td>JavaScript</td><td><strong>O que acontece</strong> quando a pessoa age?</td><td><code>js/script.js</code></td><td>Os músculos: o movimento</td></tr></tbody></table></div>
+<p>Quando você abre um arquivo .html, o navegador lê o texto de cima para baixo, entende as marcações e monta uma <strong>árvore</strong> de elementos (o DOM). É essa árvore que o CSS pinta e que o JavaScript mexe. Por isso a organização do HTML importa tanto: uma árvore bagunçada deixa o CSS e o JS difíceis.</p>
+<figure class="doc-exemplo"><figcaption class="doc-ex-titulo">Três elementos: um título, um parágrafo (com um destaque dentro) e um link</figcaption><pre class="doc-codigo codigo-pre" data-lang="html" tabindex="0"><code>&lt;h1&gt;Turismo em Barbacena&lt;/h1&gt;
+&lt;p&gt;Barbacena é conhecida como a &lt;strong&gt;Cidade das Rosas&lt;/strong&gt;.&lt;/p&gt;
+&lt;a href=&quot;sobre.html&quot;&gt;Saiba mais&lt;/a&gt;</code></pre></figure>
+<div class="doc-resultado"><p class="doc-resultado-titulo">Resultado no navegador</p><div class="doc-resultado-corpo"><h3 style="margin:0">Turismo em Barbacena</h3><p>Barbacena é conhecida como a <strong>Cidade das Rosas</strong>.</p><a href="#o-que-e">Saiba mais</a></div></div>
+<aside class="doc-nota"><p class="doc-nota-titulo">Como usar esta documentação</p><p>Clique em qualquer palavra colorida de um exemplo para ver o que ela é. Palavras com sublinhado tracejado são <strong>nomes criados por você</strong> (classes, ids): não fazem parte da linguagem.</p></aside>
+
+</section>
+<section class="trilha-secao doc-secao" id="anatomia">
+  <h2>2. Anatomia de um elemento</h2>
+  
+<p>Quase todo elemento tem três partes: a <strong>tag de abertura</strong>, o <strong>conteúdo</strong> e a <strong>tag de fechamento</strong>. A tag de fechamento é igual à de abertura, com uma barra /.</p>
+<div class="doc-anatomia" aria-label="Partes de um elemento">
+  <span class="an an-abre">&lt;a <span class="an an-attr">href</span>=<span class="an an-valor">"sobre.html"</span>&gt;</span><span class="an an-conteudo">Saiba mais</span><span class="an an-fecha">&lt;/a&gt;</span>
+</div>
+<ul class="doc-legenda-anatomia">
+  <li><span class="an-cor an-abre"></span><strong>Tag de abertura</strong>: <code>&lt;a ...&gt;</code>. Diz onde o elemento começa e qual é o tipo dele (a = link).</li>
+  <li><span class="an-cor an-attr"></span><strong>Atributo</strong>: <code>href</code>. Uma informação extra sobre o elemento. Sempre dentro da tag de abertura.</li>
+  <li><span class="an-cor an-valor"></span><strong>Valor do atributo</strong>: <code>&quot;sobre.html&quot;</code>. Entre aspas, depois do sinal de igual, sem espaço em volta do =.</li>
+  <li><span class="an-cor an-conteudo"></span><strong>Conteúdo</strong>: o que aparece na tela (pode ter outros elementos dentro).</li>
+  <li><span class="an-cor an-fecha"></span><strong>Tag de fechamento</strong>: <code>&lt;/a&gt;</code>. Diz onde o elemento termina.</li>
+</ul>
+<h3>Elementos vazios</h3>
+<p>Alguns elementos não têm conteúdo, então não têm fechamento: <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;meta&gt;</code>, <code>&lt;link&gt;</code>. Tudo o que eles precisam vai nos atributos.</p>
+<figure class="doc-exemplo"><figcaption class="doc-ex-titulo">Elementos vazios: tudo nos atributos</figcaption><pre class="doc-codigo codigo-pre" data-lang="html" tabindex="0"><code>&lt;img src=&quot;img/praca.jpg&quot; alt=&quot;Praça central com roseiras&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;
+&lt;input type=&quot;email&quot; name=&quot;email&quot; required&gt;</code></pre></figure>
+<h3>Atributos booleanos (liga/desliga)</h3>
+<p>Alguns atributos não precisam de valor: só de estarem escritos, já estão ligados. <code>required</code>, <code>disabled</code>, <code>checked</code>, <code>hidden</code>, <code>defer</code>, <code>controls</code>. Para desligar, apague o atributo (escrever <code>required=&quot;false&quot;</code> NÃO desliga).</p>
+<h3>Aninhamento: uma caixa dentro da outra</h3>
+<p>Elementos podem ficar dentro de outros. A regra é a da caixa: o que abriu por último fecha primeiro. Quem está dentro é o <strong>filho</strong>; quem está fora, o <strong>pai</strong>.</p>
+<figure class="doc-exemplo"><figcaption class="doc-ex-titulo">Certo: fecha na ordem contrária da abertura</figcaption><pre class="doc-codigo codigo-pre" data-lang="html" tabindex="0"><code>&lt;p&gt;Leia o &lt;a href=&quot;regras.html&quot;&gt;regulamento &lt;strong&gt;completo&lt;/strong&gt;&lt;/a&gt; antes.&lt;/p&gt;</code></pre></figure>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> tags fechadas na ordem errada</p>
+  <p><code>&lt;p&gt;&lt;strong&gt;Atenção&lt;/p&gt;&lt;/strong&gt;</code> está errado: o <code>&lt;strong&gt;</code> abriu dentro do <code>&lt;p&gt;</code>, então tem que fechar antes dele. O navegador conserta sozinho, seguindo uma regra fixa, mas quase nunca do jeito que você queria: um elemento vai parar dentro de outro, e o CSS deixa de funcionar como o esperado.</p>
+</div>
+<h3>Regras de escrita</h3>
+<ul><li>Tags e atributos em <strong>minúsculas</strong>: <code>&lt;section&gt;</code>, não <code>&lt;SECTION&gt;</code> (funciona, mas não é o padrão).</li><li>Valores de atributo <strong>sempre entre aspas duplas</strong>: <code>class=&quot;card destaque&quot;</code>.</li><li>Espaços e Enter a mais no texto viram <strong>um espaço só</strong> na tela. Para espaço de verdade, use CSS (margin, padding).</li><li>Recuo (indentação) de 2 espaços para cada nível de dentro. O navegador ignora, mas é o que deixa o código legível.</li><li>Comentário: <code>&lt;!-- texto --&gt;</code>. O navegador ignora; serve para explicar.</li><li>Para escrever <code>&lt;</code>, <code>&gt;</code> e <code>&amp;</code> como texto, use entidades: <code>&amp;lt;</code> <code>&amp;gt;</code> <code>&amp;amp;</code>.</li></ul>
+<div class="brinquedo"><p class="brinquedo-titulo">Experimente: veja a árvore que o navegador monta</p><p>Escreva ou cole HTML. A árvore mostra quem é pai e quem é filho. Tente fechar uma tag na ordem errada e veja o aviso.</p><div data-brinquedo="arvore"><textarea hidden>&lt;main&gt;
+  &lt;h1&gt;Meu site&lt;/h1&gt;
+  &lt;p&gt;Olá, &lt;strong&gt;turma&lt;/strong&gt;!&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/main&gt;</textarea><noscript><p>Este experimento precisa de JavaScript.</p></noscript></div></div>
+<div class="confira">
+  <p><strong>Confira:</strong> No código <code>&lt;p&gt;Olá, &lt;em&gt;mundo&lt;/p&gt;&lt;/em&gt;</code>, o que está errado?</p>
+  <details><summary>Ver a resposta</summary><p>O <code>&lt;em&gt;</code> abriu dentro do <code>&lt;p&gt;</code>, então precisa fechar antes: <code>&lt;p&gt;Olá, &lt;em&gt;mundo&lt;/em&gt;&lt;/p&gt;</code>.</p></details>
+</div>
+
+</section>
+<section class="trilha-secao doc-secao" id="estrutura">
+  <h2>3. A estrutura de todo arquivo .html</h2>
+  
+<p>Todo arquivo HTML tem o mesmo esqueleto. Decore-o: você vai escrevê-lo no começo de todo projeto.</p>
+<figure class="doc-exemplo"><figcaption class="doc-ex-titulo">O esqueleto de todo arquivo HTML</figcaption><pre class="doc-codigo codigo-pre" data-lang="html" tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Meu site&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/estilo.css&quot;&gt;
+  &lt;script src=&quot;js/script.js&quot; defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Olá!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+<div class="tabela-rolagem"><table class="tabela doc-tabela"><thead><tr><th scope="col">Linha</th><th scope="col">Para que serve</th><th scope="col">Se esquecer...</th></tr></thead><tbody><tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Avisa que é HTML moderno (o padrão atual, que todos chamam de HTML5).</td><td>O navegador entra no "modo antigo" e o CSS se comporta estranho.</td></tr><tr><td><code>&lt;html lang=&quot;pt-BR&quot;&gt;</code></td><td>A raiz. lang diz o idioma.</td><td>O leitor de tela usa o idioma padrão dele, que pode não ser o português; o tradutor oferece traduzir sem necessidade.</td></tr><tr><td><code>&lt;head&gt;</code></td><td>Informações sobre a página. Nada aqui aparece na tela.</td><td>—</td></tr><tr><td><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></td><td>A codificação dos caracteres (UTF-8): letras, acentos, símbolos e emojis.</td><td>Aparece "Ã§Ã£o" no lugar de "ção".</td></tr><tr><td><code>&lt;meta name=&quot;viewport&quot; ...&gt;</code></td><td>Faz o celular usar a largura real da tela.</td><td>No celular o site aparece minúsculo, como no computador.</td></tr><tr><td><code>&lt;title&gt;</code></td><td>Nome na aba e no Google.</td><td>A aba mostra o nome do arquivo.</td></tr><tr><td><code>&lt;link rel=&quot;stylesheet&quot;&gt;</code></td><td>Liga o CSS.</td><td>Página sem estilo nenhum.</td></tr><tr><td><code>&lt;script defer&gt;</code></td><td>Liga o JavaScript, que roda depois de o HTML ser lido.</td><td>Sem defer no head: erro "Cannot read properties of null".</td></tr><tr><td><code>&lt;body&gt;</code></td><td>Tudo o que aparece na tela.</td><td>—</td></tr></tbody></table></div>
+<aside class="doc-nota"><p class="doc-nota-titulo">Caminhos</p><p>Os caminhos em <code>href</code> e <code>src</code> partem da pasta onde está o arquivo HTML. <code>css/estilo.css</code> = "entre na pasta css e pegue estilo.css". <code>../</code> = "volte uma pasta". Letras maiúsculas contam: no GitHub Pages, <code>Foto.jpg</code> e <code>foto.jpg</code> são arquivos diferentes.</p></aside>
+
+</section>
+<section class="trilha-secao doc-secao" id="semantica">
+  <h2>4. Semântica: escolher a tag pelo significado</h2>
+  
+<p>Semântica é o <strong>significado</strong>. Uma tag semântica diz o que o conteúdo <em>é</em>, e não como ele parece. Um <code>&lt;h2&gt;</code> e um <code>&lt;div class=&quot;grande&quot;&gt;</code> podem ficar idênticos na tela, mas só o primeiro diz "isto é um título".</p><p>Por que isso importa se na tela fica igual?</p>
+<ul><li><strong>Acessibilidade</strong>: pessoas cegas usam leitores de tela, que navegam pulando de título em título, de região em região (menu, conteúdo principal, rodapé). Com div para tudo, a página vira um bloco de texto sem mapa.</li><li><strong>Google</strong>: o buscador entende o assunto pelos títulos e pelas regiões.</li><li><strong>Manutenção</strong>: você (e o seu colega) acha as partes do código muito mais rápido.</li><li><strong>Comportamento pronto</strong>: <code>&lt;button&gt;</code> já funciona com teclado, <code>&lt;details&gt;</code> já abre e fecha, <code>&lt;a href&gt;</code> já é clicável com Tab. Com div você teria que programar tudo isso em JavaScript.</li></ul>
+<h3>As regiões da página</h3>
+<figure class="doc-exemplo"><figcaption class="doc-ex-titulo">Esqueleto semântico de uma página</figcaption><pre class="doc-codigo codigo-pre" data-lang="html" tabindex="0"><code>&lt;header&gt;
+  &lt;a href=&quot;index.html&quot;&gt;Logo&lt;/a&gt;
+  &lt;nav&gt;
+    &lt;a href=&quot;#sobre&quot;&gt;Sobre&lt;/a&gt;
+    &lt;a href=&quot;#contato&quot;&gt;Contato&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;section id=&quot;sobre&quot;&gt;
+    &lt;h2&gt;Sobre&lt;/h2&gt;
+    &lt;article&gt;
+      &lt;h3&gt;Nossa história&lt;/h3&gt;
+      &lt;p&gt;...&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;aside&gt;Curiosidade: ...&lt;/aside&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+  &lt;p&gt;&amp;copy; 2026 Meu Nome&lt;/p&gt;
+&lt;/footer&gt;</code></pre></figure>
+<h3>Qual tag eu uso?</h3>
+<div class="tabela-rolagem"><table class="tabela doc-tabela"><thead><tr><th scope="col">Se o conteúdo é...</th><th scope="col">Use</th><th scope="col">E não</th></tr></thead><tbody><tr><td>o topo com logo e menu</td><td><code>&lt;header&gt;</code></td><td><code>&lt;div class=&quot;topo&quot;&gt;</code></td></tr><tr><td>o grupo de links principais</td><td><code>&lt;nav&gt;</code></td><td><code>&lt;div class=&quot;menu&quot;&gt;</code></td></tr><tr><td>o assunto principal (um por página)</td><td><code>&lt;main&gt;</code></td><td><code>&lt;div id=&quot;conteudo&quot;&gt;</code></td></tr><tr><td>uma parte com título próprio</td><td><code>&lt;section&gt;</code> + h2</td><td>div sem título</td></tr><tr><td>algo que faz sentido sozinho (post, card, produto)</td><td><code>&lt;article&gt;</code></td><td>div</td></tr><tr><td>uma nota ao lado do assunto</td><td><code>&lt;aside&gt;</code></td><td>div</td></tr><tr><td>o título principal da página</td><td><code>&lt;h1&gt;</code> (um só)</td><td><code>&lt;p&gt;&lt;b&gt;...&lt;/b&gt;&lt;/p&gt;</code></td></tr><tr><td>algo que faz uma ação na página</td><td><code>&lt;button&gt;</code></td><td><code>&lt;div onclick&gt;</code> ou <code>&lt;a href=&quot;#&quot;&gt;</code></td></tr><tr><td>algo que leva para outro lugar</td><td><code>&lt;a href&gt;</code></td><td><code>&lt;button&gt;</code></td></tr><tr><td>uma lista</td><td><code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code> com <code>&lt;li&gt;</code></td><td>vários <code>&lt;p&gt;</code> ou <code>&lt;br&gt;</code></td></tr><tr><td>dados em linhas e colunas</td><td><code>&lt;table&gt;</code></td><td>divs alinhadas com CSS</td></tr><tr><td>imagem com legenda</td><td><code>&lt;figure&gt;</code> + <code>&lt;figcaption&gt;</code></td><td><code>&lt;div&gt;</code> + <code>&lt;p&gt;</code></td></tr><tr><td>texto importante</td><td><code>&lt;strong&gt;</code></td><td><code>&lt;b&gt;</code></td></tr><tr><td>nenhum significado (só agrupar para o CSS)</td><td><code>&lt;div&gt;</code> / <code>&lt;span&gt;</code></td><td>—</td></tr></tbody></table></div>
+<h3>Títulos em ordem, como um sumário</h3>
+<p>Os títulos formam o sumário da página: h1 é o título do livro, h2 os capítulos, h3 as partes de um capítulo. <strong>Nunca pule níveis</strong> (h2 direto para h4) e nunca escolha o título pelo tamanho: tamanho é trabalho do CSS.</p>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> usar h1, h2, h3 pelo tamanho da letra</p>
+  <p>Precisa de um texto grande que não é título? Use um p com uma classe e aumente no CSS. Precisa de um título pequeno? Use o nível certo e diminua no CSS.</p>
+</div>
+<h3>Bloco e em linha</h3>
+<p>Por padrão, alguns elementos ocupam a <strong>linha inteira</strong> (bloco: <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;ul&gt;</code>) e outros ficam <strong>no meio do texto</strong> (em linha: <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;code&gt;</code>). Os elementos de texto, como <code>&lt;span&gt;</code>, <code>&lt;strong&gt;</code> e <code>&lt;em&gt;</code>, só aceitam texto e outros elementos de texto dentro: não coloque um <code>&lt;div&gt;</code> dentro de um <code>&lt;span&gt;</code>. O <code>&lt;a&gt;</code> é exceção: ele pode envolver um bloco inteiro, como um card. A aparência (bloco ou em linha) o CSS muda com display.</p>
+<div class="confira">
+  <p><strong>Confira:</strong> Um botão "Curtir" que muda um contador na página: <code>&lt;a&gt;</code> ou <code>&lt;button&gt;</code>?</p>
+  <details><summary>Ver a resposta</summary><p><code>&lt;button&gt;</code>: ele faz uma ação na página, não leva para outro endereço. Link é para ir a algum lugar.</p></details>
+</div>
+<div class="voce-tenta">
+  <p class="voce-tenta-titulo">Você tenta</p>
+  <p>Pegue o seu index.html e procure todos os <code>&lt;div&gt;</code>. Para cada um, pergunte: existe uma tag com significado para isto? Troque os que tiverem.</p>
+</div>
+
+</section>
+<section class="trilha-secao doc-secao" id="textos-links">
+  <h2>5. Textos, links, imagens e mídia</h2>
+  
+<h3>Links</h3>
+<figure class="doc-exemplo"><figcaption class="doc-ex-titulo">Os cinco tipos de link</figcaption><pre class="doc-codigo codigo-pre" data-lang="html" tabindex="0"><code>&lt;a href=&quot;sobre.html&quot;&gt;Outra página do meu site&lt;/a&gt;
+&lt;a href=&quot;#contato&quot;&gt;Uma seção desta página (id=&quot;contato&quot;)&lt;/a&gt;
+&lt;a href=&quot;https://developer.mozilla.org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Outro site, em nova aba&lt;/a&gt;
+&lt;a href=&quot;mailto:professor@escola.com&quot;&gt;Mandar e-mail&lt;/a&gt;
+&lt;a href=&quot;docs/apostila.pdf&quot; download&gt;Baixar o PDF&lt;/a&gt;</code></pre></figure>
+<p>O texto do link deve dizer para onde ele leva. "Clique aqui" não diz nada para quem usa leitor de tela, que ouve a lista de links fora do contexto.</p>
+<h3>Imagens</h3>
+<figure class="doc-exemplo"><figcaption class="doc-ex-titulo">Imagem completa: caminho, descrição, tamanho e legenda</figcaption><pre class="doc-codigo codigo-pre" data-lang="html" tabindex="0"><code>&lt;figure&gt;
+  &lt;img src=&quot;img/igreja.jpg&quot; alt=&quot;Igreja Matriz iluminada à noite&quot; width=&quot;1200&quot; height=&quot;800&quot; loading=&quot;lazy&quot;&gt;
+  &lt;figcaption&gt;Igreja Matriz, construída em 1750.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></figure>
+<div class="tabela-rolagem"><table class="tabela doc-tabela"><thead><tr><th scope="col">Atributo</th><th scope="col">Por que é obrigatório (ou quase)</th></tr></thead><tbody><tr><td><code>src</code></td><td>Sem ele não há imagem.</td></tr><tr><td><code>alt</code></td><td>Descreve a imagem para quem não enxerga e aparece se ela não carregar. Imagem só decorativa: alt vazio.</td></tr><tr><td><code>width</code> e <code>height</code></td><td>O navegador reserva o espaço antes de a foto chegar, e a página não "pula".</td></tr><tr><td><code>loading=&quot;lazy&quot;</code></td><td>Só baixa quando a pessoa rola até perto. Economiza internet.</td></tr></tbody></table></div>
+<p>Um bom alt descreve o que importa na imagem <em>para aquele texto</em>, em uma frase, sem começar com "imagem de" (o leitor de tela já avisa que é imagem).</p>
+<h3>Vídeo e áudio</h3>
+<figure class="doc-exemplo"><figcaption class="doc-ex-titulo">Vídeo com capa e legenda</figcaption><pre class="doc-codigo codigo-pre" data-lang="html" tabindex="0"><code>&lt;video controls width=&quot;640&quot; poster=&quot;img/capa.jpg&quot; preload=&quot;metadata&quot;&gt;
+  &lt;source src=&quot;midia/aula.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  &lt;track src=&quot;midia/legendas.vtt&quot; kind=&quot;subtitles&quot; srclang=&quot;pt-BR&quot; label=&quot;Português&quot; default&gt;
+  Seu navegador não mostra vídeos.
+&lt;/video&gt;</code></pre></figure>
+
+</section>
+<section class="trilha-secao doc-secao" id="formularios">
+  <h2>6. Formulários: conversar com o usuário</h2>
+  
+<p>Formulário é como o site recebe dados: um contato, um cadastro, uma busca. Três regras resolvem 90% dos problemas:</p>
+<ol><li><strong>Todo campo tem um <code>&lt;label&gt;</code></strong>, ligado pelo for = id do campo. Clicar no rótulo foca o campo, e o leitor de tela lê o nome.</li><li><strong>Todo campo tem name</strong>. É o nome do dado que vai ser enviado (e o que o FormData do JavaScript lê). Sem name, o campo é ignorado.</li><li><strong>Use o type certo</strong>: email, tel, number, date. O celular mostra o teclado certo e o navegador já valida.</li></ol>
+<figure class="doc-exemplo"><figcaption class="doc-ex-titulo">Um formulário completo e acessível</figcaption><pre class="doc-codigo codigo-pre" data-lang="html" tabindex="0"><code>&lt;form action=&quot;https://exemplo.com/contato&quot; method=&quot;post&quot;&gt;
+  &lt;label for=&quot;nome&quot;&gt;Nome&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;nome&quot; name=&quot;nome&quot; required minlength=&quot;3&quot; autocomplete=&quot;name&quot;&gt;
+
+  &lt;label for=&quot;email&quot;&gt;E-mail&lt;/label&gt;
+  &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;
+
+  &lt;label for=&quot;curso&quot;&gt;Curso&lt;/label&gt;
+  &lt;select id=&quot;curso&quot; name=&quot;curso&quot;&gt;
+    &lt;option value=&quot;ti&quot;&gt;Técnico em Informática&lt;/option&gt;
+    &lt;option value=&quot;ds&quot;&gt;Desenvolvimento de Sistemas&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;label for=&quot;mensagem&quot;&gt;Mensagem&lt;/label&gt;
+  &lt;textarea id=&quot;mensagem&quot; name=&quot;mensagem&quot; rows=&quot;4&quot; maxlength=&quot;300&quot;&gt;&lt;/textarea&gt;
+
+  &lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre></figure>
+<aside class="doc-nota"><p class="doc-nota-titulo">Validação pronta</p><p><code>required</code>, <code>minlength</code>, <code>type=&quot;email&quot;</code> e <code>pattern</code> fazem o navegador conferir os dados antes de enviar, sem nenhuma linha de JavaScript. Mas quem manda no dado é o servidor: no módulo 12 (segurança) você vai ver por que o servidor precisa conferir tudo de novo (qualquer pessoa pode desligar a validação do navegador).</p></aside>
+<p>Para onde o formulário vai? O <code>action</code> é o endereço de um servidor que recebe os dados. Enquanto você não tem um, o JavaScript pode tratar o envio (evento submit com preventDefault). No módulo 9 (API), você vai criar o servidor que recebe esses dados.</p>
+
+</section>
+<section class="trilha-secao doc-secao" id="acessibilidade">
+  <h2>7. Acessibilidade: um site para todo mundo</h2>
+  
+<p>Acessibilidade é fazer o site funcionar para quem enxerga pouco ou nada, quem não usa mouse, quem é daltônico, quem tem pouca coordenação motora. No Brasil, a Lei Brasileira de Inclusão (art. 63) exige acessibilidade nos sites de empresas e de órgãos de governo. A boa notícia: HTML semântico já resolve a maior parte.</p>
+<div class="tabela-rolagem"><table class="tabela doc-tabela"><thead><tr><th scope="col">Faça</th><th scope="col">Por quê</th></tr></thead><tbody><tr><td>alt em toda imagem</td><td>É o que o leitor de tela lê.</td></tr><tr><td>label em todo campo</td><td>Sem ele, o campo é "editar texto" sem nome.</td></tr><tr><td>button para ações, a para links</td><td>Já funcionam com Tab, Enter e Espaço.</td></tr><tr><td>títulos em ordem (h1 → h2 → h3)</td><td>É o mapa da página para quem não enxerga.</td></tr><tr><td>não tirar o contorno de foco</td><td>Quem usa teclado precisa ver onde está. Troque o estilo, não apague.</td></tr><tr><td>contraste de cor suficiente</td><td>Texto cinza-claro em fundo branco some para muita gente (e no sol, para todo mundo).</td></tr><tr><td>aria-label em botão só com ícone</td><td>Um botão "✕" precisa de um nome: aria-label="Fechar".</td></tr></tbody></table></div>
+<aside class="doc-nota"><p class="doc-nota-titulo">Regra de ouro</p><p><strong>A primeira regra do ARIA é não usar ARIA</strong> quando existe uma tag que já faz aquilo. Um <code>&lt;button&gt;</code> é melhor que <code>&lt;div role="button" tabindex="0"&gt;</code>. Use aria-* para o que o HTML não tem: dizer se um menu está aberto (aria-expanded), dar nome a ícones (aria-label), avisar mudanças (aria-live).</p></aside>
+<div class="voce-tenta">
+  <p class="voce-tenta-titulo">Você tenta</p>
+  <p>Abra o seu site, coloque o mouse de lado e navegue só com Tab, Shift + Tab, Enter e Espaço. Dá para usar tudo? Você sempre vê onde está o foco?</p>
+</div>
+
+</section>
+<section class="trilha-secao doc-secao" id="erros">
+  <h2>8. Erros comuns e como conferir</h2>
+  
+<div class="tabela-rolagem"><table class="tabela doc-tabela"><thead><tr><th scope="col">Sintoma</th><th scope="col">Causa provável</th><th scope="col">Conserto</th></tr></thead><tbody><tr><td>Página sem estilo</td><td>Caminho do CSS errado</td><td>Confira o href do link e as maiúsculas. F12 → Rede → procure 404.</td></tr><tr><td>Imagem quebrada</td><td>Caminho ou nome errado (espaço, acento, maiúscula)</td><td>Renomeie para minúsculas sem espaço; confira a pasta.</td></tr><tr><td>Acentos viram Ã§</td><td>Falta o meta charset</td><td><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code> no começo do head.</td></tr><tr><td>Link # não vai para a seção</td><td>O id não existe ou está diferente</td><td>O href="#contato" precisa de um id="contato".</td></tr><tr><td>Metade da página em negrito/itálico</td><td>Uma tag não foi fechada</td><td>Procure o <code>&lt;strong&gt;</code> ou <code>&lt;em&gt;</code> sem <code>&lt;/strong&gt;</code>.</td></tr><tr><td>Site minúsculo no celular</td><td>Falta o meta viewport</td><td>Copie a linha do esqueleto.</td></tr></tbody></table></div>
+<p>Ferramentas para conferir:</p>
+<ul><li><strong>Validador oficial</strong>: validator.w3.org/#validate_by_input. Cole o HTML e ele lista os erros com a linha.</li><li><strong>F12 → Elements</strong> (Elementos): mostra a árvore que o navegador montou. O navegador acrescenta algumas tags sozinho (como <code>&lt;tbody&gt;</code> nas tabelas); mas se um elemento aparecer dentro de outro onde você não colocou, você errou uma tag.</li><li><strong>Verificador do projeto</strong> deste site: <a href="verificador.html">verificador.html</a> confere caminhos, alt, ids repetidos e tags sem fechar.</li></ul>
+
+</section>
+<section class="trilha-secao doc-secao" id="ler-docs">
+  <h2>9. Como ler a documentação oficial (MDN)</h2>
+  
+<p>Esta página é um começo. A documentação oficial usada por programadores do mundo todo é o <strong>MDN Web Docs</strong> (developer.mozilla.org), que tem versão em português. Aprender a ler documentação é uma das habilidades mais importantes da profissão: toda ferramenta nova que você usar vai ter uma.</p>
+<ol><li>Pesquise no Google: <em>mdn</em> + o nome da tag ("mdn figure"). O primeiro resultado costuma ser a página certa.</li><li>Leia o primeiro parágrafo: é o "o que é".</li><li>Pule para <strong>Exemplos</strong>: copie, rode, mude uma coisa de cada vez.</li><li>Olhe a tabela de <strong>Atributos</strong>: quais existem e o que cada um aceita.</li><li>No fim, <strong>Compatibilidade com navegadores</strong>: verde = funciona.</li></ol>
+
+</section>
+<section class="trilha-secao doc-secao" id="referencia">
+  <h2>Referência de HTML</h2>
+  <p>Todas as palavras de HTML usadas nos códigos do site, com o que é, quando usar, onde e um exemplo. Clique para abrir. Nos exemplos acima, clicar numa palavra também leva até aqui.</p>
+  <div data-referencia="html"><noscript><p>A referência precisa de JavaScript.</p></noscript></div>
+</section>
+      <nav class="passo-nav" aria-label="Navegação entre páginas da documentação"><a class="passo-ant" href="ia.html"><span>Anterior</span>Usar IA do jeito certo</a><a class="passo-prox" href="formacao.html"><span>Próximo</span>Módulo 2: CSS</a></nav>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

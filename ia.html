@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!--
+  DOCUMENTAÇÃO — Usar IA do jeito certo
+  Página gerada pela ferramenta do professor. Os exemplos ficam coloridos e
+  clicáveis com js/documentacao.js, que usa o dicionário (js/dicionario-dados.js).
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/dicionario-dados.js" defer></script>
+  <script src="js/analisador.js" defer></script>
+  <script src="js/documentacao.js" defer></script>
+  <title>Usar IA do jeito certo — Catálogo do HTML</title>
+  <meta name="description" content="Onde usar inteligência artificial para programar e estudar, onde usar com cuidado e onde ela prejudica o aprendizado. Com pesquisas e prompts prontos.">
+</head>
+<body class="pagina-trilha pagina-doc">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html" aria-current="page">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <nav aria-label="Você está em" class="migalhas">
+          <ol>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="documentacao.html">Documentação</a></li>
+            <li aria-current="page">Usar IA do jeito certo</li>
+          </ol>
+        </nav>
+        <p class="heroi-antetitulo">Documentação · Além do código</p>
+        <h1 class="heroi-titulo">Usar IA do jeito certo</h1>
+        <p class="heroi-texto">Onde a inteligência artificial acelera o seu trabalho, onde ela precisa de cuidado e onde ela tira de você o aprendizado, com base em pesquisas e com prompts prontos para usar do jeito certo.</p>
+      </div>
+    </section>
+
+    <div class="container doc-layout">
+      <nav class="doc-indice" aria-label="Nesta página">
+        <details class="doc-indice-caixa" open>
+          <summary>Nesta página</summary>
+          <ol><li><a href="#regra">A regra que decide tudo</a></li><li><a href="#pesquisas">O que as pesquisas mostram</a></li><li><a href="#cerebro">O que acontece no cérebro</a></li><li><a href="#semaforo">Semáforo: onde usar</a></li><li><a href="#por-fase">Por fase de aprendizado</a></li><li><a href="#como-pedir">Como pedir</a></li><li><a href="#erros-ia">O que a IA erra</a></li><li><a href="#escola">Nos trabalhos da escola</a></li><li><a href="#ler-assistir">Para ler e assistir</a></li></ol>
+        </details>
+      </nav>
+      <div class="trilha-corpo doc-corpo">
+<section class="trilha-secao doc-secao" id="regra">
+  <h2>1. A regra que decide tudo</h2>
+  
+<p>Inteligência artificial é uma ferramenta de trabalho poderosa, e você vai usá-la na profissão. Mas existe uma diferença que decide se ela ajuda ou atrapalha você:</p>
+<p class="ia-destaque">A IA <strong>acelera</strong> quem já sabe fazer.<br>A IA <strong>substitui o aprendizado</strong> de quem ainda está aprendendo aquilo.</p>
+<p>Aprender a programar acontece no esforço: tentar, errar, ler o erro, pensar, tentar de novo. Quando a IA faz essa parte por você, o exercício fica pronto, mas o seu cérebro não treinou nada. É como pedir para alguém fazer musculação no seu lugar: o peso subiu, o seu braço não mudou.</p>
+<h3>O teste dos 3 C</h3>
+<p>Antes de usar qualquer coisa que a IA produziu, responda:</p>
+<div class="tabela-rolagem"><table class="tabela doc-tabela"><thead><tr><th scope="col">Pergunta</th><th scope="col">Se a resposta for não...</th></tr></thead><tbody><tr><td><strong>Consigo explicar</strong> cada linha, com as minhas palavras?</td><td>Você não pode usar esse código. Peça explicação ou volte à documentação.</td></tr><tr><td><strong>Consigo conferir</strong> se está certo (testar, rodar, comparar com a documentação)?</td><td>Você não tem como saber se a IA errou. E ela erra.</td></tr><tr><td><strong>Conseguiria fazer</strong> sem a IA, só que mais devagar?</td><td>Você está alugando conhecimento, não aprendendo. Faça sozinho primeiro.</td></tr></tbody></table></div>
+<aside class="doc-nota"><p class="doc-nota-titulo">Resumo</p><p>Três "sim": a IA está acelerando você. Qualquer "não": a IA está fazendo o trabalho que deveria ser do seu cérebro.</p></aside>
+
+</section>
+<section class="trilha-secao doc-secao" id="pesquisas">
+  <h2>2. O que as pesquisas mostram</h2>
+  
+<p>Não é opinião de professor. Dois estudos com grupos comparados mediram o aprendizado, e um terceiro mediu a velocidade de quem já é experiente:</p>
+<div class="ia-estudos">
+  <article class="ia-estudo">
+    <p class="ia-numero">50% × 67%</p>
+    <p><strong>Programadores aprendendo uma biblioteca nova</strong> (Anthropic, 2026). 52 programadores, a maioria júnior. Quem usou IA acertou 50% da prova de conhecimento feita depois; quem programou sozinho acertou 67%. A IA quase não economizou tempo. Os poucos que usaram a IA só para <em>perguntar conceitos</em> ou para <em>pedir explicação do código gerado</em> tiveram notas perto das de quem fez sozinho. Quem <em>mandou a IA fazer</em> ficou abaixo de 40%.</p>
+  </article>
+  <article class="ia-estudo">
+    <p class="ia-numero">−17%</p>
+    <p><strong>Alunos de ensino médio estudando matemática</strong> (PNAS, 2025). Quase mil alunos. Com o ChatGPT liberado, as notas nos exercícios subiram 48%. Quando a IA foi retirada na prova, esse grupo foi <strong>17% pior</strong> que quem nunca usou. O grupo que usou uma versão "tutora", que dava dicas em vez de respostas, não teve essa perda.</p>
+  </article>
+  <article class="ia-estudo">
+    <p class="ia-numero">19% mais lentos</p>
+    <p><strong>Programadores experientes no próprio projeto</strong> (METR, 2025). 16 desenvolvedores, 246 tarefas reais. Com IA, levaram 19% <em>mais</em> tempo, mas achavam que tinham ficado 20% mais rápidos. A sensação de velocidade engana: conferir e consertar o que a IA fez também custa tempo.</p>
+  </article>
+</div>
+<p>Os dois primeiros estudos mostram que o que decide não é usar ou não usar IA, é <strong>como</strong> usar: pedir resposta pronta prejudica o aprendizado; pedir explicação e dica, não. O terceiro mostra que nem para quem já sabe a IA é sempre mais rápida.</p>
+
+</section>
+<section class="trilha-secao doc-secao" id="cerebro">
+  <h2>3. O que acontece no cérebro</h2>
+  
+<p>A neurociência e a psicologia da aprendizagem ajudam a entender por que o <strong>jeito</strong> de usar a IA muda tanto o resultado. Quatro ideias explicam quase tudo:</p>
+<div class="ia-conceitos">
+  <article class="ia-conceito">
+    <h3>1. O cérebro aprende pelo esforço</h3>
+    <p>Lembrar, tentar, errar e corrigir fortalece as conexões entre neurônios. Pesquisadores chamam de <strong>dificuldades desejáveis</strong> (Robert Bjork): o estudo que parece mais difícil na hora é o que fica guardado por mais tempo. Quando a IA tira toda a dificuldade, tira junto o que faz a memória se formar.</p>
+  </article>
+  <article class="ia-conceito">
+    <h3>2. Lembrar é o que fixa</h3>
+    <p>Tentar lembrar uma coisa sem olhar a resposta (<strong>prática de recuperação</strong>) fixa muito mais do que reler. Num estudo clássico (Roediger e Karpicke, 2006), quem se testou lembrou bem mais, uma semana depois, do que quem só releu o texto. Pedir a resposta pronta pula exatamente esse momento.</p>
+  </article>
+  <article class="ia-conceito">
+    <h3>3. Descarregamento cognitivo</h3>
+    <p>Todo mundo "terceiriza" parte do pensamento para ferramentas: a agenda guarda compromissos, a calculadora faz contas. Isso é útil com o que você <strong>já sabe</strong>. O problema aparece quando você terceiriza aquilo que ainda está aprendendo: a habilidade não chega a se formar. Um estudo com 666 pessoas (Gerlich, 2025) encontrou que quem mais depende de IA tem notas mais baixas em pensamento crítico, principalmente entre os mais jovens.</p>
+  </article>
+  <article class="ia-conceito">
+    <h3>4. Confiança demais desliga a atenção</h3>
+    <p>Numa pesquisa com 319 profissionais (Microsoft Research, 2025), quem confiava mais na IA pensava menos criticamente sobre o que ela entregava; quem confiava mais em si mesmo pensava mais. Com IA, o trabalho de pensar muda: vira conferir, comparar e decidir. Quem não sabe o assunto não consegue fazer esse trabalho.</p>
+  </article>
+</div>
+<h3>O estudo do MIT: "dívida cognitiva"</h3>
+<p>Pesquisadores do MIT Media Lab (Kosmyna e outros, 2025) mediram a atividade elétrica do cérebro (EEG) de 54 jovens escrevendo redações em três grupos: com ChatGPT, com buscador e só com a própria cabeça. O grupo que escreveu sozinho teve as redes cerebrais mais ativas e conectadas; o grupo do ChatGPT, as menos. Quem usou o ChatGPT também teve dificuldade para citar trechos da redação que tinha acabado de entregar, e se sentiu menos "dono" do texto. Os autores chamaram isso de <strong>dívida cognitiva</strong>: você economiza esforço agora e paga depois, porque não aprendeu.</p>
+<aside class="doc-nota"><p class="doc-nota-titulo">Como ler estes estudos sem cair em manchete</p>
+<ul>
+  <li>O estudo do MIT é um <strong>preprint</strong>: foi publicado pelos autores, mas ainda não passou pela revisão de outros cientistas. Tem poucos participantes e uma só tarefa (redação).</li>
+  <li>Os estudos com questionário (Gerlich, Microsoft) mostram <strong>correlação</strong>, não causa: não dá para saber se a IA diminui o pensamento crítico ou se quem pensa menos criticamente usa mais IA.</li>
+  <li>Manchetes como "o ChatGPT apodrece o seu cérebro" exageram. O que os estudos sustentam é mais simples e já basta: <strong>deixar a IA pensar por você no lugar de aprender tem custo</strong>.</li>
+  <li>Esse jeito de ler (quem fez, quantas pessoas, foi revisado, é causa ou correlação?) vale para qualquer notícia de ciência, e é um bom exercício de pensamento crítico.</li>
+</ul></aside>
+
+</section>
+<section class="trilha-secao doc-secao" id="semaforo">
+  <h2>4. O semáforo: onde usar, com cuidado e onde não usar</h2>
+  
+<div class="semaforo">
+<div class="sinal sinal-verde">
+  <p class="sinal-titulo"><span class="sinal-luz" aria-hidden="true"></span>Use à vontade</p>
+  <p class="sinal-sub">A IA ajuda você a entender e a ir mais rápido, sem tirar o seu treino.</p>
+  <ul><li>Explicar um <strong>conceito</strong> de outro jeito, quando a explicação da aula ou da documentação não entrou.</li><li>Explicar uma <strong>mensagem de erro</strong>, depois que você já leu e tentou entender sozinho.</li><li>Funcionar como <strong>tutor</strong>: fazer perguntas e dar dicas, sem entregar a resposta.</li><li>Criar <strong>exercícios extras</strong> de treino e perguntas para você se testar.</li><li><strong>Revisar</strong> o código que você já terminou e apontar problemas (você corrige).</li><li><strong>Simular entrevista</strong> técnica e fazer perguntas sobre o seu projeto.</li><li><strong>Traduzir</strong> documentação em inglês e explicar termos técnicos.</li><li>Criar <strong>dados de teste</strong>: listas de produtos, nomes, textos de exemplo.</li><li>Montar um <strong>plano de estudos</strong> ou resumir onde ler cada assunto na documentação.</li></ul>
+</div>
+<div class="sinal sinal-amarelo">
+  <p class="sinal-titulo"><span class="sinal-luz" aria-hidden="true"></span>Use com cuidado</p>
+  <p class="sinal-sub">Só se você passar no teste dos 3 C. Você é responsável por cada linha.</p>
+  <ul><li>Gerar código de algo que <strong>você já sabe fazer</strong> sozinho (economiza digitação, não aprendizado).</li><li>Gerar código repetitivo e padrão (estrutura de arquivos, configuração inicial) que você <strong>lê inteiro</strong> antes de usar.</li><li><strong>Refatorar</strong> um código seu: compare antes e depois e rode os testes.</li><li>Escrever <strong>testes</strong>: confira se eles testam o que importa, e não só passam.</li><li>Consultas <strong>SQL</strong>, arquivos de <strong>Docker</strong> e de <strong>CI</strong>: entenda cada linha e confira na documentação oficial.</li><li>Comparar <strong>bibliotecas e caminhos</strong>: peça prós e contras, confira as fontes, e a decisão é sua.</li><li>Rascunho de <strong>README</strong> e mensagens de commit: reescreva com as suas palavras.</li></ul>
+</div>
+<div class="sinal sinal-vermelho">
+  <p class="sinal-titulo"><span class="sinal-luz" aria-hidden="true"></span>Não use</p>
+  <p class="sinal-sub">Aqui a IA tira exatamente o que você veio aprender, ou cria risco.</p>
+  <ul><li><strong>Exercícios de lógica</strong> e da trilha: o esforço de resolver É o aprendizado.</li><li>O <strong>primeiro contato</strong> com um assunto novo: primeiro você tenta, lê e erra.</li><li><strong>Trabalhos, provas e projetos avaliados</strong>, a não ser que o professor libere e você declare o uso.</li><li><strong>Depurar sem ler o erro</strong>: colar o erro na IA antes de ler a mensagem e a linha.</li><li>Colar no projeto código que você <strong>não consegue explicar</strong>.</li><li>As partes de <strong>explicar com as suas palavras</strong>: resumos, reflexões, "Confira", defesa oral.</li><li><strong>Senhas, chaves de API, tokens e arquivos .env</strong> (risco de segurança) e <strong>dados pessoais</strong> de qualquer pessoa (LGPD): nunca cole numa IA.</li><li><strong>Segurança e dinheiro</strong> (login, criptografia, pagamento) sem revisão de quem entende e sem teste.</li><li>Código da empresa ou do cliente numa IA que a empresa <strong>não autorizou</strong>.</li></ul>
+</div>
+</div>
+
+</section>
+<section class="trilha-secao doc-secao" id="por-fase">
+  <h2>5. O papel da IA muda conforme você aprende</h2>
+  
+<div class="tabela-rolagem"><table class="tabela doc-tabela"><thead><tr><th scope="col">Fase</th><th scope="col">Papel da IA</th><th scope="col">Exemplo</th></tr></thead><tbody><tr><td><strong>Aprendendo</strong> (módulos 1 e 2, lógica, primeira linguagem)</td><td>Professor particular que <strong>não dá a resposta</strong>. Explica, pergunta, dá dica.</td><td>"Por que o meu for não para? Não corrija, me dê uma dica."</td></tr><tr><td><strong>Praticando</strong> (projetos próprios, trilha, portfólio)</td><td><strong>Revisor</strong>: você faz, a IA aponta o que melhorar.</td><td>"Revise este componente: acessibilidade e nomes de variáveis. Não reescreva."</td></tr><tr><td><strong>Trabalhando</strong> (estágio, emprego, freelance)</td><td><strong>Colega que acelera</strong> o que você já domina. A responsabilidade continua sua.</td><td>Gerar a estrutura de um CRUD que você já fez dez vezes, revisar e testar.</td></tr></tbody></table></div>
+<p>Repare que a IA vai ganhando espaço conforme você aprende. Quem pula a fase de aprender chega à fase de trabalhar sem conseguir revisar o que a IA faz, e é disso que a empresa precisa.</p>
+<div class="erro-comum">
+  <p class="erro-comum-titulo"><strong>Erro comum:</strong> "no trabalho todo mundo usa IA, então não preciso aprender"</p>
+  <p>No trabalho, quem usa IA bem é quem consegue ler o código gerado, achar o erro, saber que a biblioteca sugerida não existe, perceber a falha de segurança. A IA não tira a necessidade de saber: ela aumenta, porque você passa o dia <strong>revisando</strong> código. E em muitas entrevistas técnicas você resolve problemas sem IA.</p>
+</div>
+
+</section>
+<section class="trilha-secao doc-secao" id="como-pedir">
+  <h2>6. Como pedir: prompts que ensinam</h2>
+  
+<p>O jeito de pedir muda tudo. Copie, ajuste e use.</p>
+<div class="prompt-caixa">
+  <div class="prompt-topo"><span>Tutor que não dá a resposta</span><button type="button" class="prompt-copiar">Copiar</button></div>
+  <pre><code>Estou aprendendo programação. Quero resolver este exercício sozinho.
+NÃO me dê a resposta nem o código pronto.
+Faça uma pergunta de cada vez para me ajudar a pensar,
+e só me dê uma dica se eu pedir.
+
+Exercício: [cole o enunciado]
+O que eu já tentei: [explique]</code></pre>
+</div>
+<div class="prompt-caixa">
+  <div class="prompt-topo"><span>Entender um erro (depois de ler a mensagem)</span><button type="button" class="prompt-copiar">Copiar</button></div>
+  <pre><code>Recebi este erro e já li a mensagem e a linha indicada.
+Explique o que o erro quer dizer e onde devo procurar,
+mas NÃO corrija o código para mim.
+
+Erro: [cole a mensagem]
+O que eu acho que está acontecendo: [sua hipótese]</code></pre>
+</div>
+<div class="prompt-caixa">
+  <div class="prompt-topo"><span>Explicar código linha por linha</span><button type="button" class="prompt-copiar">Copiar</button></div>
+  <pre><code>Explique este código linha por linha, para quem está começando.
+Para cada comando, diga o que ele faz e por que está ali.
+No fim, faça 3 perguntas para eu conferir se entendi.
+
+[cole o código]</code></pre>
+</div>
+<div class="prompt-caixa">
+  <div class="prompt-topo"><span>Revisão de código (sem reescrever)</span><button type="button" class="prompt-copiar">Copiar</button></div>
+  <pre><code>Revise o código abaixo como um desenvolvedor sênior revisaria um pull request.
+Aponte problemas de: nomes, legibilidade, erros possíveis, segurança e acessibilidade.
+Para cada problema, explique o porquê. NÃO reescreva o código: eu vou corrigir.
+
+[cole o código]</code></pre>
+</div>
+<div class="prompt-caixa">
+  <div class="prompt-topo"><span>Exercícios de treino</span><button type="button" class="prompt-copiar">Copiar</button></div>
+  <pre><code>Crie 5 exercícios de [assunto], do mais fácil ao mais difícil,
+para quem está no nível [iniciante/intermediário].
+Não mostre as respostas. Quando eu enviar minhas soluções, corrija e explique.</code></pre>
+</div>
+<div class="prompt-caixa">
+  <div class="prompt-topo"><span>Simulador de entrevista</span><button type="button" class="prompt-copiar">Copiar</button></div>
+  <pre><code>Aja como entrevistador de uma vaga de desenvolvedor júnior fullstack (troque pela sua stack: C#, SQL e React, por exemplo).
+Faça uma pergunta por vez, espere minha resposta,
+avalie o que faltou e só então faça a próxima.</code></pre>
+</div>
+
+</section>
+<section class="trilha-secao doc-secao" id="erros-ia">
+  <h2>7. O que a IA erra (e por que você precisa conferir)</h2>
+  
+<div class="tabela-rolagem"><table class="tabela doc-tabela"><thead><tr><th scope="col">Erro</th><th scope="col">Como é</th><th scope="col">Como se proteger</th></tr></thead><tbody><tr><td>Inventar coisas</td><td>Cita função, parâmetro, comando ou pacote que não existe, com toda a confiança.</td><td>Confira na documentação oficial. Pacote sugerido: procure no npm ou NuGet antes de instalar (existem pacotes falsos criados com os nomes que a IA costuma inventar).</td></tr><tr><td>Código desatualizado</td><td>Usa um jeito antigo, de uma versão passada da ferramenta.</td><td>Veja a versão que você usa e a documentação daquela versão.</td></tr><tr><td>Falhas de segurança</td><td>SQL montado com texto do usuário, senha sem hash, chave escrita no código, CORS aberto para tudo.</td><td>Módulo 12 (segurança) e revisão com a lista OWASP Top 10.</td></tr><tr><td>Não conhece o seu projeto</td><td>Sugere nomes e estruturas que não batem com o resto do seu código.</td><td>Adapte ao seu padrão; não cole às cegas.</td></tr><tr><td>Parece certo, mas não é</td><td>O código roda, mas trata errado um caso (lista vazia, valor nulo, dois cliques).</td><td>Teste os casos de borda. Escreva testes.</td></tr><tr><td>Concorda com você</td><td>Se você afirma algo errado, ela pode confirmar.</td><td>Pergunte "quais são os problemas desta ideia?" em vez de "esta ideia é boa?".</td></tr></tbody></table></div>
+
+</section>
+<section class="trilha-secao doc-secao" id="escola">
+  <h2>8. Nos trabalhos da escola</h2>
+  
+<ul><li>O professor diz, em cada atividade, se a IA está <strong>liberada</strong>, <strong>liberada com declaração</strong> ou <strong>proibida</strong>.</li><li>Quando usar, <strong>declare</strong>: qual ferramenta, para quê e o que você mudou no que ela entregou.</li><li>Esteja pronto para <strong>explicar</strong> qualquer parte do seu trabalho em voz alta. Se não souber explicar, o trabalho não é seu.</li><li>Guarde o <strong>histórico</strong> do trabalho (commits no Git, versões do documento): ele mostra o seu processo.</li></ul>
+<div class="prompt-caixa">
+  <div class="prompt-topo"><span>Declaração de uso de IA (cole no fim do trabalho)</span><button type="button" class="prompt-copiar">Copiar</button></div>
+  <pre><code>Uso de IA neste trabalho:
+- Ferramenta: [nome]
+- Para quê: [ex.: explicar o erro X; revisar o CSS do cabeçalho]
+- O que eu mudei ou decidi: [explique]
+- O que eu fiz sem IA: [explique]</code></pre>
+</div>
+<div class="confira">
+  <p><strong>Confira:</strong> Você travou num exercício de laço de repetição da trilha. Qual é o uso certo da IA: pedir o código pronto, pedir uma dica, ou não usar?</p>
+  <details><summary>Ver a resposta</summary><p>Primeiro tente sozinho e leia os seus erros. Se continuar travado, use o prompt de tutor: peça UMA dica, sem código. Pedir o código pronto tira exatamente o treino que o exercício existe para dar.</p></details>
+</div>
+<div class="voce-tenta">
+  <p class="voce-tenta-titulo">Você tenta</p>
+  <p>Pegue um código de outro assunto que você já fez e use o prompt de revisão. Corrija você mesmo cada problema apontado e anote o que aprendeu com cada um.</p>
+</div>
+
+</section>
+<section class="trilha-secao doc-secao" id="ler-assistir">
+  <h2>9. Para ler e assistir</h2>
+  
+<p>A maior parte do material bom sobre o assunto está em inglês. Use as legendas traduzidas do YouTube (Configurações &gt; Legendas &gt; Traduzir automaticamente) ou o tradutor do navegador: além de aprender o assunto, você treina o inglês técnico. Um bom exercício é ler com a ajuda de uma IA para traduzir e depois conferir no texto original se ela traduziu direito.</p>
+<h3>Vídeos e palestras</h3>
+<ul class="ia-links">
+  <li><span class="ia-tipo">Palestra · inglês</span> <a href="https://www.ted.com/talks/advait_sarkar_how_to_stop_ai_from_killing_your_critical_thinking" target="_blank" rel="noopener">How to stop AI from killing your critical thinking</a> — Advait Sarkar (TED). Um dos autores da pesquisa da Microsoft mostra como usar a IA como ferramenta para pensar, e não no lugar de pensar.</li>
+  <li><span class="ia-tipo">Entrevista · inglês</span> <a href="https://startalkmedia.com/show/your-brain-on-chatgpt-with-nataliya-kosmyna/" target="_blank" rel="noopener">Your Brain on ChatGPT with Nataliya Kosmyna</a> — StarTalk, com Neil deGrasse Tyson. A autora do estudo do MIT explica o que mediu e o que ele não prova.</li>
+  <li><span class="ia-tipo">Vídeo · inglês</span> <a href="https://www.youtube.com/watch?v=XPllm-gtrMM" target="_blank" rel="noopener">Using Desirable Difficulties to Enhance Learning</a> — Robert Bjork, o pesquisador que criou o conceito de dificuldades desejáveis.</li>
+  <li><span class="ia-tipo">Vídeo · inglês</span> <a href="https://www.youtube.com/watch?v=UBVV8pch1dM" target="_blank" rel="noopener">The Science of Thinking</a> — Veritasium. Como o cérebro alterna entre o pensamento rápido e automático e o lento e esforçado, e por que aprender exige o segundo.</li>
+</ul>
+<h3>Artigos para ler</h3>
+<ul class="ia-links">
+  <li><span class="ia-tipo">Artigo · inglês</span> <a href="https://theconversation.com/mit-researchers-say-using-chatgpt-can-rot-your-brain-the-truth-is-a-little-more-complicated-259450" target="_blank" rel="noopener">MIT researchers say using ChatGPT can rot your brain. The truth is a little more complicated</a> — The Conversation. Uma leitura crítica do estudo do MIT: o que ele mostra e o que as manchetes exageraram.</li>
+  <li><span class="ia-tipo">Artigo · inglês</span> <a href="https://www.psychologicalscience.org/observer/test-enhanced-learning-2" target="_blank" rel="noopener">Test-Enhanced Learning</a> — Association for Psychological Science. Por que se testar ensina mais do que reler.</li>
+  <li><span class="ia-tipo">Artigo · inglês</span> <a href="https://www.microsoft.com/en-us/research/blog/the-future-of-ai-in-knowledge-work-tools-for-thought-at-chi-2025/" target="_blank" rel="noopener">The Future of AI in Knowledge Work: Tools for Thought</a> — Microsoft Research. Pesquisas sobre como desenhar ferramentas de IA que façam as pessoas pensarem mais, e não menos.</li>
+</ul>
+<h3>As pesquisas originais</h3>
+<ul class="ia-links">
+  <li><span class="ia-tipo">Preprint · 2025</span> <a href="https://arxiv.org/abs/2506.08872" target="_blank" rel="noopener">Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task</a> — Kosmyna e outros, MIT Media Lab.</li>
+  <li><span class="ia-tipo">Estudo · 2025</span> <a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/" target="_blank" rel="noopener">The Impact of Generative AI on Critical Thinking</a> — Lee e outros, Microsoft Research (conferência CHI).</li>
+  <li><span class="ia-tipo">Estudo · 2025</span> <a href="https://www.mdpi.com/2075-4698/15/1/6" target="_blank" rel="noopener">AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking</a> — Gerlich, revista Societies.</li>
+  <li><span class="ia-tipo">Estudo · 2026</span> <a href="https://www.anthropic.com/research/AI-assistance-coding-skills" target="_blank" rel="noopener">How AI assistance impacts the formation of coding skills</a> — Anthropic.</li>
+  <li><span class="ia-tipo">Estudo · 2025</span> <a href="https://www.pnas.org/doi/10.1073/pnas.2422633122" target="_blank" rel="noopener">Generative AI without guardrails can harm learning</a> — Bastani e outros, PNAS.</li>
+  <li><span class="ia-tipo">Estudo · 2025</span> <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank" rel="noopener">Measuring the impact of early-2025 AI on experienced open-source developer productivity</a> — METR.</li>
+  <li><span class="ia-tipo">Estudo · 2006</span> <a href="https://journals.sagepub.com/doi/10.1111/j.1467-9280.2006.01693.x" target="_blank" rel="noopener">Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention</a> — Roediger e Karpicke, Psychological Science.</li>
+</ul>
+
+</section>
+
+      <nav class="passo-nav" aria-label="Navegação entre páginas da documentação"><a class="passo-ant" href="documentacao.html"><span>Anterior</span>Documentação</a><a class="passo-prox" href="doc-html.html"><span>Próximo</span>Módulo 2: HTML</a></nav>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

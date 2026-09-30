@@ -16,6 +16,9 @@
   <script src="js/script.js" defer></script>
   <script src="js/trilha.js" defer></script>
   <script src="js/codigos-dados.js" defer></script>
+  <script src="js/dicionario-dados.js" defer></script>
+  <script src="js/analisador.js" defer></script>
+  <script src="js/entenda.js" defer></script>
   <script src="js/painel-codigos.js" defer></script>
   <title>Passo 3: Criar o projeto pelo terminal — Catálogo do HTML</title>
   <meta name="description" content="Criar a pasta e os três arquivos, colar a estrutura e ver o site no Live Server.">
@@ -44,6 +47,9 @@
         <ul class="menu-lista" id="menu-principal">
           <li><a href="index.html">Catálogo</a></li>
           <li><a href="passo-a-passo.html" aria-current="page">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
           <li><a href="codigos.html">Códigos</a></li>
           <li><a href="verificador.html">Verificador</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -67,18 +73,18 @@
             <li aria-current="page">Passo 3</li>
           </ol>
         </nav>
-        <p class="heroi-antetitulo">Passo 3 de 10. Tempo: 30 min</p>
+        <p class="heroi-antetitulo">Passo 3 de 10. Tempo: 1 aula</p>
         <h1 class="heroi-titulo">Criar o projeto pelo terminal</h1>
         <p class="heroi-texto">Agora o projeto de verdade: a pasta do seu site, com os três arquivos já conectados, aberta no navegador pelo Live Server.</p>
       </div>
     </section>
 
     <div class="container trilha-corpo">
-      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5" aria-current="step"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-html.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-5-css.html" data-passo="5" data-total="4"><span class="mapa-num">5</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-6-js.html" data-passo="6" data-total="4"><span class="mapa-num">6</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-7-verificar.html" data-passo="7" data-total="4"><span class="mapa-num">7</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-8-github.html" data-passo="8" data-total="4"><span class="mapa-num">8</span><span class="mapa-nome">Git e GitHub</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
+      <nav class="trilha-mapa" aria-label="Passos da trilha"><ol><li><a href="passo-1-preparar.html" data-passo="1" data-total="5"><span class="mapa-num">1</span><span class="mapa-nome">Preparar o computador</span></a></li><li><a href="passo-2-terminal.html" data-passo="2" data-total="4"><span class="mapa-num">2</span><span class="mapa-nome">Terminal sem medo</span></a></li><li><a href="passo-3-projeto.html" data-passo="3" data-total="5" aria-current="step"><span class="mapa-num">3</span><span class="mapa-nome">Criar o projeto</span></a></li><li><a href="passo-4-github.html" data-passo="4" data-total="4"><span class="mapa-num">4</span><span class="mapa-nome">Guardar no GitHub</span></a></li><li><a href="passo-5-html.html" data-passo="5" data-total="5"><span class="mapa-num">5</span><span class="mapa-nome">HTML</span></a></li><li><a href="passo-6-css.html" data-passo="6" data-total="5"><span class="mapa-num">6</span><span class="mapa-nome">CSS</span></a></li><li><a href="passo-7-js.html" data-passo="7" data-total="5"><span class="mapa-num">7</span><span class="mapa-nome">JavaScript</span></a></li><li><a href="passo-8-verificar.html" data-passo="8" data-total="5"><span class="mapa-num">8</span><span class="mapa-nome">Verificar</span></a></li><li><a href="passo-9-pages.html" data-passo="9" data-total="5"><span class="mapa-num">9</span><span class="mapa-nome">GitHub Pages</span></a></li><li><a href="passo-10-atualizar.html" data-passo="10" data-total="4"><span class="mapa-num">10</span><span class="mapa-nome">Atualizar</span></a></li></ol></nav>
 <section class="trilha-secao" id="nome">
   <h2>3.1 Escolher o nome do projeto</h2>
   
-<p>O nome da pasta vira o nome do repositório e o final do endereço do site: <code>https://seu-usuario.github.io/<strong>turismo-barbacena</strong>/</code>.</p>
+<p>O nome da pasta vira o nome do repositório e o final do endereço do site: <code>https://seu-usuario.github.io/<strong>turismo-barbacena</strong>/</code>. Nesta trilha, o exemplo é sempre <code>turismo-barbacena</code>: onde aparecer, use o nome do seu projeto.</p>
 <ul>
   <li>Tudo em <strong>minúsculas</strong>, <strong>sem espaço</strong> (use hífen) e <strong>sem acento</strong>.</li>
   <li>Curto e sobre o tema: <code>receitas-da-vo</code>, <code>portfolio-ana</code>, <code>time-de-volei</code>.</li>
@@ -87,14 +93,14 @@
 </section><section class="trilha-secao" id="criar">
   <h2>3.2 Criar a pasta e os arquivos pelo terminal</h2>
   
-<p>No Git Bash, troque <code>turismo-barbacena</code> pelo nome que você escolheu, nos dois primeiros comandos em que ele aparece:</p>
+<p>No Git Bash, troque <code>turismo-barbacena</code> pelo nome que você escolheu, nos dois comandos em que ele aparece:</p>
 <div class="terminal">
   <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
-  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd ~/Documents</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">mkdir turismo-barbacena</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd turismo-barbacena</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">mkdir css js img</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">touch index.html css/estilo.css js/script.js</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">ls -R</span></span></code></pre>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd ~/projetos</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">mkdir turismo-barbacena</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cd turismo-barbacena</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">mkdir css js img</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">touch index.html css/estilo.css js/script.js</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">ls -R</span></span></code></pre>
 </div><div class="saida">
   <p class="saida-titulo">O que deve aparecer</p>
   <pre><code>.:
-css  img  index.html  js
+css/  img/  index.html  js/
 
 ./css:
 estilo.css
@@ -110,15 +116,16 @@ script.js</code></pre>
   <details><summary>Ver a resposta</summary><p>Cria um arquivo vazio chamado <code>estilo.css</code> dentro da pasta <code>css</code>. A pasta precisa existir antes; por isso o <code>mkdir</code> veio primeiro.</p></details>
 </div>
 </section><section class="trilha-secao" id="fotos">
-  <h2>3.3 Trazer as suas fotos</h2>
+  <h2>3.3 Trazer as suas fotos (no tamanho certo)</h2>
   
-<p>Copie as fotos para a pasta <code>img</code> pelo Explorador de Arquivos ou pelo terminal. Pelo terminal, já dá para acertar o nome:</p>
+<p>Foto de celular pesa de 3 a 8 MB: deixa o site lento e o repositório enorme. Antes de copiar, diminua cada foto em <strong>squoosh.app</strong> (grátis, no navegador): largura de <strong>1600 px</strong> no máximo, formato <strong>JPG</strong> ou <strong>WebP</strong>, qualidade perto de 75. Cada foto deve ficar abaixo de 300 KB.</p>
+<p>Depois copie para a pasta <code>img</code>. Pelo terminal, já dá para acertar o nome:</p>
 <div class="terminal">
   <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
-  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cp ~/Downloads/IMG_2031.JPG img/praca-central.jpg</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">ls img</span></span></code></pre>
+  <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">cp ~/Downloads/IMG_2031.jpg img/praca-central.jpg</span></span><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">ls img</span></span></code></pre>
 </div><p class="terminal-nota"><code>cp origem destino</code>: copia a foto de Downloads e, na mesma hora, dá a ela um nome em minúsculas e sem espaço.</p><div class="erro-comum">
   <p class="erro-comum-titulo"><strong>Erro comum:</strong> foto com nome <code>Foto 1.JPG</code>.</p>
-  <p>Espaço e maiúsculas funcionam no seu computador e quebram no GitHub Pages. Renomeie: <code>mv "img/Foto 1.JPG" img/foto-1.jpg</code>.</p>
+  <p>Espaço atrapalha no terminal e nos endereços. Maiúsculas enganam: o Windows acha <code>Foto.JPG</code> quando o HTML pede <code>foto.jpg</code>, mas o GitHub Pages não acha, e a imagem quebra só no site publicado. Use sempre minúsculas e renomeie: <code>mv "img/Foto 1.JPG" img/foto-1.jpg</code>. Se o arquivo já foi enviado ao GitHub (Passo 4), renomeie com <code>git mv</code> no lugar de <code>mv</code>, senão o Git do Windows não percebe a troca de maiúscula.</p>
 </div>
 </section><section class="trilha-secao" id="abrir">
   <h2>3.4 Abrir no VS Code e colar a estrutura</h2>
@@ -127,8 +134,9 @@ script.js</code></pre>
   <div class="terminal-topo"><span>Git Bash</span><button type="button" class="terminal-copiar">Copiar</button></div>
   <pre><code><span class="t-linha"><span class="t-prompt" aria-hidden="true">$ </span><span class="t-cmd">code .</span></span></code></pre>
 </div>
-<p>O VS Code abre com a pasta do projeto. Agora cole os três arquivos da estrutura inicial: abra o painel abaixo e copie cada aba para o arquivo indicado.</p>
+<p>O VS Code abre com a pasta do projeto. Agora cole os três arquivos da estrutura inicial: abra o painel abaixo, copie cada aba e cole no arquivo indicado.</p>
 <div class="codigo" data-codigo="estrutura"></div>
+<p>Abra o <strong>Entenda este código</strong> de cada aba: ele explica cada tag, propriedade e comando da estrutura.</p>
 <div class="erro-comum">
   <p class="erro-comum-titulo"><strong>Erro comum:</strong> <code>bash: code: command not found</code>.</p>
   <p>O VS Code foi instalado sem a opção <em>Adicionar ao PATH</em>. Abra o VS Code pelo menu Iniciar e use <strong>Arquivo &gt; Abrir Pasta</strong>. Na próxima reinstalação, marque a opção.</p>
@@ -138,10 +146,10 @@ script.js</code></pre>
   
 <ol class="passos">
   <li>No VS Code, clique com o botão direito no <code>index.html</code> e escolha <strong>Open with Live Server</strong> (ou clique em <strong>Go Live</strong>, embaixo, à direita).</li>
-  <li>O navegador abre em <code>http://127.0.0.1:5500/index.html</code>. Esse endereço só existe no seu computador: ninguém mais consegue abrir.</li>
+  <li>O navegador abre em <code>http://127.0.0.1:5500/index.html</code>. Esse endereço só existe no seu computador: ninguém mais consegue abri-lo.</li>
   <li><strong>Teste de conexão do CSS:</strong> no fim do <code>estilo.css</code>, escreva <code>body { background-color: yellow; }</code> e salve. A página fica amarela sozinha.</li>
-  <li><strong>Teste de conexão do JS:</strong> aperte <kbd>F12</kbd> no navegador e abra a aba <strong>Console</strong>. Deve aparecer <samp>script.js conectado!</samp>, que é a linha que veio no <code>script.js</code> da estrutura.</li>
-  <li>Deu certo? Apague a linha amarela do CSS.</li>
+  <li><strong>Teste de conexão do JS:</strong> aperte <kbd>F12</kbd> no navegador e abra a aba <strong>Console</strong>. Deve aparecer a mensagem <samp>script.js conectado!</samp>. Ela vem da linha que está no <code>script.js</code> da estrutura.</li>
+  <li>Deu certo? Apague a linha do fundo amarelo.</li>
 </ol>
 <div class="erro-comum">
   <p class="erro-comum-titulo"><strong>Erro comum:</strong> o Live Server abre uma lista de arquivos em vez do site.</p>
@@ -159,7 +167,7 @@ script.js</code></pre>
   <p>Marque cada item só depois de conferir. As marcações ficam salvas neste navegador e aparecem na página inicial da trilha.</p>
   <ul data-total="5">
     <li><label><input type="checkbox" data-progresso="passo-3-1"> O <code>ls -R</code> mostra <code>index.html</code>, <code>css/estilo.css</code>, <code>js/script.js</code> e a pasta <code>img</code></label></li>
-    <li><label><input type="checkbox" data-progresso="passo-3-2"> As minhas fotos estão em <code>img</code>, com nomes em minúsculas e sem espaço</label></li>
+    <li><label><input type="checkbox" data-progresso="passo-3-2"> As minhas fotos estão em <code>img</code>, com menos de 300 KB e nomes em minúsculas e sem espaço</label></li>
     <li><label><input type="checkbox" data-progresso="passo-3-3"> O site abre pelo Live Server</label></li>
     <li><label><input type="checkbox" data-progresso="passo-3-4"> A página ficou amarela no teste (depois apaguei a linha)</label></li>
     <li><label><input type="checkbox" data-progresso="passo-3-5"> Apareceu <samp>script.js conectado!</samp> no Console</label></li>
@@ -167,7 +175,7 @@ script.js</code></pre>
 </section>
       <nav class="passo-nav" aria-label="Navegação entre passos">
         <a class="passo-ant" href="passo-2-terminal.html"><span>Passo anterior</span>2. Terminal sem medo</a>
-        <a class="passo-prox" href="passo-4-html.html"><span>Próximo passo</span>4. HTML</a>
+        <a class="passo-prox" href="passo-4-github.html"><span>Próximo passo</span>4. Guardar no GitHub</a>
       </nav>
     </div>
   </main>
@@ -176,7 +184,7 @@ script.js</code></pre>
   <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
 
   <footer class="rodape">
-    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
   </footer>
 </body>
 </html>

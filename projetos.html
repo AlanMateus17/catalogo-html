@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--
+  PROJETOS — o mapa dos 12 projetos da formação
+  Cada projeto tem enunciado, resultado esperado e dicas em camadas; nenhum traz código pronto.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/trilha.js" defer></script>
+  <title>Projetos — Catálogo do HTML</title>
+  <meta name="description" content="12 projetos inspirados em sistemas reais, do primeiro programa ao sistema completo no ar. Você recebe o enunciado e o resultado esperado; o código você escreve do zero.">
+</head>
+<body class="pagina-trilha" data-prefixo="projeto:">
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi heroi-curto" id="inicio">
+      <div class="container heroi-conteudo">
+        <p class="heroi-antetitulo">12 projetos · do primeiro programa ao sistema no ar</p>
+        <h1 class="heroi-titulo">Projetos</h1>
+        <p class="heroi-texto">Cada projeto nasce de um sistema real e chega com o problema do cliente, as regras, o resultado esperado e dicas em camadas. O código você escreve do zero: é assim que se aprende a programar de verdade.</p>
+      </div>
+    </section>
+
+    <div class="container trilha-corpo">
+      <section class="trilha-secao" id="como">
+        <h2>Como os projetos funcionam</h2>
+        <div class="tabela-rolagem"><table class="tabela"><thead><tr><th scope="col">Você recebe</th><th scope="col">Você não recebe</th></tr></thead><tbody><tr><td>O problema do cliente, contado como história</td><td>Código pronto, repositório pronto ou esqueleto do projeto</td></tr><tr><td>Requisitos numerados (RF) e regras de negócio (RN)</td><td>Passo a passo de código ("crie o arquivo X e escreva Y")</td></tr><tr><td>Casos de teste: a entrada e a saída esperada</td><td>A solução dos casos de teste</td></tr><tr><td>Vídeo e imagens do resultado esperado</td><td>Um site de demonstração (o código ficaria visível no navegador)</td></tr><tr><td>4 marcos, cada um com 3 dicas que você abre uma de cada vez</td><td>As respostas das perguntas para pensar</td></tr><tr><td>Links para o capítulo da Documentação que ensina cada parte</td><td></td></tr></tbody></table></div>
+        <p>As dicas vêm em camadas de propósito: a primeira é uma pergunta, a segunda mostra o conceito, a terceira diz onde estudar. Abra a próxima só depois de tentar de verdade.</p>
+      </section>
+
+      <section class="trilha-secao" id="avaliacao">
+        <h2>Entrega e avaliação</h2>
+        <p>Todo projeto é entregue com repositório no GitHub (commits ao longo do trabalho), README, link publicado e um vídeo de até 2 minutos. A avaliação é a mesma nos 12:</p>
+        <div class="tabela-rolagem"><table class="tabela"><thead><tr><th scope="col">Critério</th><th scope="col">Peso</th><th scope="col">Como se mede</th></tr></thead><tbody><tr><td>Funciona como pedido</td><td>50%</td><td>Cada critério de aceite e cada caso de teste conferidos</td></tr><tr><td>Qualidade do código</td><td>20%</td><td>Nomes claros, funções pequenas, sem repetição, sem código morto</td></tr><tr><td>Documentação</td><td>15%</td><td>README completo e mensagens de commit que dizem o que mudou</td></tr><tr><td>Explicação</td><td>15%</td><td>Você explica, em até 5 minutos, qualquer trecho que o professor apontar</td></tr></tbody></table></div>
+        <aside class="trilha-ia">
+  <p class="trilha-ia-titulo">E a IA, neste passo?</p>
+  <p><strong>Pode:</strong> explicar erros e conceitos, e revisar o seu código depois de pronto.</p>
+  <p><strong>Não:</strong> gerar o projeto ou partes inteiras dele. A explicação oral é o que garante isso.</p>
+  <p>Por quê, e prompts prontos para usar do jeito certo: <a href="ia.html">Usar IA do jeito certo</a>.</p>
+</aside>
+      </section>
+
+      <p class="trilha-resumo-texto" id="progresso-geral" data-item="projeto" data-fim="Todos os projetos disponíveis completos. Os próximos saem junto com os módulos."></p>
+      <section class="projetos-etapa" aria-labelledby="etapa-1">
+        <h2 id="etapa-1">Etapa 1: lógica</h2>
+        <ol class="trilha-lista">
+        <li class="trilha-card">
+          <span class="trilha-card-num" aria-hidden="true">1</span>
+          <div class="trilha-card-corpo">
+            <h3><a href="projeto-1.html">Caixa Rápido</a> <span class="selo selo-ok">Grátis</span></h3>
+            <p>O caixa de uma padaria: soma a venda, aplica o desconto certo e diz quais cédulas e moedas devolver de troco.</p>
+            <p class="trilha-card-tempo">Inspirado no AM Kaixara (PDV) · JavaScript puro · 2 a 3 semanas · individual</p>
+          </div>
+          <div class="trilha-card-progresso" data-passo="p1" data-total="4">
+            <div class="barrinha"><span></span></div>
+            <p><span class="feitos">0</span> de 4</p>
+          </div>
+        </li>
+        </ol>
+      </section>
+      <section class="projetos-etapa" aria-labelledby="etapa-2">
+        <h2 id="etapa-2">Etapa 2: HTML, CSS e JavaScript</h2>
+        <ol class="trilha-lista">
+        <li class="trilha-card">
+          <span class="trilha-card-num" aria-hidden="true">2</span>
+          <div class="trilha-card-corpo">
+            <h3><a href="formacao.html">Linha do Tempo</a> <span class="selo">Formação</span></h3>
+            <p>A história de uma cidade, família ou escola numa linha do tempo que funciona no celular. Só HTML e CSS.</p>
+            <p class="trilha-card-tempo">Inspirado no AM Vynla (histórias e linha do tempo) · HTML, CSS, GitHub Pages · 2 a 3 semanas · individual</p>
+          </div>
+          <div class="trilha-card-progresso" data-passo="p2" data-total="6">
+            <div class="barrinha"><span></span></div>
+            <p><span class="feitos">0</span> de 6</p>
+          </div>
+        </li>
+        <li class="trilha-card">
+          <span class="trilha-card-num" aria-hidden="true">3</span>
+          <div class="trilha-card-corpo">
+            <h3><a href="formacao.html">Portfólio pessoal</a> <span class="selo">Formação</span></h3>
+            <p>O seu portfólio: projetos montados pelo JavaScript a partir de uma lista, com filtros, janela de detalhes e tema.</p>
+            <p class="trilha-card-tempo">Inspirado no o seu site pessoal · HTML, CSS, JavaScript · 3 a 4 semanas · individual</p>
+          </div>
+          <div class="trilha-card-progresso" data-passo="p3" data-total="5">
+            <div class="barrinha"><span></span></div>
+            <p><span class="feitos">0</span> de 5</p>
+          </div>
+        </li>
+        <li class="trilha-card">
+          <span class="trilha-card-num" aria-hidden="true">4</span>
+          <div class="trilha-card-corpo">
+            <h3><a href="formacao.html">Quadro Kanban</a> <span class="selo">Formação</span></h3>
+            <p>Um quadro A fazer / Fazendo / Feito com arrastar e soltar, limite de trabalho em andamento e dados salvos no navegador.</p>
+            <p class="trilha-card-tempo">Inspirado no AM Taskoro (gestão de projetos) · JavaScript, DOM, localStorage · 3 a 4 semanas · individual</p>
+          </div>
+          <div class="trilha-card-progresso" data-passo="p4" data-total="6">
+            <div class="barrinha"><span></span></div>
+            <p><span class="feitos">0</span> de 6</p>
+          </div>
+        </li>
+        </ol>
+      </section>
+      <section class="projetos-etapa" aria-labelledby="etapa-3">
+        <h2 id="etapa-3">Etapa 3: equipe e web</h2>
+        <ol class="trilha-lista">
+        <li class="trilha-card">
+          <span class="trilha-card-num" aria-hidden="true">5</span>
+          <div class="trilha-card-corpo">
+            <h3>Finanças em dupla</h3>
+            <p>Controle de gastos com orçamento e distribuição automática de aportes, feito em dupla com pull requests revisados.</p>
+            <p class="trilha-card-tempo">Inspirado no AM Rendara (finanças e rebalanceamento) · JavaScript, CSV, Git em equipe · 4 semanas · dupla</p>
+          </div>
+          <p class="ajuda">Libera junto com o módulo 3 (Git em equipe)</p>
+        </li>
+        <li class="trilha-card">
+          <span class="trilha-card-num" aria-hidden="true">6</span>
+          <div class="trilha-card-corpo">
+            <h3>Agenda com API</h3>
+            <p>Agendamento de salão que conversa com uma API: horários livres, conflitos, almoço e cancelamento com antecedência.</p>
+            <p class="trilha-card-tempo">Inspirado no AM Horaria (agendamentos) · fetch, HTTP, API falsa (json-server) · 3 a 4 semanas · individual</p>
+          </div>
+          <p class="ajuda">Libera junto com o módulo 4 (Como a web funciona)</p>
+        </li>
+        </ol>
+      </section>
+      <section class="projetos-etapa" aria-labelledby="etapa-4">
+        <h2 id="etapa-4">Etapa 4: front-end moderno</h2>
+        <ol class="trilha-lista">
+        <li class="trilha-card">
+          <span class="trilha-card-num" aria-hidden="true">7</span>
+          <div class="trilha-card-corpo">
+            <h3>Loja virtual</h3>
+            <p>Loja com catálogo, filtros na URL, carrinho, frete por CEP e cupom, em Next.js com TypeScript.</p>
+            <p class="trilha-card-tempo">Inspirado no AM Vendra (e-commerce) · TypeScript, React, Next.js, Tailwind, Zustand · 5 a 6 semanas · individual</p>
+          </div>
+          <p class="ajuda">Libera junto com os módulos 5 e 6 (TypeScript, React e Next.js)</p>
+        </li>
+        </ol>
+      </section>
+      <section class="projetos-etapa" aria-labelledby="etapa-5">
+        <h2 id="etapa-5">Etapa 5: C# e orientação a objetos</h2>
+        <ol class="trilha-lista">
+        <li class="trilha-card">
+          <span class="trilha-card-num" aria-hidden="true">8</span>
+          <div class="trilha-card-corpo">
+            <h3>Ordens de serviço</h3>
+            <p>Ordens de serviço de uma assistência técnica em C#: fluxo de status com regras, orçamento, garantia e relatórios.</p>
+            <p class="trilha-card-tempo">Inspirado no AM Consertta (assistência técnica) · C#, POO, LINQ, JSON · 4 a 5 semanas · individual</p>
+          </div>
+          <p class="ajuda">Libera junto com os módulos 7 e 8 (C# e POO, SOLID)</p>
+        </li>
+        </ol>
+      </section>
+      <section class="projetos-etapa" aria-labelledby="etapa-6">
+        <h2 id="etapa-6">Etapa 6: banco de dados</h2>
+        <ol class="trilha-lista">
+        <li class="trilha-card">
+          <span class="trilha-card-num" aria-hidden="true">9</span>
+          <div class="trilha-card-corpo">
+            <h3>Banco de dados do PDV</h3>
+            <p>O banco de dados de um PDV: modelo, restrições que recusam dado errado, 10 consultas e índices medidos.</p>
+            <p class="trilha-card-tempo">Inspirado no AM Kaixara (PDV) · SQL, PostgreSQL, Docker Compose · 4 semanas · individual</p>
+          </div>
+          <p class="ajuda">Libera junto com o módulo 10 (SQL e PostgreSQL)</p>
+        </li>
+        </ol>
+      </section>
+      <section class="projetos-etapa" aria-labelledby="etapa-7">
+        <h2 id="etapa-7">Etapa 7: API com login</h2>
+        <ol class="trilha-lista">
+        <li class="trilha-card">
+          <span class="trilha-card-num" aria-hidden="true">10</span>
+          <div class="trilha-card-corpo">
+            <h3>API da clínica veterinária</h3>
+            <p>A API de uma clínica veterinária com login, papéis, agenda sem conflito e carteira de vacinação.</p>
+            <p class="trilha-card-tempo">Inspirado no AM Petara (veterinária) · ASP.NET Core, EF Core, JWT, PostgreSQL · 6 a 8 semanas · individual</p>
+          </div>
+          <p class="ajuda">Libera junto com os módulos 9, 10 e 12 (API, banco e segurança)</p>
+        </li>
+        </ol>
+      </section>
+      <section class="projetos-etapa" aria-labelledby="etapa-8">
+        <h2 id="etapa-8">Etapa 8: testes</h2>
+        <ol class="trilha-lista">
+        <li class="trilha-card">
+          <span class="trilha-card-num" aria-hidden="true">11</span>
+          <div class="trilha-card-corpo">
+            <h3>Reservas do condomínio com TDD</h3>
+            <p>Reservas das áreas do condomínio em que cada regra nasce como um teste que falha.</p>
+            <p class="trilha-card-tempo">Inspirado no AM Predara (condomínios) · xUnit, testes de integração, Playwright · 4 a 5 semanas · individual</p>
+          </div>
+          <p class="ajuda">Libera junto com o módulo 14 (Testes automatizados)</p>
+        </li>
+        </ol>
+      </section>
+      <section class="projetos-etapa" aria-labelledby="etapa-9">
+        <h2 id="etapa-9">Etapa 9: sistema completo</h2>
+        <ol class="trilha-lista">
+        <li class="trilha-card">
+          <span class="trilha-card-num" aria-hidden="true">12</span>
+          <div class="trilha-card-corpo">
+            <h3>Sistema completo (1 de 3)</h3>
+            <p>Um sistema completo no ar, com testes, Docker e deploy: PDV, entregas em tempo real ou plataforma de exercícios.</p>
+            <p class="trilha-card-tempo">Inspirado no AM Kaixara, AM Rotara ou AM Mentor · A stack inteira, Docker, GitHub Actions, deploy · 8 a 12 semanas · individual ou dupla</p>
+          </div>
+          <p class="ajuda">Libera junto com o módulo 17 (Projeto final)</p>
+        </li>
+        </ol>
+      </section>
+
+      <p>O Projeto 1 é grátis para todos. Os outros fazem parte da <a href="formacao.html">formação</a>, com teste grátis de 7 dias. Os projetos 5 a 12 são liberados junto com os módulos de que dependem, para que você tenha sempre condições de fazê-los sozinho.</p>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>

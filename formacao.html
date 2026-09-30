@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+  PÁGINA "SOBRE" — a segunda página do site.
+
+  PARA QUE ELA SERVE NESTE PROJETO:
+  mostrar que duas páginas diferentes podem usar os MESMOS arquivos de CSS e JavaScript.
+  Olhe o <head>: as linhas de conexão são iguais às do index.html.
+  Mude uma cor no estilo.css e as DUAS páginas mudam juntas.
+  Essa é a maior vantagem de ter o CSS e o JS em arquivos externos.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formação completa — Catálogo do HTML</title>
+  <meta name="description" content="Sobre o projeto Catálogo do HTML.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap">
+
+  <!-- MESMO CSS e MESMO JS do index.html -->
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+  <!-- Ferramenta do Catálogo: painéis "Ver código" (os alunos não precisam copiar) -->
+  <script src="js/codigos-dados.js" defer></script>
+  <script src="js/dicionario-dados.js" defer></script>
+  <script src="js/analisador.js" defer></script>
+  <script src="js/entenda.js" defer></script>
+  <script src="js/painel-codigos.js" defer></script>
+</head>
+<body>
+  <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="barra-progresso" id="barra-progresso" aria-hidden="true"></div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <!--
+        Aqui o logo leva para index.html (outra página), e não para #inicio.
+        POR QUÊ: #inicio procuraria um id="inicio" NESTA página, e ele não existe aqui.
+      -->
+      <a href="index.html" class="logo" aria-label="Catálogo do HTML, página inicial">
+        <svg class="logo-icone" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="currentColor" />
+          <path d="M16 12 L8 20 L16 28" class="logo-traco" />
+          <path d="M24 12 L32 20 L24 28" class="logo-traco" />
+        </svg>
+        <span class="logo-texto">Catálogo<br>do HTML</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="btn-menu-linhas" aria-hidden="true"></span>
+        <span class="visualmente-escondido">Abrir menu</span>
+      </button>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu-lista" id="menu-principal">
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="passo-a-passo.html">Passo a passo</a></li>
+          <li><a href="aulas.html">Aulas</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="codigos.html">Códigos</a></li>
+          <li><a href="verificador.html">Verificador</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-tema" id="btn-tema" type="button" aria-pressed="false">
+        <span class="btn-tema-icone" aria-hidden="true">◐</span>
+        <span class="btn-tema-texto">Tema escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <div class="container" id="inicio">
+      <section class="secao">
+        <h1>Esta parte é da formação completa</h1>
+        <p>O que você tentou abrir faz parte da formação completa: os capítulos de CSS e JavaScript
+        da Documentação e os Projetos 2 a 12, com enunciado, dicas em camadas e o resultado esperado.</p>
+        <p>Tudo o que está neste site continua grátis e aberto: o Catálogo, os Códigos, o Dicionário,
+        o Verificador, a trilha Passo a passo completa, o capítulo de HTML e o Projeto 1 inteiro.</p>
+        <p>A plataforma com a formação completa está chegando. Enquanto isso, fale com o professor.</p>
+        <p><a href="index.html">Voltar para o Catálogo</a> · <a href="passo-a-passo.html">Ir para o Passo a passo</a> · <a href="projetos.html">Ver os projetos</a></p>
+      </section>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a href="#inicio" class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <footer class="rodape">
+    <p class="rodape-direitos"><small>&copy; <span id="ano-atual">2026</span> Prof. Alan Mateus. <a href="passo-a-passo.html">Passo a passo</a>, <a href="documentacao.html">Documentação</a>, <a href="dicionario.html">Dicionário</a>, <a href="ia.html">Usar IA do jeito certo</a>, <a href="codigos.html">Códigos</a> e <a href="verificador.html">Verificador</a>.</small></p>
+  </footer>
+</body>
+</html>
