@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Hook de pre-push: antes de cada push, cria e envia a tag da versão mais nova do CHANGELOG, sozinho.
+# Instale uma vez: git config core.hooksPath scripts/git-hooks
+# Pular num push específico: AMTECH_SKIP_HOOK=1 git push
+set -euo pipefail
+[ -n "${AMTECH_SKIP_HOOK:-}" ] && exit 0
+raiz="$(git rev-parse --show-toplevel)"
+[ -f "$raiz/tools/git/taguear.py" ] || exit 0
+# Não trava o push se a tag falhar (ex.: sem permissão para enviar tag): só avisa.
+python3 "$raiz/tools/git/taguear.py" --ultima --criar --push || echo "pre-push: não consegui taguear a versão agora (siga; crie depois com tools/git/taguear.py)" >&2
+exit 0

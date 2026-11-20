@@ -1,0 +1,30 @@
+# Portão de qualidade de todo repositório: segredos, vulnerabilidades, análise estática e testes.
+name: qualidade
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  qualidade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Segredos no histórico (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Vulnerabilidades em dependências e configs (Trivy)
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: fs
+          severity: HIGH,CRITICAL
+          exit-code: "1"
+          ignore-unfixed: true
+      - name: Análise estática (Semgrep)
+        run: pipx run semgrep scan --config auto --error --quiet
+      - name: Testes
+        run: |
+          if [ -f package.json ]; then npm ci && npm test --if-present; fi
+          if ls ./*.sln ./*.csproj >/dev/null 2>&1; then dotnet test; fi
+          if [ -d tests ] && ls tests/*.py >/dev/null 2>&1; then python -m unittest discover -s tests; fi
