@@ -1,0 +1,16 @@
+# O que o Aider não lê (o Claude Code usa .claude/settings.json)
+.env
+.env.*
+node_modules/
+bin/
+obj/
+dist/
+build/
+coverage/
+*.log
+*.lock
+package-lock.json
+pnpm-lock.yaml
+*.pfx
+*.pem
+*.kdbx
